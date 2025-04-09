@@ -1,0 +1,33 @@
+.recent-activity {
+    padding: 10px;
+}
+
+.recent-activity h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.recent-activity p {
+    margin: 5px 0;
+}
+.recent-name
+{
+  font-size: 18;
+  color: #8B949E;  
+  text-decoration: none;
+}
+.recent-name:hover
+{
+    text-decoration: underline;
+}
+.recent-image-text
+{
+    display: flex;
+}
+.recent-picture {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 23px;
+}

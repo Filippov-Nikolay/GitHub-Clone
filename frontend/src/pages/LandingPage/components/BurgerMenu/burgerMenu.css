@@ -1,0 +1,11 @@
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.burger__span {
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+}

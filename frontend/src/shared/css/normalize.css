@@ -1,0 +1,37 @@
+/*NORMALIZE CSS*/
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    writing-mode: horizontal-tb;
+}
+ul, li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+input {
+    outline: none;
+    border: none;
+    background-color: inherit;
+}
+button {
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+
