@@ -16,36 +16,41 @@ namespace CloneGitHub.DAL.Repositories
             db = _db;
         }
 
-        public async Task<ICollection<User>> GetAllUsers()
+        public async Task<IEnumerable<User>> GetAllAsync() //GetAllUsers 
         {
             return await db.Users.ToListAsync();
         }
     
-    public async Task<User> GetUser(string username)
+    public async Task<User> GetUser(string username) //GetUser by username
     {
        return await db.Users.Where(u => u.UserName == username).FirstOrDefaultAsync();
     }
 
-       public async Task<User> GetUser(int id)
+       public async Task<User> GetByIdAsync(int id) //GetUser by id
     {
        return await db.Users.Where(u => u.Id == id).FirstOrDefaultAsync();
      
     }
 
-    public async Task<User> GetUserByEmail(string email)
+    public async Task<User> GetUserByEmail(string email) //GetUserByEmail
     {
        return await db.Users.Where(u => u.Email == email).FirstOrDefaultAsync();
        
     }
 
 
+public async Task AddAsync(User user)
+{
+    if(user != null)
+    await db.Users.AddAsync(user);
+}
 
-    public void Update(User user)
+    public void UpdateAsync(User user)
     {
         db.Entry(user).State = EntityState.Modified;
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteAsync(int id)
     {
         User user = await db.Users.FindAsync(id);
         

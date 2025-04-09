@@ -1,25 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj": {}
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
   },
   "projects": {
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj": {
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj",
+        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
         "projectName": "CloneGitHub",
-        "projectPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj",
-        "packagesPath": "/Users/dima/.nuget/packages/",
-        "outputPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/obj/",
+        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
+        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/dima/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+<<<<<<< HEAD
+=======
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,12 +51,15 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+<<<<<<< HEAD
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"
             }
           },
+=======
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
           "imports": [
             "net461",
             "net462",
@@ -67,7 +79,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
         }
       }
     }
