@@ -1,0 +1,6 @@
+@GitHub_Clone_HostAddress = http://localhost:5179
+
+GET {{GitHub_Clone_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

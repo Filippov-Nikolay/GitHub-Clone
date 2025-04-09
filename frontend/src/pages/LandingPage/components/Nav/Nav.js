@@ -17,7 +17,7 @@ export function Nav({btnClick}) {
                 <div className="nav__sign-up-wrapper">
                     <SignUp></SignUp>
                 </div>
-                <a href="#" className="logo" aria-label='logo'><LogoSvg></LogoSvg></a>
+                <a href="#" className="logo" aria-label='logo'><LogoSvg colorProps="#fff"></LogoSvg></a>
                 <div className="nav__inner">
                     <Menu></Menu>
                     <div className="nav__wrapper-item">

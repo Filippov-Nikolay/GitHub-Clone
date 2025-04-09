@@ -1,0 +1,21 @@
+@import url('../../../shared/css/normalize.css');
+
+@import url('../components/form/form.css');
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+body {
+    font-family: 'Noto+Sans', sans-serif;
+
+    background-color: #0E1116;
+
+    font-feature-settings: unset;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+
+    max-width: 1280px;
+    width: 100%;
+}
