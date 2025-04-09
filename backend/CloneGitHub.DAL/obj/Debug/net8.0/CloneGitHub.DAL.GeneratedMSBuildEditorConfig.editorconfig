@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CloneGitHub.DAL
-build_property.ProjectDir = D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub.DAL\
+build_property.ProjectDir = /Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

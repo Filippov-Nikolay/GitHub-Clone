@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj": {}
+    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj": {}
   },
   "projects": {
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj": {
+    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj",
-        "projectName": "CloneGitHub",
-        "projectPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/CloneGitHub.csproj",
+        "projectUniqueName": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
+        "projectName": "CloneGitHub.DAL",
+        "projectPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
         "packagesPath": "/Users/dima/.nuget/packages/",
-        "outputPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub/obj/",
+        "outputPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/dima/.nuget/NuGet/NuGet.Config"
@@ -54,9 +54,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
