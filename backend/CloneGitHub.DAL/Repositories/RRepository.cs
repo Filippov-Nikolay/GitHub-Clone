@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CloneGitHub.DAL.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class RRepository<T> : IRepository<T> where T : class
     {
         protected readonly CloneGitHubContext _context;
         private readonly DbSet<T> _dbSet;
 
-        public Repository(CloneGitHubContext context)
+        public RRepository(CloneGitHubContext context)
         {
             _context = context;
             _dbSet = _context.Set<T>();

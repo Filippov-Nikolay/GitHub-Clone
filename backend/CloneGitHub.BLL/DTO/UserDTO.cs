@@ -16,6 +16,8 @@ namespace CloneGitHub.BLL.DTO
         [Required(ErrorMessage = "Username must be specified")]
         public string UserName { get; set; }
 
+        public UserDetailsDTO userDetailsDTO{ get; set; }
+
 
     }
 }

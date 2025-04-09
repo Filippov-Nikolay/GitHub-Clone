@@ -14,5 +14,6 @@ namespace CloneGitHub.DAL.Interfaces
         IRepository<User> Users { get; }
         IRepository<Subscription> Subscriptions { get; }
         Task<int> CompleteAsync();
+        Task Save();
     }
 }

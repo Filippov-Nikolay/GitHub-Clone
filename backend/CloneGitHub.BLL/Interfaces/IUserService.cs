@@ -10,7 +10,7 @@ namespace CloneGitHub.BLL.Interfaces
         Task<UserDTO> GetUser(int id);
         Task<UserDTO> GetUser(string username);
         Task<UserDTO> GetUserByEmail(string email);
-        Task<ICollection<UserDTO userDTO>> GetAllUsers();
+        Task<IEnumerable<UserDTO>> GetAllUsers();
 
     }
 }

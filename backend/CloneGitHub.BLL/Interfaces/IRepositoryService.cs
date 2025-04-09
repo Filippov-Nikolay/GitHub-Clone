@@ -8,7 +8,7 @@ namespace CloneGitHub.BLL.Interfaces
         Task DeleteRepository(int id);
         Task UpdateRepository(RepositoryDTO repositoryDTO);
         Task GetRepository(int id);
-        Task GetRepository(string name)
+        Task GetRepository(string name);
         Task<IEnumerable<RepositoryDTO>> GetAllRepositories();
 
     }

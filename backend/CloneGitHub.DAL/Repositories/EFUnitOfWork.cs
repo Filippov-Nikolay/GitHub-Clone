@@ -10,10 +10,10 @@ public class EFUnitOfWork : IUnitOfWork
     public EFUnitOfWork(CloneGitHubContext context)
     {
         _context = context;
-        Repositories = new Repository<Repository>(_context);
-        Activities = new Repository<Activity>(_context);
-        Users = new Repository<User>(_context);
-        Subscriptions = new Repository<Subscription>(_context);
+        Repositories = new RRepository<Repository>(_context);
+        Activities = new RRepository<Activity>(_context);
+        Users = new RRepository<User>(_context);
+        Subscriptions = new RRepository<Subscription>(_context);
     }
 
     public IRepository<Repository> Repositories { get; }
@@ -25,4 +25,10 @@ public class EFUnitOfWork : IUnitOfWork
     {
         return await _context.SaveChangesAsync();
     }
+
+    
+        public async Task Save()
+        {
+            await _context.SaveChangesAsync();
+        }
 }
