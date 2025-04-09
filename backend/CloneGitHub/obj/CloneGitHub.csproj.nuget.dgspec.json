@@ -25,10 +25,6 @@
           "net8.0"
         ],
         "sources": {
-<<<<<<< HEAD
-=======
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,15 +47,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-<<<<<<< HEAD
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"
             }
           },
-=======
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
           "imports": [
             "net461",
             "net462",
@@ -79,11 +72,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
         }
       }
     }
