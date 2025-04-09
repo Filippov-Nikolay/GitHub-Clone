@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
 import RepositoriesPage from './pages/RepositoriesPage/Index';
 import HomePage from './pages/HomePage/Index'
+import SignIn from './pages/LoginPage/Index';
 
 const AppRouter = () => {
   return (
@@ -13,6 +14,7 @@ const AppRouter = () => {
         <Route path="Clone-GitHub/profilePage" element={<ProfilePage />} />
         <Route path="Clone-GitHub/repositoriesPage" element={<RepositoriesPage />}/>
         <Route path="Clone-GitHub/homePage" element={<HomePage />}/>
+        <Route path="Clone-GitHub/signInPage" element={<SignIn />}/>
       </Routes>
     </Router>
   );

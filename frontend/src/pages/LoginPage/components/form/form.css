@@ -1,0 +1,73 @@
+.form-content {
+    display: block;
+}
+.form-content__nav {
+    display: flex;
+    justify-content: center;
+
+    padding: 38px 0px;
+}
+.form-content__link {
+}
+.form-content__link svg {
+    width: 48px;
+    height: 48px;
+}
+.title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+}
+.login-form {
+    display: flex;
+    justify-content: center;
+}
+.login-form__container {
+    padding: 20px;
+
+    border: 1px solid #3d444db3;
+    border-radius: 15px;
+
+    background-color: #151b23;
+}
+.login-form__item {
+
+}
+.login-form__item:not(:last-child) {
+    margin-bottom: 15px;
+}
+.login-form__label {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    color: #f0f6fc;
+}
+.login-form__wrapper {
+    display: flex;
+}
+.login-form__forgot-password {
+}
+.login-form__input {
+    background-color: #0d1117;
+    border: 1px solid #3d444d;
+}
+.login-form__btn {
+    padding: 5px 0px;
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: #238636;
+    border-radius: 5px;
+}
+.login-callout {
+}
+.login-callout__btn {
+}
+.login-callout__text {
+}
+.login-callout__link {
+}
