@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloneGitHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ee1c6db556b3f258eba6374d7807a1d3cd0f08e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e4bf13f3bbe4efdd19668bb4a961658c9133c52")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloneGitHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloneGitHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
