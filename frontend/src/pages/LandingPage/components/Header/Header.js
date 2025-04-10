@@ -4,7 +4,7 @@ import '../../styles/main.css'
 
 import { 
     OcticonCode, ArrowSymbolMktg, 
-    OcticonLock, OcticonCodeConduct, OcticonBriefcase
+    OcticonLock, OcticonCodeConduct
 } from '../../assets/svg/svgComponents'
 
 

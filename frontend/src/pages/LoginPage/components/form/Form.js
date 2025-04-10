@@ -8,7 +8,7 @@ export function Form() {
             <h1 className="title">Sign in to GitHub</h1>
             <div className="login-form">
                 <div className="login-form__container">
-                    <form action="">
+                    <form className="login-form__form" action="">
                         <div className="login-form__item">
                             <label className="login-form__label" htmlFor="loginOrEmail">Username or email address</label>
                             <input className="login-form__input" type="text" name="loginOrEmail"/>
@@ -26,7 +26,7 @@ export function Form() {
                     
                     <div className="login-callout">
                         <button type="button" className="login-callout__btn">Sign in with a passkey</button>
-                        <p className="login-callout__text">New to GitHub? <a className="login-callout__link" href="#">Create an account</a></p>
+                        <p className="login-callout__text">New to GitHub? <a className="login-callout__link" href="signup">Create an account</a></p>
                     </div>
                 </div>
             </div>
