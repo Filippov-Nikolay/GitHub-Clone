@@ -7,7 +7,7 @@ import { Menu } from "../Menu/Menu";
 
 function SignUp() {
     return (
-        <a className="nav__btn nav__btn--border" href="#">Sign up</a>
+        <a className="nav__btn nav__btn--border" href="/signup">Sign up</a>
     )
 }
 export function Nav({btnClick}) {
@@ -28,7 +28,7 @@ export function Nav({btnClick}) {
                             </div>
                             <span className="nav__btn-span"><PathSvg></PathSvg></span>
                         </button>
-                        <a className="nav__btn" href="/Clone__GitHub/vb-app">Sign in</a>
+                        <a className="nav__btn" href="/login">Sign in</a>
                         <div className="nav__sign-up"><SignUp></SignUp></div>
                     </div>
                 </div>
