@@ -1,14 +1,20 @@
-- shared (глобальные компоненты, которые используют другие компоненты)
-- pasges:
-	- LandingPage:
-		- components:
-			- header: header.js, header.css
-			- sidebar: sidebar.js, sidebar.css
-			- nav
-			- footer
-			- index.js 
-		- assets:
-			- img
-			- svg
-		- hooks
-	- HomePage
+- src:
+	- shared (глобальные компоненты, которые используют другие компоненты)
+	- pasges:
+		- LandingPage:
+			- components:
+				- header: header.js, header.css
+				- sidebar: sidebar.js, sidebar.css
+				- nav
+				- footer
+				- index.js 
+			- assets:
+				- img
+				- svg
+			- hooks:
+			- services:
+			- styles:
+				- main.css (Подключаются все нужные стили комопнентов (components))
+			- Index.js
+		- HomePage:
+			- ...

@@ -1,0 +1,128 @@
+.article{
+    grid-column: 2;
+    min-width: 0;
+}
+
+.section{
+    margin-top: 34px;
+    margin-left: 25px;
+}
+
+.article__wrapper{
+
+}
+
+.article__container{
+   display: flex;
+   background-color: #388afd4e;
+   border: 1px solid #388BFD;
+   padding: 25px 25px;
+   border-radius: 5px;
+}
+
+.article__container-text{
+    color: #C9D1D9;
+    margin-right: 1.5rem;
+}
+
+.article__container--link{
+    color: #58A6FF;
+}
+
+.article__container-btn{
+    cursor: pointer;
+}
+.article__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.article__header-name{
+    color: #C9D1D9;
+    font-weight: 600;
+}
+
+.article__header-edit{
+    color: #8B949E;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.article__header-edit:hover{
+    text-decoration: underline;
+}
+
+  .pinned-items-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(33.33%, 1fr));
+    gap: 16px;
+  }
+  
+  .pinned-item {
+    background-color: #0D1117;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #30363d63;
+  }
+  
+  .pinned-item-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .pinned-item-title {
+    font-weight: 500;
+    align-items: center;
+    display: flex; 
+    gap: 10px;
+    color: #58A6FF;
+  }
+  
+  .pinned-item-type {
+    color: #8B949E;
+    border: 1px solid #8b949e67;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+  }
+
+  .pinned-item-footer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .pinned-item-description {
+    margin-top: 14px;
+    color: #8B949E;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  .pinned-item-icon {
+    margin-top: 16px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+
+  @media (max-width: 1024px) {
+    .pinned-items-list {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    }
+  }
+
+  @media (max-width: 767px) {
+    .article{
+        grid-column: 1;
+        min-width: 0;
+    }
+
+    .pinned-items-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      }
+  }
