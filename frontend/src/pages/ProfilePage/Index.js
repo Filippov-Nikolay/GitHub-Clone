@@ -4,6 +4,7 @@ import { Nav } from '../../shared/Nav/Nav.js';
 import { Aside } from '../../shared/Aside/Aside.js';
 import { Overview } from './components/Overview/Overview.js';
 import { Footer } from '../../shared/Footer/Footer.js';
+import { EditAside } from '../../shared/EditAside/EditAside.js'
 
 export function Index() {
     return (
@@ -16,7 +17,7 @@ export function Index() {
             <main className='main'>
                 <div className='profile-container'>
                     <div className='profile-content'>
-                        <Aside/>
+                        <EditAside/>
                         <Overview/>
                     </div>
                 </div>

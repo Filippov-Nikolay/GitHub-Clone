@@ -177,7 +177,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Repositories\\Repository.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAswDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T10:16:20.264Z"
+              "WhenOpened": "2025-04-09T10:16:20.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -189,7 +190,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Repository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:10.398Z"
+              "WhenOpened": "2025-04-09T09:38:10.398Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -201,7 +203,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Subscription.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:16.346Z"
+              "WhenOpened": "2025-04-09T09:38:16.346Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -213,7 +216,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:22.464Z"
+              "WhenOpened": "2025-04-09T09:38:22.464Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -225,7 +229,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\UserDetails.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:28.803Z"
+              "WhenOpened": "2025-04-09T09:38:28.803Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -237,7 +242,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:36.47Z"
+              "WhenOpened": "2025-04-09T09:38:36.47Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -249,7 +255,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:35.835Z"
+              "WhenOpened": "2025-04-09T09:38:35.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -261,7 +268,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Logger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:03.956Z"
+              "WhenOpened": "2025-04-09T09:38:03.956Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -273,7 +281,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Activity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:37:57.575Z"
+              "WhenOpened": "2025-04-09T09:37:57.575Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -285,7 +294,8 @@
               "RelativeToolTip": "CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAA1wEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:37:37.235Z"
+              "WhenOpened": "2025-04-09T09:37:37.235Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -297,7 +307,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:41:55.669Z"
+              "WhenOpened": "2025-04-09T09:41:55.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

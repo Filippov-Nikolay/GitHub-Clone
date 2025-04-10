@@ -8,34 +8,21 @@ import Emblem2 from '../assets/svg/Emblem2.svg';
 import Emblem3 from '../assets/svg/Emblem3.svg';
 import Emblem4 from '../assets/svg/Emblem4.svg';
 
+const emblemList = [Emblem1, Emblem2, Emblem3, Emblem4];
+
 function EmblemOrganizations() {
     return (
         <div className='profile-aside__organizations'>
             <h3 className='profile-aside__title-name'>Organizations</h3>
-
-            {/* Реализовать через map */}
             <ul className='profile-organizations-emblem__list'>
-                <li className='profile-organizations-emblem__item'>
-                    <a href='#'>
-                        <img className='profile-organizations-emblem__img' src={Emblem1} alt='Emblem1'/>
-                    </a>
-                </li>
-                <li className='profile-organizations-emblem__item'>
-                    <a href='#'>
-                        <img className='profile-organizations-emblem__img' src={Emblem2} alt='Emblem2'/>
-                    </a>
-                </li>
-                <li className='profile-organizations-emblem__item'>
-                    <a href='#'>
-                        <img className='profile-organizations-emblem__img' src={Emblem3} alt='Emblem3'/>
-                    </a>
-                </li>
-                <li className='profile-organizations-emblem__item'>
-                    <a href='#'>
-                        <img className='profile-organizations-emblem__img' src={Emblem4} alt='Emblem4'/>
-                    </a>
-                </li>
-            </ul>    
+                {emblemList.map((emblem, index) => (
+                    <li key={index} className='profile-organizations-emblem__item'>
+                        <a href='#'>
+                            <img className='profile-organizations-emblem__img' src={emblem} alt={`Emblem${index + 1}`} />
+                        </a>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
