@@ -1,7 +1,63 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\GitHub-Clone\\backend\\",
   "Documents": [],
+=======
+  "WorkspaceRootPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\repositories\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\repositories\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\ef\\clonegithubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\ef\\clonegithubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +65,278 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
+=======
+          "SelectedChildIndex": 23,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
               "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+=======
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EFUnitOfWork.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T10:19:25.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\Repository.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T10:16:20.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Repository.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Repository.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Repository.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:10.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Subscription.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Subscription.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Subscription.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Subscription.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Subscription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:16.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\User.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\User.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:22.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDetails.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\UserDetails.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\UserDetails.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\UserDetails.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\UserDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:28.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IRepository.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Interfaces\\IRepository.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IRepository.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:36.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:35.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Logger.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Logger.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Logger.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Logger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:38:03.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Activity.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Activity.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Activity.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Activity.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Activity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:37:57.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CloneGitHubContext.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
+              "RelativeDocumentMoniker": "CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
+              "RelativeToolTip": "CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:37:37.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EFUnitOfWork.cs",
+              "DocumentMoniker": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
+              "ToolTip": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:41:55.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TeamRepository.cs",
+              "DocumentMoniker": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
+              "ToolTip": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T09:42:15.294Z"
+>>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
             }
           ]
         }
