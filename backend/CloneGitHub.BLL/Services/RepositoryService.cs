@@ -74,7 +74,7 @@ private Repository InfoToInteraction(RepositoryDTO repositoryDTO)
         }
        public async Task GetRepository(int id)
         {
-            var repository = await Database.Repository.GetAsync(id);
+            var repository = await Database.Repository.GetByIdAsync(id);
             if(repository != null)
             {
                 RepositoryDTO repositoryDTO = CreateLocalRepositoryDTO(repository);
@@ -84,7 +84,7 @@ private Repository InfoToInteraction(RepositoryDTO repositoryDTO)
         }
         Task GetRepository(string name)
         {
-         var repository = await Database.Repository.GetAsync(name);
+         var repository = await Database.Repository.GetByNameAsync(name);
             if(repository != null)
             {
                 RepositoryDTO repositoryDTO = CreateLocalRepositoryDTO(repository);
@@ -92,7 +92,11 @@ private Repository InfoToInteraction(RepositoryDTO repositoryDTO)
             }
             return null;
         }
-        Task<IEnumerable<RepositoryDTO>> GetAllRepositories();
+        Task<IEnumerable<RepositoryDTO>> GetAllRepositories()
+        {
+        var repositories = await Database.Repository.GetAllRepositories(); 
+        return mapper.Map<IEnumerable<RepositoryDTO>>(repositories);
+        }
 
 
 

@@ -124,8 +124,8 @@ namespace CloneGitHub.BLL.Services
 
           public async Task<IEnumerable<UserDTO>> GetUsers()
         {
-        var players = await _playerRepository.GetAllAsync(); 
-        return mapper.Map<IEnumerable<PlayerDTO>>(players);
+        var users = await Database.Users.GetAllAsync(); 
+        return mapper.Map<IEnumerable<UserDTO>>(users);
         }
 
     }
