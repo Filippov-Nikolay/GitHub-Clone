@@ -1,0 +1,121 @@
+/* SECTION-HEADER */
+.section-header__title--anim-block {
+    transform: translateX(-100px);
+    opacity: 0;
+
+    transition: all .8s ease;
+}
+.section-header__title--anim-block.element-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.section-header__sub-title--anim-block {
+    transform: translateX(-100px);
+    opacity: 0;
+
+    transition: all 1.2s ease;
+}
+.section-header__sub-title--anim-block.element-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* SECTION-MAIN */
+.section-main-first--anim-block {
+    transform: translateX(70%);
+    opacity: 0;
+
+    transition: all .8s ease;
+}
+.section-main-first--anim-block.element-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.section-main--anim-block {
+    opacity: 0;
+
+    transition: all 2s ease;
+}
+.section-main--anim-block.element-show {
+    opacity: 1;
+}
+
+.section-main-second--anim-block {
+    transform: translate(100%, -70%);
+    opacity: 0;
+
+    transition: all .8s ease;
+}
+.section-main-second--anim-block.element-show {
+    transform: translate(0, -70%);
+    opacity: 1;
+}
+
+
+/* SECTION-PROMO */
+.section-promo-content--anim-block {
+    transform: translateX(90px);
+    opacity: 0;
+
+    transition: all .9s ease;
+}
+.section-promo-content--anim-block.element-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fact--anim-block {
+    transform: translateX(-100px);
+    opacity: 0;
+
+    transition: all .8s ease;
+}
+.fact--anim-block.element-show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+/* SECTION-CARD */
+.anim-block__card-img {
+    transform: scale(0);
+
+    transition: all .5s ease;
+}
+.anim-block__card-img.element-show {
+    transform: scale(1);
+}
+
+
+/* EVENT-PATH */
+.interval-middle--anim-block {
+    height: 0;
+
+    transition: all 1.1s ease;
+}
+.interval-middle--anim-block.element-show {
+    height: 100%;
+}
+
+.event-middle--anim-block {
+    opacity: 0;
+
+    transition: all 1.1s ease;
+}
+.event-middle--anim-block.element-show {
+    opacity: 1;
+}
+
+.event__interval-more-info--anim-block {
+    clip-path: inset(0% -100% 75% 0);
+    opacity: 0;
+
+    transition: all 1.1s ease;
+}
+.event__interval-more-info--anim-block.element-show {
+    clip-path: inset(0% -100% 0% 0);
+    opacity: 1;
+}

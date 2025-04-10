@@ -1,0 +1,37 @@
+.feed {
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 343px;
+}
+
+.feed__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.feed__title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.feed__description {
+    margin: 10px 0;
+}
+
+.feed__feedback {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.feed__feedback:hover {
+    text-decoration: underline;
+}

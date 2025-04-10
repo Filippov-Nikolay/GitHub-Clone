@@ -1,0 +1,152 @@
+.vb-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.app-link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.app-link:hover {
+    text-decoration: underline;
+}
+.profile-picture {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 18px;
+    font-weight: bold;
+}
+@media screen and (max-width: 1120px)
+{
+    
+}
+.vbb-profile {
+    background-color: #0D1117;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.vbb-profile-container{
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.vbb-profile-content {
+    display: flex;
+}
+
+.vb-language
+{
+    color: #8b949e;
+}
+.vb-description
+{
+    color: #8b949e;
+}
+@media screen and (max-width: 1184px) {
+    .vbb-profile-container{
+        margin-right: 32px;
+        margin-left: 32px;
+    }
+}
+
+@media screen and (max-width: 868px) {
+    .vbb-profile-container{
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .vbb-profile-content {
+        flex-direction: column;
+    }
+}
+
+/*  */
+
+/* WebKit scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #141618;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox scrollbar styles */
+html {
+    scrollbar-color: #888 #141618;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #141618;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox scrollbar styles */
+html {
+    scrollbar-color: #888 #141618;
+    scrollbar-width: thin;
+}
+
+
+.profile {
+    background-color: #0D1117;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container{
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.profile-content {
+    display: flex; 
+}
+
+@media screen and (max-width: 1184px) {
+    .profile-container{
+        margin-right: 32px;
+        margin-left: 32px;
+    }
+}
+
+@media screen and (max-width: 868px) {
+    .profile-container{
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    
+    .profile-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}

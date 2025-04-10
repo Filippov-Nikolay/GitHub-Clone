@@ -1,0 +1,32 @@
+.section-block-anim{
+    position: relative;
+}
+.section-main__first {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+.section-main__blur {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+
+    max-height: none;
+    width: 1000px;
+    transform: translate(26%, 5%);
+}
+.section-main__second {
+    position: absolute;
+    right: 50px;
+    transform: translateY(-70%);
+    z-index: 1;
+
+    max-width: 480px;
+
+    overflow: hidden;
+    border-radius: 8px;
+}

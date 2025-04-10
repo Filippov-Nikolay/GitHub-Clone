@@ -1,0 +1,48 @@
+/* PRODUCTIVITY */
+.productivity {
+    color: #fff;
+}
+.productivity__content {
+    display: flex;
+}
+.event {
+}
+.event__interval {
+}
+.event__middle {
+}
+.event__middle--green {
+}
+.event__interval-middle {
+}
+.event__interval-middle--low {
+}
+.productivity__event-info {
+    margin-top: 10px;
+    margin-bottom: 95px;
+}
+.content-title {
+    margin-bottom: 24px;
+
+    font-size: 24px;
+    font-weight: 500;
+}
+.content-sub-title {
+    max-width: 900px;
+
+    font-size: 48px;
+    font-weight: 500;
+}
+.content-sub-title__accent {
+    display: block;
+}
+.content-sub-title__accent--green {
+    color: #3fb950;
+}
+.content-sub-title__accent--blue {
+    color: #33b3ae;
+}
+.content-sub-title__accent--pink {
+    color: #F778BA;
+}
+

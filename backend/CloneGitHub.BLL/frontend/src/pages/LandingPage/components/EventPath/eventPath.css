@@ -1,0 +1,95 @@
+.event {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    width: 10%;
+ }
+.event__start {
+    margin: 0 50px;
+    margin-bottom: 5px;
+}
+.event__interval {
+    margin: 0 50px;
+
+    width: 3px;
+    height: 100%;
+}
+.event__interval--purple {
+    background: linear-gradient(transparent, #7C72FF 30%);
+}
+.event__interval-middle {
+    margin: 0 50px;
+
+    width: 3px;
+    height: 100%;
+}
+.event__interval-middle--transparent-to-purple {
+    background: linear-gradient(transparent, #7C72FF 30%);
+}
+.event__interval-middle--purple-to-green {
+    background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+}
+.event__interval-middle--transparent-to-green {
+    background: linear-gradient(transparent, #2DA44E 30%);
+}
+.event__interval-middle--green-to-transparent {
+    background: linear-gradient(#2DA44E 70%, transparent);
+}
+.event__interval-middle--transparent-to-blue {
+    background: linear-gradient(transparent, #33b3ae 30%);
+}
+.event__interval-middle--blue-to-transparent {
+    background: linear-gradient(#33b3ae 70%, transparent);
+}
+.event__interval-middle--transparent-to-pink {
+    background: linear-gradient(transparent, #F778BA 30%);
+}
+.event__interval-middle--pink-to-transparent {
+    background: linear-gradient(#F778BA 70%, transparent);
+}
+.event__interval-middle--transparent-to-purple {
+    background: linear-gradient(transparent, #7C72FF 30%);
+}
+.event__interval-middle--purple-to-transparent {
+    background: linear-gradient(#7C72FF 70%, transparent);
+}
+.event__middle {
+    position: relative;
+
+    margin: 10px 0;
+}
+.event__middle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: blur(18px);
+}
+.event__middle--purple::after {
+    background-color: #7c72ff;
+}
+.event__middle--green::after {
+    background-color: #3fb950;
+}
+.event__middle--blue::after {
+    background-color: #33b3ae;
+}
+.event__middle--pink::after {
+    background-color: #F778BA;
+}
+.event__middle path {
+    fill: #fff;
+}
+.event__interval-more-info {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
