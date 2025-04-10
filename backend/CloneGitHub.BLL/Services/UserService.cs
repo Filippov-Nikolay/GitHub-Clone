@@ -39,7 +39,8 @@ namespace CloneGitHub.BLL.Services
                 WebSite = user.UserDetails.WebSite,
                 LinkToSocial1 = user.UserDetails.LinkToSocial1,
                 LinkToSocial2 = user.UserDetails.LinkToSocial2,
-                LinkToSocial3 = user.UserDetails.LinkToSocial3
+                LinkToSocial3 = user.UserDetails.LinkToSocial3,
+                LinkToSocial4 = user.UserDetails.LinkToSocial4
             }
           };
           }
@@ -64,7 +65,8 @@ namespace CloneGitHub.BLL.Services
               WebSite = userDTO.UserDetails.WebSite,
               LinkToSocial1 = userDTO.UserDetails.LinkToSocial1,
               LinkToSocial2 = userDTO.UserDetails.LinkToSocial2,
-              LinkToSocial3 = userDTO.UserDetails.LinkToSocial3
+              LinkToSocial3 = userDTO.UserDetails.LinkToSocial3,
+              LinkToSocial4 = user.UserDetails.LinkToSocial4
 
             };
             return user;
@@ -120,7 +122,7 @@ namespace CloneGitHub.BLL.Services
         }
 
 
-          public async Task<IEnumerable<UserDTO>> GetPlayers()
+          public async Task<IEnumerable<UserDTO>> GetUsers()
         {
         var players = await _playerRepository.GetAllAsync(); 
         return mapper.Map<IEnumerable<PlayerDTO>>(players);

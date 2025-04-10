@@ -16,6 +16,7 @@ namespace CloneGitHub.DAL.Entities
         public string LinkToSocial1 { get; set; }
         public string LinkToSocial2 { get; set; }
         public string LinkToSocial3 { get; set; }
+        public string LinkToSocial4 { get; set; }
 
         public virtual User User { get; set; }
     }
