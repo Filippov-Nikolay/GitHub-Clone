@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\GitHub-Clone\\backend\\Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,73 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Test\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Test\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-10T07:00:50.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Program.cs",
-              "RelativeDocumentMoniker": "Test\\Program.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Program.cs",
-              "RelativeToolTip": "Test\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T06:58:48.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Test\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Test\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T06:54:41.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserDbContext.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\UserDbContext.cs",
-              "RelativeDocumentMoniker": "Test\\Models\\UserDbContext.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\UserDbContext.cs",
-              "RelativeToolTip": "Test\\Models\\UserDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T06:48:54.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Test\\Models\\User.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
-              "RelativeToolTip": "Test\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T06:47:12.848Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -104,6 +27,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\User.cs",
+              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeToolTip": "Test\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:14:09.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Test\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Test\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAcwEsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T10:31:33.66Z",
+              "EditorCaption": ""
             }
           ]
         }

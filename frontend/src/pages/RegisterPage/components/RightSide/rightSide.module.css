@@ -86,7 +86,7 @@
     font-size: 14px;
     font-weight: 500;
 }
-.right-side__button {
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,6 +104,9 @@
     border-radius: 4px;
 
     transition: all 0.2s ease-in-out;
+}
+.btn__span {
+    margin-right: 10px;
 }
 .right-side__button:hover {
     background-color: #32383f;

@@ -10,7 +10,7 @@ import Signup from './pages/RegisterPage/Index';
 const AppRouter = () => {
   return (
     <Router>
-      <Routes basename="/Clone-GitHub">
+      <Routes basename="/">
         <Route path="/" element={<LandingPage />} />
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/repositoriesPage" element={<RepositoriesPage />}/>
