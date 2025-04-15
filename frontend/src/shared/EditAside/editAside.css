@@ -1,4 +1,4 @@
-.profile-aside {
+.profile-edit-aside {
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
@@ -9,20 +9,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.profile-aside__main {
+.profile-edit-aside__main {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.profile-aside__wrapper {
+.profile-edit-aside__wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
 }
 
-.profile-aside__logo {
+.profile-edit-aside__logo {
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -41,21 +41,21 @@
     border-radius: 50%;
 }
 
-.profile-aside__info {
+.profile-edit-aside__info {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.profile-aside__info label {
+.profile-edit-aside__info label {
     font-weight: 600;
     font-size: 14px;
 }
 
-.profile-aside__input,
-.profile-aside__bio-text,
-.profile-aside__info select {
+.profile-edit-aside__input,
+.profile-edit-aside__bio-text,
+.profile-edit-aside__info select {
     width: 100%;
     padding: 8px 10px;
     background-color: #0d1117;
@@ -66,12 +66,12 @@
     outline: none;
 }
 
-.profile-aside__input::placeholder,
-.profile-aside__bio-text::placeholder {
+.profile-edit-aside__input::placeholder,
+.profile-edit-aside__bio-text::placeholder {
     color: #8b949e;
 }
 
-.profile-aside__bio-text {
+.profile-edit-aside__bio-text {
     resize: none;
     height: 80px;
     font-family: inherit;
@@ -107,7 +107,7 @@
     background-color: #2ea043;
 }
 
-.profile-aside__btn-beta {
+.profile-edit-aside__btn-beta {
     padding: 6px 16px;
     background-color: transparent;
     border: 1px solid #30363d;
@@ -118,6 +118,6 @@
     transition: background-color 0.2s ease;
 }
 
-.profile-aside__btn-beta:hover {
+.profile-edit-aside__btn-beta:hover {
     background-color: #161b22;
 }

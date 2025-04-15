@@ -39,17 +39,17 @@ export function EditAside({ initialData, onSave, onCancel }) {
     };
 
     return (
-        <aside className="profile-aside">
-            <form onSubmit={handleSubmit} className="profile-aside__main">
-                <div className="profile-aside__wrapper">
-                    <div className="profile-aside__logo">
+        <aside className="profile-edit-aside">
+            <form onSubmit={handleSubmit} className="profile-edit-aside__main">
+                <div className="profile-edit-aside__wrapper">
+                    <div className="profile-edit-aside__logo">
                         <img src={formData.avatar} alt="Avatar" className="edit-avatar" />
                     </div>
 
-                    <div className="profile-aside__info">
+                    <div className="profile-edit-aside__info">
                         <label>Name</label>
                         <input
-                            className="profile-aside__input"
+                            className="profile-edit-aside__input"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
@@ -58,7 +58,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
 
                         <label>Pronouns</label>
                         <select
-                            className="profile-aside__input"
+                            className="profile-edit-aside__input"
                             name="pronouns"
                             value={formData.pronouns}
                             onChange={handleChange}
@@ -71,7 +71,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
 
                         <label>Bio</label>
                         <textarea
-                            className="profile-aside__bio-text"
+                            className="profile-edit-aside__bio-text"
                             name="bio"
                             value={formData.bio}
                             onChange={handleChange}
@@ -80,7 +80,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
 
                         <label>Company</label>
                         <input
-                            className="profile-aside__input"
+                            className="profile-edit-aside__input"
                             name="company"
                             value={formData.company}
                             onChange={handleChange}
@@ -89,7 +89,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
 
                         <label>Location</label>
                         <input
-                            className="profile-aside__input"
+                            className="profile-edit-aside__input"
                             name="location"
                             value={formData.location}
                             onChange={handleChange}
@@ -108,7 +108,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
 
                         <label>Website</label>
                         <input
-                            className="profile-aside__input"
+                            className="profile-edit-aside__input"
                             name="website"
                             value={formData.website}
                             onChange={handleChange}
@@ -119,7 +119,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                         {[1, 2, 3, 4].map(i => (
                             <input
                                 key={i}
-                                className="profile-aside__input"
+                                className="profile-edit-aside__input"
                                 name={`social${i}`}
                                 value={formData[`social${i}`]}
                                 onChange={handleChange}
@@ -128,9 +128,9 @@ export function EditAside({ initialData, onSave, onCancel }) {
                         ))}
                     </div>
 
-                    <div className="edit-buttons profile-aside__content-wrapper">
+                    <div className="edit-buttons profile-edit-aside__content-wrapper">
                         <button type="submit" className="profile-edit-aside__btn-edit">Save</button>
-                        <button type="button" onClick={handleCancel} className="profile-aside__btn-beta">Cancel</button>
+                        <button type="button" onClick={handleCancel} className="profile-edit-aside__btn-beta">Cancel</button>
                     </div>
                 </div>
             </form>
