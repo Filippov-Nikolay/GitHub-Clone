@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj": {}
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj": {}
   },
   "projects": {
-    "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj": {
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj",
+        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\backend\\Test\\Test\\obj\\",
+        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
+        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,8 +43,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -82,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

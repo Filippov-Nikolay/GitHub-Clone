@@ -4,8 +4,8 @@ import '../../shared/Nav/nav.css';
 import { OverviewSVG, RepositoriesSVG, ProjectsSVG, PackagesSVG, StarsSVG, DotsSvg } from '../assets/svg/SvgComponents';
 
 const navItems = [
-    { name: 'Overview', icon: <OverviewSVG />, href: '/Clone__GitHub/profile' },
-    { name: 'Repositories', icon: <RepositoriesSVG />, href: '/Clone__GitHub/vb-profile' },
+    { name: 'Overview', icon: <OverviewSVG />, href: '#' },
+    { name: 'Repositories', icon: <RepositoriesSVG />, href: '#' },
     { name: 'Projects', icon: <ProjectsSVG />, href: '#' },
     { name: 'Packages', icon: <PackagesSVG />, href: '#' },
     { name: 'Stars', icon: <StarsSVG />, href: '#' }

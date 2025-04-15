@@ -14,19 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloneGitHub.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4e0da427ceef6539eac595861f019c58b01c403")]
-=======
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4e0da427ceef6539eac595861f019c58b01c403")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4bed0c6a741506bad2219ca5280230c5c5380dd")]
->>>>>>> 5a3d58f541f0d68e24ce1171d92fa23b2abc323d
->>>>>>> dimvxs
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c4c958312fb38ce50f988e9cc32adefe52f881d")]
->>>>>>> shvets_test
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3c6790472424983ac22a6e024aa4deed35e4d40")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloneGitHub.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloneGitHub.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

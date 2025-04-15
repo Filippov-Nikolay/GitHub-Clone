@@ -1,69 +1,28 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "WorkspaceRootPath": "D:\\GitHub-Clone\\backend\\",
-  "Documents": [],
-=======
-=======
->>>>>>> shvets_test
   "WorkspaceRootPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\repositories\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\repositories\\efunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABEED4E0-8483-47D1-A01A-5F9487D90C33}|CloneGitHub\\CloneGitHub.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABEED4E0-8483-47D1-A01A-5F9487D90C33}|CloneGitHub\\CloneGitHub.csproj|solutionrelative:clonegithub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|solutionrelative:test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABEED4E0-8483-47D1-A01A-5F9487D90C33}|CloneGitHub\\CloneGitHub.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ABEED4E0-8483-47D1-A01A-5F9487D90C33}|CloneGitHub\\CloneGitHub.csproj|solutionrelative:clonegithub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|solutionrelative:test\\test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\entities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\entities\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\clonegithub.dal\\ef\\clonegithubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A83659C-7743-412F-A095-C76C5066FA3E}|CloneGitHub.DAL\\CloneGitHub.DAL.csproj|solutionrelative:clonegithub.dal\\ef\\clonegithubcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{808569C1-2CE0-45E2-9A6F-0348D0C62A64}|Test\\Test\\Test.csproj|solutionrelative:test\\test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
-<<<<<<< HEAD
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
-=======
->>>>>>> shvets_test
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -71,16 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-<<<<<<< HEAD
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-=======
-=======
->>>>>>> shvets_test
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 24,
           "Children": [
             {
               "$type": "Bookmark",
@@ -108,20 +58,10 @@
             },
             {
               "$type": "Bookmark",
-<<<<<<< HEAD
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
-=======
->>>>>>> shvets_test
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
-=======
-=======
->>>>>>> shvets_test
               "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -186,175 +126,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EFUnitOfWork.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Repositories\\EFUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T10:19:25.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Repositories\\Repository.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Repositories\\Repository.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Repositories\\Repository.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswDIAAAAAAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Test\\Test\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Test\\Test\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T10:16:20.264Z",
+              "WhenOpened": "2025-04-15T12:40:31.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Repository.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Repository.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Repository.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Repository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\Program.cs",
+              "RelativeDocumentMoniker": "CloneGitHub\\Program.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\Program.cs",
+              "RelativeToolTip": "CloneGitHub\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:10.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Subscription.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Subscription.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Subscription.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Subscription.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Subscription.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:16.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\User.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\User.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:22.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UserDetails.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\UserDetails.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\UserDetails.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\UserDetails.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\UserDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:28.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IRepository.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Interfaces\\IRepository.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IRepository.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:36.47Z",
+              "WhenOpened": "2025-04-15T12:40:01.931Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:35.835Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\appsettings.json",
+              "RelativeDocumentMoniker": "CloneGitHub\\appsettings.json",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\appsettings.json",
+              "RelativeToolTip": "CloneGitHub\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-15T12:39:34.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Logger.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Logger.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Logger.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Logger.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Logger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:38:03.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Activity.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Activity.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\Entities\\Activity.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\Entities\\Activity.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\Entities\\Activity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:37:57.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CloneGitHubContext.cs",
-              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
-              "RelativeDocumentMoniker": "CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
-              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
-              "RelativeToolTip": "CloneGitHub.DAL\\EF\\CloneGitHubContext.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:37:37.235Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EFUnitOfWork.cs",
-              "DocumentMoniker": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
-              "ToolTip": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\EFUnitOfWork.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:41:55.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TeamRepository.cs",
-              "DocumentMoniker": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
-              "ToolTip": "D:\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\ItStep - Prog\\ASP.NET\\13 lesson\\example\\13. Layered architecture\\Soccer\\Soccer.DAL\\Repositories\\TeamRepository.cs",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Test\\Test\\Models\\User.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeToolTip": "Test\\Test\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T09:42:15.294Z"
-<<<<<<< HEAD
->>>>>>> 47b32af405d51b17af0e51a624df6c8e1e759a02
-=======
->>>>>>> shvets_test
+              "WhenOpened": "2025-04-15T12:39:21.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "Test\\Test\\Models\\UserDbContext.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDbContext.cs",
+              "RelativeToolTip": "Test\\Test\\Models\\UserDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T12:39:12.635Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -49,8 +49,8 @@
     transition: 0.5s all;
 }
 .profile-aside__logo {
-    width: 300px;
-    height: 300px;
+    width: 265px;
+    height: 265px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #30363d;
@@ -169,6 +169,11 @@
     margin-right: 5px;
 }
 
+@media screen and (max-width: 1325px) {
+    .profile-aside__main{
+        margin-left: 25px;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .profile-aside{

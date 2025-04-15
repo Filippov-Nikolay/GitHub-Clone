@@ -1,17 +1,6 @@
 {
   "version": 3,
   "targets": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> shvets_test
-    "net8.0": {}
-  },
-  "libraries": {},
-  "projectFileDependencyGroups": {
-    "net8.0": []
-<<<<<<< HEAD
-=======
     "net8.0": {
       "Microsoft.EntityFrameworkCore/9.0.4": {
         "type": "package",
@@ -591,30 +580,14 @@
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 9.0.4"
     ]
->>>>>>> dimvxs
-  },
-  "packageFolders": {
-    "/Users/dima/.nuget/packages/": {}
-=======
   },
   "packageFolders": {
     "C:\\Users\\theda\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> shvets_test
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
-      "projectName": "CloneGitHub.DAL",
-      "projectPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
-      "packagesPath": "/Users/dima/.nuget/packages/",
-      "outputPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/Users/dima/.nuget/NuGet/NuGet.Config"
-=======
       "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
       "projectName": "CloneGitHub.DAL",
       "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
@@ -628,16 +601,12 @@
         "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> shvets_test
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-<<<<<<< HEAD
-=======
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
->>>>>>> shvets_test
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -660,18 +629,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[9.0.4, )"
           }
         },
->>>>>>> dimvxs
-=======
->>>>>>> shvets_test
         "imports": [
           "net461",
           "net462",
@@ -688,12 +651,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
->>>>>>> shvets_test
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,22 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj": {}
-  },
-  "projects": {
-    "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
-        "projectName": "CloneGitHub.DAL",
-        "projectPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/CloneGitHub.DAL.csproj",
-        "packagesPath": "/Users/dima/.nuget/packages/",
-        "outputPath": "/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/dima/.nuget/NuGet/NuGet.Config"
-=======
     "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {}
   },
   "projects": {
@@ -36,16 +20,12 @@
           "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> shvets_test
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-<<<<<<< HEAD
-=======
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
->>>>>>> shvets_test
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,18 +48,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
             }
           },
->>>>>>> dimvxs
-=======
->>>>>>> shvets_test
           "imports": [
             "net461",
             "net462",
@@ -96,11 +70,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
-=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
->>>>>>> shvets_test
         }
       }
     }

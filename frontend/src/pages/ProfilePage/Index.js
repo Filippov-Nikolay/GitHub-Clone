@@ -26,16 +26,19 @@ export function Index() {
     };
 
     const [isEditing, setIsEditing] = useState(false);
+    const [profileData, setProfileData] = useState(initialProfileData);
 
     const handleEdit = () => setIsEditing(true);
     const handleCancel = () => setIsEditing(false);
     const handleSave = (newData) => {
+        setProfileData(newData); 
         setIsEditing(false);
+        localStorage.setItem('profileData', JSON.stringify(newData));
     };
 
     return (
         <div className='profile'>
-            <Header />
+            <Header avatar={profileData.avatar}/>
             <Nav />
             <main className='main'>
                 <div className='profile-container'>
