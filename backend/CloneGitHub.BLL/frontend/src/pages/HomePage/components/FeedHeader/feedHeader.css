@@ -1,0 +1,30 @@
+
+
+.feedHeader__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.feedHeader__title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.feedHeader__description {
+    margin: 10px 0;
+}
+
+.feedHeader__feedback {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.feedHeader__feedback:hover {
+    text-decoration: underline;
+}

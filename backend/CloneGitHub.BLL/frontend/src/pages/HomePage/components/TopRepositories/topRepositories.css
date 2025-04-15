@@ -1,0 +1,102 @@
+
+.top-repositories {
+    padding: 10px;
+    position: relative;
+}
+
+.new-button {
+    right: 20px;
+    top: 20px;
+    background-color: #2ea44f;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.new-button:hover {
+    background-color: #2c974b;
+}
+.top-repositories h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.top-repositories input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.repository-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repository-item {
+    display: flex;
+    align-items: center;
+}
+
+.repository-image {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.repository-name {
+    font-size: 18px;
+}
+
+.top-repositories ul {
+    list-style-type: none;
+    padding: 0;
+}
+.repository-header-wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-repositories li {
+    padding: 5px 0;
+}
+.Link-muted
+{
+    color: #8d96a0;
+    text-decoration: none;
+}
+.Link-muted:hover
+{
+    color: #4493f8;
+}
+.Link-repo
+{
+    color: #e6edf3;
+    text-decoration: none;
+}
+.Link-repo:hover
+{
+    text-decoration: underline;
+}
+/* Input and placeholder styles */
+.input-placeholder {
+    padding: 10px;
+    font-size: 16px;
+    border: 0px solid #ccc; /*Border of input will delete as not needed */
+    border-radius: 4px;
+    background-color: #010409; /* Background color of INPUT */
+    color: #C9D1D9; /*Change the color of INPUT text */
+  }
+
+  /* Optional: Style the placeholder text itself */
+  .input-placeholder::placeholder {
+    color: #C9D1D9; /* Example placeholder text color */
+  }
+  

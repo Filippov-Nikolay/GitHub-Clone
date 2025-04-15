@@ -86,3 +86,15 @@ D:\itStep - Exam\CloneGitHub\CloneGitHub\bin\Debug\net8.0\CloneGitHub.DAL.dll
 D:\itStep - Exam\CloneGitHub\CloneGitHub\bin\Debug\net8.0\CloneGitHub.DAL.pdb
 D:\itStep - Exam\CloneGitHub\CloneGitHub\obj\Debug\net8.0\CloneGitHub.csproj.AssemblyReference.cache
 D:\itStep - Exam\CloneGitHub\CloneGitHub\obj\Debug\net8.0\CloneGit.835F199D.Up2Date
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.csproj.AssemblyReference.cache
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.GeneratedMSBuildEditorConfig.editorconfig
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.AssemblyInfoInputs.cache
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.AssemblyInfo.cs
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.csproj.CoreCompileInputs.cache
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.MvcApplicationPartsAssemblyInfo.cache
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.RazorAssemblyInfo.cache
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.RazorAssemblyInfo.cs
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.sourcelink.json
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.dll
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\refint\CloneGitHub.dll
+D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.pdb

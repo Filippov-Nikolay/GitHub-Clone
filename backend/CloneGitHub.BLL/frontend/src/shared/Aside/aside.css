@@ -1,0 +1,225 @@
+.profile-aside{
+    margin-top: 32px;
+    grid-row: 1;
+}
+
+.profile-aside__editor{
+
+}
+
+.profile-aside__name{
+    padding:  10px 0;
+}
+
+.profile-aside__name-main{
+    color: #C9D1D9;
+    font-weight: 700;
+}
+
+.profile-aside__name-sub{
+    color: #8B949E;
+    font-weight: 400;
+}
+
+.profile-aside__bio{
+    padding: 15px 0;
+   
+}
+
+.profile-aside__bio-text{
+    color: #C9D1D9;
+    font-size: 17px;
+}
+
+.profile-aside__func{
+    padding: 10px 0;
+}
+
+.profile-aside__btn-edit{
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 270px;
+    text-align: center;
+    border: 1px solid #f0f6fc15;
+    background-color: #21262D;
+    color: #C9D1D9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.profile-aside__btn-edit:hover{
+    background-color: #2a2f36;
+}
+
+.profile-aside__content-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-aside__content-wrapper:not(:last-child){
+    margin-bottom: 7px;
+}
+.profile-aside__links{
+    color:  #8B949E;
+}
+
+.profile-aside__links:hover{
+    color: #58A6FF;
+}
+
+.profile-aside__links-follow{
+    color: #C9D1D9 ;
+}
+
+.profile-aside__links:hover .profile-aside__links-follow  {
+    color: #58A6FF;
+}
+
+.profile-aside__links svg path{
+    fill: currentColor; 
+}
+
+.profile-aside__info{
+    padding: 10px 0;
+}
+
+.profile-country__name{
+    color: #C9D1D9;
+}
+.profile-link__social{
+    color: #C9D1D9;
+    cursor: pointer;
+}
+
+.profile-link__social:hover{
+    color: #58A6FF;
+    text-decoration: underline;
+}
+
+
+.profile-aside__achievements{
+    padding: 10px 0;
+}
+
+.profile-aside__title-name{
+    color: #C9D1D9;
+    margin-bottom: 15px;
+}
+
+.profile-aside__achiev-logo{
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.profile-aside__btn-beta{
+    background-color: #0D1117;
+    border-radius: 15px;
+    border: 1px solid #3FB950;
+    color: #3FB950;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.profile-aside__btn-beta:hover{
+    background-color: #3d804689;
+}
+
+.profile-aside__link-feedback{
+    color: #58A6FF;
+}
+
+.profile-aside__link-feedback:hover{
+    color: #6a99cf8f;
+    text-decoration: underline;
+}
+
+.profile-aside__organizations{
+    padding: 10px 0;
+}
+
+.profile-organizations-emblem__list{
+    display: flex;
+}
+
+.profile-organizations-emblem__item:not(:last-child){
+    margin-right: 5px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .profile-aside{
+        margin-top: 32px;
+    }
+
+    .profile-aside__btn-edit{
+
+        font-size: 14px;
+        width: 220px;
+
+    }
+
+    .profile-aside__name-main{
+        font-size: 20px;
+    }
+    
+    .profile-aside__name-sub{
+        font-size: 15px;
+    }
+
+    .profile-aside__bio-text{
+        font-size: 13px;
+    }
+
+    .profile-aside__links{
+        font-size: 14px;
+    }
+
+    .profile-country__name{
+        font-size: 14px;
+    }
+
+    .profile-link__social{
+        font-size: 14px;
+    }
+
+    .profile-aside__title-name{
+        font-size: 14px;
+    }
+
+    .profile-aside__achiev-logo{
+        width: 52px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .profile-aside{
+        width: 100% !important;
+    }
+    
+   .profile-aside__logo{
+    width: 62px;
+   }
+
+   .profile-aside__wrapper{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+   }
+   .profile-aside__info{
+    display: none;
+   }
+   .profile-aside__achievements{
+    display: none;
+   }
+   .profile-aside__organizations{
+    display: none;
+   }
+   .profile-aside__btn-edit{
+    font-size: 16px;
+    width: 100.08%;
+   }
+}

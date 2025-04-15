@@ -9,6 +9,22 @@
   position: relative;
 }
 
+.profile-header__logo-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-header__dots {
+  background: none;
+  border: 1px solid #3c444c;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 5px
+}
+
 .profile-header__wrapper {
   display: flex;
   gap: 0.5rem;
@@ -46,6 +62,10 @@
   padding: 5px;
   transition: 0.5s all;
   border-radius: 10px;
+}
+
+.profile-content__item img{
+  border-radius: 50%;
 }
 
 .profile-content__item:hover {
@@ -91,7 +111,7 @@
 }
 
 .profile-content__logo {
-  width: 21px;
+  width: 32px;
 }
 
 .notifications-dropdown {

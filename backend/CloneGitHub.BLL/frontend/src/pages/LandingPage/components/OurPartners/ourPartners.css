@@ -1,0 +1,21 @@
+/* OUR-PARTNERS */
+.our-partners {
+    margin: 95px 0;
+}
+.our-partners__text {
+    margin-bottom: 15px;
+
+    color: #8d96a0;
+    font-size: 20px;
+}
+.our-partners__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+.our-partners__item {
+}
+.out-partners__img {
+    max-height: 50px;
+}
