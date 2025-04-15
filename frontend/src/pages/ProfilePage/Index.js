@@ -1,29 +1,56 @@
-import React from 'react';
-import { Header}  from '../../shared/Header/Header.js'
+import React, { useState } from 'react';
+import { Header } from '../../shared/Header/Header.js';
 import { Nav } from '../../shared/Nav/Nav.js';
 import { Aside } from '../../shared/Aside/Aside.js';
+import { EditAside } from '../../shared/EditAside/EditAside.js';
 import { Overview } from './components/Overview/Overview.js';
 import { Footer } from '../../shared/Footer/Footer.js';
 
 export function Index() {
-    return (
-        // 1290px - пропадает контейнер, на 1184 - появляется.
-        // Контейнер должен быть везде
+    const savedData = localStorage.getItem('profileData');
 
+    const initialProfileData = savedData ? JSON.parse(savedData) : {
+        avatar: '../assets/img/LogoProfile.png',
+        name: 'chirag singla',
+        bio: 'Currently working in KAN LABs, NYC USA as an ML Engineer(Remote)',
+        pronouns: 'he/him',
+        company: '',
+        location: 'Delhi',
+        showTime: true,
+        timezone: 'UTC',
+        website: 'https://neuralai.co/',
+        social1: '',
+        social2: '',
+        social3: '',
+        social4: ''
+    };
+
+    const [isEditing, setIsEditing] = useState(false);
+
+    const handleEdit = () => setIsEditing(true);
+    const handleCancel = () => setIsEditing(false);
+    const handleSave = (newData) => {
+        setIsEditing(false);
+    };
+
+    return (
         <div className='profile'>
-            <Header/>
-            <Nav/>
+            <Header />
+            <Nav />
             <main className='main'>
                 <div className='profile-container'>
                     <div className='profile-content'>
-                        <Aside/>
-                        <Overview/>
+                        {isEditing
+                            ? <EditAside initialData={initialProfileData} onSave={handleSave} onCancel={handleCancel} />
+                            : <Aside data={initialProfileData} onEdit={handleEdit} />
+                        }
+                        <Overview />
                     </div>
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </div>
-    )
+    );
 }
 
 export default Index;

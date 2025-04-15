@@ -1,0 +1,123 @@
+.profile-edit-aside {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-edit-aside__main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-edit-aside__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-edit-aside__logo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #30363d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #161b22;
+}
+
+.edit-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-edit-aside__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-edit-aside__info label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profile-edit-aside__input,
+.profile-edit-aside__bio-text,
+.profile-edit-aside__info select {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-size: 14px;
+    outline: none;
+}
+
+.profile-edit-aside__input::placeholder,
+.profile-edit-aside__bio-text::placeholder {
+    color: #8b949e;
+}
+
+.profile-edit-aside__bio-text {
+    resize: none;
+    height: 80px;
+    font-family: inherit;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.edit-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.profile-edit-aside__btn-edit {
+    padding: 6px 16px;
+    background-color: #238636;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-edit-aside__btn-edit:hover {
+    background-color: #2ea043;
+}
+
+.profile-edit-aside__btn-beta {
+    padding: 6px 16px;
+    background-color: transparent;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-edit-aside__btn-beta:hover {
+    background-color: #161b22;
+}

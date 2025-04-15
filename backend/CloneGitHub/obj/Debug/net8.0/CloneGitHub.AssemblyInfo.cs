@@ -15,6 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7063eace548e9b7715992d683dfa9a5c395a1780")]
 =======
 <<<<<<< HEAD
@@ -27,6 +28,9 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4bed0c6a741506bad2219ca5280230c5c5380dd")]
 >>>>>>> 5a3d58f541f0d68e24ce1171d92fa23b2abc323d
 >>>>>>> dimvxs
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c4c958312fb38ce50f988e9cc32adefe52f881d")]
+>>>>>>> shvets_test
 [assembly: System.Reflection.AssemblyProductAttribute("CloneGitHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloneGitHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

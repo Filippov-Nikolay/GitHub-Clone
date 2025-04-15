@@ -1,6 +1,6 @@
 import React from "react";
-import { Form } from "./components/Form/Form";
-import { Footer } from "./components/Footer/Footer";
+import { Form } from "./components/Form/Form.js";
+import { Footer } from "./components/Footer/Footer.js";
 
 import "./styles/main.css";
 
