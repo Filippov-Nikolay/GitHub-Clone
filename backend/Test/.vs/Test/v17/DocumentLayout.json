@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\GitHub-Clone\\backend\\Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -31,27 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Test\\Models\\User.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Models\\User.cs",
-              "RelativeToolTip": "Test\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T11:14:09.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Test\\Controllers\\UserController.cs",
               "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
               "RelativeToolTip": "Test\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:31:33.66Z",
+              "WhenOpened": "2025-04-15T15:47:37.089Z",
               "EditorCaption": ""
             }
           ]

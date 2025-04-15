@@ -11,25 +11,25 @@ export function RightSide() {
         UserName: "",
         Password: "",
         Country: "",
-        emailPreferences: false
+        EmailPreferences: false
     });
     const handleChange = (e) => {
-        const { name, type, value, checked } = e.target;
+        const { name, value, type, checked } = e.target;
         setFormData({
-            ...formData,
-            [name]: type === "checkbox" ? checked : value,
+          ...formData,
+          [name]: type === "checkbox" ? checked : value,
         });
-    };
+      };
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         try {
             const result = await registerUser(formData);
-            
+
             if (result === true) {
-                navigate('/homePage');
+            navigate("/homePage");
             } else {
-                alert("Failed! Invalid credentials.");
+            alert("Failed! Invalid credentials.");
             }
         } catch (error) {
             console.log("Registration error:", error);
@@ -55,8 +55,8 @@ export function RightSide() {
                                 name="Email"
                                 value={formData.Email}
                                 onChange={handleChange}
-                                required
                                 placeholder="Enter your email or username"
+                                required
                             />
                         </div>
                         <div className={styles["right-side__form-group"]}>
@@ -65,24 +65,24 @@ export function RightSide() {
                                 id="password"
                                 className={styles["right-side__input"]}
                                 type="password"
-                                name="password"
-                                value={formData.password}
+                                name="Password"
+                                value={formData.Password}
                                 onChange={handleChange}
-                                required
                                 placeholder="Enter your password"
+                                required
                             />
                             <p className={styles["right-side__note"]}>Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
                         </div>
                         <div className={styles["right-side__form-group"]}>
                             <label htmlFor="username" className={styles["right-side__label"]}>Username</label>
                             <input 
-                                type="text" 
                                 id="username" 
-                                className={styles["right-side__input"]} 
+                                className={styles["right-side__input"]}
+                                type="text"  
                                 placeholder="Enter your username" 
-                                value={formData.userName}
+                                value={formData.UserName}
                                 onChange={handleChange}
-                                name="userName"
+                                name="UserName"
                                 required 
                             />
                             <p className={styles["right-side__note"]}>Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.</p>
@@ -90,14 +90,14 @@ export function RightSide() {
                         <div className={styles["right-side__form-group"]}>
                             <label htmlFor="country" className={styles["right-side__label"]}>Your country</label>
                             <input 
-                                type="text" 
                                 id="country" 
                                 className={styles["right-side__input"]} 
+                                type="text" 
                                 placeholder="Enter your country" 
-                                required 
-                                value={formData.country}
+                                value={formData.Country}
                                 onChange={handleChange}
-                                name="country"
+                                name="Country"
+                                required 
                             />
                             <p className={styles["right-side__note"]}>For compliance reasons, we're required to collect country information to send you occasional updates and announcements.</p>
                         </div>
@@ -105,12 +105,12 @@ export function RightSide() {
                         <label htmlFor="email-preferences" className={styles["right-side__label"]}>Email preferences</label>
                         <div className={`${styles["right-side__form-group"]} ${styles["right-side__form-group--flex"]}`}>
                             <input 
-                                type="checkbox" 
                                 id="email-preferences" 
                                 className={styles["right-side__checkbox"]} 
-                                name="emailPreferences"
-                                checked={formData.emailPreferences}
+                                type="checkbox" 
+                                checked={formData.EmailPreferences}
                                 onChange={handleChange}
+                                name="EmailPreferences"
                             />
                             <span className={styles["right-side__checkbox-label"]}>Receive occasional product updates and announcements</span>
                         </div>

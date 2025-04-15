@@ -4,8 +4,9 @@ import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
 import RepositoriesPage from './pages/RepositoriesPage/Index';
 import HomePage from './pages/HomePage/Index'
-import Login from './pages/LoginPage/index';
-import Signup from './pages/RegisterPage/Index';
+import LoginPage from './pages/LoginPage/Index';
+import PasswordResetPage from './pages/PasswordResetPage/Index';
+import SignupPage from './pages/RegisterPage/Index';
 
 const AppRouter = () => {
   return (
@@ -15,8 +16,9 @@ const AppRouter = () => {
         <Route path="/profilePage" element={<ProfilePage />} />
         <Route path="/repositoriesPage" element={<RepositoriesPage />}/>
         <Route path="/homePage" element={<HomePage />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/signup" element={<Signup />}/>
+        <Route path="/login" element={<LoginPage />}/>
+        <Route path="/password_reset" element={<PasswordResetPage />}/>
+        <Route path="/signup" element={<SignupPage />}/>
       </Routes>
     </Router>
   );
