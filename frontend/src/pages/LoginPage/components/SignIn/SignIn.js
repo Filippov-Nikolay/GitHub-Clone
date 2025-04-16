@@ -70,12 +70,23 @@ export function SignIn() {
     const handleResetSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            resetData.email = emailFromUrl;
-            resetData.code = codeFromUrl;
-            console.log("Reset data:", resetData);
+        const { newPassword, confirmPassword } = resetData;
 
-            const result = await PasswordReset({ resetData });
+        if (newPassword !== confirmPassword) {
+            console.log("Passwords do not match");
+            setShowError(true);
+            setShowSuccess(false);
+            return;
+        }
+
+        try {
+            const dataToSend = {
+                ...resetData,
+                email: emailFromUrl,
+                code: codeFromUrl
+            };
+
+            const result = await PasswordReset({ resetData : dataToSend });
 
             if (result != null) {
                 console.log("Password reset successful!");
@@ -89,7 +100,6 @@ export function SignIn() {
             }
         } catch (error) {
             console.log("Password reset error:", error);
-            setShowError(true);
         }
     };
 
@@ -119,8 +129,9 @@ export function SignIn() {
                 {isResetMode ? (
                     <form onSubmit={handleResetSubmit} className="login-form__form">
                         <div className="login-form__item">
-                            <label className="login-form__label" htmlFor="password">Password</label>
+                            <label className="login-form__label" htmlFor="newPassword">Password</label>
                             <input 
+                                id="newPassword"
                                 className="login-form__input" 
                                 type="password" 
                                 name="newPassword"
@@ -129,8 +140,9 @@ export function SignIn() {
                             />
                         </div>
                         <div className="login-form__item">
-                            <label className="login-form__label" htmlFor="password">Confirm password</label>
+                            <label className="login-form__label" htmlFor="confirmPassword">Confirm password</label>
                             <input 
+                                id="confirmPassword"
                                 className="login-form__input" 
                                 type="password" 
                                 name="confirmPassword"
@@ -138,13 +150,20 @@ export function SignIn() {
                                 onChange={handleChangeReset}
                             />
                         </div>
+                        <div className="login-form__item">
+                            <p className="login-form__text">
+                                Make sure it`s at least 15 characters OR at least 8 characters including a number, symbol, and uppercase and lowercase letter. <a className="login-callout__link" href="/">Learn more.</a>
+                            </p>
+                        </div>
                         <button type="submit" className="login-form__btn">Reset Password</button>
                     </form>
                     ) : (
+                    <>
                     <form className="login-form__form" action="" onSubmit={handleSubmit}>
                         <div className="login-form__item">
                             <label className="login-form__label" htmlFor="loginOrEmail">Username or email address</label>
                             <input 
+                                id="loginOrEmail"
                                 className="login-form__input" 
                                 type="text" 
                                 name="userNameOrEmail"
@@ -167,11 +186,12 @@ export function SignIn() {
                         </div>
                         <button type="submit" className="login-form__btn">Sign in</button>
                     </form>
-                    )}
                     <div className="login-callout">
                         <button type="button" className="login-callout__btn">Sign in with a passkey</button>
                         <p className="login-callout__text">New to GitHub? <a className="login-callout__link" href="signup">Create an account</a></p>
                     </div>
+                    </>
+                )}
                 </div>
             </div>
         </div>
