@@ -1,37 +1,32 @@
 using Microsoft.EntityFrameworkCore;
 using CloneGitHub.BLL.Interfaces;
 using CloneGitHub.BLL.Services;
-using CloneGitHub.BLL.Infrastructure;
+using CloneGitHub.DAL.EF;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddUserContext(connection);
-builder.Services.AddUnitOfWorkService();
+// Получаем строку подключения из файла конфигурации
+string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddCors(options => {
+    options.AddDefaultPolicy(policy => {
+        policy.WithOrigins("http://localhost:3000")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+builder.Services.AddDbContext<CloneGitHubContext>(options => options.UseSqlServer(connection));
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IRepositoryService, RepositoryService>();
 builder.Services.AddTransient<IUserService, UserService>();
-
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseHttpsRedirection();
+app.UseCors();
 app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllers();
 
 app.Run();

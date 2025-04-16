@@ -10,7 +10,7 @@ export function Index() {
     const savedData = localStorage.getItem('profileData');
 
     const initialProfileData = savedData ? JSON.parse(savedData) : {
-        avatar: '../assets/img/LogoProfile.png',
+        avatar: '../../shared/assets/img/LogoProfile.png',
         name: 'chirag singla',
         bio: 'Currently working in KAN LABs, NYC USA as an ML Engineer(Remote)',
         pronouns: 'he/him',

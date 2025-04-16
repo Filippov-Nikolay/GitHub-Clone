@@ -24,3 +24,16 @@ D:/itStep - Exam/CloneGitHub/CloneGitHub.DAL/obj/Debug/net8.0/CloneGitHub.DAL.ge
 /Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/Debug/net8.0/refint/CloneGitHub.DAL.dll
 /Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/Debug/net8.0/CloneGitHub.DAL.pdb
 /Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/obj/Debug/net8.0/ref/CloneGitHub.DAL.dll
+D:\GitHub-Clone\backend\CloneGitHub.DAL\bin\Debug\net8.0\CloneGitHub.DAL.deps.json
+D:\GitHub-Clone\backend\CloneGitHub.DAL\bin\Debug\net8.0\CloneGitHub.DAL.dll
+D:\GitHub-Clone\backend\CloneGitHub.DAL\bin\Debug\net8.0\CloneGitHub.DAL.pdb
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.csproj.AssemblyReference.cache
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.AssemblyInfoInputs.cache
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.AssemblyInfo.cs
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.csproj.CoreCompileInputs.cache
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.sourcelink.json
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.dll
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\refint\CloneGitHub.DAL.dll
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\CloneGitHub.DAL.pdb
+D:\GitHub-Clone\backend\CloneGitHub.DAL\obj\Debug\net8.0\ref\CloneGitHub.DAL.dll

@@ -26,6 +26,9 @@ namespace CloneGitHub.DAL.Repositories
         {
             return await _dbSet.FindAsync(id);
         }
+        public async Task<T> GetByNameAsync(string name) {
+            return await _dbSet.Where(e => );
+        }
 
         public async Task AddAsync(T entity)
         {

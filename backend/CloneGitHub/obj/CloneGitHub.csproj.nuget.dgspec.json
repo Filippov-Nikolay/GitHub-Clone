@@ -4,14 +4,101 @@
     "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
   },
   "projects": {
-    "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {
+    "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
-        "projectName": "CloneGitHub",
-        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+        "projectName": "CloneGitHub.BLL",
+        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\obj\\",
+        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+                "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "projectName": "CloneGitHub.DAL",
+        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,7 +139,97 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "projectName": "CloneGitHub",
+        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
+                "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj"
+              },
+              "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+                "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.1, )"
             }
           },
           "imports": [
@@ -74,7 +251,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

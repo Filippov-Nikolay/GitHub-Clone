@@ -9,11 +9,13 @@ namespace CloneGitHub.DAL.Interfaces
 {
     public interface IUnitOfWork
     {
-        IRepository<Repository> Repositories { get; }
         IRepository<Activity> Activities { get; }
-        IRepository<User> Users { get; }
+        // Logger
+        IRepository<Repository> Repositories { get; }
         IRepository<Subscription> Subscriptions { get; }
-        Task<int> CompleteAsync();
+        IRepository<User> Users { get; }
+        // UserDetails
+        Task<int> CompleteAsync(); // ?
         Task Save();
     }
 }

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MimeKit;
 using Test.Models;
-using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace Test.Controllers {
     [ApiController]
@@ -102,7 +101,7 @@ namespace Test.Controllers {
         }
 
 
-
+        // Reset password
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request) {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
@@ -152,7 +151,6 @@ namespace Test.Controllers {
             else
                 return BadRequest("Invalid or expired code.");
         }
-
         private bool VerifyCode(string email, string code) {
             var user = _context.Users.FirstOrDefault(u => u.Email == email);
             if (user == null)
@@ -184,7 +182,6 @@ namespace Test.Controllers {
 
             return Ok("Пароль успешно обновлён.");
         }
-
         private async Task SendEmailAsync(string to, string subject, string body) {
             const string email = "BranchPoint00@gmail.com";
             const string password = "suei plvg nhuv mnjz";

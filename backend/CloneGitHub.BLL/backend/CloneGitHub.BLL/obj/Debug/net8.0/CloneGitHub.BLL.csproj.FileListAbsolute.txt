@@ -1,6 +1,0 @@
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.csproj.AssemblyReference.cache
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.GeneratedMSBuildEditorConfig.editorconfig
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.AssemblyInfoInputs.cache
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.AssemblyInfo.cs
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.csproj.CoreCompileInputs.cache
-/Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.BLL/obj/Debug/net8.0/CloneGitHub.BLL.sourcelink.json

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu.js';
 import '../../shared/Header/header.css';
 import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from '../assets/svg/SvgComponents';
-import LogoProfile from '../assets/img/LogoProfile.png';
 
 const shuffleArray = (array) => {
   const shuffled = [...array];

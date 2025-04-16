@@ -98,3 +98,13 @@ D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\Cl
 D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.dll
 D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\refint\CloneGitHub.dll
 D:\itStep - Exam\ExamReact\Clone__GitHub\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.pdb
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.csproj.AssemblyReference.cache
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.AssemblyInfoInputs.cache
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.AssemblyInfo.cs
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.csproj.CoreCompileInputs.cache
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.MvcApplicationPartsAssemblyInfo.cache
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.sourcelink.json
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.dll
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\refint\CloneGitHub.dll
+D:\GitHub-Clone\backend\CloneGitHub\obj\Debug\net8.0\CloneGitHub.pdb
