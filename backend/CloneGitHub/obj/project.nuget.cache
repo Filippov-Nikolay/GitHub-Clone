@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "lGQVyhVX/bw=",
+  "dgSpecHash": "g2vinX5kJfI=",
   "success": true,
   "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
-=======
-  "dgSpecHash": "iJjk2Ky2XBw=",
-  "success": true,
-  "projectFilePath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -49,8 +43,6 @@
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\mimekit\\4.11.0\\mimekit.4.11.0.nupkg.sha512",
-    "C:\\Users\\filip\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
-    "C:\\Users\\filip\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.3\\pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\swashbuckle.aspnetcore\\8.1.1\\swashbuckle.aspnetcore.8.1.1.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\8.1.1\\swashbuckle.aspnetcore.swagger.8.1.1.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\8.1.1\\swashbuckle.aspnetcore.swaggergen.8.1.1.nupkg.sha512",
@@ -82,16 +74,6 @@
     "C:\\Users\\filip\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: Pomelo.EntityFrameworkCore.MySql 8.0.3 требуется Microsoft.EntityFrameworkCore.Relational (>= 8.0.13 && <= 8.0.999), но в результате разрешения получена версия Microsoft.EntityFrameworkCore.Relational 9.0.4.",
-      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
     {
       "code": "NU1608",
       "level": "Warning",

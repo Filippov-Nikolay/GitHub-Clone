@@ -665,39 +665,6 @@
           }
         }
       },
-      "MySqlConnector/2.3.5": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "7.0.1"
-        },
-        "compile": {
-          "lib/net8.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Pomelo.EntityFrameworkCore.MySql/8.0.3": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "[8.0.13, 8.0.999]",
-          "MySqlConnector": "2.3.5"
-        },
-        "compile": {
-          "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Swashbuckle.AspNetCore/8.1.1": {
         "type": "package",
         "dependencies": {
@@ -1233,7 +1200,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "CloneGitHub.DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.4",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.4"
         },
         "compile": {
           "bin/placeholder/CloneGitHub.BLL.dll": {}
@@ -2481,50 +2448,6 @@
         "mimekit.nuspec"
       ]
     },
-    "MySqlConnector/2.3.5": {
-      "sha512": "AmEfUPkFl+Ev6jJ8Dhns3CYHBfD12RHzGYWuLt6DfG6/af6YvOMyPz74ZPPjBYQGRJkumD2Z48Kqm8s5DJuhLA==",
-      "type": "package",
-      "path": "mysqlconnector/2.3.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net462/MySqlConnector.dll",
-        "lib/net462/MySqlConnector.xml",
-        "lib/net471/MySqlConnector.dll",
-        "lib/net471/MySqlConnector.xml",
-        "lib/net48/MySqlConnector.dll",
-        "lib/net48/MySqlConnector.xml",
-        "lib/net6.0/MySqlConnector.dll",
-        "lib/net6.0/MySqlConnector.xml",
-        "lib/net7.0/MySqlConnector.dll",
-        "lib/net7.0/MySqlConnector.xml",
-        "lib/net8.0/MySqlConnector.dll",
-        "lib/net8.0/MySqlConnector.xml",
-        "lib/netstandard2.0/MySqlConnector.dll",
-        "lib/netstandard2.0/MySqlConnector.xml",
-        "lib/netstandard2.1/MySqlConnector.dll",
-        "lib/netstandard2.1/MySqlConnector.xml",
-        "logo.png",
-        "mysqlconnector.2.3.5.nupkg.sha512",
-        "mysqlconnector.nuspec"
-      ]
-    },
-    "Pomelo.EntityFrameworkCore.MySql/8.0.3": {
-      "sha512": "gOHP6v/nFp5V/FgHqv9mZocGqCLGofihEX9dTbLhiXX3H7SJHmGX70GIPUpiqLT+1jIfDxg1PZh9MTUKuk7Kig==",
-      "type": "package",
-      "path": "pomelo.entityframeworkcore.mysql/8.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.png",
-        "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll",
-        "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.xml",
-        "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512",
-        "pomelo.entityframeworkcore.mysql.nuspec"
-      ]
-    },
     "Swashbuckle.AspNetCore/8.1.1": {
       "sha512": "HJHexmU0PiYevgTLvKjYkxEtclF2w4O7iTd3Ef3p6KeT0kcYLpkFVgCw6glpGS57h8769anv8G+NFi9Kge+/yw==",
       "type": "package",
@@ -3590,23 +3513,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\theda\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\filip\\.nuget\\packages\\": {},
+    "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
+      "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
       "projectName": "CloneGitHub",
-      "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
-      "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
-      "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\obj\\",
+      "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+      "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3687,16 +3610,6 @@
     }
   },
   "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: Pomelo.EntityFrameworkCore.MySql 8.0.3 требуется Microsoft.EntityFrameworkCore.Relational (>= 8.0.13 && <= 8.0.999), но в результате разрешения получена версия Microsoft.EntityFrameworkCore.Relational 9.0.4.",
-      "libraryId": "Microsoft.EntityFrameworkCore.Relational",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
     {
       "code": "NU1608",
       "level": "Warning",

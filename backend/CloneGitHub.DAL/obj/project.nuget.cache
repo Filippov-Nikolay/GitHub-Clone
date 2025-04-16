@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "++jVCoPpavw=",
   "success": true,
   "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-=======
-  "dgSpecHash": "mn9axzh5lyc=",
-  "success": true,
-  "projectFilePath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.4\\microsoft.entityframeworkcore.9.0.4.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.4\\microsoft.entityframeworkcore.abstractions.9.0.4.nupkg.sha512",
@@ -23,16 +17,12 @@
     "C:\\Users\\filip\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.4\\microsoft.extensions.primitives.9.0.4.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.4\\system.diagnostics.diagnosticsource.9.0.4.nupkg.sha512"
   ],
-<<<<<<< HEAD
-  "logs": []
-=======
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Ошибка чтения файла кэша D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
 }
