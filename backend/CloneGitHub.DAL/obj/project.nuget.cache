@@ -1,13 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "uRe6SVutiOU=",
-  "success": true,
-  "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
-=======
-  "dgSpecHash": "ELJ3Xai3Bek=",
+  "dgSpecHash": "mn9axzh5lyc=",
   "success": true,
   "projectFilePath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
   "expectedPackageFiles": [
@@ -32,5 +25,4 @@
       "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
->>>>>>> ad35cfa37e2602f5f4db8d993f843252d5c64b39
 }

@@ -1,25 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {}
-  },
-  "projects": {
-    "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-        "projectName": "CloneGitHub.DAL",
-        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
     "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {}
   },
   "projects": {
@@ -37,7 +18,6 @@
         ],
         "configFilePaths": [
           "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> ad35cfa37e2602f5f4db8d993f843252d5c64b39
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -63,25 +43,18 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-<<<<<<< HEAD
         },
         "SdkAnalysisLevel": "9.0.200"
-=======
-        }
->>>>>>> ad35cfa37e2602f5f4db8d993f843252d5c64b39
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-<<<<<<< HEAD
-=======
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
             }
           },
->>>>>>> ad35cfa37e2602f5f4db8d993f843252d5c64b39
           "imports": [
             "net461",
             "net462",
@@ -98,11 +71,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
->>>>>>> ad35cfa37e2602f5f4db8d993f843252d5c64b39
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
