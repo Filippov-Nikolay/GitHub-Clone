@@ -164,6 +164,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный чёрный */
-  z-index: 99; /* меньше, чем у меню, но выше остального */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 99;
 }
+

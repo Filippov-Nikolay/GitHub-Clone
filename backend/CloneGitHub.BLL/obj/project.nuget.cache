@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "xOfZkyhMDo8=",
+=======
+  "dgSpecHash": "bt6OlGRRgn8=",
+>>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
   "success": true,
   "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
   "expectedPackageFiles": [

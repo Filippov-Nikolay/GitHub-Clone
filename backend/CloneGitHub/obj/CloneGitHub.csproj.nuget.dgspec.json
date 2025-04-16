@@ -1,9 +1,10 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
   },
   "projects": {
+<<<<<<< HEAD
     "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -99,12 +100,22 @@
         "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
         "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
+=======
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "projectName": "CloneGitHub",
+        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
+        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\obj\\",
+>>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

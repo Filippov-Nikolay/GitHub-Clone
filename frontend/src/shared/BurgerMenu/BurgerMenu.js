@@ -8,6 +8,8 @@ import {
 } from '../assets/svg/SvgComponents';
 import './BurgerMenu.css';
 
+import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
+
 export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
   if (!isOpen) return null;
 
@@ -114,6 +116,10 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
                 ))}
               </ul>
               <span className="burger-menu__repositories-title">Show more</span>
+            </div>
+
+            <div className="burger-menu__footer">
+              <FooterBurgerMenu />
             </div>
           </>
         )}
