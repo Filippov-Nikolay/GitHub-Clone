@@ -6,7 +6,8 @@
 .pnp.js
 node_modules/
 .cache/
-.obj/
+**/obj/
+**/bin/
 
 # testing
 /coverage
