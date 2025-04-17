@@ -31,7 +31,7 @@ namespace CloneGitHub.DAL.Repositories
             }
         }
 
-        public IRepository<Repository> Repositories
+        public IRepositoryRepository Repositories
         {
             get
             {
@@ -51,7 +51,7 @@ namespace CloneGitHub.DAL.Repositories
             }
         }
 
-        public IRepository<User> Users
+        public IUserRepository Users
         {
             get
             {

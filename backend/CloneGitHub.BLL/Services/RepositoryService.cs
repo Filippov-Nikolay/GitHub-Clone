@@ -74,7 +74,7 @@ namespace CloneGitHub.BLL.Services
 
         public async Task<RepositoryDTO> GetRepository(string name)
         {
-            var repository = await Database.Repositories.GetByNameAsync(name);
+            var repository = await Database.Repositories.GetByName(name);
             if(repository != null)
             {
                 RepositoryDTO repositoryDTO = CreateLocalRepository(repository);

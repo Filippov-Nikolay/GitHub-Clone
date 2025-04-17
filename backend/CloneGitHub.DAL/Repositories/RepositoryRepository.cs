@@ -5,7 +5,7 @@ using CloneGitHub.DAL.Interfaces;
 
 namespace CloneGitHub.DAL.Repositories
 {
-    public class RepositoryRepository: IRepository<Repository>
+    public class RepositoryRepository: IRepositoryRepository
     {
            private CloneGitHubContext db;
 
