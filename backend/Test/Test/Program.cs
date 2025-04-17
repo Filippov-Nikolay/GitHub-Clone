@@ -11,7 +11,8 @@ builder.Services.AddCors(options => {
     options.AddDefaultPolicy(policy => {
         policy.WithOrigins("http://localhost:3000")
             .AllowAnyHeader()
-            .AllowAnyMethod();
+            .AllowAnyMethod()
+            .AllowCredentials();
     });
 });
 builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(connection));

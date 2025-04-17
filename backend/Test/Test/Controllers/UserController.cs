@@ -78,6 +78,13 @@ namespace Test.Controllers {
                 return Ok(false);
             }
 
+            Response.Cookies.Append("dotcom_user", loginRequest.Username, new CookieOptions {
+                HttpOnly = false,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTimeOffset.UtcNow.AddDays(7)
+            });
+
             return Ok(true);
         }
 

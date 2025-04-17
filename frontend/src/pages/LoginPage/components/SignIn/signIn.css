@@ -46,18 +46,18 @@
 .flash-error__text {
 }
 .flash-success__text {
-    color: #000;
+    color: #f0f6fc;
 }
 .flash-error__btn, .flash-success__btn {
     color: #f85149;
     font-size: 10px;
 }
 .flash-success {
-    border: 1px solid #DADEE3;
-    background-color: #D2F1F9;
+    border: 1px solid #388bfd66;
+    background-color: #388bfd1a;
 }
 .flash-success__btn {
-    color: #305C86;
+    color: #4493f8;
 }
 
 

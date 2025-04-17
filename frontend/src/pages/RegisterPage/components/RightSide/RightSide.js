@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useSearchParams} from 'react-router-dom';
+
 import { ArrowSymbolMktg } from "../../../../shared/assets/svg/SvgComponents";
 import { registerUser } from "../../services/Registration";
-import { useNavigate } from 'react-router-dom';
 import styles from "./rightSide.module.css"
 
+
 export function RightSide() {
+    const [params] = useSearchParams();
+    const [email, setEmail] = useState("");
+
+    useEffect(() => {
+        const emailFromUrl = params.get("email");
+        if (emailFromUrl) {
+            const cleanedEmail = emailFromUrl.replace(/"/g, "");
+            setEmail(cleanedEmail);
+            setFormData(prev => ({
+                ...prev,
+                Email: cleanedEmail
+            }));
+        }
+    }, [params]);
+
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         Email: "",
