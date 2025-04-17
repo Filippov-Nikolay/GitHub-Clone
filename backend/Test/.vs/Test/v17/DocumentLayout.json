@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Test\\Controllers\\UserController.cs",
               "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
               "RelativeToolTip": "Test\\Controllers\\UserController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwFEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAcwFEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T06:01:10.943Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Test\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T06:01:05.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-17T06:01:05.499Z"
             }
           ]
         }
