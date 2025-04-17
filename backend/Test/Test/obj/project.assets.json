@@ -3665,23 +3665,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\filip\\.nuget\\packages\\": {},
-    "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\theda\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj",
+      "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "D:\\GitHub-Clone\\backend\\Test\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub-Clone\\backend\\Test\\Test\\obj\\",
+      "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
+      "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3759,7 +3759,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
       "message": "Ошибка чтения файла кэша D:\\GitHub-Clone\\backend\\Test\\Test\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
     }
   ]
 }
