@@ -95,7 +95,7 @@ export function Aside({ data, onEdit }) {
             <div className='profile-aside__main'>
                 <div className='profile-aside__wrapper'>
                     <div className='profile-aside__logo'>
-                        <img src={data.avatar} alt='Logo Profile' />
+                        <img src={`https://localhost:7044${data.avatar}`} alt='Logo Profile' />
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>

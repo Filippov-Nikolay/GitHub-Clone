@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "Test.Controllers.EditController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Edit/getProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Test.Controllers.EditController",
+    "Method": "SaveProfile",
+    "RelativePath": "api/Edit/saveProfile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatedProfile",
+        "Type": "Test.Models.UserDetails",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Test.Controllers.UserController",
     "Method": "GetUsers",
     "RelativePath": "api/User",

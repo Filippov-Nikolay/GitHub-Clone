@@ -1,14 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitHub-Clone\\backend\\Test\\",
+  "WorkspaceRootPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\controllers\\editcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\controllers\\editcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\userdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\github-clone\\backend\\test\\test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\verifyresetcoderequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\verifyresetcoderequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|d:\\itstep - exam\\examreact\\clone__github\\backend\\test\\test\\models\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD091BCE-4255-4BE9-82EA-CF988D90D8EF}|Test\\Test.csproj|solutionrelative:test\\models\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +50,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 27,
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
             },
             {
               "$type": "Bookmark",
@@ -30,28 +146,132 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDetails.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDetails.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\UserDetails.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDetails.cs",
+              "RelativeToolTip": "Test\\Models\\UserDetails.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T15:46:20.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Program.cs",
+              "RelativeDocumentMoniker": "Test\\Program.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Program.cs",
+              "RelativeToolTip": "Test\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T06:01:05.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\UserDbContext.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\UserDbContext.cs",
+              "RelativeToolTip": "Test\\Models\\UserDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T11:42:50.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\appsettings.json",
+              "RelativeDocumentMoniker": "Test\\appsettings.json",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\appsettings.json",
+              "RelativeToolTip": "Test\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-17T12:28:01.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EditController.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\EditController.cs",
+              "RelativeDocumentMoniker": "Test\\Controllers\\EditController.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\EditController.cs",
+              "RelativeToolTip": "Test\\Controllers\\EditController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAswFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T11:48:56.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\User.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\User.cs",
+              "RelativeToolTip": "Test\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:06:14.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Test\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Controllers\\UserController.cs",
               "RelativeToolTip": "Test\\Controllers\\UserController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwFEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAALQAAAAAAAAAAAAkwNgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T06:01:10.943Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitHub-Clone\\backend\\Test\\Test\\Program.cs",
-              "RelativeDocumentMoniker": "Test\\Program.cs",
-              "ToolTip": "D:\\GitHub-Clone\\backend\\Test\\Test\\Program.cs",
-              "RelativeToolTip": "Test\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ForgotPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\ForgotPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\ForgotPasswordViewModel.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\ForgotPasswordViewModel.cs",
+              "RelativeToolTip": "Test\\Models\\ForgotPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T06:01:05.499Z",
+              "WhenOpened": "2025-04-17T12:10:41.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ResetPasswordViewModel.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\ResetPasswordViewModel.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\ResetPasswordViewModel.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\ResetPasswordViewModel.cs",
+              "RelativeToolTip": "Test\\Models\\ResetPasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:10:46.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VerifyResetCodeRequest.cs",
+              "DocumentMoniker": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\VerifyResetCodeRequest.cs",
+              "RelativeDocumentMoniker": "Test\\Models\\VerifyResetCodeRequest.cs",
+              "ToolTip": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\Models\\VerifyResetCodeRequest.cs",
+              "RelativeToolTip": "Test\\Models\\VerifyResetCodeRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T12:11:04.61Z",
               "EditorCaption": ""
             }
           ]

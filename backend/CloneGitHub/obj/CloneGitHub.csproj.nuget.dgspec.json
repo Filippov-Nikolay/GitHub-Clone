@@ -1,14 +1,10 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
+    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
   },
   "projects": {
-<<<<<<< HEAD
     "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
-=======
-    "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
->>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
@@ -100,21 +96,15 @@
       "restore": {
         "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "projectName": "CloneGitHub.DAL",
-<<<<<<< HEAD
         "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
         "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\",
-=======
-        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
->>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

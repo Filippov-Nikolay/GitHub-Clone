@@ -13,7 +13,6 @@ export function EditAside({ initialData, onSave, onCancel }) {
         }));
     };
 
-    //test load avatar
     const handleAvatarClick = () => {
         fileInputRef.current.click();
     };
@@ -25,16 +24,15 @@ export function EditAside({ initialData, onSave, onCancel }) {
             reader.onloadend = () => {
                 setFormData(prev => ({
                     ...prev,
-                    avatar: reader.result 
+                    avatar: reader.result
                 }));
             };
-            reader.readAsDataURL(file); 
+            reader.readAsDataURL(file);
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('profileData', JSON.stringify(formData));
         onSave(formData);
     };
 

@@ -5,6 +5,49 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Edit/getProfile": {
+      "get": {
+        "tags": [
+          "Edit"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Edit/saveProfile": {
+      "post": {
+        "tags": [
+          "Edit"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDetails"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDetails"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserDetails"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User": {
       "get": {
         "tags": [
@@ -430,6 +473,67 @@
             "nullable": true
           },
           "country": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDetails": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "bio": {
+            "type": "string",
+            "nullable": true
+          },
+          "pronouns": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "currentLocationTime": {
+            "type": "boolean"
+          },
+          "webSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "linkToSocial1": {
+            "type": "string",
+            "nullable": true
+          },
+          "linkToSocial2": {
+            "type": "string",
+            "nullable": true
+          },
+          "linkToSocial3": {
+            "type": "string",
+            "nullable": true
+          },
+          "linkToSocial4": {
             "type": "string",
             "nullable": true
           }

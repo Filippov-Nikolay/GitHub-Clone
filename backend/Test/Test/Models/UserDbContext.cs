@@ -3,6 +3,7 @@
 namespace Test.Models {
     public class UserDbContext : DbContext {
         public DbSet<User> Users { get; set; }
+        public DbSet<UserDetails> UserDetails { get; set; }
 
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) {
             if (Database.EnsureCreated()) {
@@ -13,6 +14,17 @@ namespace Test.Models {
                         new User { UserName = "Sam", Email = "Sam@gmail.com", Password = "Sam", Country = "USA" },
                     }
                 );
+                SaveChanges();
+
+                UserDetails.AddRange(
+                    new List<UserDetails>
+                    {
+                        new UserDetails { UserId = 1, Name = "John" },
+                        new UserDetails { UserId = 2, Name = "Jane" },
+                        new UserDetails { UserId = 3, Name = "Sam" }
+                    }
+                );
+
                 SaveChanges();
             }
         }

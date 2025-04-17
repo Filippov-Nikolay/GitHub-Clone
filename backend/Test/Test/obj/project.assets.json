@@ -3759,11 +3759,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-<<<<<<< HEAD
       "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\Test\\Test\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Ошибка чтения файла кэша D:\\GitHub-Clone\\backend\\Test\\Test\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
     }
   ]
 }
