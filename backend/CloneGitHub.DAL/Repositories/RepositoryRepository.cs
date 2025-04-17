@@ -25,7 +25,7 @@ namespace CloneGitHub.DAL.Repositories
         }
 
 
-         public async Task<Repository> GetByNameAsync(string name)
+         public async Task<Repository> GetByName(string name)
          {
              return await db.Repositories.Where(r => r.Name == name).FirstOrDefaultAsync();
          }

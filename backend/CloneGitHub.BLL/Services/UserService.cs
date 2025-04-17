@@ -16,26 +16,26 @@ namespace CloneGitHub.BLL.Services {
             mapper = _mapper;
         }
 
-        private async Task<UserDTO> CreateLocalUser(UserDTO user) {
+        private async Task<UserDTO> CreateLocalUser(User user) {
             if (user != null) {
                 return new UserDTO {
                     Id = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
                     userDetailsDTO = new UserDetailsDTO {
-                        Id = user.userDetailsDTO.Id,
-                        UserId = user.userDetailsDTO.UserId,
-                        Name = user.userDetailsDTO.Name,
-                        Bio = user.userDetailsDTO.Bio,
-                        Pronouns = user.userDetailsDTO.Pronouns,
-                        Company = user.userDetailsDTO.Company,
-                        Location = user.userDetailsDTO.Location,
-                        CurrentLocationTime = user.userDetailsDTO.CurrentLocationTime,
-                        WebSite = user.userDetailsDTO.WebSite,
-                        LinkToSocial1 = user.userDetailsDTO.LinkToSocial1,
-                        LinkToSocial2 = user.userDetailsDTO.LinkToSocial2,
-                        LinkToSocial3 = user.userDetailsDTO.LinkToSocial3,
-                        LinkToSocial4 = user.userDetailsDTO.LinkToSocial4
+                        Id = user.UserDetails.Id,
+                        UserId = user.UserDetails.UserId,
+                        Name = user.UserDetails.Name,
+                        Bio = user.UserDetails.Bio,
+                        Pronouns = user.UserDetails.Pronouns,
+                        Company = user.UserDetails.Company,
+                        Location = user.UserDetails.Location,
+                        CurrentLocationTime = user.UserDetails.CurrentLocationTime,
+                        WebSite = user.UserDetails.WebSite,
+                        LinkToSocial1 = user.UserDetails.LinkToSocial1,
+                        LinkToSocial2 = user.UserDetails.LinkToSocial2,
+                        LinkToSocial3 = user.UserDetails.LinkToSocial3,
+                        LinkToSocial4 = user.UserDetails.LinkToSocial4
                     }
                 };
             }
@@ -87,7 +87,7 @@ namespace CloneGitHub.BLL.Services {
         {
             var user = await Database.Users.GetByIdAsync(id);
             if(user != null) {
-                UserDTO userDTO = CreateLocalUser(user);
+                UserDTO userDTO = await CreateLocalUser(user);
                 return userDTO;
             }
             return null;
@@ -97,7 +97,7 @@ namespace CloneGitHub.BLL.Services {
         {
             var user = await Database.Users.GetUser(username);
             if(user != null) {
-                UserDTO userDTO = CreateLocalUser(user);
+                UserDTO userDTO = await CreateLocalUser(user);
                 return userDTO;
             }
             return null;
@@ -108,7 +108,7 @@ namespace CloneGitHub.BLL.Services {
         {
             var user = await Database.Users.GetUserByEmail(email);
           if(user != null){
-              UserDTO userDTO = CreateLocalUser(user);
+              UserDTO userDTO = await CreateLocalUser(user);
               return userDTO;
           }
           return null;
