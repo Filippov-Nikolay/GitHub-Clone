@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloneGitHub.BLL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33044636f296da4d9bc72639192acd29bf0a56e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18a5aef85d803764df301c91840117b4326c82df")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloneGitHub.BLL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloneGitHub.BLL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

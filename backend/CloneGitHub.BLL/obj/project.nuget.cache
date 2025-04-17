@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P7NDrk7DNjo=",
+  "dgSpecHash": "5eddt9pBhgM=",
   "success": true,
-  "projectFilePath": "D:\\GitHub-Clone\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+  "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

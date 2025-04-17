@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub-Clone\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {}
+    "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {}
   },
   "projects": {
-    "D:\\GitHub-Clone\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
+    "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub-Clone\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
         "projectName": "CloneGitHub.BLL",
-        "projectPath": "D:\\GitHub-Clone\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\CloneGitHub.BLL\\obj\\",
+        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GitHub-Clone\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
-                "projectPath": "D:\\GitHub-Clone\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+              "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+                "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
               }
             }
           }
@@ -91,14 +91,14 @@
         }
       }
     },
-    "D:\\GitHub-Clone\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+    "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub-Clone\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "projectName": "CloneGitHub.DAL",
-        "projectPath": "D:\\GitHub-Clone\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\CloneGitHub.DAL\\obj\\",
+        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
