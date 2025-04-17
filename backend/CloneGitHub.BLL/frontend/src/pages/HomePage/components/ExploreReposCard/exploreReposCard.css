@@ -1,0 +1,23 @@
+.explore-repositories {
+    padding: 20px;
+    color: #fff;
+}
+
+.explore-repositories__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.explore-repositories__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-repositories__link {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.explore-repositories__link:hover {
+    text-decoration: underline;
+}

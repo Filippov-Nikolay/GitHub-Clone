@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CloneGitHub.DAL.Entities;
+
 
 namespace CloneGitHub.DAL.Interfaces
 {
-    internal interface IRepositoryRepository
+    public interface IRepositoryRepository: IRepository<Repository>
     {
+        Task<Repository> GetByName(string name);
     }
 }

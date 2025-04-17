@@ -1,0 +1,217 @@
+.modal-window-input {
+    position: absolute;
+
+    padding: 0 60px;
+    width: 100%;
+
+    z-index: 2;
+}
+.modal-window-input__bg {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: block;
+    width: 100%;
+    height: 100vh;
+
+    background-color: #8c959f33;
+}
+.modal-window-input__content {
+    padding: 10px;
+
+    border-radius: 16px;
+}
+
+.modal-window-input__content--light {
+    background-color: #fff;
+    border: 1px solid #d0d7de;
+}
+.modal-window-input__content--dark {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+}
+
+.modal-window-input__content--hide {
+    display: none;
+}
+.modal-window-input__item {
+}
+.modal-window-input__item:last-child {
+    border-top: 1px solid #d0d7de;
+}
+.modal-window-input__wrapper-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    padding: 10px 10px;
+    
+    border: 2px solid #0969da;
+    border-radius: 8px;
+}
+.modal-window-input__search-span {
+    max-width: 16px;
+    max-height: 16px;
+    
+    fill: #8C959F;
+}
+.modal-window-input__input {
+    width: 100%;
+}
+
+.modal-window-input__input--light {
+    color: #000;
+}
+.modal-window-input__input--dark {
+    color: #e6edf3;
+}
+
+.modal-window-input__action-list-link {
+    display: flex;
+    align-items: center;
+
+    margin: 10px 0;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    transition: all .2s ease;
+}
+.modal-window-input__action-list-content {
+    position: relative;
+}
+.modal-window-input__action-list-content::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+
+    display: block;
+    width: 100%;
+    height: 1px;
+
+    background-color: #d0d7de;
+}
+.modal-window-input__action-list-link--hide {
+    display: none;
+}
+.modal-window-input__action-list-link:hover {
+    background-color: #d0d7de54;
+}
+.modal-window-input__search-span {
+}
+.modal-window-input__search-span--close {
+    position: relative;
+    z-index: 2;
+}
+.modal-window-input__search-span--close:hover {
+    cursor: pointer;
+}
+.modal-window-input__search-span--close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+
+    transition: all .2s ease;
+}
+.modal-window-input__search-span--close:hover::after {
+    background-color: #d0d7de54;
+    border-radius: 5px;
+}
+.modal-window-input__action-list-output {
+    margin-left: 10px;
+
+    font-size: 14px;
+}
+
+.modal-window-input__action-list-output--light {
+    color: #57606A;
+}
+.modal-window-input__action-list-output--dark {
+    color: #e6edf3;
+}
+
+.modal-window-input__action-list-hint {
+    margin-left: auto;
+
+    color: #636c76;
+    font-size: 14px;
+}
+.sub-menu__modal-window {
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.modal-window-list__title-li {
+    padding-bottom: 20px;
+    padding-left: 10px;
+
+    color: #636c76;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.modal-window-list__item {
+}
+.modal-window-list__item:not(:last-child) {
+    margin-bottom: 2px;
+}
+.modal-window-list__link {
+    display: flex;
+    align-items: center;
+
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+
+    border-radius: 5px;
+}
+.modal-window-list__link--light svg {
+    fill: #636c76;
+}
+.modal-window-list__link--dark svg {
+    fill: #8D96A0;
+}
+.modal-window-list__link:hover {
+    background-color: #d0d7de54;
+}
+.modal-window-list__wrapper {
+}
+.modal-window-list__title {
+    color: #1f2328;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.modal-window-list__title--light {
+    color: #1f2328;
+}
+.modal-window-list__title--dark {
+    color: #e6edf3;
+}
+
+.modal-window-input__link {
+    display: inline-block;
+
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+
+    color: #0969da;;
+    font-size: 12px;
+}
+.modal-window-input__link:hover {
+    text-decoration: underline;
+}

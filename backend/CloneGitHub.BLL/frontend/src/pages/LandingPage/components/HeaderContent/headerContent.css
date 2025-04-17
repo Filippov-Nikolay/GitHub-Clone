@@ -1,0 +1,50 @@
+/* HEADER-CONTENT */
+.header-content {
+    position: relative;
+    z-index: 0;
+
+    margin-top: 75px;
+}
+.header-content__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.header-content__main {
+    display: flex;
+
+    padding-top: 190px;
+}
+.header-content__title {
+    margin-bottom: 35px;
+
+    color: #E6EDF3;
+    font-size: 96px;
+    font-weight: bold;
+}
+.header-content__sub-title {
+    margin-bottom: 96px;
+    max-width: 800px;
+
+    color: #8D96A0;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+@keyframes floatTilt {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+}
+.header-content__decor {
+    animation: floatTilt 10s ease-in-out infinite;
+}

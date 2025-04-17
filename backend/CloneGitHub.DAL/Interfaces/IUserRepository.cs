@@ -2,8 +2,9 @@
 
 namespace CloneGitHub.DAL.Interfaces
 {
-    internal interface IUserRepository: IRepository<User>
+    public interface IUserRepository: IRepository<User>
     {
          Task<User> GetUserByEmail(string email);
+         Task<User> GetUser(string username);
     }
 }

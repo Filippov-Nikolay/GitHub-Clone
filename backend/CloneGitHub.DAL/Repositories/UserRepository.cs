@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CloneGitHub.DAL.Repositories
 {
-    public class UserRepository: IRepository<User>
+    public class UserRepository: IUserRepository
     {
         private CloneGitHubContext db;
 
