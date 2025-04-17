@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g2vinX5kJfI=",
+  "dgSpecHash": "EbEHBxqui2M=",
   "success": true,
-  "projectFilePath": "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+  "projectFilePath": "D:\\GitHub-Clone\\CloneGitHub\\CloneGitHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\filip\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\filip\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -74,12 +74,6 @@
     "C:\\Users\\filip\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\GitHub-Clone\\backend\\CloneGitHub\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1608",
       "level": "Warning",

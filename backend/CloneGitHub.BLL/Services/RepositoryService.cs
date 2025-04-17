@@ -49,7 +49,7 @@ namespace CloneGitHub.BLL.Services
         {
           var repository = InfoToInteraction(repositoryDTO);
           await Database.Repositories.AddAsync(repository);
-          await Database.Save();
+          await Database.CompleteAsync();
         }
         public async Task DeleteRepository(int id)
         {
@@ -59,7 +59,7 @@ namespace CloneGitHub.BLL.Services
         {
             var repository = InfoToInteraction(repositoryDTO);
             Database.Repositories.UpdateAsync(repository);
-            await Database.Save();
+            await Database.CompleteAsync();
         }
         public async Task<RepositoryDTO> GetRepository(int id)
         {
@@ -71,6 +71,7 @@ namespace CloneGitHub.BLL.Services
             }
             return null;
         }
+
         public async Task<RepositoryDTO> GetRepository(string name)
         {
             var repository = await Database.Repositories.GetByNameAsync(name);

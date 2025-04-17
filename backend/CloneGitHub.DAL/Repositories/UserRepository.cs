@@ -20,8 +20,13 @@ namespace CloneGitHub.DAL.Repositories
         {
             return await db.Users.ToListAsync();
         }
-    
-    public async Task<User> GetUser(string username) //GetUser by username
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await db.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task<User> GetUser(string username) //GetUser by username
     {
        return await db.Users.Where(u => u.UserName == username).FirstOrDefaultAsync();
     }
@@ -32,11 +37,7 @@ namespace CloneGitHub.DAL.Repositories
      
     }
 
-    public async Task<User> GetUserByEmail(string email) //GetUserByEmail
-    {
-       return await db.Users.Where(u => u.Email == email).FirstOrDefaultAsync();
-       
-    }
+   
 
 
 public async Task AddAsync(User user)
