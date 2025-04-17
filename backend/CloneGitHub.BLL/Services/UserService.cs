@@ -16,13 +16,13 @@ namespace CloneGitHub.BLL.Services {
             mapper = _mapper;
         }
 
-        private async Task CreateLocalUser(UserDTO user) {
+        private async Task<UserDTO> CreateLocalUser(User user) {
             if (user != null) {
                 return new UserDTO {
                     Id = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
-                    UserDetails = new UserDetailsDTO {
+                    userDetailsDTO = new UserDetailsDTO {
                         Id = user.UserDetails.Id,
                         UserId = user.UserDetails.UserId,
                         Name = user.UserDetails.Name,
@@ -42,52 +42,52 @@ namespace CloneGitHub.BLL.Services {
             return null;
         }
         
-        private async Task InfoToInteraction(UserDTO userDTO) {
+        private async Task<User> InfoToInteraction(UserDTO userDTO) {
             return new User {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
                 Email = userDTO.Email,
                 UserDetails = new UserDetails {
-                    Id = userDTO.UserDetails.Id,
-                    UserId = userDTO.UserDetails.UserId,
-                    Name = userDTO.UserDetails.Name,
-                    Bio = userDTO.UserDetails.Bio,
-                    Pronouns = userDTO.UserDetails.Pronouns,
-                    Company = userDTO.UserDetails.Company,
-                    Location = userDTO.UserDetails.Location,
-                    CurrentLocationTime = userDTO.UserDetails.CurrentLocationTime,
-                    WebSite = userDTO.UserDetails.WebSite,
-                    LinkToSocial1 = userDTO.UserDetails.LinkToSocial1,
-                    LinkToSocial2 = userDTO.UserDetails.LinkToSocial2,
-                    LinkToSocial3 = userDTO.UserDetails.LinkToSocial3,
-                    LinkToSocial4 = user.UserDetails.LinkToSocial4
+                    Id = userDTO.userDetailsDTO.Id,
+                    UserId = userDTO.userDetailsDTO.UserId,
+                    Name = userDTO.userDetailsDTO.Name,
+                    Bio = userDTO.userDetailsDTO.Bio,
+                    Pronouns = userDTO.userDetailsDTO.Pronouns,
+                    Company = userDTO.userDetailsDTO.Company,
+                    Location = userDTO.userDetailsDTO.Location,
+                    CurrentLocationTime = userDTO.userDetailsDTO.CurrentLocationTime,
+                    WebSite = userDTO.userDetailsDTO.WebSite,
+                    LinkToSocial1 = userDTO.userDetailsDTO.LinkToSocial1,
+                    LinkToSocial2 = userDTO.userDetailsDTO.LinkToSocial2,
+                    LinkToSocial3 = userDTO.userDetailsDTO.LinkToSocial3,
+                    LinkToSocial4 = userDTO.userDetailsDTO.LinkToSocial4
                 }
             };
         }
 
         public async Task CreateUser(UserDTO userDTO) {
-            var user = InfoToInteraction(userDTO);
+            var user = await InfoToInteraction(userDTO);
             await Database.Users.AddAsync(user);
-            await Database.Save();
+            await Database.CompleteAsync();
             
         }
 
         public async Task UpdateUser(UserDTO userDTO){
-            var user = InfoToInteraction(userDTO);
+            var user = await InfoToInteraction(userDTO);
             Database.Users.UpdateAsync(user);
-            await Database.Save();
+            await Database.CompleteAsync();
         }
 
         public async Task DeleteUser(int id){
             await Database.Users.DeleteAsync(id);
-            await Database.Save();
+            await Database.CompleteAsync();
         }
 
         public async Task<UserDTO> GetUser(int id)
         {
             var user = await Database.Users.GetByIdAsync(id);
             if(user != null) {
-                UserDTO userDTO = CreateLocalUserDTO(user);
+                UserDTO userDTO = await CreateLocalUser(user);
                 return userDTO;
             }
             return null;
@@ -97,17 +97,18 @@ namespace CloneGitHub.BLL.Services {
         {
             var user = await Database.Users.GetUser(username);
             if(user != null) {
-                UserDTO userDTO = CreateLocalUserDTO(user);
+                UserDTO userDTO = await CreateLocalUser(user);
                 return userDTO;
             }
             return null;
         }
 
+      
         public async Task<UserDTO> GetUserByEmail(string email)
         {
-          var user = await Database.Users.GetUserByEmail(email);
+            var user = await Database.Users.GetUserByEmail(email);
           if(user != null){
-              UserDTO userDTO = CreateLocalUserDTO(user);
+              UserDTO userDTO = await CreateLocalUser(user);
               return userDTO;
           }
           return null;

@@ -5,7 +5,7 @@ using CloneGitHub.DAL.Interfaces;
 
 namespace CloneGitHub.DAL.Repositories
 {
-    public class RepositoryRepository: IRepository<Repository>
+    public class RepositoryRepository: IRepositoryRepository
     {
            private CloneGitHubContext db;
 
@@ -25,7 +25,7 @@ namespace CloneGitHub.DAL.Repositories
         }
 
 
-         public async Task<Repository> GetByNameAsync(string name)
+         public async Task<Repository> GetByName(string name)
          {
              return await db.Repositories.Where(r => r.Name == name).FirstOrDefaultAsync();
          }
