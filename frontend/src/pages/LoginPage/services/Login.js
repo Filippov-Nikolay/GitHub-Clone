@@ -5,6 +5,9 @@ export const Login = async ({ formData }) => {
         const response = await axios.post('https://localhost:7044/api/User/login', {
             Username: formData.userNameOrEmail,
             Password: formData.password
+        }, 
+        {
+            withCredentials: true
         });
         return response.data;
     }
