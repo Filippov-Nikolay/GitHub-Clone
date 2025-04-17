@@ -12,11 +12,11 @@ export function EditAside({ initialData, onSave, onCancel }) {
             [name]: type === 'checkbox' ? checked : value
         }));
     };
-
+    
     const handleAvatarClick = () => {
         fileInputRef.current.click();
     };
-
+    
     const handleAvatarChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -30,12 +30,12 @@ export function EditAside({ initialData, onSave, onCancel }) {
             reader.readAsDataURL(file);
         }
     };
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         onSave(formData);
     };
-
+    
     return (
         <aside className="profile-edit-aside">
             <form onSubmit={handleSubmit} className="profile-edit-aside__main">
@@ -50,7 +50,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleAvatarChange}
                         />
                     </div>
-
+    
                     <div className="profile-edit-aside__info">
                         <label>Name</label>
                         <input
@@ -60,7 +60,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleChange}
                             placeholder="Name"
                         />
-
+    
                         <label>Pronouns</label>
                         <select
                             className="profile-edit-aside__input"
@@ -73,7 +73,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             <option value="she/her">She / Her</option>
                             <option value="they/them">They / Them</option>
                         </select>
-
+    
                         <label>Bio</label>
                         <textarea
                             className="profile-edit-aside__bio-text"
@@ -82,7 +82,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleChange}
                             placeholder="Bio"
                         />
-
+    
                         <label>Company</label>
                         <input
                             className="profile-edit-aside__input"
@@ -91,7 +91,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleChange}
                             placeholder="Company"
                         />
-
+    
                         <label>Location</label>
                         <input
                             className="profile-edit-aside__input"
@@ -100,19 +100,18 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleChange}
                             placeholder="Location"
                         />
-
+    
                         <label className="checkbox-wrapper">
                             <input
                                 type="checkbox"
-                                name="showTime"
-                                checked={formData.showTime}
+                                name="currentLocationTime"
+                                checked={formData.currentLocationTime}
                                 onChange={handleChange}
                             />
                             Display current local time
                         </label>
-
-
-                        {formData.showTime && (
+    
+                        {formData.currentLocationTime && (
                             <>
                                 <label>Time zone</label>
                                 <select
@@ -127,29 +126,29 @@ export function EditAside({ initialData, onSave, onCancel }) {
                                 </select>
                             </>
                         )}
-
+    
                         <label>Website</label>
                         <input
                             className="profile-edit-aside__input"
-                            name="website"
-                            value={formData.website}
+                            name="webSite"
+                            value={formData.webSite}
                             onChange={handleChange}
                             placeholder="Website"
                         />
-
+    
                         <label>Social accounts</label>
                         {[1, 2, 3, 4].map(i => (
                             <input
                                 key={i}
                                 className="profile-edit-aside__input"
-                                name={`social${i}`}
-                                value={formData[`social${i}`]}
+                                name={`linkToSocial${i}`}
+                                value={formData[`linkToSocial${i}`] || ''}
                                 onChange={handleChange}
                                 placeholder={`Social link ${i}`}
                             />
                         ))}
                     </div>
-
+    
                     <div className="edit-buttons profile-edit-aside__content-wrapper">
                         <button type="submit" className="profile-edit-aside__btn-edit">Save</button>
                         <button type="button" onClick={onCancel} className="profile-edit-aside__btn-beta">Cancel</button>

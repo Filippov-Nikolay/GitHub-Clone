@@ -1,0 +1,180 @@
+.contrib-container {
+    margin: 34px 75px 0;
+    font-size: 12px;
+    color: #c9d1d9;
+  }
+  
+  .contrib-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .contrib-count {
+    font-weight: 500;
+  }
+  
+  .contrib-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+    color: #8b949e;
+  }
+  
+  .contrib-settings {
+    cursor: pointer;
+  }
+  
+  .contrib-years {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .year {
+    background: none;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 6px;
+    color: #8b949e;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .year.active {
+    background-color: #238636;
+    color: white;
+  }
+  
+  .contrib-grid-box {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 50px;
+    overflow-x: auto;
+  }
+  
+  .months {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    font-size: 10px;
+  }
+  
+  .contrib-graph {
+    display: flex;
+    margin-top: 6px;
+  }
+  
+  .weekdays {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    margin-right: 4px;
+    font-size: 10px;
+  }
+  
+  .grid {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .week {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .cell {
+    width: 11px;
+    height: 11px;
+    background-color: #161b22;
+    border-radius: 2px;
+  }
+  
+  .level-0 { background-color: #161b22; }
+  .level-1 { background-color: #0e4429; }
+  .level-2 { background-color: #006d32; }
+  .level-3 { background-color: #26a641; }
+  .level-4 { background-color: #39d353; }
+  
+  .legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .legend-scale {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  @media (max-width: 768px) {
+    .contrib-container {
+      margin: 34px 15px 0;
+    }
+  
+    .contrib-years {
+      flex-direction: row;
+    }
+  }
+ 
+@media (min-width: 1170px) {
+    .contrib-grid-box {
+      overflow-x: hidden;
+    }
+  
+    .grid {
+      min-width: unset;
+      flex-wrap: nowrap;
+    }
+  
+    .contrib-graph {
+      overflow-x: visible;
+
+    }
+    
+    .grid {
+        min-width: 855px;
+      }
+  
+    .months {
+      justify-content: space-between;
+      padding-left: 40px;
+    }
+  }
+
+  @media (max-width: 1185px) {
+    .contrib-grid-box {
+      overflow-x: auto;
+    }
+  
+    .grid {
+      min-width: 885px;
+    }
+  
+    .months {
+      min-width: 885px;
+    }
+  
+    .contrib-graph {
+      min-width: 885px;
+    }
+  }.contrib-grid-box {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 1185px){
+
+  }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './overview.css'
 import { ExitSvg,BookSvg,OrangeSvg,BlueSvg,StarSvg } from '../../../../shared/assets/svg/SvgComponents';
-
+import ContributionsGraph  from '../ContributionsGraph/ContributionsGraph.js';
 
 
 const pinnedItemsData = [
@@ -44,21 +44,24 @@ const pinnedItemsData = [
 
   const PinnedItems = () => {
     return (
-      <div className="pinned-items-list">
+      <ul className="pinned-items-list">
         {pinnedItemsData.map((item, index) => (
-          // Реализовать через список
-          <div key={index} className="pinned-item">
+          <li key={index} className="pinned-item">
             <div className="pinned-item-header">
-              <span className="pinned-item-title"> <BookSvg /> {item.title}</span>
+              <span className="pinned-item-title">
+                <BookSvg /> {item.title}
+              </span>
               <span className="pinned-item-type">{item.type}</span>
             </div>
-            <div className='pinned-item-footer'>
-                <div className="pinned-item-description">{item.iconD} {item.description}</div>
-                <div className="pinned-item-icon">{item.icon}</div>
+            <div className="pinned-item-footer">
+              <div className="pinned-item-description">
+                {item.iconD} {item.description}
+              </div>
+              <div className="pinned-item-icon">{item.icon}</div>
             </div>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     );
   };
 
@@ -69,6 +72,16 @@ const [isNotificationVisible, setIsNotificationVisible] = useState(true);
 
   const handleExitClick = () => {
     setIsNotificationVisible(false);
+  };
+
+  const contributions = {
+    Mon: [0, 3, 5, 0, 0, 0, 0],
+    Tue: [0, 0, 0, 0, 0, 0, 0],
+    Wed: [1, 2, 6, 0, 0, 0, 0],
+    Thu: [0, 0, 0, 0, 0, 0, 0],
+    Fri: [0, 2, 4, 5, 0, 0, 0],
+    Sat: [0, 0, 0, 0, 0, 0, 0],
+    Sun: [0, 0, 0, 0, 0, 0, 0],
   };
 
   return(
@@ -90,12 +103,12 @@ const [isNotificationVisible, setIsNotificationVisible] = useState(true);
             <div className='article__wrapper'>
                 <div className='article__header'>
                     <p className='article__header-name'>Pinned</p>
-
-                    {/* Должно быть кнопкой */}
-                    <p className='article__header-edit'>Customize your pins</p>
+                    <button type='button' className='article__header-edit'>Customize your pins</button>
                 </div>
                 <PinnedItems />
+                <ContributionsGraph  contributions={contributions}/>
             </div>
+
         </section>
     </article>
   )

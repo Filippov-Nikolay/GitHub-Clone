@@ -11,6 +11,7 @@
         public string? Company { get; set; }
         public string? Location { get; set; }
         public bool CurrentLocationTime { get; set; } = false;
+        public string? Timezone { get; set; }
         public string? WebSite { get; set; }
         public string? LinkToSocial1 { get; set; }
         public string? LinkToSocial2 { get; set; }

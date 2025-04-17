@@ -5,7 +5,7 @@ using CloneGitHub.BLL.Infrastructure;
 using CloneGitHub.BLL.Interfaces;
 using AutoMapper;
 
-// Исправить UserDetails
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ UserDetails
 namespace CloneGitHub.BLL.Services {
     public class UserService :IUserService {
         private readonly IUnitOfWork Database;
