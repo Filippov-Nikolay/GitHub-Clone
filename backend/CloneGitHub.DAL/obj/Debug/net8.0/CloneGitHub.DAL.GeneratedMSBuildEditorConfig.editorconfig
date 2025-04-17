@@ -8,12 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CloneGitHub.DAL
-<<<<<<< HEAD
 build_property.ProjectDir = /Users/dima/Desktop/GitHub-Clone/backend/CloneGitHub.DAL/
-=======
-build_property.ProjectDir = D:\GitHub-Clone\backend\CloneGitHub.DAL\
->>>>>>> 5a3d58f541f0d68e24ce1171d92fa23b2abc323d
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
