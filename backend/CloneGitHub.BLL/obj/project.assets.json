@@ -2876,23 +2876,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\theda\\.nuget\\packages\\": {},
+    "C:\\Users\\dima\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
       "projectName": "CloneGitHub.BLL",
-      "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
-      "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
-      "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\obj\\",
+      "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+      "packagesPath": "C:\\Users\\dima\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2901,14 +2901,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
-              "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+            "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+              "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
             }
           }
         }
@@ -2923,7 +2924,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -2962,7 +2963,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2971,13 +2972,13 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     },
     {
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 требуется AutoMapper (= 12.0.1), но в результате разрешения получена версия AutoMapper 14.0.0.",
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 14.0.0 was resolved.",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net8.0"

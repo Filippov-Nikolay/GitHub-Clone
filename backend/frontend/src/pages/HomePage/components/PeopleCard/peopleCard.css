@@ -1,0 +1,121 @@
+.vb-card {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    color: #c9d1d9;
+    display: flex;
+    align-items: center;
+
+}
+
+.vb-user-header {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.vb-user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.vb-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.vb-username {
+    font-weight: 600;
+    color: #58a6ff;
+}
+.vb-user-button{
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    height: fit-content;
+}
+.vb-user-info {
+    background-color: #161b22;
+    padding: 16px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    width: 99%;
+    margin-bottom: 1%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 10px;
+}
+.vb-user-info-wrapper{
+
+}
+.vb-user-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.vb-user-owner {
+    color: #8b949e;
+}
+.vb-users-button{
+    background-color: #21262D;
+    border: 1px solid #8B949E;
+    color: #C9D1D9;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+}
+:active.vb-users-button{
+    background-color: #31363e;
+}
+.vb-user-name {
+    color: #58a6ff;
+    margin-left: 4px;
+}
+
+.vb-description {
+    margin-bottom: 8px;
+}
+
+.vb-footer {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.vb-language {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.vb-language-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.vb-stars {
+    display: flex;
+    align-items: center;
+    color: #8b949e;
+}
+.vb-star {
+margin-right: 3px;
+}
+@media screen and (max-width: 370px) {
+    .recommendedUsers__list{
+        flex-wrap: wrap;
+    }
+}

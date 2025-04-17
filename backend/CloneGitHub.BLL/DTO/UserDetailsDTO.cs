@@ -22,5 +22,6 @@ namespace CloneGitHub.BLL.DTO
         public string LinkToSocial1 { get; set; }
         public string LinkToSocial2 { get; set; }
         public string LinkToSocial3 { get; set; }
+        public string LinkToSocial4 { get; set; }
     }
 }

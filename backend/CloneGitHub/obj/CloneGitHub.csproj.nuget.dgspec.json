@@ -1,27 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
+    "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {}
   },
   "projects": {
-<<<<<<< HEAD
-    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
-=======
-    "D:\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
->>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
+    "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+        "projectUniqueName": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
         "projectName": "CloneGitHub.BLL",
-        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
-        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
-        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\obj\\",
+        "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj",
+        "packagesPath": "C:\\Users\\dima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -30,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
-                "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+              "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+                "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
               }
             }
           }
@@ -52,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -91,30 +88,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+    "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
         "projectName": "CloneGitHub.DAL",
-<<<<<<< HEAD
-        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
-        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\",
-=======
-        "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-        "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
->>>>>>> 503b0589e1e46fb3a9ee04a80da0bc998dfb8758
+        "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
+        "packagesPath": "C:\\Users\\dima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -123,6 +114,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -141,7 +133,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -168,24 +160,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj": {
+    "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "projectUniqueName": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
         "projectName": "CloneGitHub",
-        "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\CloneGitHub.csproj",
-        "packagesPath": "C:\\Users\\theda\\.nuget\\packages\\",
-        "outputPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub\\obj\\",
+        "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub\\CloneGitHub.csproj",
+        "packagesPath": "C:\\Users\\dima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -194,17 +186,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
-                "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj"
+              "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj": {
+                "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.BLL\\CloneGitHub.BLL.csproj"
               },
-              "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
-                "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
+              "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj": {
+                "projectPath": "C:\\Users\\dima\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj"
               }
             }
           }
@@ -219,7 +212,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -261,7 +254,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
