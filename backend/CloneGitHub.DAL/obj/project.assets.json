@@ -582,30 +582,12 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\filip\\.nuget\\packages\\": {},
-    "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
     "C:\\Users\\theda\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-      "projectName": "CloneGitHub.DAL",
-      "projectPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
-      "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub-Clone\\backend\\CloneGitHub.DAL\\obj\\",
-      "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Nikolay Filippov\\Program files\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
-      "configFilePaths": [
-        "C:\\Users\\filip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
       "projectName": "CloneGitHub.DAL",
       "projectPath": "D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\CloneGitHub.DAL.csproj",
@@ -617,7 +599,6 @@
       ],
       "configFilePaths": [
         "C:\\Users\\theda\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -674,9 +655,6 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
-<<<<<<< HEAD
-  }
-=======
   },
   "logs": [
     {
@@ -686,5 +664,4 @@
       "message": "Ошибка чтения файла кэша D:\\itStep - Exam\\ExamReact\\Clone__GitHub\\backend\\CloneGitHub.DAL\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
->>>>>>> fb503d9715876aca00ccdb14a92ecce97554befa
 }
