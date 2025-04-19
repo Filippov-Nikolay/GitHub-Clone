@@ -112,7 +112,7 @@ namespace CloneGitHub.Controllers {
 
 
         // Reset password
-        [HttpPost("reset-password")]
+        [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request) {
             var user = await _userService.GetUserByEmail(request.Email);
             if (user == null)
@@ -149,7 +149,7 @@ namespace CloneGitHub.Controllers {
             return Ok($"Код сброса отправлен на почту.");
         }
         [HttpGet("verify-reset-code")]
-        public async Task<IActionResult> VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
+        public IActionResult VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
             var result = VerifyCode(email, code);
             if (result) {
                 Console.WriteLine($"Код сброса для {email} подтверждён.");
@@ -171,7 +171,7 @@ namespace CloneGitHub.Controllers {
                 return NotFound("Пользователь с таким email не найден.");
 
             // Тут нужно зашифровать пароль
-            
+            user.Password = request.NewPassword;
 
             resetCodes.Remove(request.Email);
 

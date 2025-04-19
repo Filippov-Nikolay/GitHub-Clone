@@ -17,7 +17,7 @@ namespace CloneGitHub.DAL.Repositories
 
         public async Task<IEnumerable<User>> GetAllAsync() //GetAllUsers 
         {
-            return await db.Users.ToListAsync();
+            return await db.Users.Include(u => u.UserDetails).ToListAsync();
         }
 
         public async Task<User> GetUserByEmail(string email)
