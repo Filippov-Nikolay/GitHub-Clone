@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using System.Text.Json;
 using Test.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,7 +18,11 @@ builder.Services.AddCors(options => {
     });
 });
 builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(connection));
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

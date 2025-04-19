@@ -1,8 +1,9 @@
 import axios from 'axios';
+import config from '../../../shared/config';
 
 export const PasswordReset = async ({ formData }) => {
     try {
-        const response = await axios.post('https://localhost:7044/api/User/forgot-password', {
+        const response = await axios.post(`${config}/api/User/forgot-password`, {
             Email: formData.email
         });
         return response.data;

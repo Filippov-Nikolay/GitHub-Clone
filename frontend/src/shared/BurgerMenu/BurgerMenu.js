@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // импортируйте Link для навигации
 import {
   CommunitySVG, CopilotSVG, DocsSVG, EnterprisesSVG, FeaturePreviewSVG,
   GistsSVG, LogoSVG, OrganizationsSVG, ProfileSVG, ProjectsSVG, RepositorySVG,
@@ -7,13 +8,11 @@ import {
   DiscussionsSVG, CodespacesSVG, ExploreSVG, MarketplaceSVG, SearchSVG
 } from '../assets/svg/SvgComponents';
 import './BurgerMenu.css';
-
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
 
 export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
   if (!isOpen) return null;
 
-  
   const repositories = [
     { name: 'repo1', avatar: 'https://via.placeholder.com/30' },
     { name: 'repo2', avatar: 'https://via.placeholder.com/30' },
@@ -36,7 +35,7 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
   ];
 
   const rightMenuItems = [
-    { text: 'Your profile', icon: <ProfileSVG /> },
+    { text: 'Your profile', icon: <ProfileSVG />, path: '/profilePage' },
     { text: 'Your repository', icon: <RepositorySVG /> },
     { text: 'Your Copilot', icon: <CopilotSVG /> },
     { text: 'Your projects', icon: <ProjectsSVG /> },
@@ -62,8 +61,8 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
 
   return (
     <>
-    <div className="burger-menu__overlay" onClick={onClose}></div>
-    
+      <div className="burger-menu__overlay" onClick={onClose}></div>
+      
       <div className={`burger-menu burger-menu--${position} ${isOpen ? 'burger-menu--open' : ''}`}>
         {position === 'left' && (
           <>
@@ -145,10 +144,10 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
             <ul className="burger-menu__list">
               {rightMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <a href="#" className="burger-menu__item">
+                  <Link to={item.path || "#"} className="burger-menu__item"> {/* Используем Link */}
                     <span className="burger-menu__icon">{item.icon}</span>
                     <span className="burger-menu__text">{item.text}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

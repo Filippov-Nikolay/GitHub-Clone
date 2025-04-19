@@ -5,10 +5,10 @@ using CloneGitHub.DAL.EF;
 using CloneGitHub.DAL.Interfaces;
 using CloneGitHub.DAL.Repositories;
 using AutoMapper;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Получаем строку подключения из файла конфигурации
 string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddCors(options => {
@@ -38,6 +38,21 @@ if (app.Environment.IsDevelopment()) {
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseRouting();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+app.UseCors();
+app.UseHttpsRedirection();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<CloneGitHubContext>();
+    dbContext.Database.EnsureCreated();
+}
 
 app.Run();

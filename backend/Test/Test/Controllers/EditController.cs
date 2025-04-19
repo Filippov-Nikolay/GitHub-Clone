@@ -68,13 +68,16 @@ namespace Test.Controllers
                 return NotFound("User profile not found");
             }
 
+            
             // Обновляем только разрешённые поля
+            userDetails.Avatar = updatedProfile.Avatar;
             userDetails.Name = updatedProfile.Name;
             userDetails.Bio = updatedProfile.Bio;
             userDetails.Pronouns = updatedProfile.Pronouns;
             userDetails.Company = updatedProfile.Company;
             userDetails.Location = updatedProfile.Location;
             userDetails.CurrentLocationTime = updatedProfile.CurrentLocationTime;
+            userDetails.Timezone = updatedProfile.Timezone; 
             userDetails.WebSite = updatedProfile.WebSite;
             userDetails.LinkToSocial1 = updatedProfile.LinkToSocial1;
             userDetails.LinkToSocial2 = updatedProfile.LinkToSocial2;

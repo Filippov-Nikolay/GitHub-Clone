@@ -150,7 +150,6 @@ namespace Test.Controllers {
         [HttpGet("verify-reset-code")]
         public IActionResult VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
             var result = VerifyCode(email, code);
-            var user = _context.Users.FirstOrDefault(u => u.Email == email);
             if (result) {
                 Console.WriteLine($"Код сброса для {email} подтверждён.");
                 return Redirect($"http://localhost:3000/login?email={email}&code={code}");

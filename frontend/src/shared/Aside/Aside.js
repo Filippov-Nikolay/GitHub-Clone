@@ -49,19 +49,20 @@ const extractSocialData = (url) => {
     return { username: url, icon: 'default', url };
 };
 
-function getCurrentTimeInTimeZone(timezone) {
-    try {
-        return new Intl.DateTimeFormat('en-US', {
-            timeZone: timezone,
-            hour: '2-digit',
-            minute: '2-digit',
-        }).format(new Date());
-    } catch (error) {
-        return 'Invalid timezone';
-    }
-}
-
 export function Aside({ data, onEdit }) {
+
+    // Функция для получения времени в зависимости от часового пояса
+    const getCurrentTimeInTimeZone = (timezone) => {
+        try {
+            return new Intl.DateTimeFormat('en-US', {
+                timeZone: timezone,
+                hour: '2-digit',
+                minute: '2-digit',
+            }).format(new Date());
+        } catch (error) {
+            return 'Invalid timezone'; // Если часовой пояс некорректен
+        }
+    };
 
     const renderSocialLink = (socialLink) => {
         const { username, icon, url } = extractSocialData(socialLink);
@@ -90,12 +91,14 @@ export function Aside({ data, onEdit }) {
         );
     };
 
+    if (!data) return <div>Loading profile...</div>;
+
     return (
         <aside className='profile-aside'>
             <div className='profile-aside__main'>
                 <div className='profile-aside__wrapper'>
                     <div className='profile-aside__logo'>
-                        <img src={`https://localhost:7044${data.avatar}`} alt='Logo Profile' />
+                        <img src={data.avatar} alt='Logo Profile' />
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>
@@ -125,24 +128,24 @@ export function Aside({ data, onEdit }) {
                         </div>
                     </div>
                 )}
-                {data.showTime && data.timezone && (
+                {data.currentLocationTime && data.timezone && (
                     <div className="profile-aside__info">
                         <div className="profile-aside__content-wrapper">
-                            <ClockSVG /> <span className="profile-time__current">{getCurrentTimeInTimeZone(data.timezone)}</span>
+                            <ClockSVG /> <span className="profile-time__current">{data.timezone ? getCurrentTimeInTimeZone(data.timezone) : 'No timezone set'}</span>
                         </div>
                     </div>
                 )}
-                {data.website && (
+                {data.webSite && (
                     <div className='profile-aside__info'>
                         <div className='profile-aside__content-wrapper'>
-                            <LinksSVG /> <span className='profile-link__social'>{data.website}</span>
+                            <LinksSVG /> <span className='profile-link__social'>{data.webSite}</span>
                         </div>
                     </div>
                 )}
-                {data.social1 && renderSocialLink(data.social1)}
-                {data.social2 && renderSocialLink(data.social2)}
-                {data.social3 && renderSocialLink(data.social3)}
-                {data.social4 && renderSocialLink(data.social4)}
+                {data.linkToSocial1 && renderSocialLink(data.linkToSocial1)}
+                {data.linkToSocial2 && renderSocialLink(data.linkToSocial2)}
+                {data.linkToSocial3 && renderSocialLink(data.linkToSocial3)}
+                {data.linkToSocial4 && renderSocialLink(data.linkToSocial4)}
                 <div className='profile-aside__achievements'>
                     <h3 className='profile-aside__title-name'>Achievements</h3>
                     <div className='profile-aside__achiev-logo'>

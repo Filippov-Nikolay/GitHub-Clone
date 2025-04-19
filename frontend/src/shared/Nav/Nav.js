@@ -4,8 +4,8 @@ import '../../shared/Nav/nav.css';
 import { OverviewSVG, RepositoriesSVG, ProjectsSVG, PackagesSVG, StarsSVG, DotsSvg } from '../assets/svg/SvgComponents';
 
 const navItems = [
-    { name: 'Overview', icon: <OverviewSVG />, href: '#' },
-    { name: 'Repositories', icon: <RepositoriesSVG />, href: '#' },
+    { name: 'Overview', icon: <OverviewSVG />, href: 'profilePage' },
+    { name: 'Repositories', icon: <RepositoriesSVG />, href: 'repositoriesPage' },
     { name: 'Projects', icon: <ProjectsSVG />, href: '#' },
     { name: 'Packages', icon: <PackagesSVG />, href: '#' },
     { name: 'Stars', icon: <StarsSVG />, href: '#' }
@@ -18,7 +18,7 @@ export function Nav() {
 
     useEffect(() => {
         const currentPath = location.pathname;
-        const currentIndex = navItems.findIndex(item => item.href === currentPath);
+        const currentIndex = navItems.findIndex(item => `/${item.href}` === currentPath);
         setActiveIndex(currentIndex);
     }, [location.pathname]);
 

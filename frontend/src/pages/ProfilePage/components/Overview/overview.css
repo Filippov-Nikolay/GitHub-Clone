@@ -126,6 +126,19 @@
     fill: #9a8830;
   }
   
+  @media (min-width: 1170px) {
+    .section{
+      margin-top: 34px;
+      margin-left: 25px;
+  }
+  }
+
+  @media (max-width: 1185px) {
+    .article{
+      min-width: 825px;
+  }
+  
+  }
 
   @media (max-width: 1024px) {
     .pinned-items-list {

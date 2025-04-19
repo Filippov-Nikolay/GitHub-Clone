@@ -11,12 +11,12 @@ export function Index() {
     const [isEditing, setIsEditing] = useState(false);
     const [profileData, setProfileData] = useState(null);
     const [loading, setLoading] = useState(true);
-
+        
     useEffect(() => {
         getProfile()
             .then(response => {
                 const userData = response.data;
-
+                console.log(userData);
                 setProfileData(userData);
                 setLoading(false);
             })
