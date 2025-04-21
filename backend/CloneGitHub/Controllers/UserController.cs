@@ -55,9 +55,11 @@ namespace CloneGitHub.Controllers {
             }
 
             // Проверка: уже существует пользователь с таким Email или UserName
-            var existingUser = await _userService.GetUserByEmail(userDTO.Email);
-            if (existingUser != null) {
-                return Conflict("A user with this email or username already exists.");
+            var existingEmail = await _userService.GetUserByEmail(userDTO.Email);
+            var existingUser = await _userService.GetUser(userDTO.UserName);
+
+            if (existingEmail != null || existingUser != null) {
+                return Conflict("Пользователь с таким email или логином уже существует.");
             }
 
             await _userService.CreateUser(userDTO);
@@ -77,8 +79,6 @@ namespace CloneGitHub.Controllers {
             if (login == null && email == null) {
                 return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
             }
-            
-            Console.WriteLine($"{login} {email}");
 
             bool passwordValid = (login?.Password == loginRequest.Password) || 
                                 (email?.Password == loginRequest.Password);
