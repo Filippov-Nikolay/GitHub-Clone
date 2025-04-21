@@ -37,15 +37,15 @@ namespace CloneGitHub.Controllers {
         }
 
 
-        [HttpPut]
-        public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO) {
-            if (userDTO == null) {
-                return BadRequest();
-            }
+        //[HttpPut]
+        //public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO) {
+        //    if (userDTO == null) {
+        //        return BadRequest();
+        //    }
 
-            await _userService.UpdateUser(userDTO);
-            return Ok(userDTO);
-        }
+        //    await _userService.UpdateUser(userDTO);
+        //    return Ok(userDTO);
+        //}
 
 
         [HttpPost]
@@ -68,22 +68,23 @@ namespace CloneGitHub.Controllers {
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
 
             if (loginRequest == null) {
-                return BadRequest();
+                return Ok(false);
             }
 
-            var login = await _userService.GetUserByEmail(loginRequest.Username);
-            var email = await _userService.GetUser(loginRequest.Username);
+            var login = await _userService.GetUser(loginRequest.Username);
+            var email = await _userService.GetUserByEmail(loginRequest.Username);
 
             if (login == null && email == null) {
-                return NotFound();
+                return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
             }
             
             Console.WriteLine($"{login} {email}");
 
-            bool passwordValid = false;
+            bool passwordValid = (login?.Password == loginRequest.Password) || 
+                                (email?.Password == loginRequest.Password);
 
             if (!passwordValid) {
-                return Unauthorized();
+                return Ok("Неверный логин или пароль.");
             }
 
             Response.Cookies.Append("dotcom_user", loginRequest.Username, new CookieOptions {
@@ -132,7 +133,7 @@ namespace CloneGitHub.Controllers {
                         But don't worry! You can use the following code to reset your password:
                     </p>
                     <div style='text-align: center; margin: 24px 0;'>
-                        <a href='https://localhost:7044/api/User/verify-reset-code?email={request.Email}&code={code}'
+                        <a href='https://{HttpContext.Request.Host}/api/User/verify-reset-code?email={request.Email}&code={code}'
                            style='background-color: #2ea44f; color: white; padding: 12px 20px; border-radius: 6px;
                                   text-decoration: none; font-weight: bold; display: inline-block;'>
                             Reset your password
@@ -143,14 +144,14 @@ namespace CloneGitHub.Controllers {
                     </p>
                 </div>";
 
-            Console.WriteLine($"Отправка кода сброса на почту: {request.Email}");
+            Console.WriteLine($"Отправка кода сброса на почту: {request.Email}\nКод: {code}");
             await SendEmailAsync(request.Email, "[BranchPoint] Please reset your password", bodyHtml);
 
             return Ok($"Код сброса отправлен на почту.");
         }
         [HttpGet("verify-reset-code")]
-        public IActionResult VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
-            var result = VerifyCode(email, code);
+        public async Task<IActionResult> VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
+            var result = await VerifyCodeAsync(email, code);
             if (result) {
                 Console.WriteLine($"Код сброса для {email} подтверждён.");
                 return Redirect($"http://localhost:3000/login?email={email}&code={code}");
@@ -170,8 +171,10 @@ namespace CloneGitHub.Controllers {
             if (user == null)
                 return NotFound("Пользователь с таким email не найден.");
 
-            // Тут нужно зашифровать пароль
+            // Замените на хеширование пароля
             user.Password = request.NewPassword;
+            
+            await _userService.UpdateUser(user);
 
             resetCodes.Remove(request.Email);
 
@@ -179,21 +182,16 @@ namespace CloneGitHub.Controllers {
         }
 
 
+        private async Task<bool> VerifyCodeAsync(string email, string code) {
+            var user = await _userService.GetUserByEmail(email);
 
-
-        private bool VerifyCode(string email, string code) {
-            var user = _userService.GetUserByEmail(email);
-            if (user == null) {
+            if (user == null)
                 return false;
-            }
 
-            if (resetCodes.TryGetValue(email, out var storedCode)) {
-                if (storedCode == code) {
-                    resetCodes.Remove(email);
-                    return true;
-                }
-            }
-            return false;
+            if (!resetCodes.TryGetValue(email, out var storedCode) || storedCode != code)
+                return false;
+
+            return true;
         }
         private async Task SendEmailAsync(string to, string subject, string body) {
             const string email = "BranchPoint00@gmail.com";

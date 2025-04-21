@@ -110,11 +110,11 @@ namespace CloneGitHub.BLL.Services {
         public async Task<UserDTO> GetUserByEmail(string email)
         {
             var user = await Database.Users.GetUserByEmail(email);
-          if(user != null){
-              UserDTO userDTO = await CreateLocalUser(user);
-              return userDTO;
-          }
-          return null;
+            if(user != null){
+                UserDTO userDTO = await CreateLocalUser(user);
+                return userDTO;
+            }
+            return null;
         }
 
         public async Task<IEnumerable<UserDTO>> GetAllUsers()
