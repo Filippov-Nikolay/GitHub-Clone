@@ -39,6 +39,7 @@ namespace Test.Controllers
                 {
                     UserId = user.Id,
                     Name = user.UserName,
+                    Location = user.Country,
                     Avatar = _config["UserSettings:DefaultAvatar"]
                 };
                 _context.UserDetails.Add(userDetails);
@@ -68,8 +69,6 @@ namespace Test.Controllers
                 return NotFound("User profile not found");
             }
 
-            
-            // Обновляем только разрешённые поля
             userDetails.Avatar = updatedProfile.Avatar;
             userDetails.Name = updatedProfile.Name;
             userDetails.Bio = updatedProfile.Bio;
