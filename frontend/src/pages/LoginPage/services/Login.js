@@ -1,8 +1,9 @@
 import axios from 'axios';
+import config from '../../../shared/config';
 
 export const Login = async ({ formData }) => {
     try {
-        const response = await axios.post('https://localhost:7044/api/User/login', {
+        const response = await axios.post(`${config.API_BASE_BACKEND}/api/User/login`, {
             Username: formData.userNameOrEmail,
             Password: formData.password
         }, 

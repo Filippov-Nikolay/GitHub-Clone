@@ -1,10 +1,11 @@
 import axios from 'axios';
+import config from '../../../shared/config';
 
 export const PasswordReset = async ({ resetData }) => {
     try {
         console.log("resetData in PasswordReset:", resetData);
 
-        const response = await axios.post('https://localhost:7044/api/User/reset-password', {
+        const response = await axios.post(`${config.API_BASE_BACKEND}/api/User/reset-password`, {
             Email: resetData.email,
             NewPassword: resetData.newPassword,
             ConfirmPassword: resetData.confirmPassword,

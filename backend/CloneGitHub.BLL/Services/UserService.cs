@@ -4,6 +4,7 @@ using CloneGitHub.DAL.Interfaces;
 using CloneGitHub.BLL.Infrastructure;
 using CloneGitHub.BLL.Interfaces;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 // ��������� UserDetails
 namespace CloneGitHub.BLL.Services {
@@ -22,6 +23,7 @@ namespace CloneGitHub.BLL.Services {
                     Id = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
+                    Password = user.Password,
                     userDetailsDTO = new UserDetailsDTO {
                         Id = user.UserDetails.Id,
                         UserId = user.UserDetails.UserId,
@@ -47,6 +49,7 @@ namespace CloneGitHub.BLL.Services {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
                 Email = userDTO.Email,
+                Password = userDTO.Password,
                 UserDetails = new UserDetails {
                     Id = userDTO.userDetailsDTO.Id,
                     UserId = userDTO.userDetailsDTO.UserId,
@@ -107,17 +110,40 @@ namespace CloneGitHub.BLL.Services {
         public async Task<UserDTO> GetUserByEmail(string email)
         {
             var user = await Database.Users.GetUserByEmail(email);
-          if(user != null){
-              UserDTO userDTO = await CreateLocalUser(user);
-              return userDTO;
-          }
-          return null;
+            if(user != null){
+                UserDTO userDTO = await CreateLocalUser(user);
+                return userDTO;
+            }
+            return null;
         }
 
         public async Task<IEnumerable<UserDTO>> GetAllUsers()
         {
-            var users = await Database.Users.GetAllAsync(); 
-            return mapper.Map<IEnumerable<UserDTO>>(users);
+            // Проблема с автомаппером
+            //var users = await Database.Users.GetAllAsync(); 
+            //return mapper.Map<IEnumerable<UserDTO>>(users);
+            
+            return Database.Users.GetAllAsync().Result.Select(user => new UserDTO {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                Password = user.Password,
+                userDetailsDTO = new UserDetailsDTO {
+                    Id = user.UserDetails.Id,
+                    UserId = user.UserDetails.UserId,
+                    Name = user.UserDetails.Name,
+                    Bio = user.UserDetails.Bio,
+                    Pronouns = user.UserDetails.Pronouns,
+                    Company = user.UserDetails.Company,
+                    Location = user.UserDetails.Location,
+                    CurrentLocationTime = user.UserDetails.CurrentLocationTime,
+                    WebSite = user.UserDetails.WebSite,
+                    LinkToSocial1 = user.UserDetails.LinkToSocial1,
+                    LinkToSocial2 = user.UserDetails.LinkToSocial2,
+                    LinkToSocial3 = user.UserDetails.LinkToSocial3,
+                    LinkToSocial4 = user.UserDetails.LinkToSocial4
+                }
+            });
         }
     }
 }
