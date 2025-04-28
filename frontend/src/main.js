@@ -24,12 +24,12 @@ const AppRouter = () => {
         <Route path="/password_reset" element={<PasswordResetPage />}/>
         <Route path="/signup" element={<SignupPage />}/>
 
-        <Route path="/profilePage" element={
+        <Route path="/:username" element={
           <PrivateRoute>
             <ProfilePage />
           </PrivateRoute>
         } />
-        <Route path="/repositoriesPage" element={
+        <Route path="/:username/repositoriesPage" element={
           <PrivateRoute>
             <RepositoriesPage />
           </PrivateRoute>

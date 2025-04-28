@@ -1,4 +1,5 @@
 import React from 'react';
+import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom'; // импортируйте Link для навигации
 import {
   CommunitySVG, CopilotSVG, DocsSVG, EnterprisesSVG, FeaturePreviewSVG,
@@ -9,8 +10,10 @@ import {
 } from '../assets/svg/SvgComponents';
 import './BurgerMenu.css';
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
+import DefaultAvatar from '../assets/img/avatar_account.png'
 
-export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
+export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, nickname }) {
+  const username = Cookies.get('dotcom_user');
   if (!isOpen) return null;
 
   const repositories = [
@@ -35,7 +38,7 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
   ];
 
   const rightMenuItems = [
-    { text: 'Your profile', icon: <ProfileSVG />, path: '/profilePage' },
+    { text: 'Your profile', icon: <ProfileSVG />, getPath: (username) => `/${username}` },
     { text: 'Your repository', icon: <RepositorySVG /> },
     { text: 'Your Copilot', icon: <CopilotSVG /> },
     { text: 'Your projects', icon: <ProjectsSVG /> },
@@ -127,10 +130,10 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
           <>
             <div className="burger-menu__header">
               <div className="burger-menu__logo-wrapper">
-              <img src={avatar} alt="Profile" className="burger-menu__logo" />
+              <img src={avatar ? avatar : DefaultAvatar} alt="Profile" className="burger-menu__logo" />
                 <div className="burger-menu__user-info">
-                  <span className="burger-menu__user-surname">Surname</span>
-                  <span className="burger-menu__user-firstname">Firstname</span>
+                  <span className="burger-menu__user-username">{username}</span>
+                  <span className="burger-menu__user-nickname">{nickname}</span>
                 </div>
               </div>
               <div className="burger-menu__actions">
@@ -144,10 +147,17 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar }) {
             <ul className="burger-menu__list">
               {rightMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <Link to={item.path || "#"} className="burger-menu__item"> {/* Используем Link */}
-                    <span className="burger-menu__icon">{item.icon}</span>
-                    <span className="burger-menu__text">{item.text}</span>
-                  </Link>
+                  {item.getPath ? (
+                    <Link to={item.getPath(username)} className="burger-menu__item">
+                      <span className="burger-menu__icon">{item.icon}</span>
+                      <span className="burger-menu__text">{item.text}</span>
+                    </Link>
+                  ) : (
+                    <a href="#" className="burger-menu__item">
+                      <span className="burger-menu__icon">{item.icon}</span>
+                      <span className="burger-menu__text">{item.text}</span>
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -32,7 +32,7 @@ export function Index() {
 
     return(
         <div className='vbb-profile'>
-            <Header />
+            <Header avatar={profileData?.avatar} userDetails={profileData?.name}/>
             <Nav />
             <main className='vbb-main'>
                 <div className='vbb-profile-container'>

@@ -1,15 +1,21 @@
 import axios from 'axios';
+import config from '../../../shared/config';
 
-const API_BASE_URL = 'https://localhost:7044/api/edit';
 
 export const getProfile = () => {
-    return axios.get(`${API_BASE_URL}/getProfile`, {
+    return axios.get(`${config.API_BASE_BACKEND}/api/edit/getProfile`, {
         withCredentials: true
     });
 };
 
 export const saveProfile = (profileData) => {
-    return axios.post(`${API_BASE_URL}/saveProfile`, profileData, {
+    return axios.post(`${config.API_BASE_BACKEND}/api/edit/saveProfile`, profileData, {
+        withCredentials: true
+    });
+};
+
+export const getProfileByName = (username) => {
+    return axios.get(`${config.API_BASE_BACKEND}/api/edit/getProfileByName/${username}`, {
         withCredentials: true
     });
 };
