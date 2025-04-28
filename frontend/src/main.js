@@ -10,6 +10,8 @@ import LoginPage from './pages/LoginPage/Index';
 import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 
+import Test from './pages/ProjectsPage/Index';
+
 const PrivateRoute = ({ children }) => {
   const user = Cookies.get('dotcom_user');
   return user ? children : <Navigate to="/" />;
@@ -23,6 +25,10 @@ const AppRouter = () => {
         <Route path="/login" element={<LoginPage />}/>
         <Route path="/password_reset" element={<PasswordResetPage />}/>
         <Route path="/signup" element={<SignupPage />}/>
+        <Route path="/signup" element={<SignupPage />}/>
+
+        {/* TEST */}
+        <Route path="/test" element={<Test />}/>
 
         <Route path="/profilePage" element={
           <PrivateRoute>

@@ -1,0 +1,66 @@
+.projects-banner {
+    position: relative;
+
+    margin-bottom: 15px;
+    padding: 16px;
+
+    max-width: 890px;
+
+    background-image: url('../../assets/img/projects-beta-banner-dark.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+
+    border-radius: 8px;
+    border: 1px solid #3d444d;
+}
+.projects-banner--hidden {
+    display: none;
+}
+.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.close__span svg #Vector {
+    transition: all 0.3s ease-in-out;
+}
+.close:hover .close__span svg #Vector {
+    stroke: #f0f6fc;
+}
+.projects-banner__content {
+}
+.projects-banner__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.projects-banner__description {
+    max-width: 50%;
+    
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: 200;
+    color: #fff;
+}
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+
+    color: #f0f6fc;
+    font-weight: 600;
+    font-size: 14px;
+
+    border: 1px solid #3d444d;
+    border-radius: 6px;
+
+    background-color: #212830;
+
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+    background-color: #262c36;
+}
