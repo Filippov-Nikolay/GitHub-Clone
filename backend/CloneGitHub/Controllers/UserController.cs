@@ -20,10 +20,8 @@ namespace CloneGitHub.Controllers {
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsers() {
-            var users = await _userService.GetAllUsers();
-            return Ok(users);
+            return Ok(await _userService.GetAllUsers());
         }
-
 
         [HttpGet("{id}")]
         public async Task<ActionResult<UserDTO>> GetUser(int id) {
@@ -36,17 +34,15 @@ namespace CloneGitHub.Controllers {
             return Ok(user);
         }
 
+        [HttpPut]
+        public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO) {
+            if (userDTO == null) {
+                return BadRequest();
+            }
 
-        //[HttpPut]
-        //public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO) {
-        //    if (userDTO == null) {
-        //        return BadRequest();
-        //    }
-
-        //    await _userService.UpdateUser(userDTO);
-        //    return Ok(userDTO);
-        //}
-
+            await _userService.UpdateUser(userDTO);
+            return Ok(userDTO);
+        }
 
         [HttpPost]
         public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO) {
@@ -65,6 +61,20 @@ namespace CloneGitHub.Controllers {
             await _userService.CreateUser(userDTO);
             return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteUser(int id) {
+            var user = await _userService.GetUser(id);
+
+            if (user == null) {
+                return NotFound();
+            }
+
+            await _userService.DeleteUser(id);
+            return Ok(user);
+        }
+
+
         [HttpPost("login")]
         public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest) {
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
@@ -80,7 +90,7 @@ namespace CloneGitHub.Controllers {
                 return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
             }
 
-            bool passwordValid = (login?.Password == loginRequest.Password) || 
+            bool passwordValid = (login?.Password == loginRequest.Password) ||
                                 (email?.Password == loginRequest.Password);
 
             if (!passwordValid) {
@@ -96,20 +106,6 @@ namespace CloneGitHub.Controllers {
 
             return Ok(true);
         }
-
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteUser(int id) {
-            var user = await _userService.GetUser(id);
-
-            if (user == null) {
-                return NotFound();
-            }
-
-            await _userService.DeleteUser(id);
-            return Ok(user);
-        }
-
 
 
         // Reset password

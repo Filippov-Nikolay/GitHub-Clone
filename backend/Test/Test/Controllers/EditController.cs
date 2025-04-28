@@ -16,8 +16,17 @@ namespace Test.Controllers
             _config = config;
         }
 
-        [HttpGet("getProfile")]
-        public async Task<IActionResult> GetProfile()
+        // Если просто GetProfile, то нужно выводить всех
+        // Если нужен конкретный профиль, то нужно передавать id или userName
+
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> GetProfile(int id)
+
+        //[HttpGet("{userName}")]
+        //public async Task<IActionResult> GetProfile(string userName)
+
+        [HttpGet("getProfile/{id}")]
+        public async Task<IActionResult> GetProfile(int id)
         {
             // Получаем пользователя из куки
             if (!Request.Cookies.TryGetValue("dotcom_user", out var userName))
