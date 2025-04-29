@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloneGitHub.DAL", "CloneGit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloneGitHub.BLL", "CloneGitHub.BLL\CloneGitHub.BLL.csproj", "{4FB7CFA2-B0CA-4D57-A02C-30A8AA108AD1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test\Test.csproj", "{808569C1-2CE0-45E2-9A6F-0348D0C62A64}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{4FB7CFA2-B0CA-4D57-A02C-30A8AA108AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB7CFA2-B0CA-4D57-A02C-30A8AA108AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FB7CFA2-B0CA-4D57-A02C-30A8AA108AD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{808569C1-2CE0-45E2-9A6F-0348D0C62A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{808569C1-2CE0-45E2-9A6F-0348D0C62A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{808569C1-2CE0-45E2-9A6F-0348D0C62A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{808569C1-2CE0-45E2-9A6F-0348D0C62A64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

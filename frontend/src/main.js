@@ -11,7 +11,8 @@ import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 
 import Test from './pages/ProjectsPage/Index';
-import Test1 from './pages/PackagesPage/Index'
+import Test1 from './pages/PackagesPage/Index';
+import Test2 from './pages/StarsPages/Index';
 
 const PrivateRoute = ({ children }) => {
   const user = Cookies.get('dotcom_user');
@@ -32,8 +33,10 @@ const AppRouter = () => {
         {/* TESTS */}
         <Route path="/test" element={<Test />}/>
         <Route path="/test1" element={<Test1 />}/>
+        <Route path="/test2" element={<Test2 />}/>
 
 
+        {/* Private Routes */}
         <Route path="/:username" element={
           <PrivateRoute>
             <ProfilePage />

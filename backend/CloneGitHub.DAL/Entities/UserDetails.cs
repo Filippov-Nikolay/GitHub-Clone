@@ -8,7 +8,7 @@ namespace CloneGitHub.DAL.Entities
         public int Id { get; set; }
         public int UserId { get; set; }
         public string? Avatar { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; } = string.Empty;
         public string? Bio { get; set; }
         public string? Pronouns { get; set; }
         public string? Company { get; set; }

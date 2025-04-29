@@ -44,15 +44,14 @@ const HomePage = () => {
             return <div>Loading...</div>;
         }
 
-        // avatar={profileData.avatar}
     return (
         <div className="vb-app">
-            <Header  userDetails={profileData?.name}/> 
+            <Header avatar={profileData.avatar} userDetails={profileData?.name}/> 
             <div className='vb-app-contain'>
                 <div className="panels">
                     <div className="left-panel">
                         <Profile 
-                            // avatar={profileData.avatar}
+                            avatar={profileData.avatar}
                             username={username} 
                         />
                         <TopRepositories />

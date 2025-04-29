@@ -55,3 +55,12 @@
 .blankslate__btn {
     background-color: #29903b;
 }
+.blankslate__link {
+    display: inline-block;
+
+    color: #4493f8;
+    font-size: 14px;
+}
+.blankslate__link:hover {
+    text-decoration: underline;
+}
