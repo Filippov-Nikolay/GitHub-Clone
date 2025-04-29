@@ -6,6 +6,8 @@ using CloneGitHub.DAL.Interfaces;
 using CloneGitHub.DAL.Repositories;
 using AutoMapper;
 using Microsoft.Extensions.FileProviders;
+using CloneGitHub.BLL.Service;
+using CloneGitHub.BLL.MappingProfiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,10 +25,13 @@ builder.Services.AddDbContext<CloneGitHubContext>(options => options.UseSqlServe
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 
 builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
 builder.Services.AddTransient<IRepositoryService, RepositoryService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddScoped<IEditService, EditService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

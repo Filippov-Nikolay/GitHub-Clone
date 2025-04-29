@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './editAside.css';
+import DefaultAvatar from '../assets/img/avatar_account.png'
 
 export function EditAside({ initialData, onSave, onCancel }) {
     const [formData, setFormData] = useState(initialData);
@@ -41,7 +42,7 @@ export function EditAside({ initialData, onSave, onCancel }) {
             <form onSubmit={handleSubmit} className="profile-edit-aside__main">
                 <div className="profile-edit-aside__wrapper">
                     <div className="profile-edit-aside__logo" onClick={handleAvatarClick} style={{ cursor: 'pointer' }}>
-                        <img src={formData.avatar} alt="Avatar" className="edit-avatar" />
+                        <img src={formData.avatar ? formData.avatar : DefaultAvatar} alt="Avatar" className="edit-avatar" />
                         <input
                             type="file"
                             accept="image/*"

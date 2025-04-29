@@ -57,8 +57,8 @@
   flex-direction: column;
 }
 
-.burger-menu__user-surname,
-.burger-menu__user-firstname {
+.burger-menu__user-username,
+.burger-menu__user-nickname {
   font-size: 15.9px;
   color: white;
 }

@@ -6,6 +6,7 @@ import Emblem1 from '../assets/svg/Emblem1.svg';
 import Emblem2 from '../assets/svg/Emblem2.svg';
 import Emblem3 from '../assets/svg/Emblem3.svg';
 import Emblem4 from '../assets/svg/Emblem4.svg';
+import DefaultAvatar from '../assets/img/avatar_account.png'
 
 const emblemList = [Emblem1, Emblem2, Emblem3, Emblem4];
 
@@ -49,7 +50,7 @@ const extractSocialData = (url) => {
     return { username: url, icon: 'default', url };
 };
 
-export function Aside({ data, onEdit }) {
+export function Aside({ data, onEdit, isOwnProfile  }) {
 
     // Функция для получения времени в зависимости от часового пояса
     const getCurrentTimeInTimeZone = (timezone) => {
@@ -98,7 +99,7 @@ export function Aside({ data, onEdit }) {
             <div className='profile-aside__main'>
                 <div className='profile-aside__wrapper'>
                     <div className='profile-aside__logo'>
-                        <img src={data.avatar} alt='Logo Profile' />
+                        <img src={data?.avatar ? data.avatar : DefaultAvatar} />
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>
@@ -111,7 +112,11 @@ export function Aside({ data, onEdit }) {
                     </div>
                 )}
                 <div className='profile-aside__func'>
-                    <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button>
+                    {isOwnProfile ? (
+                        <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button>
+                    ) : (
+                        <button className='profile-aside__btn-edit'>Follow</button>
+                    )}
                     <div className='profile-aside__content-wrapper'>
                         <a href='#' className='profile-aside__links'>
                             <FollowersSVG /><span className='profile-aside__links-follow'> 12</span> followers

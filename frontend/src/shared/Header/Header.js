@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu.js';
 import '../../shared/Header/header.css';
 import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from '../assets/svg/SvgComponents';
+import DefaultAvatar from '../assets/img/avatar_account.png'
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -31,7 +32,7 @@ const initialNotifications = [
   'Explore our new feature: [Feature Name].'
 ];
 
-export function Header({ avatar }) {
+export function Header({ avatar, nickname, userDetails }) {
   const [notifications, setNotifications] = useState(() => getRandomSubset(initialNotifications));
   const [unreadCount, setUnreadCount] = useState(notifications.length);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -127,12 +128,12 @@ export function Header({ avatar }) {
             )}
           </li>
           <li className='profile-content__item' onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
-            <a href='#'><img className='profile-content__logo'  src={avatar} alt='Profile' /></a>
+            <a href='#'><img className='profile-content__logo'  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></a>
           </li>
         </ul>
       </div>
 
-      <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} />
+      <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} nickname={userDetails}/>
       <BurgerMenu position='left' isOpen={isLeftMenuOpen} onClose={() => setIsLeftMenuOpen(false)} avatar={avatar} />
     </header>
   );
