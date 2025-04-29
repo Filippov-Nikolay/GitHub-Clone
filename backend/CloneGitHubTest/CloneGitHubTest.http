@@ -1,6 +1,0 @@
-@CloneGitHubTest_HostAddress = http://localhost:5155
-
-GET {{CloneGitHubTest_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

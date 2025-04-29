@@ -4,6 +4,7 @@ import {
     ApacheLogoSVG, NuGetLogoSVG, RubyGemsLogoSVG, 
     NpmLogoSVG, ContainersLogoSVG 
 } from "../../../../shared/assets/svg/SvgComponents"
+import Btn from "../../../../shared/Components/Btn/Btn";
 
 import './packages.css';
 
@@ -59,8 +60,10 @@ export default function Packages() {
                                 <h3 className="packages-grid__title">{item.title}</h3>
                             </div>
                             <p className="packages-grid__description">{item.description}</p>
-                            <a href="#" className="btn">Lorem more</a>
-                            {/* <a href={item.link} className="packages-grid__link">Lorem more</a> */}
+                            <Btn
+                                btnHref={item.link}
+                                btnText={'Lorem more'}
+                            />
                         </div>
                     ))}
                 </div>

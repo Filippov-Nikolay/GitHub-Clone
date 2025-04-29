@@ -9,8 +9,8 @@ import HomePage from './pages/HomePage/Index'
 import LoginPage from './pages/LoginPage/Index';
 import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
+import ProjectsPage from './pages/ProjectsPage/Index';
 
-import Test from './pages/ProjectsPage/Index';
 import Test1 from './pages/PackagesPage/Index';
 import Test2 from './pages/StarsPages/Index';
 
@@ -31,7 +31,6 @@ const AppRouter = () => {
 
 
         {/* TESTS */}
-        <Route path="/test" element={<Test />}/>
         <Route path="/test1" element={<Test1 />}/>
         <Route path="/test2" element={<Test2 />}/>
 
@@ -42,11 +41,16 @@ const AppRouter = () => {
             <ProfilePage />
           </PrivateRoute>
         } />
-        <Route path="/:username/repositoriesPage" element={
+        <Route path="/:username/repositories" element={
           <PrivateRoute>
             <RepositoriesPage />
           </PrivateRoute>
         }/>
+        <Route path="/:username/projects" element={
+          <PrivateRoute>
+            <ProjectsPage />
+          </PrivateRoute>
+        } />
         <Route path="/homePage" element={
           <PrivateRoute>
             <HomePage />

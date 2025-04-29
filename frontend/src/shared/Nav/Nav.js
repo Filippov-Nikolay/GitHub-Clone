@@ -13,8 +13,8 @@ export function Nav() {
 
     const navItems = [
         { name: 'Overview', icon: <OverviewSVG />, href: `/${username}` },
-        { name: 'Repositories', icon: <RepositoriesSVG />, href: `/${username}/repositoriesPage` },
-        { name: 'Projects', icon: <ProjectsSVG />, href: '#' },
+        { name: 'Repositories', icon: <RepositoriesSVG />, href: `/${username}/repositories` },
+        { name: 'Projects', icon: <ProjectsSVG />, href: `/${username}/projects` },
         { name: 'Packages', icon: <PackagesSVG />, href: '#' },
         { name: 'Stars', icon: <StarsSVG />, href: '#' }
     ];
