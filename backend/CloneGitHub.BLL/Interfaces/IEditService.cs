@@ -7,6 +7,7 @@ namespace CloneGitHub.BLL.Interfaces
     {
         Task<UserDetailsDTO> GetProfileAsync(string username);
         Task<UserDetailsDTO> SaveProfileAsync(string username, UserDetailsDTO updatedProfile);
+        Task UpdateAvatarAsync(string username, string avatarPath);
 
     }
 }

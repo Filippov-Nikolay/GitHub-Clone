@@ -5,7 +5,7 @@ import { Header } from '../../shared/Header/Header'
 import { Nav } from '../../shared/Nav/Nav'
 import { Aside } from '../../shared/Aside/Aside'
 import { Footer } from '../../shared/Footer/Footer'
-import RepoSearchInit from './components/RepoSearchInit/repoSearchInit'
+import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
 
 import { getProfile } from '../ProfilePage/services/profileApi.js';
 
@@ -37,7 +37,7 @@ export function Index() {
             <main className='vbb-main'>
                 <div className='vbb-profile-container'>
                     <div className='vbb-profile-content'>
-                        <Aside data={profileData}/>
+                        <Aside data={profileData} isOwnProfile={true}/>
                         <RepoSearchInit />
                     </div>
                 </div>

@@ -19,7 +19,7 @@ namespace CloneGitHub.BLL.DTO
         [Required(ErrorMessage = "Password must be specified")]
         public string Password { get; set; }
 
-        public UserDetailsDTO userDetailsDTO{ get; set; }
+        public UserDetailsDTO? userDetailsDTO{ get; set; }
 
 
     }

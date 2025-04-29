@@ -1,5 +1,6 @@
 import React from 'react';
 import './aside.css';
+
 import { FollowersSVG, GeoSVG, LinksSVG, InstagramSVG, LinkedInSVG, YouTubeSVG, ClockSVG } from '../assets/svg/SvgComponents'; // Добавьте иконки
 import Achiev from '../assets/svg/Achiev.svg';
 import Emblem1 from '../assets/svg/Emblem1.svg';
@@ -33,21 +34,21 @@ const extractSocialData = (url) => {
     const youtubeRegex = /youtube\.com\/(@[^\/?#]+)/i;
 
     if (instagramRegex.test(url)) {
-        const username = url.match(instagramRegex)[1];
-        return { username, icon: 'instagram', url: `https://instagram.com/${username}` };
+        const linkName = url.match(instagramRegex)[1];
+        return { linkName, icon: 'instagram', url: `https://instagram.com/${linkName}` };
     }
 
     if (linkedinRegex.test(url)) {
-        const username = url.match(linkedinRegex)[1];
-        return { username, icon: 'linkedin', url: `https://linkedin.com/${username}` };
+        const linkName = url.match(linkedinRegex)[1];
+        return { linkName, icon: 'linkedin', url: `https://linkedin.com/${linkName}` };
     }
 
     if (youtubeRegex.test(url)) {
-        const username = url.match(youtubeRegex)[1];
-        return { username, icon: 'youtube', url: `https://youtube.com/${username}` };
+        const linkName = url.match(youtubeRegex)[1];
+        return { linkName, icon: 'youtube', url: `https://youtube.com/${linkName}` };
     }
 
-    return { username: url, icon: 'default', url };
+    return { linkName: url, icon: 'default', url };
 };
 
 export function Aside({ data, onEdit, isOwnProfile  }) {
@@ -61,12 +62,12 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
                 minute: '2-digit',
             }).format(new Date());
         } catch (error) {
-            return 'Invalid timezone'; // Если часовой пояс некорректен
+            return 'Invalid timezone';
         }
     };
 
     const renderSocialLink = (socialLink) => {
-        const { username, icon, url } = extractSocialData(socialLink);
+        const { linkName, icon, url } = extractSocialData(socialLink);
         let IconComponent;
 
         switch (icon) {
@@ -87,7 +88,7 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
         return (
             <a className='profile-aside__content-wrapper' href={url} target="_blank" rel="noopener noreferrer">
                 <IconComponent />
-                <span className='profile-link__social'>{username}</span>
+                <span className='profile-link__social'>{linkName}</span>
             </a>
         );
     };
@@ -103,7 +104,10 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>
-                        <h3 className='profile-aside__name-sub'>{data.pronouns}</h3>
+                        <div className='profile-aside__gendeer-wrapper'>
+                            <h3 className='profile-aside__name-sub'>{data.userName}</h3>
+                            <h3 className='profile-aside__name-sub'> {data.pronouns}</h3>
+                        </div>
                     </div>
                 </div>
                 {data.bio && (
@@ -112,10 +116,10 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
                     </div>
                 )}
                 <div className='profile-aside__func'>
-                    {isOwnProfile ? (
-                        <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button>
+                {isOwnProfile ? (
+                        <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button> 
                     ) : (
-                        <button className='profile-aside__btn-edit'>Follow</button>
+                        <button className='profile-aside__btn-edit'>Follow</button> 
                     )}
                     <div className='profile-aside__content-wrapper'>
                         <a href='#' className='profile-aside__links'>

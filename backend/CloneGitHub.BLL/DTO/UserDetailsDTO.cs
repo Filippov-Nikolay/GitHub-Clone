@@ -13,8 +13,7 @@ namespace CloneGitHub.BLL.DTO
 
         public string? Avatar { get; set; }  
 
-        [Required(ErrorMessage = "Name must be specified")]
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; }
 
         public string? Bio { get; set; }
         public string? Pronouns { get; set; }

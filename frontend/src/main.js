@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 
 import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
-import RepositoriesPage from './pages/RepositoriesPage/Index';
-import HomePage from './pages/HomePage/Index'
+import HomePage from './pages/HomePage/Index';
 import LoginPage from './pages/LoginPage/Index';
 import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
@@ -18,27 +17,22 @@ const PrivateRoute = ({ children }) => {
 const AppRouter = () => {
   return (
     <Router>
-      <Routes basename="/">
+      <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />}/>
-        <Route path="/password_reset" element={<PasswordResetPage />}/>
-        <Route path="/signup" element={<SignupPage />}/>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/password_reset" element={<PasswordResetPage />} />
+        <Route path="/signup" element={<SignupPage />} />
 
-        <Route path="/:username" element={
+        <Route path="/:urlUserName" element={
           <PrivateRoute>
             <ProfilePage />
           </PrivateRoute>
         } />
-        <Route path="/:username/repositoriesPage" element={
-          <PrivateRoute>
-            <RepositoriesPage />
-          </PrivateRoute>
-        }/>
         <Route path="/homePage" element={
           <PrivateRoute>
             <HomePage />
           </PrivateRoute>
-        }/>
+        } />
       </Routes>
     </Router>
   );

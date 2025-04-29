@@ -2,8 +2,10 @@ import React, { useState, useRef } from 'react';
 import './editAside.css';
 import DefaultAvatar from '../assets/img/avatar_account.png'
 
+
 export function EditAside({ initialData, onSave, onCancel }) {
     const [formData, setFormData] = useState(initialData);
+    const [avatarFile, setAvatarFile] = useState(null);
     const fileInputRef = useRef(null);
 
     const handleChange = (e) => {
@@ -21,20 +23,18 @@ export function EditAside({ initialData, onSave, onCancel }) {
     const handleAvatarChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({
-                    ...prev,
-                    avatar: reader.result
-                }));
-            };
-            reader.readAsDataURL(file);
+            const localUrl = URL.createObjectURL(file);
+            setFormData(prev => ({
+                ...prev,
+                avatar: localUrl
+            }));
+            setAvatarFile(file);
         }
     };
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSave(formData);
+        onSave(formData, avatarFile);
     };
     
     return (
@@ -70,9 +70,9 @@ export function EditAside({ initialData, onSave, onCancel }) {
                             onChange={handleChange}
                         >
                             <option value="">Don't specify</option>
-                            <option value="he/him">He / Him</option>
-                            <option value="she/her">She / Her</option>
-                            <option value="they/them">They / Them</option>
+                            <option value="• he/him">He / Him</option>
+                            <option value="• she/her">She / Her</option>
+                            <option value="• they/them">They / Them</option>
                         </select>
     
                         <label>Bio</label>

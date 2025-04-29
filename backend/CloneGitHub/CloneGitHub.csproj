@@ -18,4 +18,8 @@
     <ProjectReference Include="..\CloneGitHub.BLL\CloneGitHub.BLL.csproj" />
     <ProjectReference Include="..\CloneGitHub.DAL\CloneGitHub.DAL.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
 </Project>
