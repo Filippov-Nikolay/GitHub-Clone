@@ -2,11 +2,13 @@ import {React, useState} from "react";
 import { 
     LogoSvg, PathSvg, SearchSvg
 } from '../../../shared/assets/svg/SvgComponents'
-import { BurgerMenu } from "../../BurgerMenu/BurgerMenu";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { Menu } from "../Menu/Menu";
 import BtnSearch from "../BtnSearch/BtnSearch";
 import { ModalWindowInput } from "../ModalWindowInput/ModalWindowInput";
+
 import './nav.css';
+import './adaptive.css'
 
 function SignUp() {
     return (
