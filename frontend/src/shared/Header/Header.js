@@ -130,7 +130,7 @@ export function Header({ avatar, name, userName }) {
             )}
           </li>
           <li className='profile-content__item' onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
-            <a href='#'><img className='profile-content__logo'  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></a>
+            <button><img className='profile-content__logo'  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></button>
           </li>
         </ul>
       </div>
