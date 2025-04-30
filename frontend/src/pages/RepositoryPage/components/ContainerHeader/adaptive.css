@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+    .repository-container-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        height: auto;
+        gap: 10px;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .container-btn {
+        /*width: calc(50% - 5px); !* две кнопки в строке *!*/
+        justify-content: space-between;
+    }
+
+    .divider {
+        display: none; /* убираем вертикальные полосы */
+    }
+
+    .watch-count {
+        margin-right: 0;
+    }
+}
