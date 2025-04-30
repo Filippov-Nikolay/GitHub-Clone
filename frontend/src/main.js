@@ -29,7 +29,7 @@ const AppRouter = () => {
             ) : (
               // Публичные маршруты
               <>
-                {/* <Route path="/:urlUserName" element={<ProfilePage />}/> */}
+                <Route path="/:urlUserName" element={<ProfilePage />}/>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/password_reset" element={<PasswordResetPage />} />

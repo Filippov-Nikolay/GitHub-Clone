@@ -1,5 +1,6 @@
 import React from 'react';
 import './aside.css';
+import { useNavigate } from 'react-router-dom';
 
 import { FollowersSVG, GeoSVG, LinksSVG, InstagramSVG, LinkedInSVG, YouTubeSVG, ClockSVG } from '../assets/svg/SvgComponents'; // Добавьте иконки
 import Achiev from '../assets/svg/Achiev.svg';
@@ -51,7 +52,7 @@ const extractSocialData = (url) => {
     return { linkName: url, icon: 'default', url };
 };
 
-export function Aside({ data, onEdit, isOwnProfile  }) {
+export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
 
     // Функция для получения времени в зависимости от часового пояса
     const getCurrentTimeInTimeZone = (timezone) => {
@@ -65,6 +66,17 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
             return 'Invalid timezone';
         }
     };
+
+    const navigate = useNavigate();
+
+    const handleFollowClick = () => {
+        if (!isAuthenticated) {
+            navigate('/login');
+        } else {
+            // Заглушка — здесь будет логика подписки
+            console.log('Follow clicked — заглушка');
+        }
+    }
 
     const renderSocialLink = (socialLink) => {
         const { linkName, icon, url } = extractSocialData(socialLink);
@@ -119,7 +131,7 @@ export function Aside({ data, onEdit, isOwnProfile  }) {
                 {isOwnProfile ? (
                         <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button> 
                     ) : (
-                        <button className='profile-aside__btn-edit'>Follow</button> 
+                        <button className='profile-aside__btn-edit' onClick={handleFollowClick}>Follow</button> 
                     )}
                     <div className='profile-aside__content-wrapper'>
                         <a href='#' className='profile-aside__links'>
