@@ -1,0 +1,161 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0d1117;
+  padding: 10px 20px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+}
+
+.topbar-left,
+.topbar-center,
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  height: 30px; 
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.username,
+.repo-name {
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.separator {
+  margin: 0 5px;
+}
+
+.lock-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+.search-input {
+  align-items: flex-start;
+  background-color: #161b22;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  color: white;
+  width: 250px;
+}
+
+.button {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px;
+  cursor: pointer;
+  fill: white;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+
+
+.button {
+  color: white;
+}
+
+.copilot-btn {
+  border: 0.5px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-color: rgb(61, 68, 77);
+}
+.arrow-btn {
+  color: white;
+  
+}
+
+.hr-btn {
+  background-color: white;
+  border: none;
+  width: 1px;
+  margin: 0 10px;
+  align-self: stretch;
+  height: 100%;
+  
+}
+
+hr {
+  background-color: white;
+  border: none;
+  width: 1px;
+  margin: 0 10px;
+
+}
+
+.add-btn {
+  border: 0.5px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-color: rgb(61, 68, 77);
+  
+}
+
+.issue-btn {
+  border: 1px solid white;
+  margin: 3px;
+  padding: 5px;
+  padding-bottom: 3px;
+  border-radius: 6px;
+  border-color: rgb(61, 68, 77);
+  row-gap: 4px;
+}
+
+.pull-requests-btn {
+  border: 1px solid white;
+  margin: 3px;
+  padding: 5px;
+  padding-bottom: 3px;
+  border-radius: 6px;
+  border-color: rgb(61, 68, 77);
+  row-gap: 4px;
+}
+
+.notifications-btn {
+  border: 1px solid white;
+  margin: 3px;
+  padding: 5px;
+  padding-bottom: 3px;
+  border-radius: 6px;
+  border-color: rgb(61, 68, 77);
+  row-gap: 4px;
+}
+
+
+.profile-logo {
+  margin: 5px;
+}
