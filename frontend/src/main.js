@@ -4,12 +4,11 @@ import Cookies from 'js-cookie'; // npm install js-cookie
 
 import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
-import HomePage from './pages/HomePage/Index';
+
 import LoginPage from './pages/LoginPage/Index';
 import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
-import ProjectsPage from './pages/ProjectsPage/Index';
-import RepositoriesPage from './pages/RepositoriesPage/Index';
+
 
 import Test1 from './pages/PackagesPage/Index';
 import Test2 from './pages/StarsPages/Index';
@@ -36,24 +35,6 @@ const AppRouter = () => {
           <Route path="/:urlUserName" element={
               <PrivateRoute>
                 <ProfilePage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/:username/repositories" element={
-              <PrivateRoute>
-                <RepositoriesPage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/:username/projects" element={
-              <PrivateRoute>
-                <ProjectsPage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/homePage" element={
-              <PrivateRoute>
-                <HomePage />
               </PrivateRoute>
             }
           />
