@@ -1,9 +1,6 @@
 @import url('../../../shared/css/normalize.css');
 
 @import url('../components/Header/header.css');
-@import url('../components/ModalWindowInput/modalWindowInput.css');
-@import url('../components/Nav/nav.css');
-@import url('../components/Menu/menu.css');
 @import url('../components/EventPath/eventPath.css');
 @import url('../components/Form/form.css');
 @import url('../components/HeaderContent/headerContent.css');

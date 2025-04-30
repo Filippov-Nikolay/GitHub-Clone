@@ -5,11 +5,9 @@ import '../../styles/main.css'
 import { 
     OcticonCode, ArrowSymbolMktg, 
     OcticonLock, OcticonCodeConduct
-} from '../../assets/svg/svgComponents'
+} from '../../../../shared/assets/svg/SvgComponents'
 
-
-import { ModalWindowInput } from "../ModalWindowInput/ModalWindowInput";
-import { Nav } from "../Nav/Nav";
+import { Nav } from "../../../../shared/Components/Nav/Nav";
 
 import { HeaderContent } from "../HeaderContent/HeaderContent";
 import { Productivity } from "../Productivity/Productivity";
@@ -234,15 +232,9 @@ function MainContent() {
 
 // HEADER
 export function Header() {
-    const [isModalVisible, setModalVisible] = useState(false);
-    const handleButtonClick = () => {
-        setModalVisible(!isModalVisible);
-    };
-
     return (
         <header className="header">
-            <ModalWindowInput isActive={isModalVisible} onClose={() => setModalVisible(false)} theme={'light'}/>
-            <Nav btnClick={() => handleButtonClick()}/>
+            <Nav/>
             <HeaderContent/>
         </header>
     )

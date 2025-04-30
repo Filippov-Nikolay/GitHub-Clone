@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .navigation-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .nav-button {
+        flex: 1 1 45%; /* 2 кнопки в строке */
+        justify-content: center;
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    .wrapper {
+        justify-content: center;
+    }
+
+    .button-text {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-button {
+        flex: 1 1 100%; /* 1 кнопка в строку на маленьких экранах */
+    }
+}

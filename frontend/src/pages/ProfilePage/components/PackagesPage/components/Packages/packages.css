@@ -20,10 +20,12 @@
 .packages__title {
     margin-bottom: 15px;
 
+    text-align: center;
     font-size: 32px;
     color: #f0f6fc;
 }
 .packages__description {
+    text-align: center;
     font-size: 16px;
     color: #9198a1;
 }

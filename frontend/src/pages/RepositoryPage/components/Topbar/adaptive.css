@@ -1,0 +1,61 @@
+@media screen and (max-width: 992px) {
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .topbar-left,
+    .topbar-right {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .topbar-center {
+        margin: 10px 0;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 240px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .copilot-btn,
+    .add-btn,
+    .issue-btn,
+    .pull-requests-btn,
+    .notifications-btn {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .topbar-right {
+        gap: 6px;
+    }
+
+    .repo-name,
+    .username {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .logo,
+    .separator {
+        display: none;
+    }
+
+    .copilot-btn,
+    .add-btn {
+        display: none;
+    }
+
+    .topbar {
+        padding: 8px;
+    }
+}

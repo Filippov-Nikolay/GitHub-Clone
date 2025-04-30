@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+    .gh-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .gh-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .gh-branch {
+        margin-right: 0;
+    }
+
+    .gh-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .gh-time {
+        margin-top: 4px;
+    }
+}
