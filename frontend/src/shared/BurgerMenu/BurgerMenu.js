@@ -1,6 +1,4 @@
 import React from 'react';
-import Cookies from 'js-cookie';
-import { Link } from 'react-router-dom'; // импортируйте Link для навигации
 import {
   CommunitySVG, CopilotSVG, DocsSVG, EnterprisesSVG, FeaturePreviewSVG,
   GistsSVG, LogoSVG, OrganizationsSVG, ProfileSVG, ProjectsSVG, RepositorySVG,
@@ -12,8 +10,8 @@ import './BurgerMenu.css';
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
 import DefaultAvatar from '../assets/img/avatar_account.png'
 
-export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, nickname }) {
-  const username = Cookies.get('dotcom_user');
+
+export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, name, userName }) {
   if (!isOpen) return null;
 
   const repositories = [
@@ -38,8 +36,8 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, nicknam
   ];
 
   const rightMenuItems = [
-    { text: 'Your profile', icon: <ProfileSVG />, getPath: (username) => `/${username}` },
-    { text: 'Your repository', icon: <RepositorySVG /> },
+    { text: 'Your profile', icon: <ProfileSVG />, getPath: () => `/${userName}` },
+    { text: 'Your repository', icon: <RepositorySVG />, getPath: () => `/${userName}?tab=repositories`},
     { text: 'Your Copilot', icon: <CopilotSVG /> },
     { text: 'Your projects', icon: <ProjectsSVG /> },
     { text: 'Your stars', icon: <StarSvg /> },
@@ -132,8 +130,8 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, nicknam
               <div className="burger-menu__logo-wrapper">
               <img src={avatar ? avatar : DefaultAvatar} alt="Profile" className="burger-menu__logo" />
                 <div className="burger-menu__user-info">
-                  <span className="burger-menu__user-username">{username}</span>
-                  <span className="burger-menu__user-nickname">{nickname}</span>
+                <span className="burger-menu__user-nickname">{name || userName}</span>
+                <span className="burger-menu__user-username">{userName}</span>
                 </div>
               </div>
               <div className="burger-menu__actions">
@@ -148,10 +146,10 @@ export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, nicknam
               {rightMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
                   {item.getPath ? (
-                    <Link to={item.getPath(username)} className="burger-menu__item">
+                    <a href={item.getPath(userName)} className="burger-menu__item">
                       <span className="burger-menu__icon">{item.icon}</span>
                       <span className="burger-menu__text">{item.text}</span>
-                    </Link>
+                    </a>
                   ) : (
                     <a href="#" className="burger-menu__item">
                       <span className="burger-menu__icon">{item.icon}</span>

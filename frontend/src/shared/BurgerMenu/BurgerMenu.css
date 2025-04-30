@@ -49,8 +49,10 @@
   gap: 10px;
 }
 .burger-menu__logo-wrapper img{
-  border-radius: 50%;
   width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .burger-menu__user-info {
   display: flex;
@@ -61,6 +63,10 @@
 .burger-menu__user-nickname {
   font-size: 15.9px;
   color: white;
+}
+
+.burger-menu__user-username{
+  color: #8B949E;
 }
 
 .burger-menu__actions {

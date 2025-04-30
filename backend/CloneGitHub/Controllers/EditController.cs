@@ -61,5 +61,55 @@ namespace CloneGitHub.Controllers
 
             return Ok(result);
         }
+        public class UploadAvatarRequest
+        {
+            [FromForm(Name = "avatar")]
+            public IFormFile Avatar { get; set; }
+        }
+
+        [HttpPost("uploadAvatar")]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> UploadAvatar([FromForm] UploadAvatarRequest request)
+        {
+            if (!Request.Cookies.TryGetValue("dotcom_user", out var userName))
+            {
+                return Unauthorized();
+            }
+
+            var avatar = request.Avatar;
+            if (avatar == null || avatar.Length == 0)
+            {
+                return BadRequest("No file uploaded");
+            }
+
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+            var extension = Path.GetExtension(avatar.FileName).ToLower();
+            if (!allowedExtensions.Contains(extension))
+            {
+                return BadRequest("Only image files (jpg, jpeg, png) are allowed.");
+            }
+
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "avatars");
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            var fileName = $"avatar_profile_{Guid.NewGuid()}{extension}";
+            var filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await avatar.CopyToAsync(stream);
+            }
+
+            var relativePath = $"/uploads/avatars/{fileName}";
+            await _editService.UpdateAvatarAsync(userName, relativePath);
+
+            return Ok(new { avatarPath = relativePath });
+        }
+
+
+
     }
 }

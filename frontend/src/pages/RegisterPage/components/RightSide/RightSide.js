@@ -44,9 +44,9 @@ export function RightSide() {
             const result = await registerUser(formData);
 
             if (result === true) {
-            navigate("/homePage");
+                navigate("/homePage");
             } else {
-            alert("Failed! Invalid credentials.");
+                alert("Failed! Invalid credentials.");
             }
         } catch (error) {
             console.log("Registration error:", error);

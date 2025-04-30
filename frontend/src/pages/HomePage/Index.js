@@ -25,7 +25,7 @@ const HomePage = () => {
     const [profileData, setProfileData] = useState(null);
         const [loading, setLoading] = useState(true);
     
-        const username = Cookies.get('dotcom_user');
+        const userName = Cookies.get('dotcom_user');
 
         useEffect(() => {
             getProfile()
@@ -46,13 +46,14 @@ const HomePage = () => {
 
     return (
         <div className="vb-app">
-            <Header avatar={profileData.avatar} userDetails={profileData?.name}/> 
+            <Header avatar={profileData?.avatar} name={profileData?.name} userName={userName}/>
+
             <div className='vb-app-contain'>
                 <div className="panels">
                     <div className="left-panel">
                         <Profile 
-                            avatar={profileData.avatar}
-                            username={username} 
+                            avatar={profileData?.avatar}
+                            userName={userName} 
                         />
                         <TopRepositories />
                         <RecentActivity />

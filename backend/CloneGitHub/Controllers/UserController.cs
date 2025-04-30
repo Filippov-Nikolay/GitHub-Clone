@@ -59,6 +59,14 @@ namespace CloneGitHub.Controllers {
             }
 
             await _userService.CreateUser(userDTO);
+
+            Response.Cookies.Append("dotcom_user", userDTO.UserName, new CookieOptions {
+                HttpOnly = false,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTimeOffset.UtcNow.AddDays(7)
+            });
+
             return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
         }
 

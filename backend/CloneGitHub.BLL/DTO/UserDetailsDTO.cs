@@ -10,12 +10,8 @@ namespace CloneGitHub.BLL.DTO
     {
         public int Id { get; set; }
         public int UserId { get; set; }
-
         public string? Avatar { get; set; }  
-
-        [Required(ErrorMessage = "Name must be specified")]
-        public string? Name { get; set; } = string.Empty;
-
+        public string? Name { get; set; }
         public string? Bio { get; set; }
         public string? Pronouns { get; set; }
         public string? Company { get; set; }

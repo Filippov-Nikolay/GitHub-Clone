@@ -1,31 +1,43 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'; // <-- важно
-import { Header } from '../../shared/Header/Header.js';
-import { Nav } from '../../shared/Nav/Nav.js';
-import { Aside } from '../../shared/Aside/Aside.js';
-import { EditAside } from '../../shared/EditAside/EditAside.js';
-import { Overview } from './components/Overview/Overview.js';
-import { Footer } from '../../shared/Footer/Footer.js';
-import DefaultAvatar from '../../shared/assets/img/avatar_account.png'
-import { getProfileByName, saveProfile } from './services/profileApi.js'; // <-- используй новый метод
+import { useParams, useLocation } from 'react-router-dom';
+import { Header } from '../../shared/Header/Header';
+import { Nav } from '../../shared/Nav/Nav';
+import { Aside } from '../../shared/Aside/Aside';
+import { EditAside } from '../../shared/EditAside/EditAside';
+import { Overview } from './components/Overview/Overview';
+import { Footer } from '../../shared/Footer/Footer';
+import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
+import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
+import Cookies from 'js-cookie';
 
 export function Index() {
     const [isEditing, setIsEditing] = useState(false);
-    const [profileData, setProfileData] = useState(null);
+    const [profileData, setProfileData] = useState(null); // профиль, который просматривается
+    const [currentUserData, setCurrentUserData] = useState(null); // залогиненный пользователь
     const [loading, setLoading] = useState(true);
 
-    const { username } = useParams(); // <-- получить username из URL
+    const [tab, setTab] = useState('overview');
+    const { urlUserName } = useParams();
+    const location = useLocation();
+    const userName = Cookies.get('dotcom_user');
 
-    useEffect(() => {
-        if (!username) return;
     
-        getProfileByName(username)
+
+    // Загружаем профиль, который отображается по URL
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        setTab(searchParams.get('tab') || 'overview');
+
+        if (!urlUserName) return;
+
+        setLoading(true);
+        getProfileByName(urlUserName)
             .then(response => {
                 const profile = response.data;
-                // Просто сетим как есть
+                
                 setProfileData({
                     ...profile,
-                    userName: username, // только дописываем, если нужно
+                    userName: urlUserName,
                 });
                 setLoading(false);
             })
@@ -33,55 +45,90 @@ export function Index() {
                 console.error('Ошибка загрузки профиля', error);
                 setLoading(false);
             });
-    }, [username]);
+    }, [urlUserName, location.search]);
+
+    // Загружаем профиль залогиненного пользователя
+    useEffect(() => {
+        if (!userName) return;
+        getProfile()
+            .then(response => {
+                console.log('Response from getProfile():', response.data);
+                setCurrentUserData({
+                    ...response.data,
+                    userName: userName 
+                });
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки текущего пользователя', error);
+            });
+    }, [userName]);
 
     const handleEdit = () => setIsEditing(true);
     const handleCancel = () => setIsEditing(false);
 
-    const handleSave = (newData) => {
-        saveProfile(newData)
-            .then(response => {
-                const updatedProfile = response.data;
-                setProfileData(prev => ({
+    const handleSave = async (newData, avatarFile) => {
+        if (avatarFile) {
+            const allowedTypes = ['image/jpeg', 'image/png']; 
+            if (!allowedTypes.includes(avatarFile.type)) {
+                alert('Please upload a valid image file (JPEG, PNG).');
+                return;
+            }
+    
+            const newAvatarUrl = await uploadAvatar(avatarFile);
+            newData.avatar = newAvatarUrl;
+        }
+    
+        try {
+            const response = await saveProfile(newData);
+            const updatedProfile = response.data;
+    
+            setProfileData(prev => ({
+                ...prev,
+                ...updatedProfile
+            }));
+            if (userName === urlUserName) {
+                setCurrentUserData(prev => ({
                     ...prev,
                     ...updatedProfile
                 }));
-                setIsEditing(false);
-            })
-            .catch(error => {
-                console.error('Ошибка сохранения профиля', error);
-            });
+            }
+            setIsEditing(false);
+        } catch (error) {
+            console.error('Ошибка сохранения профиля', error);
+        }
     };
+    
 
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
+    if (loading || !currentUserData) {
+        return <div>Loading...</div>;
     }
-    const currentUser = getCookie('dotcom_user');
-    const isOwnProfile = currentUser === username;
 
+    const isOwnProfile = userName === urlUserName;
 
-    if (loading) {
-        return <div>loading...</div>;
-    }
+    const renderTabContent = () => {
+        switch (tab) {
+            case 'repositories':
+                return <RepoSearchInit />;
+            default:
+                return <Overview />;
+        }
+    };
 
     return (
         <div className="profile">
             <Header 
-                avatar={profileData?.avatar ? profileData.avatar : DefaultAvatar}
-                user={profileData?.userName}
-                userDetails={profileData?.name}
+                avatar={currentUserData.avatar}     
+                name={currentUserData?.name || userName}
+                userName={currentUserData.userName}
             />
-            <Nav userDetails={profileData?.name}/>
+            <Nav profileUserName={urlUserName}/>
             <main className="main">
                 <div className="profile-container">
                     <div className="profile-content">
                         {isEditing
-            ? <EditAside initialData={profileData} onSave={handleSave} onCancel={handleCancel} />
-            : <Aside data={profileData} onEdit={isOwnProfile ? handleEdit : null} isOwnProfile={isOwnProfile} />
-                        }
-                        <Overview />
+                            ? <EditAside initialData={currentUserData} onSave={handleSave} onCancel={handleCancel} />
+                            : <Aside data={profileData} onEdit={handleEdit} isOwnProfile={isOwnProfile} />}
+                        {renderTabContent()}
                     </div>
                 </div>
             </main>

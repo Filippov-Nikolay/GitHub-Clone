@@ -32,7 +32,9 @@ const initialNotifications = [
   'Explore our new feature: [Feature Name].'
 ];
 
-export function Header({ avatar, nickname, userDetails }) {
+export function Header({ avatar, name, userName }) {
+
+  
   const [notifications, setNotifications] = useState(() => getRandomSubset(initialNotifications));
   const [unreadCount, setUnreadCount] = useState(notifications.length);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -133,7 +135,7 @@ export function Header({ avatar, nickname, userDetails }) {
         </ul>
       </div>
 
-      <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} nickname={userDetails}/>
+      <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} name={name} userName={userName}/>
       <BurgerMenu position='left' isOpen={isLeftMenuOpen} onClose={() => setIsLeftMenuOpen(false)} avatar={avatar} />
     </header>
   );

@@ -32,10 +32,9 @@ namespace CloneGitHub.BLL.Service
                 userDetails = new UserDetails
                 {
                     UserId = user.Id,
-                    Name = user.UserName,
                 };
                 await _unitOfWork.UserDetails.AddAsync(userDetails);
-                await _unitOfWork.CompleteAsync(); 
+                await _unitOfWork.CompleteAsync();
             }
 
             return _mapper.Map<UserDetailsDTO>(userDetails);
@@ -50,7 +49,8 @@ namespace CloneGitHub.BLL.Service
                                 .FirstOrDefault(ud => ud.UserId == user.Id);
             if (userDetails == null) return null;
 
-            userDetails.Avatar = updatedProfile.Avatar;
+            if (!string.IsNullOrWhiteSpace(updatedProfile.Avatar))
+                userDetails.Avatar = updatedProfile.Avatar;
             userDetails.Name = updatedProfile.Name;
             userDetails.Bio = updatedProfile.Bio;
             userDetails.Pronouns = updatedProfile.Pronouns;
@@ -69,6 +69,48 @@ namespace CloneGitHub.BLL.Service
 
             return _mapper.Map<UserDetailsDTO>(userDetails);
         }
+
+        public async Task UpdateAvatarAsync(string username, string avatarPath)
+        {
+            var user = await _unitOfWork.Users.GetUser(username);
+            if (user == null) return;
+
+            var userDetails = (await _unitOfWork.UserDetails.GetAllAsync())
+                    .FirstOrDefault(ud => ud.UserId == user.Id);
+            if (userDetails == null) return;
+
+            Console.WriteLine($"[AVATAR] OLD AVATAR PATH: {userDetails.Avatar}");
+            if (!string.IsNullOrEmpty(userDetails.Avatar) && !userDetails.Avatar.Contains("avatar_account.png"))
+            {
+                var relativeAvatarPath = userDetails.Avatar;
+
+                // если по какой-то причине пришёл полный URL, вырежи только часть после /uploads
+                if (userDetails.Avatar.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                {
+                    var uri = new Uri(userDetails.Avatar);
+                    relativeAvatarPath = uri.AbsolutePath; // даст что-то типа /uploads/avatars/...
+                }
+
+                var oldPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", relativeAvatarPath.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+
+                Console.WriteLine($"[AVATAR] Full path to delete: {oldPath}");
+                if (System.IO.File.Exists(oldPath))
+                {
+                    System.IO.File.Delete(oldPath);
+                    Console.WriteLine("[AVATAR] Old file deleted");
+                }
+                else
+                {
+                    Console.WriteLine("[AVATAR] File NOT FOUND to delete");
+                }
+            }
+
+
+            userDetails.Avatar = avatarPath;
+            _unitOfWork.UserDetails.UpdateAsync(userDetails);
+            await _unitOfWork.CompleteAsync();
+        }
+
 
 
     }
