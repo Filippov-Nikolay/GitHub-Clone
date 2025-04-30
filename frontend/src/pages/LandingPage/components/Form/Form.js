@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowSymbolMktg } from "../../assets/svg/svgComponents";
+import { ArrowSymbolMktg } from "../../../../shared/assets/svg/SvgComponents";
 
 export function Form() {
     const [email, setEmail] = useState("");
