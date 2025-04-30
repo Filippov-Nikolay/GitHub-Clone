@@ -1,0 +1,54 @@
+/* Базовая стилизация уже есть */
+
+@media screen and (max-width: 1200px) {
+    .gh-sidebar {
+        width: 240px;
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .gh-sidebar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        border-top: 1px solid #30363d;
+        border-left: none;
+    }
+
+    .gh-sidebar-section {
+        padding: 10px 0;
+        border-bottom: 1px solid #30363d;
+    }
+
+    .gh-language-labels {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .about-tg {
+        gap: 20px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .gh-sidebar {
+        padding: 10px;
+    }
+
+    .gh-workflow-btn {
+        width: 100%;
+    }
+
+    .about-tg {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .gh-language-labels {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

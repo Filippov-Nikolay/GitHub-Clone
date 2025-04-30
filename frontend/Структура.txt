@@ -1,6 +1,6 @@
 - src:
 	- shared (глобальные компоненты, которые используют другие компоненты)
-	- pasges:
+	- pages:
 		- LandingPage:
 			- components:
 				- header: header.js, header.css

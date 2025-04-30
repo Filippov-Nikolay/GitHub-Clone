@@ -1,0 +1,165 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    height: 63px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container-btn-branch {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border: 1px rgb(61, 68, 77) solid;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    gap: 5px;
+    position: relative;
+    margin: 5px;
+    background-color: rgb(42, 49, 60);
+    border-bottom-color: rgb(61, 68, 77);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.btn-without-border {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    gap: 5px;
+    position: relative;
+}
+
+.nav__btn-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.nav__btn-span {
+    max-width: 15px;
+    max-height: 15px;
+}
+
+.nav__btn-span--search {
+    margin-right: 5px;
+    color: white;
+    max-width: 10px;
+    max-height: 10px;
+    fill: #636c76;
+}
+
+.nav__btn-text {
+    color: white;
+}
+
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-input {
+    padding-left: 30px;
+    padding-right: 10px;
+    background-color: transparent;
+    border: 1px solid #57606A;
+    border-radius: 6px;
+    color: white;
+}
+
+.code-btn {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    background-color: rgb(55, 108, 2);
+    border-radius: 6px;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+}
+
+.nav__btn-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #8C959F;
+    border: 1px solid #57606A;
+    border-radius: 6px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+nav__btn-span {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.nav__btn-span--search {
+    margin-right: 5px;
+    max-width: 16px;
+    max-height: 16px;
+    fill: #636c76;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .main-container {
+        justify-content: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .container-btn-branch,
+    .btn-without-border,
+    .nav__btn-search,
+    .code-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+        gap: 4px;
+        border-radius: 4px;
+        max-height: 36px;
+        flex: 0 1 auto;
+    }
+
+    .wrapper svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .nav__btn-text {
+        font-size: 12px;
+    }
+
+    .searchbar {
+        flex-grow: 1;
+        max-width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+        font-size: 12px;
+    }
+}

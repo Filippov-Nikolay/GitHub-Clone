@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export function GitBranch({colorProps}) {
     let color = colorProps === 'green' ? '#3fb950' : 
