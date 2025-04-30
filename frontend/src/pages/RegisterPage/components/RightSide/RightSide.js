@@ -44,7 +44,7 @@ export function RightSide() {
             const result = await registerUser(formData);
 
             if (result === true) {
-                navigate("/homePage");
+                window.location.href = '/';
             } else {
                 alert("Failed! Invalid credentials.");
             }

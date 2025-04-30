@@ -7,7 +7,11 @@ import { EditAside } from '../../shared/EditAside/EditAside';
 import { Overview } from './components/Overview/Overview';
 import { Footer } from '../../shared/Footer/Footer';
 import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
+
 import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
+import ProjectsPage from './components/ProjectsPage/Index.js';
+import PackagesPage from './components/PackagesPage/Index.js';
+
 import Cookies from 'js-cookie';
 
 export function Index() {
@@ -108,9 +112,13 @@ export function Index() {
     const renderTabContent = () => {
         switch (tab) {
             case 'repositories':
-                return <RepoSearchInit />;
+                return <RepoSearchInit/>;
+            case 'projects':
+                return <ProjectsPage/>;
+            case 'packages':
+                return <PackagesPage/>;
             default:
-                return <Overview />;
+                return <Overview/>;
         }
     };
 
@@ -128,7 +136,9 @@ export function Index() {
                         {isEditing
                             ? <EditAside initialData={currentUserData} onSave={handleSave} onCancel={handleCancel} />
                             : <Aside data={profileData} onEdit={handleEdit} isOwnProfile={isOwnProfile} />}
-                        {renderTabContent()}
+                        <div className='profile-content__container'>
+                            {renderTabContent()}
+                        </div>
                     </div>
                 </div>
             </main>

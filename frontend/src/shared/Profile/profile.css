@@ -124,6 +124,12 @@ html {
     margin-right: auto;
     margin-left: auto;
 }
+.profile-content__container {
+    margin-top: 32px;
+    margin-left: 25px;
+
+    width: 90%;
+}
 
 .profile-content {
     display: flex; 

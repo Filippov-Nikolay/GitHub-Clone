@@ -2,15 +2,15 @@ import { React } from "react";
 
 import ProjectsBanner from "./components/ProjectsBanner/ProjectsBanner";
 
-import Blankslate from "../../shared/Components/Blankslate/Blankslate";
-import BtnPrimaryComponent from "../../shared/Components/BtnPrimary/BtnPrimary";
+import Blankslate from "../../../../shared/Components/Blankslate/Blankslate";
+import BtnPrimaryComponent from "../../../../shared/Components/BtnPrimary/BtnPrimary";
 
-import { ProjectsSVG } from '../../shared/assets/svg/SvgComponents';
+import { ProjectsSVG } from '../../../../shared/assets/svg/SvgComponents';
 
 
 export default function Index() {
     return (
-        <>
+        <div className="projects-page">
             <ProjectsBanner />
             <Blankslate
                 SvgComponent={<ProjectsSVG/>}
@@ -19,6 +19,6 @@ export default function Index() {
                 isBtn={true}
                 btnPrimaryComponent={<BtnPrimaryComponent btnText={"New project"} />}
             />
-        </>
+        </div>
     );
 }

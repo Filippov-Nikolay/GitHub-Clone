@@ -3,8 +3,8 @@ import {
     PackagesLogoSVG, 
     ApacheLogoSVG, NuGetLogoSVG, RubyGemsLogoSVG, 
     NpmLogoSVG, ContainersLogoSVG 
-} from "../../../../shared/assets/svg/SvgComponents"
-import Btn from "../../../../shared/Components/Btn/Btn";
+} from "../../../../../../shared/assets/svg/SvgComponents"
+import Btn from "../../../../../../shared/Components/Btn/Btn";
 
 import './packages.css';
 

@@ -7,6 +7,7 @@ import { LogoSVG } from "../../../../shared/assets/svg/SvgComponents";
 import { Login } from "../../services/Login"
 import { PasswordReset } from "../../services/PasswordReset";
 
+import Cookies from "js-cookie";
 
 export function SignIn() {
     // Standard hooks
@@ -54,7 +55,8 @@ export function SignIn() {
 
             if (result === true) {
                 console.log("Login successful!");
-                navigate("/homePage");
+                const userName = Cookies.get('dotcom_user');
+                window.location.href = `/${userName}`;
             } else {
                 setFormData(prev => ({ ...prev, password: "" }));
                 console.log("Login failed! Invalid credentials.");

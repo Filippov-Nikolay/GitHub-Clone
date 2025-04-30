@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { CloseBurgerSVG } from '../../../../shared/assets/svg/SvgComponents';
+import { CloseBurgerSVG } from '../../../../../../shared/assets/svg/SvgComponents';
 import './projectsBanner.css'; 
 
 export default function ProjectsBanner() {

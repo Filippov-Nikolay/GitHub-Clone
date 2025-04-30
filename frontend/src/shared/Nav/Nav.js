@@ -12,8 +12,8 @@ export function Nav({ profileUserName }) {
     const navItems = [
         { name: 'Overview', icon: <OverviewSVG />, href: `/${profileUserName}` },
         { name: 'Repositories', icon: <RepositoriesSVG />, href: `/${profileUserName}?tab=repositories` },
-        { name: 'Projects', icon: <ProjectsSVG />, href: '#' },
-        { name: 'Packages', icon: <PackagesSVG />, href: '#' },
+        { name: 'Projects', icon: <ProjectsSVG />, href: `/${profileUserName}?tab=projects` },
+        { name: 'Packages', icon: <PackagesSVG />, href: `/${profileUserName}?tab=packages` },
         { name: 'Stars', icon: <StarsSVG />, href: '#' }
     ];
 
