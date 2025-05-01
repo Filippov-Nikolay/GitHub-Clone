@@ -8,9 +8,10 @@ import { Overview } from './components/Overview/Overview';
 import { Footer } from '../../shared/Footer/Footer';
 import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
 
-import RepoSearchInitq from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
-import ProjectsPage from './components/ProjectsPage/Index.js';
-import PackagesPage from './components/PackagesPage/Index.js';
+import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
+import Projects from './components/Projects/Projects.js';
+import Packages from './components/Packages/Packages.js';
+import Stars from './components/Stars/Stars.js';
 
 import Cookies from 'js-cookie';
 
@@ -116,11 +117,13 @@ export function Index() {
     const renderTabContent = () => {
         switch (tab) {
             case 'repositories':
-                return <RepoSearchInitq/>;
+                return <RepoSearchInit/>;
             case 'projects':
-                return <ProjectsPage/>;
+                return <Projects/>;
             case 'packages':
-                return <PackagesPage/>;
+                return <Packages/>;
+            case 'stars':
+                return <Stars/>;
             default:
                 return <Overview/>;
         }

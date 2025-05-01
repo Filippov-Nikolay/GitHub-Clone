@@ -8,7 +8,7 @@ import BtnPrimaryComponent from "../../../../shared/Components/BtnPrimary/BtnPri
 import { ProjectsSVG } from '../../../../shared/assets/svg/SvgComponents';
 
 
-export default function Index() {
+export default function Projects() {
     return (
         <div className="projects-page">
             <ProjectsBanner />

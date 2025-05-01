@@ -1,27 +1,27 @@
-.stars-page {
+.stars {
     max-width: 890px;
 }
-.stars-page__header {
+.stars__header {
     margin-bottom: 15px;
 }
-.stars-page__wrapper {
+.stars__wrapper, .stars__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.stars-page__btn {
+.stars__content {
 }
-.stars-page__btn:first-child {
-    margin-right: 5px;
+.stars__btn:last-child {
+    margin-left: 5px;
 }
-.stars-page__title {
+.stars__title {
     color: #f0f6fc;
     font-size: 16px;
     font-weight: 300;
 }
-.stars-page__span {
+.stars__span {
     color: #9198a1;
 }
-.stars-page__body {
+.stars__body {
     margin-top: 32px;
 }

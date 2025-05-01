@@ -11,7 +11,6 @@ import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 import RepositoryPage from './pages/RepositoryPage/Index';
 
-import Test from './pages/ProfilePage/components/StarsPage/Index';
 
 const AppRouter = () => {
     const user = Cookies.get('dotcom_user');
@@ -35,8 +34,6 @@ const AppRouter = () => {
                 <Route path="/password_reset" element={<PasswordResetPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/RepositoryPage" element={<RepositoryPage />} />
-
-                <Route path="/stars" element={<Test />} />
               </>
             )
           }

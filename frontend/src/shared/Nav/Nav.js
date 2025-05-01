@@ -14,7 +14,7 @@ export function Nav({ profileUserName }) {
         { name: 'Repositories', icon: <RepositoriesSVG />, href: `/${profileUserName}?tab=repositories` },
         { name: 'Projects', icon: <ProjectsSVG />, href: `/${profileUserName}?tab=projects` },
         { name: 'Packages', icon: <PackagesSVG />, href: `/${profileUserName}?tab=packages` },
-        { name: 'Stars', icon: <StarsSVG />, href: '#' }
+        { name: 'Stars', icon: <StarsSVG />, href:  `/${profileUserName}?tab=stars` }
     ];
 
     const toggleDropdown = () => {

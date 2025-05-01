@@ -21,6 +21,9 @@
 }
 .nav__btn {
     padding: 5px 10px;
+    
+    min-width: max-content;
+    
     color: #fff;
 
     transition: all .3s ease;

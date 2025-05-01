@@ -5,11 +5,15 @@
 
     padding: 5px 10px;
     
-    min-width: 305px;
+    width: 100%;
+    max-width: 305px;
+    min-width: 200px;
+    /* min-width: 305px; */
     max-height: 30px;
 
     font-size: 14px;
     color: #8C959F;
+
     border: 1px solid #57606A;
     border-radius: 6px;
     background-color: #2e374ad1;

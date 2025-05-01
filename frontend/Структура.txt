@@ -7,7 +7,7 @@
 				- sidebar: sidebar.js, sidebar.css
 				- nav
 				- footer
-				- index.js 
+			- index.js 
 			- assets:
 				- img
 				- svg
