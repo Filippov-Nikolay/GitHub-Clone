@@ -5,6 +5,7 @@ using CloneGitHub.BLL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using CloneGitHub.Models;
 using MimeKit;
+using CloneGitHub.DAL.Entities;
 
 namespace CloneGitHub.Controllers {
     [ApiController]
@@ -47,16 +48,23 @@ namespace CloneGitHub.Controllers {
         [HttpPost]
         public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO) {
             if (userDTO == null) {
+                Console.WriteLine($"Какое-то поле является пустым: {ModelState.IsValid}");
                 return BadRequest();
             }
 
             // Проверка: уже существует пользователь с таким Email или UserName
-            var existingEmail = await _userService.GetUserByEmail(userDTO.Email);
-            var existingUser = await _userService.GetUser(userDTO.UserName);
+            var existingUser = await _userService.GetUserByEmail(userDTO.Email)
+                            ?? await _userService.GetUser(userDTO.UserName);
 
-            if (existingEmail != null || existingUser != null) {
+            if (existingUser != null) {
                 return Conflict("Пользователь с таким email или логином уже существует.");
             }
+
+            var salt = PasswordHasher.GenerateSalt();
+            var hash = PasswordHasher.HashPassword(userDTO.Password, salt);
+
+            userDTO.Salt = salt;
+            //userDTO.Password = hash;
 
             await _userService.CreateUser(userDTO);
 
@@ -70,6 +78,38 @@ namespace CloneGitHub.Controllers {
             return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
         }
 
+        [HttpPost("login")]
+        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest) {
+            Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
+
+            if (loginRequest == null) {
+                return Ok(false);
+            }
+
+            var user = await _userService.GetUser(loginRequest.Username)
+                    ?? await _userService.GetUserByEmail(loginRequest.Username);
+
+            if (user == null) {
+                return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
+            }
+
+            //bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
+            bool passwordValid = user.Password == loginRequest.Password;
+
+            if (!passwordValid) {
+                return Ok("Неверный логин или пароль.");
+            }
+
+            Response.Cookies.Append("dotcom_user", user.UserName, new CookieOptions {
+                HttpOnly = false,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTimeOffset.UtcNow.AddDays(7)
+            });
+
+            return Ok(true);
+        }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id) {
             var user = await _userService.GetUser(id);
@@ -80,41 +120,6 @@ namespace CloneGitHub.Controllers {
 
             await _userService.DeleteUser(id);
             return Ok(user);
-        }
-
-
-        [HttpPost("login")]
-        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest) {
-            Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
-
-            if (loginRequest == null) {
-                return Ok(false);
-            }
-
-            var login = await _userService.GetUser(loginRequest.Username);
-            var email = await _userService.GetUserByEmail(loginRequest.Username);
-
-            if (login == null && email == null) {
-                return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
-            }
-
-            bool passwordValid = (login?.Password == loginRequest.Password) ||
-                                (email?.Password == loginRequest.Password);
-
-            if (!passwordValid) {
-                return Ok("Неверный логин или пароль.");
-            }
-
-            var userName = login?.UserName ?? email?.UserName;
-
-            Response.Cookies.Append("dotcom_user", userName, new CookieOptions {
-                HttpOnly = false,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTimeOffset.UtcNow.AddDays(7)
-            });
-
-            return Ok(true);
         }
 
 
@@ -177,9 +182,13 @@ namespace CloneGitHub.Controllers {
             if (user == null)
                 return NotFound("Пользователь с таким email не найден.");
 
-            // Замените на хеширование пароля
+            var salt = PasswordHasher.GenerateSalt();
+            var hash = PasswordHasher.HashPassword(request.NewPassword, salt);
+
+            user.Salt = salt;
+            //user.Password = hash;
             user.Password = request.NewPassword;
-            
+
             await _userService.UpdateUser(user);
 
             resetCodes.Remove(request.Email);

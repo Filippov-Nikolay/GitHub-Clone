@@ -1,4 +1,4 @@
-using CloneGitHub.BLL.DTO;
+﻿using CloneGitHub.BLL.DTO;
 using CloneGitHub.DAL.Entities;
 using CloneGitHub.DAL.Interfaces;
 using CloneGitHub.BLL.Infrastructure;
@@ -81,10 +81,6 @@ namespace CloneGitHub.BLL.Services {
 
         public async Task<IEnumerable<UserDTO>> GetAllUsers()
         {
-            // Проблема с автомаппером
-            //var users = await Database.Users.GetAllAsync(); 
-            //return mapper.Map<IEnumerable<UserDTO>>(users);
-
             var users = await Database.Users.GetAllAsync();
             return mapper.Map<IEnumerable<UserDTO>>(users);
         }

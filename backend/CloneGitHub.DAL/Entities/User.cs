@@ -9,6 +9,7 @@ namespace CloneGitHub.DAL.Entities
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public string? Salt { get; set; }
         public virtual UserDetails UserDetails { get; set; }
 
         public virtual ICollection<Repository> Repositories { get; set; } = new List<Repository>();
