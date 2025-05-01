@@ -12,6 +12,7 @@ import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchI
 import Projects from './components/Projects/Projects.js';
 import Packages from './components/Packages/Packages.js';
 import Stars from './components/Stars/Stars.js';
+import { Nav as HeaderUnAuthenticated } from '../../shared/Components/Nav/Nav';
 
 import Cookies from 'js-cookie';
 
@@ -131,11 +132,17 @@ export function Index() {
 
     return (
         <div className="profile">
+           {userName ? (
             <Header 
                 avatar={currentUserData?.avatar}     
                 name={currentUserData?.name || userName}
                 userName={currentUserData?.userName}
             />
+        ) : (
+            <>
+                <HeaderUnAuthenticated bgColor= "#161B22"/>
+            </>
+        )}
             <Nav profileUserName={urlUserName}/>
             <main className="main">
                 <div className="profile-container">

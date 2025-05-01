@@ -234,7 +234,7 @@ function MainContent() {
 export function Header() {
     return (
         <header className="header">
-            <Nav/>
+            <Nav theme="light"/>
             <HeaderContent/>
         </header>
     )

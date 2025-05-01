@@ -23,6 +23,7 @@ font-size: 14px;
   
   .nav-button:hover {
     color: #58a6ff;
+    background: #1a1f24;
   }
   
   .nav-button.active {
@@ -45,11 +46,14 @@ font-size: 14px;
     color: white;
     display: flex;
     align-items: center;
+    border-radius: 6px;
     gap: 8px;
     background: none;
     padding: 10px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
   }
+  
 
   .navigation-bar {
     display: flex;

@@ -15,7 +15,7 @@ function SignUp() {
         <a className="nav__btn nav__btn--border" href="/signup">Sign up</a>
     )
 }
-export function Nav({bgColor = "#ffffff00"}) {
+export function Nav({bgColor = "#ffffff00", theme = 'dark'}) {
     const [isModalVisible, setModalVisible] = useState(false);
     const handleButtonClick = () => {
         setModalVisible(!isModalVisible);
@@ -23,7 +23,7 @@ export function Nav({bgColor = "#ffffff00"}) {
 
     return (
         <>
-            <ModalWindowInput isActive={isModalVisible} setIsActive={setModalVisible} theme={'light'}/>
+            <ModalWindowInput isActive={isModalVisible} setIsActive={setModalVisible} theme={theme}/>
             <nav className="nav" style={{backgroundColor: bgColor}}>
                 <div className="nav__wrapper">
                     <div className="nav__sign-up-wrapper"><SignUp></SignUp></div>
