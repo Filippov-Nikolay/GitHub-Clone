@@ -1,5 +1,5 @@
 import axios from 'axios';
-import config from '../../../shared/config';
+import config from '../../../../../shared/config';
 
 export const ApiService = async ({ formData }) => {
    try {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 
 import HomePage from './pages/HomePage/Index';
@@ -11,7 +11,7 @@ import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 import RepositoryPage from './pages/RepositoryPage/Index';
 
-import Test from './pages/StarsPage/Index'
+import Test from './pages/ProfilePage/components/StarsPage/Index';
 
 const AppRouter = () => {
     const user = Cookies.get('dotcom_user');

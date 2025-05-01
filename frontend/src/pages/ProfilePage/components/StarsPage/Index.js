@@ -1,11 +1,11 @@
 import React from 'react';
  
-import Blankslate from "../../shared/Components/Blankslate/Blankslate";
-import BtnPrimary from "../../shared/Components/BtnPrimary/BtnPrimary";
-import Btn from "../../shared/Components/Btn/Btn";
-import BtnSearch from "../../shared/Components/BtnSearch/BtnSearch";
+import Blankslate from "../../../../shared/Components/Blankslate/Blankslate";
+import BtnPrimary from "../../../../shared/Components/BtnPrimary/BtnPrimary";
+import Btn from "../../../../shared/Components/Btn/Btn";
+import BtnSearch from "../../../../shared/Components/BtnSearch/BtnSearch";
 
-import { StarsSVG, SearchSVG } from '../../shared/assets/svg/SvgComponents';
+import { StarsSVG, SearchSVG } from '../../../../shared/assets/svg/SvgComponents';
 
 import './styles/main.css';
 

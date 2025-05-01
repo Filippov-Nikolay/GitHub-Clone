@@ -105,7 +105,9 @@ namespace CloneGitHub.Controllers {
                 return Ok("Неверный логин или пароль.");
             }
 
-            Response.Cookies.Append("dotcom_user", loginRequest.Username, new CookieOptions {
+            var userName = login?.UserName ?? email?.UserName;
+
+            Response.Cookies.Append("dotcom_user", userName, new CookieOptions {
                 HttpOnly = false,
                 Secure = true,
                 SameSite = SameSiteMode.None,
