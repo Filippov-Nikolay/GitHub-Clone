@@ -1,6 +1,6 @@
 import React, {} from "react";
 import useIntersectionObserver from "../../../hooks/AnimationHook/UseIntersectionObserver";
-import { ArrowSymbolMktg } from "../../../assets/svg/svgComponents";
+import { ArrowSymbolMktg } from "../../../../../shared/assets/svg/SvgComponents";
 
 export function SectionPromo({event, AccentText, text, buttonText, href = '#', question = 'Did you know?', title, subTitle, color, isSubButton = false, linkSubButton = '#', subButtonText}) {
     const elementsRef = useIntersectionObserver('element-show');

@@ -1,6 +1,6 @@
 import React, {} from "react";
 import { EventPath } from "../EventPath/EventPath";
-import { OcticonCode } from "../../assets/svg/svgComponents";
+import { OcticonCode } from "../../../../shared/assets/svg/SvgComponents";
 import { Form } from "../Form/Form";
 
 export function Globe() {

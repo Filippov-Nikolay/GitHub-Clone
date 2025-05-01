@@ -7,6 +7,7 @@ import {
 import Btn from "../../../../../../shared/Components/Btn/Btn";
 
 import './packages.css';
+import './adaptive.css'
 
 
 export default function Packages() {

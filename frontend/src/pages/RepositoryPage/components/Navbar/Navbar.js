@@ -3,7 +3,7 @@ import './Navbar.css';
 import './adaptive.css';
 
 import {
-  IssuesSVG, PullRequestsSVG, ActionsSvg, ProjectsSVG,  SecuritySVG, InsightsSVG, SettingsSVG
+  IssuesSVG, PullRequestsSVG, ActionsSvg, ProjectsSVG, SecuritySVG, InsightsSVG, SettingsSVG
 } from "../../../../shared/assets/svg/SvgComponents";
 
 

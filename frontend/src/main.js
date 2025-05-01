@@ -11,6 +11,7 @@ import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 import RepositoryPage from './pages/RepositoryPage/Index';
 import CreateRepository from './pages/CreateRepository/Index';
+import Test from './pages/StarsPage/Index';
 
 
 const AppRouter = () => {

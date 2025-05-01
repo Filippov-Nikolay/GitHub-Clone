@@ -11,7 +11,7 @@ import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu
 import DefaultAvatar from '../assets/img/avatar_account.png'
 
 
-export function BurgerMenu({ isOpen, onClose, position = 'left', avatar, name, userName }) {
+export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, name, userName }) {
   if (!isOpen) return null;
 
   const repositories = [

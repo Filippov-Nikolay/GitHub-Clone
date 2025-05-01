@@ -8,9 +8,10 @@ import { Overview } from './components/Overview/Overview';
 import { Footer } from '../../shared/Footer/Footer';
 import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
 
-import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
+import RepoSearchInitq from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
 import ProjectsPage from './components/ProjectsPage/Index.js';
 import PackagesPage from './components/PackagesPage/Index.js';
+import { Nav as HeaderUnAuthenticated } from '../../shared/Components/Nav/Nav';
 
 import Cookies from 'js-cookie';
 
@@ -103,16 +104,20 @@ export function Index() {
     };
     
 
-    if (loading || !currentUserData) {
+    if (loading) {
         return <div>Loading...</div>;
     }
+    
+    if (!profileData) {
+        return <div>Профиль не найден</div>; // или редирект, или 404
+    }
 
-    const isOwnProfile = userName === urlUserName;
+    const isOwnProfile = currentUserData && userName === urlUserName;
 
     const renderTabContent = () => {
         switch (tab) {
             case 'repositories':
-                return <RepoSearchInit/>;
+                return <RepoSearchInitq/>;
             case 'projects':
                 return <ProjectsPage/>;
             case 'packages':
@@ -124,18 +129,24 @@ export function Index() {
 
     return (
         <div className="profile">
+           {userName ? (
             <Header 
-                avatar={currentUserData.avatar}     
+                avatar={currentUserData?.avatar}     
                 name={currentUserData?.name || userName}
-                userName={currentUserData.userName}
+                userName={currentUserData?.userName}
             />
+        ) : (
+            <>
+                <HeaderUnAuthenticated bgColor= "#161B22"/>
+            </>
+        )}
             <Nav profileUserName={urlUserName}/>
             <main className="main">
                 <div className="profile-container">
                     <div className="profile-content">
                         {isEditing
                             ? <EditAside initialData={currentUserData} onSave={handleSave} onCancel={handleCancel} />
-                            : <Aside data={profileData} onEdit={handleEdit} isOwnProfile={isOwnProfile} />}
+                            : <Aside data={profileData} onEdit={handleEdit? handleEdit : null} isOwnProfile={isOwnProfile} isAuthenticated={!!userName}/>}
                         <div className='profile-content__container'>
                             {renderTabContent()}
                         </div>

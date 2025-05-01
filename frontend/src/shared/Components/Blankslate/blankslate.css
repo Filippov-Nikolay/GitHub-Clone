@@ -2,6 +2,7 @@
     padding: 48px;
 
     max-width: 890px;
+    width: 100%;
 
     color: #fff;
 
@@ -24,12 +25,14 @@
 .blankslate__title {
     margin-bottom: 10px;
 
+    text-align: center;
     font-size: 20px;
     color: #f0f6fc;
 }
 .blankslate__description {
     margin-bottom: 20px;
 
+    text-align: center;
     font-size: 16px;
     color: #9198a1;
 }

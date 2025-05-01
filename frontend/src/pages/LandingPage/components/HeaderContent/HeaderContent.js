@@ -3,7 +3,7 @@ import React from "react";
 import { Form } from "../Form/Form";
 import { OurPartners } from "../OurPartners/OurPartners";
 import { EventPath } from "../EventPath/EventPath";
-import { OcticonCode } from '../../assets/svg/svgComponents'
+import { OcticonCode } from '../../../../shared/assets/svg/SvgComponents'
 import logoNLO from '../../assets/img/header_element_nlo.png' 
 
 export function HeaderContent() {

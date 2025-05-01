@@ -2,7 +2,7 @@ import React, {} from "react";
 import { 
     LogoGithub, LogoTwitter, LogoFacebook, 
     LogoLinkedIn, LogoYouTube, LogoTwitch, LogoTikTok, LogoGitHub
-} from '../../assets/svg/svgComponents'
+} from '../../../../shared/assets/svg/SvgComponents'
 
 export function Footer() {
     const footerList = [

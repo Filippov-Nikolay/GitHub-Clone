@@ -1,7 +1,7 @@
 import React from "react";
 import { 
     OcticonCode, ArrowSymbolMktg, OcticonBriefcase
-} from '../../assets/svg/svgComponents'
+} from '../../../../shared/assets/svg/SvgComponents'
 import { EventPath } from "../EventPath/EventPath";
 import { SectionHeader } from "../Section/SectionHeader/SectionHeader";
 import { SectionMain } from "../Section/SectionMain/SectionMain";

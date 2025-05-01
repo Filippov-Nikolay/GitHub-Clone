@@ -80,7 +80,7 @@ h3:hover{
 }
 
 
-a {
+.gh-sidebar-section__link {
     text-decoration: underline;
     color: rgb(68, 147, 248);
     font-size: 12px;

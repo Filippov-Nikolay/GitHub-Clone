@@ -1,0 +1,27 @@
+.stars-page {
+    max-width: 890px;
+}
+.stars-page__header {
+    margin-bottom: 15px;
+}
+.stars-page__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stars-page__btn {
+}
+.stars-page__btn:first-child {
+    margin-right: 5px;
+}
+.stars-page__title {
+    color: #f0f6fc;
+    font-size: 16px;
+    font-weight: 300;
+}
+.stars-page__span {
+    color: #9198a1;
+}
+.stars-page__body {
+    margin-top: 32px;
+}
