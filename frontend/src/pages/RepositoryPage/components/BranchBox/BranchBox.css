@@ -31,6 +31,7 @@
 .btn-without-border {
     display: flex;
     align-items: center;
+    border-radius: 6px;
     padding: 5px 10px;
     font-size: 16px;
     color: white;
@@ -38,6 +39,15 @@
     background: none;
     gap: 5px;
     position: relative;
+}
+
+.btn-without-border:hover{
+    background-color: #1a1f24;
+}
+
+
+.container-btn-branch:hover{
+    background-color: #1a1f24;
 }
 
 .nav__btn-wrapper {
@@ -88,8 +98,11 @@
 
 .code-btn {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    background-color: rgb(55, 108, 2);
+    background-color: rgb(41, 144, 59);
     border-radius: 6px;
+}
+.code-btn:hover{
+    background-color: rgb(45, 170, 63);
 }
 
 .left-side {

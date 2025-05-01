@@ -90,9 +90,26 @@
   height: 100%;
   border-color: rgb(61, 68, 77);
 }
+
+.copilot-btn:hover{
+  background: #1a1f24;
+}
+
+.add-btn:hover{
+  background: #1a1f24;
+}
+
+.issue-btn:hover{
+  background: #1a1f24;
+}
+.pull-requests-btn:hover{
+  background: #1a1f24;
+}
+.notifications-btn:hover{
+  background: #1a1f24;
+}
 .arrow-btn {
   color: white;
-  
 }
 
 .hr-btn {

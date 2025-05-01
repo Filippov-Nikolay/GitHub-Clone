@@ -11,9 +11,7 @@ const RepositorySidebar = () => {
                     <div className="about-txt">
                 <h3>About</h3>
                     </div>
-                    <div>
-                <SettingsSVG/>
-                    </div>
+                  
                 </div>
                 <p className="descr">No description, website, or topics provided.</p>
                 <ul className="gh-about-stats">
