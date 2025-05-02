@@ -11,10 +11,6 @@
 }
 
 @media screen and (max-width: 991px) {
-    
-}
-
-@media screen and (max-width: 767px) {
     .stars__content {
         flex-direction: column;
         align-items: flex-start;
@@ -26,5 +22,11 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+}
+
 @media screen and (max-width: 575px) {
+    .stars__wrapper {
+        flex-wrap: wrap;
+    }
 }

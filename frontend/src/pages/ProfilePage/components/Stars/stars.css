@@ -8,11 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
 }
 .stars__content {
 }
 .stars__btn:last-child {
-    margin-left: 5px;
 }
 .stars__title {
     color: #f0f6fc;
