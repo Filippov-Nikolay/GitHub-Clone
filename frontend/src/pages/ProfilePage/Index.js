@@ -6,7 +6,7 @@ import { Aside } from '../../shared/Aside/Aside';
 import { EditAside } from '../../shared/EditAside/EditAside';
 import { Overview } from './components/Overview/Overview';
 import { Footer } from '../../shared/Footer/Footer';
-import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
+import { getProfileByName, getProfile, saveProfile, uploadAvatar, Test } from './services/profileApi';
 
 import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchInit.js'
 import Projects from './components/Projects/Projects.js';
@@ -31,6 +31,8 @@ export function Index() {
 
     // Загружаем профиль, который отображается по URL
     useEffect(() => {
+        Test(); // TEST
+
         const searchParams = new URLSearchParams(location.search);
         setTab(searchParams.get('tab') || 'overview');
 

@@ -1,6 +1,20 @@
 import axios from 'axios';
 import config from '../../../shared/config';
 
+// TEST
+export const Test = () => {
+    console.log("run test");
+    return axios.get(`${config.API_BASE_BACKEND}/api/edit/info`, {
+        withCredentials: true
+    }).then(response => {
+        console.log("TEST RESPONSE", JSON.stringify(response.data, null, 2));
+        console.log(`${response.data.userId}`);
+    }).catch(error => {
+        console.log(`TEST ERROR ${error}`);
+    });
+};
+
+
 export const getProfile = () => {
     return axios.get(`${config.API_BASE_BACKEND}/api/edit/getProfile`, {
         withCredentials: true
