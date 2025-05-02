@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using CloneGitHub.Models;
 using MimeKit;
 using CloneGitHub.DAL.Entities;
+using System.Security.Claims;
 
 namespace CloneGitHub.Controllers {
     [ApiController]
     [Route("api/[controller]")]
     public class UserController :Controller {
         private readonly IUserService _userService;
+        private readonly JwtTokenGenerator _jwtTokenGenerator;
         private static readonly Dictionary<string, string> resetCodes = new();
 
-        public UserController(IUserService userService) {
+        public UserController(IUserService userService, JwtTokenGenerator jwtTokenGenerator) {
             _userService = userService;
+            _jwtTokenGenerator = jwtTokenGenerator;
         }
 
 
@@ -68,12 +71,11 @@ namespace CloneGitHub.Controllers {
 
             await _userService.CreateUser(userDTO);
 
-            Response.Cookies.Append("dotcom_user", userDTO.UserName, new CookieOptions {
-                HttpOnly = false,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTimeOffset.UtcNow.AddDays(7)
-            });
+            var createdUser = await _userService.GetUser(userDTO.UserName);
+
+            // Генерируем JWT токен
+            var token = _jwtTokenGenerator.GenerateToken(createdUser);
+            SetAuthCookies(userDTO, token);
 
             return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
         }
@@ -106,6 +108,10 @@ namespace CloneGitHub.Controllers {
                 SameSite = SameSiteMode.None,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             });
+
+            // Генерируем JWT токен
+            var token = _jwtTokenGenerator.GenerateToken(user);
+            SetAuthCookies(user, token);
 
             return Ok(true);
         }
@@ -232,5 +238,26 @@ namespace CloneGitHub.Controllers {
             }
             await client.DisconnectAsync(true);
         }
+
+
+        private void SetAuthCookies(UserDTO userDTO, string token) {
+            var userCookieOptions = new CookieOptions {
+                HttpOnly = false,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTimeOffset.UtcNow.AddDays(7)
+            };
+
+            var tokenCookieOptions = new CookieOptions {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Expires = DateTimeOffset.UtcNow.AddDays(7)
+            };
+
+            Response.Cookies.Append("dotcom_user", userDTO.UserName, userCookieOptions);
+            Response.Cookies.Append("user_session", token, tokenCookieOptions);
+        }
+
     }
 }

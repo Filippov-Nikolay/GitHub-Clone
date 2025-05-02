@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CloneGitHub.BLL.DTO;
 using CloneGitHub.BLL.Interfaces;
+using CloneGitHub.BLL.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CloneGitHub.Controllers
 {
@@ -43,6 +45,27 @@ namespace CloneGitHub.Controllers
 
             return Ok(profile);
         }
+
+
+
+        // TEST
+        [Authorize] // Обязателен для проверки, есть ли у пользователя токен
+        [HttpGet("info")]
+        public async Task<ActionResult<UserDTO>> GetCurrentUser() {
+            Console.WriteLine("TEST");
+
+            var userName = User.Identity?.Name;
+            Console.WriteLine($"\nTEST: {userName}");
+            if (string.IsNullOrEmpty(userName))
+                return Unauthorized();
+
+            var user = await _editService.GetProfileAsync(userName);
+            if (user == null)
+                return NotFound();
+
+            return Ok(user);
+        }
+
 
 
         [HttpPost("saveProfile")]
