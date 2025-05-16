@@ -1,0 +1,35 @@
+:root {
+    --borderColor-default: #3d444d;
+}
+
+.btn-only-star {
+    max-width: fit-content;
+
+    background-color: #212830;
+    
+    border: 1px solid var(--borderColor-default);
+    border-radius: 6px;
+    
+    overflow: hidden;
+}
+.btn-only-star__wrapper {
+    display: flex;
+}
+.btn-only-star__btn {
+    display: flex;
+    align-items: center;
+
+    transition: all .5 ease;
+}
+.btn-only-star__btn:first-child {
+    padding: 6px 12px;
+
+    border-right: 1px solid var(--borderColor-default);
+}
+.btn-only-star__btn svg {
+    fill: #9198a1;
+}
+.btn-only-star__btn:hover {
+    background-color: #262c36;
+    border-color: #3d444d;
+}

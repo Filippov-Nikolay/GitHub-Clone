@@ -1,0 +1,52 @@
+.recommendedUsers {
+    padding: 20px 0px;
+    background-color: #010409;
+    margin-bottom: 20px;
+}
+
+.recommendedUsers__title {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #8B949E;
+}
+
+.recommendedUsers__list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.recommendedUsers__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.recommendedUsers__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.recommendedUsers__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendedUsers__name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.recommendedUsers__description {
+    font-size: 14px;
+    color: #666;
+}
+
+@media screen and (max-width: 375px) {
+    .recommendedUsers__list{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

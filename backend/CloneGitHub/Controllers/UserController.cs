@@ -102,13 +102,6 @@ namespace CloneGitHub.Controllers {
                 return Ok("Неверный логин или пароль.");
             }
 
-            Response.Cookies.Append("dotcom_user", user.UserName, new CookieOptions {
-                HttpOnly = false,
-                Secure = true,
-                SameSite = SameSiteMode.None,
-                Expires = DateTimeOffset.UtcNow.AddDays(7)
-            });
-
             // Генерируем JWT токен
             var token = _jwtTokenGenerator.GenerateToken(user);
             SetAuthCookies(user, token);
@@ -241,6 +234,9 @@ namespace CloneGitHub.Controllers {
 
 
         private void SetAuthCookies(UserDTO userDTO, string token) {
+            const bool HTTP_ONLY = false;
+            const bool SECURE = false;
+
             var userCookieOptions = new CookieOptions {
                 HttpOnly = false,
                 Secure = true,

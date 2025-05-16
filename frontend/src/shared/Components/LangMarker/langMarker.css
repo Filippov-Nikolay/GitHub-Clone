@@ -1,0 +1,14 @@
+.lang-marker {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.lang-marker__color-lang {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.lang-marker__name-lang {
+    color: #9198a1;
+    font-size: 12px;
+}

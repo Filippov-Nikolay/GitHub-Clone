@@ -5,8 +5,8 @@
     padding-top: 2rem;
     padding-bottom: 1.5rem;
     font-size: 12px;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .profile-footer__container {
@@ -49,6 +49,9 @@
 }
 
 .profile-footer__link{
+    color: #9198a1;
+}
+.profile-footer__link:hover {
     color: #58A6FF;
 }
 

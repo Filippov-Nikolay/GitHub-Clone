@@ -1,0 +1,14 @@
+.repositoryList {
+    padding: 20px 0px;
+}
+
+.repositoryList__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repositoryList__forked {
+    display:flex;
+    align-items: center;
+    margin-bottom: 10px;
+}

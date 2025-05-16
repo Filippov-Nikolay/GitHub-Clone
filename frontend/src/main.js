@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 
-import HomePage from './pages/HomePage/Index';
+import DashboardPage from './pages/DashboardPage/Index';
 import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
 
@@ -23,8 +23,9 @@ const AppRouter = () => {
             user ? (
                // Приватные маршруты
                <>
-                <Route path="/" element={<HomePage/>} />
+                <Route path="/" element={<DashboardPage/>} />
                 <Route path="/:urlUserName" element={<ProfilePage />}/>
+                <Route path="/CreateRepository" element={<CreateRepository />} />
                </>
             ) : (
               // Публичные маршруты
@@ -36,7 +37,6 @@ const AppRouter = () => {
                 <Route path="/signup" element={<SignupPage />} />
 
                 <Route path="/RepositoryPage" element={<RepositoryPage />} />
-                <Route path="/CreateRepository" element={<CreateRepository />} />
               </>
             )
           }

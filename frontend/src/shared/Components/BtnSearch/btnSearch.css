@@ -1,7 +1,7 @@
 .btn-search {
     display: flex;
     align-items: center;
-    gap: 150px;
+    /* gap: 150px; */
 
     padding: 5px 10px;
     
@@ -25,6 +25,8 @@
     align-items: center;
 }
 .btn-search__span {
+    margin-left: auto;
+
     max-width: 20px;
     max-height: 20px;
 }

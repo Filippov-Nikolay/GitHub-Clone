@@ -1,0 +1,120 @@
+:root {
+    --timeline-color: #3d444d; 
+    --color-default-text: #f0f6fc;
+}
+
+.latest-changes-list__item {
+    display: flex;
+}
+.latest-changes-list__timeline {
+    position: relative;
+
+    margin-right: 16px;
+}
+.latest-changes-list__marker {
+    width: 8px;
+    height: 8px;
+
+    background-color: var(--timeline-color);
+    
+    border: 2px solid var(--timeline-color);
+    border-radius: 50%;
+}
+.latest-changes-list__marker::after {
+    content: '';
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 100%;
+    width: 1px;
+
+    background-color: var(--timeline-color);
+}
+.latest-changes-list__marker--transparent {
+    background-color: transparent;
+    border-color: transparent;
+}
+.latest-changes-list__content {
+    padding-bottom: 16px;
+}
+.latest-changes-list__date {
+    margin-bottom: 3px;
+
+    color: #9198a1;
+    font-size: 12px;
+}
+.latest-changes-list__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-default-text);
+}
+
+
+.latest-changes {
+    padding: 20px;
+    
+    max-width: 360px;
+
+    background-color: #010409;
+    border-radius: 8px;
+    color: #ffffff;
+
+    border: 1px solid #3d444d;;
+}
+
+.latest-changes__title {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.latest-changes__list {
+    position: relative;
+}
+
+.latest-changes__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.latest-changes__marker {
+    width: 10px;
+    height: 10px;
+    background-color: #1c1c1c;
+    border: 2px solid #21262D;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+}
+
+.latest-changes__item::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 16px;
+    bottom: 0;
+    width: 2px;
+    background-color: #21262D;
+}
+
+.latest-changes__item:last-child::before {
+    height: 10px;
+}
+
+.latest-changes__content {
+    flex: 1;
+}
+
+.latest-changes__link {
+    color: #9198a1;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.latest-changes__link:hover {
+    color: #007bff;
+
+    text-decoration: underline;
+}

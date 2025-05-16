@@ -1,0 +1,19 @@
+.repo-owner-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.repo-owner-link__img-wrapper {
+    max-width: 20px;
+    max-height: 20px;
+
+    border-radius: 50%;
+    overflow: hidden;
+}
+.repo-owner-link__link {
+    font-size: 14px;
+    color: #f0f6fc;
+}
+.repo-owner-link__link:hover .repo-owner-link__text {
+    color: #4493f8;
+}

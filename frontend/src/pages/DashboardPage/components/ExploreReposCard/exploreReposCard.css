@@ -1,0 +1,92 @@
+.explore-repositories {
+    padding: 16px;
+
+    background-color: #0d1117;
+    border: 1px solid #3d444d;
+    border-radius: 6px;
+}
+.explore-repositories__title {
+    color: #f0f6fc;
+    font-size: 14px;
+    font-weight: 600;
+}
+.explore-repositories-list {
+}
+.explore-repositories-list__item {
+    padding: 16px 0px;
+}
+.explore-repositories-list__item:not(:last-child) {
+    border-bottom: 1px solid #3d444d;
+}
+.explore-repositories-list__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.explore-repositories-list__repo-owner-link {
+}
+.explore-repositories-list__img-wrapper {
+}
+.explore-repositories-list__img {
+}
+.explore-repositories-list__link {
+}
+.explore-repositories-list__text {
+    margin: 14px 0px;
+
+    color: #9198a1;
+    font-size: 12px;
+}
+.explore-repositories-list__statistics {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.explore-repositories-list__stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.explore-repositories-list__value {
+    color: #9198a1;
+    font-size: 12px;
+}
+.explore-repositories__link {
+    color: #4493f8;
+    font-size: 14px;
+}
+.explore-repositories__link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* OLD STYLE */
+.explore-repositories {
+    padding-top: 20px;
+    color: #fff;
+}
+
+.explore-repositories__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.explore-repositories__link {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.explore-repositories__link:hover {
+    text-decoration: underline;
+}

@@ -2,13 +2,20 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    padding-bottom: 32px;
 }
 .app-link {
+    padding: 5px 10px;
+
     color: #FFFFFF;
     text-decoration: none;
+
+    border-radius: 5px;
+
+    transition: all .5 ease;
 }
 .app-link:hover {
-    text-decoration: underline;
+    background-color: #656c7633;
 }
 .profile-picture {
     border-radius: 50%;
@@ -18,7 +25,7 @@
 }
 
 .username {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
 }
 @media screen and (max-width: 1120px)

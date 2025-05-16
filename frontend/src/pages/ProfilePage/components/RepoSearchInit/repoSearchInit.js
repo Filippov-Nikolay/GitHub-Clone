@@ -1,5 +1,5 @@
 import React from 'react';
-import RepositorySearch from '../../../HomePage/components/RepoSearch/RepoSearch'
+import RepositorySearch from '../../../DashboardPage/components/RepoSearch/RepoSearch'
 import './repoSearchInit.css';
 import Avatar1 from "../../../../shared/assets/img/Image_repo.png"
 

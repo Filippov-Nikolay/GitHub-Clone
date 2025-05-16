@@ -1,0 +1,25 @@
+.repository-search {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.repository-list {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width: 1120px) {
+    .repository-search {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .repository-search {
+        padding: 10px;
+    }
+
+    .repository-list {
+        padding: 0;
+    }
+}

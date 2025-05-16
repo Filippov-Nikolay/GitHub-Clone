@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu.js';
-import '../../shared/Header/header.css';
+import style from '../../shared/Header/header.module.css';
 import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from '../assets/svg/SvgComponents';
 import DefaultAvatar from '../assets/img/avatar_account.png'
+import BtnSearch from '../Components/BtnSearch/BtnSearch.js';
+import { ModalWindowInput } from '../Components/ModalWindowInput/ModalWindowInput';
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -72,71 +74,60 @@ export function Header({ avatar, name, userName }) {
     ['Pull requests', 'Issues', 'Codespaces', 'Marketplace', 'Explore']
   ), []);
 
+    const [isModalVisible, setModalVisible] = useState(false);
+    const handleButtonClick = () => {
+        setModalVisible(!isModalVisible);
+    };
+
   return (
-    <header className='profile-header'>
-      <div className='profile-header__wrapper'>
-      <div className='profile-header__logo-group'>
-        <button className='profile-header__dots' onClick={() => setIsLeftMenuOpen((prev) => !prev)}>
-          <DotsSvg />
-        </button>
-        <div className='profile-header__logo'>
-          <a href='#'><LogoSVG /></a>
-        </div>
-      </div>
-        <div className='profile-header__search-wrapper'>
-          <button className='profile-btn-input'>
-            <div className='profile-btn-wrapper'>
-              <span className='profile-btn-span profile-btn-span--search'><SearchSvg /></span>
-              <span className='profile-btn-text'>Search or jump to...</span>
+    <header className={style["profile"]}>
+        <ModalWindowInput isActive={isModalVisible} setIsActive={setModalVisible} theme={'dark'}/>
+        <div className={style["profile__wrapper"]}>
+            <div className={style["profile__item"]}>
+                <button className={style["burger"]} onClick={() => setIsLeftMenuOpen((prev) => !prev)}><div className={style["burger__svg"]}><DotsSvg/></div></button>
+                <div className={style["logo"]}><a className={style["logo__link"]} href='/'><div className={style["logo__svg"]}><LogoSVG/></div><h2 className={style["logo__title"]}>Dashboard</h2></a></div>
             </div>
-            <span className='profile-btn-span'><PathSvg /></span>
-          </button>
-          <button className='profile-btn__search'><SearchSVG /></button>
+            <div className={style["profile__item"]}>
+                <BtnSearch
+                    btnClick={handleButtonClick}
+                    svgComponent={<SearchSvg></SearchSvg>}
+                    btnText={'Type / to search'}
+                    additionalSvgComponent={<PathSvg></PathSvg>}
+                />
+
+                <ul className={style['profile-content__wrapper']}>
+                    <li className={style['profile-content__item']}>
+                        <button onClick={toggleNotifications} className={style['notification-btn']}>
+                            <NotificationSVG style={{ fill: unreadCount > 0 ? 'red' : 'inherit' }} />
+                            {unreadCount > 0 && <span className={style['notification-count']}>{unreadCount}</span>}
+                        </button>
+
+                        {showNotifications && (
+                        <div className={style['notifications-dropdown']} ref={dropdownRef}>
+                            {notifications.length > 0 ? (
+                            <>
+                                <ul className={style['notifications-list']}>
+                                {notifications.map((notification, index) => (
+                                    <li key={index} className={style['notification-item']}>{notification}</li>
+                                ))}
+                                </ul>
+                                <button className={style['all-notifications-btn']} onClick={markAllAsRead}>It has been read</button>
+                            </>
+                            ) : (
+                            <div className={style['empty-notifications']}>There are no notifications right now</div>
+                            )}
+                        </div>
+                        )}
+                    </li>
+                    <li className={style['profile-content__item']} onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
+                        <button className={style['profile-content__btn']}><img className={style['profile-content__logo']}  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></button>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div className='profile-header__content'>
-          <ul className='profile-content__wrapper'>
-            {headerLinks.map((text) => (
-              <li key={text} className='profile-content__item'>
-                <a className='profile-content__item-link' href='#'>{text}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
 
-      <div className='profile-header__items'>
-        <ul className='profile-content__wrapper'>
-          <li className='profile-content__item'>
-            <button onClick={toggleNotifications} className='notification-btn'>
-              <NotificationSVG style={{ fill: unreadCount > 0 ? 'red' : 'inherit' }} />
-              {unreadCount > 0 && <span className='notification-count'>{unreadCount}</span>}
-            </button>
-
-            {showNotifications && (
-              <div className='notifications-dropdown' ref={dropdownRef}>
-                {notifications.length > 0 ? (
-                  <>
-                    <ul className='notifications-list'>
-                      {notifications.map((notification, index) => (
-                        <li key={index} className='notification-item'>{notification}</li>
-                      ))}
-                    </ul>
-                    <button className='all-notifications-btn' onClick={markAllAsRead}>It has been read</button>
-                  </>
-                ) : (
-                  <div className='empty-notifications'>There are no notifications right now</div>
-                )}
-              </div>
-            )}
-          </li>
-          <li className='profile-content__item' onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
-            <button><img className='profile-content__logo'  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></button>
-          </li>
-        </ul>
-      </div>
-
-      <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} name={name} userName={userName}/>
-      <BurgerMenu position='left' isOpen={isLeftMenuOpen} onClose={() => setIsLeftMenuOpen(false)} avatar={avatar} />
+        <BurgerMenu position='right' isOpen={isRightMenuOpen} onClose={() => setIsRightMenuOpen(false)} avatar={avatar} name={name} userName={userName}/>
+        <BurgerMenu position='left' isOpen={isLeftMenuOpen} onClose={() => setIsLeftMenuOpen(false)} avatar={avatar} />
     </header>
   );
 }
