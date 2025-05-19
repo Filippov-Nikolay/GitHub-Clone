@@ -25,6 +25,7 @@ namespace CloneGitHub.BLL.Services
                 {
                     Id = repository.Id,
                     UserId = repository.UserId,
+                    Name = repository.Name,
                     Description = repository.Description,
                     IsPrivate = repository.IsPrivate,
                     IsPinned = repository.IsPinned
@@ -37,6 +38,7 @@ namespace CloneGitHub.BLL.Services
             if(repositoryDTO != null) {
                 return new Repository {
                     Id = repositoryDTO.Id,
+                    UserId = repositoryDTO.UserId,
                     Name = repositoryDTO.Name,
                     Description = repositoryDTO.Description,
                     IsPrivate = repositoryDTO.IsPrivate,
@@ -87,5 +89,10 @@ namespace CloneGitHub.BLL.Services
             var repositories = await Database.Repositories.GetAllAsync(); 
             return mapper.Map<IEnumerable<RepositoryDTO>>(repositories);
         }
+
+
+
+
+
     }
 }
