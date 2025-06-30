@@ -39,3 +39,19 @@
     max-width: 15px;
     max-height: 15px;
 }
+
+@media screen and (max-width: 540px) {
+    .btn-search {
+        min-width: fit-content;
+    }
+    .btn-search__text {
+        display: none;
+    }
+    .btn-search__span {
+        display: none;
+    }
+    .btn-search__span--search {
+        display: block;
+        margin: 0;
+    }
+}

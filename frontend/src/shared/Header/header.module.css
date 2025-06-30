@@ -51,6 +51,9 @@
 .logo__title {
     color: #F0F6FC;
     font-size: 14px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .profile-content__btn {
@@ -268,52 +271,53 @@
 }
 
 .empty-notifications {
-  text-align: center;
-  color: #ccc;
-  margin-top: 1rem;
-  font-size: 14px;
+    text-align: center;
+    color: #ccc;
+    margin-top: 1rem;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 1120px) {
-  .profile-btn-input {
-      display: none;
-  }
+    .profile-btn-input {
+        display: none;
+    }
 
-  .profile-btn__search {
-      display: block;
-  }
+    .profile-btn__search {
+        display: block;
+    }
 
-  .profile-content__item-link {
-      font-size: 12px;
-  }
+    .profile-content__item-link {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .profile-header__content {
-      display: none;
-  }
+    .profile-header__content {
+        display: none;
+    }
 
-  .profile-btn-input {
+    .profile-btn-input {
     display: flex;
     width: 100%;
     font-size: 12px;
-  }
+    }
 
-  .profile-btn__search {
-      display: none;
-  }
+    .profile-btn__search {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 553px) {
+    .profile-btn-input {
+        display: none;
+    }
 
-
-  .profile-btn-input {
-    display: none;
-
-  }
-
-  .profile-btn__search {
-      display: block;
-  }
+    .profile-btn__search {
+        display: block;
+    }
 }
-
+@media screen and (max-width: 375px) {
+    .logo__title {
+        width: 30px; 
+    }
+}
