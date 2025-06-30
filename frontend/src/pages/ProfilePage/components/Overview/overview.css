@@ -135,7 +135,7 @@
 
   @media (max-width: 1185px) {
     .article{
-      min-width: 825px;
+      /* min-width: 825px; */
   }
   
   }
