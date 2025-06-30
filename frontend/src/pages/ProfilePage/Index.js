@@ -12,6 +12,7 @@ import RepoSearchInit from '../ProfilePage/components/RepoSearchInit/repoSearchI
 import Projects from './components/Projects/Projects.js';
 import Packages from './components/Packages/Packages.js';
 import Stars from './components/Stars/Stars.js';
+import Following from '../../shared/Components/Following/Following.js';
 import { Nav as HeaderUnAuthenticated } from '../../shared/Components/Nav/Nav';
 
 import Cookies from 'js-cookie';
@@ -120,15 +121,18 @@ export function Index() {
     const renderTabContent = () => {
         switch (tab) {
             case 'repositories':
-                return <RepoSearchInit/>;
+                return <RepoSearchInit />;
             case 'projects':
-                return <Projects/>;
+                return <Projects />;
             case 'packages':
-                return <Packages/>;
+                return <Packages />;
             case 'stars':
-                return <Stars/>;
+                return <Stars />;
+            case 'followers':
+            case 'following':
+                return <Following />;
             default:
-                return <Overview/>;
+                return <Overview />;
         }
     };
 
@@ -139,6 +143,7 @@ export function Index() {
                 avatar={currentUserData?.avatar}     
                 name={currentUserData?.name || userName}
                 userName={currentUserData?.userName}
+                pageUserName={urlUserName}
             />
         ) : (
             <>

@@ -78,6 +78,16 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
         }
     }
 
+    const handleFollowersClick = (e) => {
+        e.preventDefault();
+        navigate(`/${data.userName}?tab=followers`);
+    };
+
+    const handleFollowingClick = (e) => {
+        e.preventDefault();
+        navigate(`/${data.userName}?tab=following`);
+    };
+
     const renderSocialLink = (socialLink) => {
         const { linkName, icon, url } = extractSocialData(socialLink);
         let IconComponent;
@@ -138,10 +148,10 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
                         <button className='profile-aside__btn-edit' onClick={handleFollowClick}>Follow</button> 
                     )}
                     <div className='profile-aside__content-wrapper'>
-                        <a href='#' className='profile-aside__links'>
+                        <a href={`/${data.userName}?tab=followers`} onClick={handleFollowersClick} className='profile-aside__links'>
                             <FollowersSVG /><span className='profile-aside__links-follow'> 12</span> followers
                         </a>
-                        <a href='#' className='profile-aside__links'>
+                        <a href={`/${data.userName}?tab=following`} onClick={handleFollowingClick} className='profile-aside__links'>
                             <span className='profile-aside__links-follow'>3</span> following
                         </a>
                     </div>

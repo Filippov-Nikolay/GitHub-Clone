@@ -288,7 +288,7 @@ namespace CloneGitHub.Controllers
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            // Удаляем куки, установленные при логине
+
             Response.Cookies.Delete("dotcom_user", new CookieOptions
             {
                 SameSite = SameSiteMode.None,
@@ -303,6 +303,23 @@ namespace CloneGitHub.Controllers
 
             return Ok(new { message = "Выход выполнен успешно" });
         }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchUsers([FromQuery] string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                return BadRequest("Query is empty");
+
+            var users = await _userService.GetAllUsers();
+            var result = users
+                .Where(u => u.UserName.Contains(query, StringComparison.OrdinalIgnoreCase))
+                .Select(u => new {
+                    u.UserName
+                });
+
+            return Ok(result);
+        }
+
 
     }
 }

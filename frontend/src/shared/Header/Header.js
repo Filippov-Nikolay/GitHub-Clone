@@ -5,6 +5,7 @@ import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from
 import DefaultAvatar from '../assets/img/avatar_account.png'
 import BtnSearch from '../Components/BtnSearch/BtnSearch.js';
 import { ModalWindowInput } from '../Components/ModalWindowInput/ModalWindowInput';
+import { useLocation } from 'react-router-dom';
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -34,7 +35,7 @@ const initialNotifications = [
   'Explore our new feature: [Feature Name].'
 ];
 
-export function Header({ avatar, name, userName }) {
+export function Header({ avatar, name, userName, pageUserName }) {
 
   
   const [notifications, setNotifications] = useState(() => getRandomSubset(initialNotifications));
@@ -54,6 +55,11 @@ export function Header({ avatar, name, userName }) {
     setNotifications([]);
     setShowNotifications(false);
   }, []);
+
+  const location = useLocation();
+
+  const isDashboard = location.pathname === '/';
+  const headerTitle = isDashboard ? 'Dashboard' : pageUserName || userName || '';
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -85,7 +91,7 @@ export function Header({ avatar, name, userName }) {
         <div className={style["profile__wrapper"]}>
             <div className={style["profile__item"]}>
                 <button className={style["burger"]} onClick={() => setIsLeftMenuOpen((prev) => !prev)}><div className={style["burger__svg"]}><DotsSvg/></div></button>
-                <div className={style["logo"]}><a className={style["logo__link"]} href='/'><div className={style["logo__svg"]}><LogoSVG/></div><h2 className={style["logo__title"]}>Dashboard</h2></a></div>
+                <div className={style["logo"]}><a className={style["logo__link"]} href='/'><div className={style["logo__svg"]}><LogoSVG/></div><h2 className={style["logo__title"]}>{headerTitle}</h2></a></div>
             </div>
             <div className={style["profile__item"]}>
                 <BtnSearch
