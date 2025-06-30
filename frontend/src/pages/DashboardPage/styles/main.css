@@ -1,4 +1,3 @@
-
 *{
     box-sizing: border-box;
 }
@@ -16,7 +15,9 @@
     display: flex;
     font-weight: 13;
     flex-direction: column;
+
     width: 100%;
+    height: 100vh;
 
     background-color: #010409;
 }
@@ -67,7 +68,7 @@
 
     max-width: 840px;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #010409;
     color: #fff;
 }
