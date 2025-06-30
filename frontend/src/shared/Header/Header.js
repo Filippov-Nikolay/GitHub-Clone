@@ -120,7 +120,8 @@ export function Header({ avatar, name, userName }) {
                         )}
                     </li>
                     <li className={style['profile-content__item']} onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
-                        <button className={style['profile-content__btn']}><img className={style['profile-content__logo']}  src={avatar ? avatar : DefaultAvatar} alt='Profile' /></button>
+                        <button className={style['profile-content__btn']}><img className={style['profile-content__logo']}  src={avatar || DefaultAvatar} 
+  onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }} alt='Profile' /></button>
                     </li>
                 </ul>
             </div>

@@ -126,6 +126,7 @@
 
 .burger-menu__repositories {
   margin-top: 20px;
+  display: none;
 }
 
 .burger-menu__repositories-header {

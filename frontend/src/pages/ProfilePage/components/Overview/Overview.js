@@ -85,7 +85,7 @@ const [isNotificationVisible, setIsNotificationVisible] = useState(true);
   };
 
   return(
-    <article className='article'>
+    <article className='article' >
         {isNotificationVisible && ( <section className='section notification'>
             <div className='article__wrapper'>
               <div className='article__container'>

@@ -8,30 +8,36 @@ using MimeKit;
 using CloneGitHub.DAL.Entities;
 using System.Security.Claims;
 
-namespace CloneGitHub.Controllers {
+namespace CloneGitHub.Controllers
+{
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController :Controller {
+    public class UserController : Controller
+    {
         private readonly IUserService _userService;
         private readonly JwtTokenGenerator _jwtTokenGenerator;
         private static readonly Dictionary<string, string> resetCodes = new();
 
-        public UserController(IUserService userService, JwtTokenGenerator jwtTokenGenerator) {
+        public UserController(IUserService userService, JwtTokenGenerator jwtTokenGenerator)
+        {
             _userService = userService;
             _jwtTokenGenerator = jwtTokenGenerator;
         }
 
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsers() {
+        public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsers()
+        {
             return Ok(await _userService.GetAllUsers());
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserDTO>> GetUser(int id) {
+        public async Task<ActionResult<UserDTO>> GetUser(int id)
+        {
             var user = await _userService.GetUser(id);
 
-            if (user == null) {
+            if (user == null)
+            {
                 return NotFound();
             }
 
@@ -39,8 +45,10 @@ namespace CloneGitHub.Controllers {
         }
 
         [HttpPut]
-        public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO) {
-            if (userDTO == null) {
+        public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO)
+        {
+            if (userDTO == null)
+            {
                 return BadRequest();
             }
 
@@ -49,8 +57,10 @@ namespace CloneGitHub.Controllers {
         }
 
         [HttpPost]
-        public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO) {
-            if (userDTO == null) {
+        public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO)
+        {
+            if (userDTO == null)
+            {
                 Console.WriteLine($"Какое-то поле является пустым: {ModelState.IsValid}");
                 return BadRequest();
             }
@@ -59,7 +69,8 @@ namespace CloneGitHub.Controllers {
             var existingUser = await _userService.GetUserByEmail(userDTO.Email)
                             ?? await _userService.GetUser(userDTO.UserName);
 
-            if (existingUser != null) {
+            if (existingUser != null)
+            {
                 return Conflict("Пользователь с таким email или логином уже существует.");
             }
 
@@ -81,24 +92,28 @@ namespace CloneGitHub.Controllers {
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest) {
+        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest)
+        {
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
 
-            if (loginRequest == null) {
+            if (loginRequest == null)
+            {
                 return Ok(false);
             }
 
             var user = await _userService.GetUser(loginRequest.Username)
                     ?? await _userService.GetUserByEmail(loginRequest.Username);
 
-            if (user == null) {
+            if (user == null)
+            {
                 return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
             }
 
             //bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
             bool passwordValid = user.Password == loginRequest.Password;
 
-            if (!passwordValid) {
+            if (!passwordValid)
+            {
                 return Ok("Неверный логин или пароль.");
             }
 
@@ -110,10 +125,12 @@ namespace CloneGitHub.Controllers {
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteUser(int id) {
+        public async Task<ActionResult> DeleteUser(int id)
+        {
             var user = await _userService.GetUser(id);
 
-            if (user == null) {
+            if (user == null)
+            {
                 return NotFound();
             }
 
@@ -124,7 +141,8 @@ namespace CloneGitHub.Controllers {
 
         // Reset password
         [HttpPost("forgot-password")]
-        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request) {
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
+        {
             var user = await _userService.GetUserByEmail(request.Email);
             if (user == null)
                 return NotFound("Пользователь с таким email не найден.");
@@ -160,17 +178,22 @@ namespace CloneGitHub.Controllers {
             return Ok($"Код сброса отправлен на почту.");
         }
         [HttpGet("verify-reset-code")]
-        public async Task<IActionResult> VerifyResetCode([FromQuery] string email, [FromQuery] string code) {
+        public async Task<IActionResult> VerifyResetCode([FromQuery] string email, [FromQuery] string code)
+        {
             var result = await VerifyCodeAsync(email, code);
-            if (result) {
+            if (result)
+            {
                 Console.WriteLine($"Код сброса для {email} подтверждён.");
                 return Redirect($"http://localhost:3000/login?email={email}&code={code}");
-            } else {
+            }
+            else
+            {
                 return BadRequest("Неверный код подтверждения.");
             }
         }
         [HttpPost("reset-password")]
-        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordViewModel request) {
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordViewModel request)
+        {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -196,7 +219,8 @@ namespace CloneGitHub.Controllers {
         }
 
 
-        private async Task<bool> VerifyCodeAsync(string email, string code) {
+        private async Task<bool> VerifyCodeAsync(string email, string code)
+        {
             var user = await _userService.GetUserByEmail(email);
 
             if (user == null)
@@ -207,7 +231,8 @@ namespace CloneGitHub.Controllers {
 
             return true;
         }
-        private async Task SendEmailAsync(string to, string subject, string body) {
+        private async Task SendEmailAsync(string to, string subject, string body)
+        {
             const string email = "BranchPoint00@gmail.com";
             const string password = "suei plvg nhuv mnjz";
 
@@ -220,31 +245,36 @@ namespace CloneGitHub.Controllers {
             using var client = new MailKit.Net.Smtp.SmtpClient();
             await client.ConnectAsync("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
             await client.AuthenticateAsync(email, password);
-            try {
+            try
+            {
                 client.ServerCertificateValidationCallback = (s, c, h, e) => true;
                 client.MessageSent += (sender, args) => Console.WriteLine("Message Sent: " + args.Response);
                 await client.SendAsync(message);
                 Console.WriteLine("Email sent!");
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine("Ошибка при отправке: " + ex.Message);
             }
             await client.DisconnectAsync(true);
         }
 
 
-        private void SetAuthCookies(UserDTO userDTO, string token) {
+        private void SetAuthCookies(UserDTO userDTO, string token)
+        {
             const bool HTTP_ONLY = false;
             const bool SECURE = false;
 
-            var userCookieOptions = new CookieOptions {
+            var userCookieOptions = new CookieOptions
+            {
                 HttpOnly = false,
                 Secure = true,
                 SameSite = SameSiteMode.None,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
 
-            var tokenCookieOptions = new CookieOptions {
+            var tokenCookieOptions = new CookieOptions
+            {
                 HttpOnly = true,
                 Secure = true,
                 SameSite = SameSiteMode.None,
@@ -253,6 +283,25 @@ namespace CloneGitHub.Controllers {
 
             Response.Cookies.Append("dotcom_user", userDTO.UserName, userCookieOptions);
             Response.Cookies.Append("user_session", token, tokenCookieOptions);
+        }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Удаляем куки, установленные при логине
+            Response.Cookies.Delete("dotcom_user", new CookieOptions
+            {
+                SameSite = SameSiteMode.None,
+                Secure = true
+            });
+
+            Response.Cookies.Delete("user_session", new CookieOptions
+            {
+                SameSite = SameSiteMode.None,
+                Secure = true
+            });
+
+            return Ok(new { message = "Выход выполнен успешно" });
         }
 
     }

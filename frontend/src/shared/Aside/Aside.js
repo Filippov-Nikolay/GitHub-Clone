@@ -112,7 +112,11 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
             <div className='profile-aside__main'>
                 <div className='profile-aside__wrapper'>
                     <div className='profile-aside__logo'>
-                        <img src={data?.avatar ? data.avatar : DefaultAvatar} />
+                        <img
+                            src={data?.avatar || DefaultAvatar}
+                            onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }}
+                            alt="User avatar"
+                            />
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>
