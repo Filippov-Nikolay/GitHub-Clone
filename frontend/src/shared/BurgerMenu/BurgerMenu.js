@@ -9,10 +9,21 @@ import {
 import './BurgerMenu.css';
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
 import DefaultAvatar from '../assets/img/avatar_account.png'
-
+import { logout } from '../../pages/ProfilePage/services/profileApi.js';
 
 export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, name, userName }) {
   if (!isOpen) return null;
+
+  const handleSignOut = async () => {
+  try {
+    await logout();
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+  } catch (error) {
+    console.error('Ошибка выхода из аккаунта:', error);
+  }
+};
 
   const repositories = [
     { name: 'repo1', avatar: 'https://via.placeholder.com/30' },
@@ -128,7 +139,8 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
           <>
             <div className="burger-menu__header">
               <div className="burger-menu__logo-wrapper">
-              <img src={avatar ? avatar : DefaultAvatar} alt="Profile" className="burger-menu__logo" />
+              <img src={avatar || DefaultAvatar} 
+  onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }} alt="Profile" className="burger-menu__logo" />
                 <div className="burger-menu__user-info">
                 <span className="burger-menu__user-nickname">{name || userName}</span>
                 <span className="burger-menu__user-username">{userName}</span>
@@ -189,7 +201,7 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
             <div className="burger-menu__divider"></div>
 
             <ul className="burger-menu__list">
-              <li className="burger-menu__item">
+              <li className="burger-menu__item" onClick={handleSignOut} style={{ cursor: 'pointer' }}>
                 <span className="burger-menu__icon"><SignOutSVG /></span>
                 <span className="burger-menu__text">Sign out</span>
               </li>
