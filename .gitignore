@@ -30,4 +30,5 @@ yarn-error.log*
 # local connection files
 /frontend/src/shared/config.js
 /backend/CloneGitHub/appsettings.json
+appsettings.json
 .fake
