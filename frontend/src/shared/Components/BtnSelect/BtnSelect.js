@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 
 import Btn from '../Btn/Btn'
-import { CheckSVG, CloseBurgerSVG } from '../../assets/svg/SvgComponents'
+import { CheckSVG, CloseBurgerSVG, ArrowDownSvg } from '../../assets/svg/SvgComponents'
 
 import './btnSelect.css';
 import './adaptive.css';
 
-export default function BtnSelect({ label, icon, options, onSelect }) {
-    const [selectedIndex, setSelectedIndex] = useState(0);
+export default function BtnSelect({ label, icon = <ArrowDownSvg/>, options, defaultOptionIndex = 0, onSelect }) {
+    const [selectedIndex, setSelectedIndex] = useState(defaultOptionIndex);
     const handleSelect = (index) => {
         setSelectedIndex(index);
 
@@ -32,7 +32,7 @@ export default function BtnSelect({ label, icon, options, onSelect }) {
                     <span className="btn-select__close-svg" onClick={toggleMenu}><CloseBurgerSVG/></span>
                 </h4>
                 <ul className="btn-select__menu">
-                    {options.map((item, index) => (
+                    {options && options.map((item, index) => (
                         <li key={ index } className="btn-select__item" onClick={() => handleSelect(index)}>
                             <span className={`btn-select__svg ${selectedIndex === index ? '' : 'btn-select__svg--hidden'}`}><CheckSVG /></span>
                             <span className="btn-select__text">{ item }</span>

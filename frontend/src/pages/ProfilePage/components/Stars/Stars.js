@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
  
 import Blankslate from "../../../../shared/Components/Blankslate/Blankslate";
 import BtnPrimary from "../../../../shared/Components/BtnPrimary/BtnPrimary";
 import Btn from "../../../../shared/Components/Btn/Btn";
 import BtnSearch from "../../../../shared/Components/BtnSearch/BtnSearch";
+import BtnSelect from '../../../../shared/Components/BtnSelect/BtnSelect'
 
 import { StarsSVG, SearchSVG } from '../../../../shared/assets/svg/SvgComponents';
 
@@ -11,6 +12,18 @@ import './stars.css';
 import './adaptive.css';
 
 export default function Stars() {
+    const [type, setType] = useState("All");
+    const typeOptions = [
+        "All", "Public", "Private", 
+        "Source", "Forks", "Can be sponsored", 
+        "Mirrors", "Templates"
+    ];
+
+    const [sortBy, setSortBy] = useState("Recently starred");
+    const sortByOptions = [
+        "Recently starred", "Recently active", "Most stars"
+    ];
+
     return (
         <div className='stars'>
             <div className='stars__header'>
@@ -18,8 +31,12 @@ export default function Stars() {
                     <h2 className='stars__title'>Lists <span className='stars__span'>(0)</span></h2>
                     <div className="stars__wrapper">
                         <div className='stars__btn'>
-                            <Btn
-                                btnText={'Sort'}
+                            <BtnSelect
+                                label={"Sort"}
+                                options={
+                                    ["Name ascending (A-Z)", "Name descending (Z-A)", "Newest", "Oldest", "Last update"]
+                                }
+                                defaultOptionIndex={4}
                             />
                         </div>
                         <div className='stars__btn'>
@@ -58,13 +75,19 @@ export default function Stars() {
                     </div>
                     <div className="stars__wrapper">
                         <div className="stars__btn">
-                            <Btn
-                                btnText={'Type: All'}
+                            <BtnSelect
+                                label={`Type: ${type}`}
+                                options={typeOptions}
+                                defaultOptionIndex={0}
+                                onSelect={setType}
                             />
                         </div>
                         <div className="stars__btn">
-                            <Btn
-                                btnText={'Sort by: Recently starred'}
+                            <BtnSelect
+                                label={`Sort by: ${sortBy}`}
+                                options={sortByOptions}
+                                defaultOptionIndex={0}
+                                onSelect={setSortBy}
                             />
                         </div>
                     </div>
