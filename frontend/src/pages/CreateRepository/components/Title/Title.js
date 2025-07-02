@@ -1,9 +1,62 @@
-import React from 'react';
+import React, { useState } from "react";
 import './Title.css';
 import { BookRepositorySVG, LockSVG} from '../../../../shared/assets/svg/SvgComponents';
+import { useNavigate } from 'react-router-dom';
+import { createRepository } from "../../services/CreateRepository";
+
+
 
 
 export function Title() {
+
+
+    const navigate = useNavigate();
+    const [showError, setShowError] = useState(false);
+    const [formData, setFormData] = useState({
+        username: "",
+        repositoryName: "",
+        description: "",
+        isPrivate: false
+        
+    });
+
+    const handleChange = (e) => {
+        const { name, type, value, checked } = e.target;
+
+        if (name === "isPrivate") {
+            setFormData({
+                ...formData,
+                isPrivate: value === "true", // "true" → true, "false" → false
+            });
+        }
+        else{
+
+
+        setFormData({
+            ...formData,
+            [name]: type === "checkbox" ? checked : value,
+        });
+    }
+
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // предотвращает перезагрузку страницы при отправке формы
+        try{
+            await createRepository(formData);
+            navigate("/RepositoryPage");
+            console.log("Creating repository...", formData);
+        }
+        catch(error)
+        {
+            console.error("An error occurred by creating repository:", error);
+            setShowError(true);
+        }
+    
+   
+    };
+        
+
     return(
     
         <div className="repo-container">
@@ -19,12 +72,12 @@ export function Title() {
             <div className="input-row">
                 <div className="input-group">
                     <label htmlFor="owner" className="label">Owner<span className="required">*</span></label>
-                    <input id="owner" disabled value="username" className="input small" />
+                    <input id="owner" disabled value={formData.username} className="input small" />
                 </div>
                 <div className="slash">/</div>
                 <div className="input-group">
                     <label htmlFor="repo" className="label">Repository name<span className="required">*</span></label>
-                    <input id="repo" placeholder="my-repo" className="input" />
+                    <input id="repo" placeholder="my-repo" className="input" value={formData.repositoryName} onChange={handleChange} />
                 </div>
             </div>
 
@@ -35,17 +88,17 @@ export function Title() {
 
             <div className="input-group">
                 <label htmlFor="desc" className="label">Description <span className="optional">(optional)</span></label>
-                <input id="desc" className="input full" placeholder="Description" />
+                <input id="desc" className="input full" placeholder="Description" value={formData.description} onChange={handleChange}/>
                 <div className="section-divider"></div>
 
             </div>
             
 
             <div className="radio-group">
-                <label><input type="radio" name="visibility" defaultChecked /><BookRepositorySVG/> Public</label>
+                <label><input type="radio" name="isPrivate" value="true" checked={formData.isPrivate === true} onChange={handleChange} defaultChecked /><BookRepositorySVG/> Public</label>
                 <span className="radio-note">Anyone on the internet can see this repository. You choose who can commit.</span>
 
-                <label><input type="radio" name="visibility" /><LockSVG/> Private</label>
+                <label><input type="radio" name="isPrivate" value="false" checked={formData.isPrivate === false} onChange={handleChange}/><LockSVG/> Private</label>
                 <span className="radio-note">You choose who can see and commit to this repository.</span>
                 <div className="section-divider"></div>
 
@@ -81,7 +134,9 @@ export function Title() {
             <p className="info-note">You are creating a public repository in your personal account.</p>
             <div className="section-divider"></div>
 
+             <form onSubmit={handleSubmit}>
             <button className="create-btn">Create repository</button>
+            </form>
             
         </div>
     );

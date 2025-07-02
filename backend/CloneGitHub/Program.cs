@@ -15,7 +15,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
 string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<CloneGitHubContext>(options =>
+    options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 builder.Services.AddScoped<JwtTokenGenerator>();
@@ -53,7 +57,7 @@ builder.Services.AddCors(options => {
             .AllowCredentials();
     });
 });
-builder.Services.AddDbContext<CloneGitHubContext>(options => options.UseSqlServer(connection));
+// builder.Services.AddDbContext<CloneGitHubContext>(options => options.UseSqlServer(connection));
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
