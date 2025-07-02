@@ -1,7 +1,13 @@
+.search-bar-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
 .search-bar_input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 7px;
     border-radius: 6px;
     border: 1px solid #30363d;
     background-color: #0d1117;

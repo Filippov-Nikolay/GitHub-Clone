@@ -46,5 +46,10 @@
     color: #9198a1;
     font-size: 12px;
 }
+.repository-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 .repository-card__date-last-update {
 }

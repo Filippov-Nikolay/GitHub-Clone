@@ -1,0 +1,81 @@
+.btn-select {
+    position: relative;
+}
+.bg-for-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100vh;
+}
+.bg-for-close--hidden {
+    display: none;
+}
+.btn-select__wrapper {
+    position: absolute;
+    top: auto;
+    right: 0;
+    z-index: 2;
+    
+    margin: 8px 0;
+
+    width: 300px;
+
+    color: #f0f6fc;
+    font-size: 12px;
+
+    background-color: #010409;
+    border: 1px solid #3d444d;
+    border-radius: 8px;
+}
+.btn-select__wrapper--hidden {
+    display: none;
+}
+.btn-select__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 7px 16px;
+
+    border-bottom: 1px solid #3d444db3;
+}
+.btn-select__close-svg {
+    max-width: 16px;
+    max-height: 16px;
+
+    cursor: pointer;
+}
+.btn-select__close-svg svg {
+    stroke: #9198a1;
+}
+.btn-select__close-svg svg:hover #Vector {
+    stroke: #f0f6fc;
+}
+.btn-select__menu {
+}
+.btn-select__item {
+    display: flex;
+    align-items: center;
+
+    padding: 7px 16px;
+    
+    border-bottom: 1px solid #3d444db3;
+    cursor: pointer;
+}
+.btn-select__item:hover {
+    background-color: #656c7633;
+}
+.btn-select__svg--hidden {
+    visibility: hidden;
+}
+.btn-select__svg svg {
+    fill: #F0F6FC;
+}
+.btn-select__text {
+    margin-left: 8px;
+}

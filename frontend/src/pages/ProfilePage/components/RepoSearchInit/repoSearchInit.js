@@ -12,7 +12,8 @@ const RepoSearchInit = () => {
             language: "Python",
             languageColor: "#3572A5",
             stars: "3",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: true
         },
         {
             user: "BuilderIO",
@@ -21,7 +22,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "8",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         },
         {
             user: "BuilderIO",
@@ -30,7 +32,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: true
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -38,7 +41,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -46,7 +50,17 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
+        }, {
+            user: "BuilderIO",
+            repoName: "demo-editor",
+            description: "",
+            language: "JavaScript",
+            languageColor: "#f1e05a",
+            stars: "0",
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -54,7 +68,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: true
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -62,7 +77,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -70,7 +86,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -78,7 +95,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -86,7 +104,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -94,7 +113,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -102,7 +122,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }, {
             user: "BuilderIO",
             repoName: "demo-editor",
@@ -110,15 +131,8 @@ const RepoSearchInit = () => {
             language: "JavaScript",
             languageColor: "#f1e05a",
             stars: "5",
-            userAvatar: Avatar1
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         },
         {
             user: "stared",
@@ -127,7 +141,8 @@ const RepoSearchInit = () => {
             language: "Python",
             languageColor: "#3572A5",
             stars: "1.2k",
-            userAvatar: Avatar1
+            userAvatar: Avatar1,
+            isPrivate: false
         }
     ];
 
