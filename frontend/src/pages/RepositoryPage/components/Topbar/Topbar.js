@@ -3,19 +3,20 @@ import './Topbar.css';
 import './adaptive.css';
 
 import {
-  CopilotSVG, LogoSVG, IssuesSVG, PullRequestsSVG, NotificationSVG, ProfileLogoSVG
+  CopilotSVG, LogoSVG, IssuesSVG, PullRequestsSVG, NotificationSVG
 } from "../../../../shared/assets/svg/SvgComponents";
 
-const Topbar = ({ username, repository }) => {
+import DefaultAvatarSVG from '../../../../shared/assets/img/avatar_account.png';
+
+const Topbar = ({ repoName, username }) => {
   return (
     <div className="topbar">
       <div className="topbar-left">
         <button className="menu-button">☰</button>
-        <span className='logo'><LogoSVG/></span>
+        <span className='logo'><LogoSVG /></span>
         <span className="username">{username}</span>
         <span className="separator">/</span>
-        <span className="repo-name">{repository}</span>
-
+        <span className="repo-name">{repoName}</span>
       </div>
 
       <div className="topbar-center">
@@ -23,43 +24,36 @@ const Topbar = ({ username, repository }) => {
       </div>
 
       <div className="topbar-right">
-
         <div className='copilot-btn'>
-        <CopilotSVG className="button" />
-        <hr className='hr-btn'/>
-        <button className='arrow-btn'>&#9660;</button>
+          <CopilotSVG className="button" />
+          <hr className='hr-btn'/>
+          <button className='arrow-btn'>&#9660;</button>
         </div>
 
         <hr/>
-        
+
         <div className='add-btn'>
-         +
-        <hr className='hr-btn'/>
-        <button className='arrow-btn'>&#9660;</button>
+          +
+          <hr className='hr-btn'/>
+          <button className='arrow-btn'>&#9660;</button>
         </div>
-   
 
         <div className='issue-btn'>
-         <IssuesSVG/>
+          <IssuesSVG/>
         </div>
 
         <div className='pull-requests-btn'>
-         <PullRequestsSVG/>
+          <PullRequestsSVG/>
         </div>
 
         <div className='notifications-btn'>
-         <NotificationSVG/>
+          <NotificationSVG/>
         </div>
 
-         <div className='profile-logo'>
-          <ProfileLogoSVG/>
-          </div>
-
-
+        <div className='profile-logo'>
+          <span className='logo'><img src={DefaultAvatarSVG} className="logo" alt='Avatar' /></span>
+        </div>
       </div>
-
-
-
     </div>
   );
 };

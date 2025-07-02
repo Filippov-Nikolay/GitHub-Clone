@@ -3,61 +3,70 @@ import './Navbar.css';
 import './adaptive.css';
 
 import {
-  IssuesSVG, PullRequestsSVG, ActionsSvg, ProjectsSVG, SecuritySVG, InsightsSVG, SettingsSVG
+  IssuesSVG,
+  PullRequestsSVG,
+  ActionsSvg,
+  ProjectsSVG,
+  SecuritySVG,
+  InsightsSVG,
+  SettingsSVG
 } from "../../../../shared/assets/svg/SvgComponents";
 
+import { NavLink } from 'react-router-dom';
 
 const NavigationBar = () => {
+  const urlParts = window.location.pathname.split('/');
+  const username = urlParts[2];
+  const repoName = urlParts[3];
+
+  if (!username || !repoName) return null;
+
+
+const navItems = [
+  { name: 'Code', icon: <>&#60; &#62;</>, to: `/repository/${username}/${repoName}`, clickable: true },
+  { name: 'Issues', icon: <IssuesSVG />, to: `/repository/${username}/${repoName}/issues`, clickable: false },
+  { name: 'Pull requests', icon: <PullRequestsSVG />, to: `/repository/${username}/${repoName}/pulls`, clickable: false },
+  { name: 'Actions', icon: <ActionsSvg />, to: `/repository/${username}/${repoName}/actions`, clickable: false },
+  { name: 'Projects', icon: <ProjectsSVG />, to: `/repository/${username}/${repoName}/projects`, clickable: false },
+  { name: 'Security', icon: <SecuritySVG />, to: `/repository/${username}/${repoName}/security`, clickable: false },
+  { name: 'Insights', icon: <InsightsSVG />, to: `/repository/${username}/${repoName}/insights`, clickable: false },
+  { name: 'Settings', icon: <SettingsSVG />, to: `/repository/${username}/${repoName}/settings`, clickable: true },
+];
+
+
+
   return (
+    <div>
+      <div className='navigation-bar'>
+        {navItems.map((item, index) => (
+  item.clickable ? (
+    <NavLink
+      key={index}
+      to={item.to}
+      className={({ isActive }) =>
+        isActive ? 'nav-button active' : 'nav-button'
+      }
+      style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}
+      end={item.name === 'Code'} // точное совпадение для Code
+    >
+      <div className='wrapper'>{item.icon}</div>
+      <div className='button-text'>{item.name}</div>
+    </NavLink>
+  ) : (
+    <div
+      key={index}
+      className='nav-button disabled'
+      style={{ display: 'flex', alignItems: 'center', cursor: 'default', opacity: 0.5, pointerEvents: 'none' }}
+      title="Not clickable"
+    >
+      <div className='wrapper'>{item.icon}</div>
+      <div className='button-text'>{item.name}</div>
+    </div>
+  )
+))}
 
-<div>
-
-  <div className='navigation-bar'>
-
-    <button className='nav-button'>
-    <div className='wrapper arrows'>&#60; &#62;</div>
-    <div className='button-text'>Code</div>
-    </button>
-
-
-    <button className='nav-button'>
-    <div className='wrapper'><IssuesSVG/></div>
-    <div className='button-text'>Issues</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><PullRequestsSVG/></div>
-    <div className='button-text'>Pull requests</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><ActionsSvg/></div>
-    <div className='button-text'>Actions</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><ProjectsSVG/></div>
-    <div className='button-text'>Projects</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><SecuritySVG/></div>
-    <div className='button-text'>Security</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><InsightsSVG/></div>
-    <div className='button-text'>Insights</div>
-    </button>
-
-    <button className='nav-button'>
-    <div className='wrapper'><SettingsSVG/></div>
-    <div className='button-text'>Settings</div>
-    </button>
-
-  </div>
-
-</div>
+      </div>
+    </div>
   );
 };
 

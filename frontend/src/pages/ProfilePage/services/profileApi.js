@@ -50,8 +50,9 @@ export const uploadAvatar = async (file) => {
     return `${config.API_BASE_BACKEND}/${uploadedAvatarPath}`;
 };
 
-export const logout = () => {
-  return axios.post(`${config.API_BASE_BACKEND}/api/user/logout`, {}, {
-    withCredentials: true
+
+export const getUserRepositories = (username) => {
+  return axios.get(`${config.API_BASE_BACKEND}/api/Repository/userRepos/${encodeURIComponent(username)}`, {
+    withCredentials: true,
   });
 };

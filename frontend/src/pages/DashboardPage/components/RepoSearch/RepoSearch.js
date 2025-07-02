@@ -39,6 +39,7 @@ const RepositorySearch = ({ repositories }) => {
                         languageColor={repo.languageColor}
                         stars={repo.stars}
                         userAvatar={repo.userAvatar}
+                        url={repo.url}
                     />
                 ))}
             </div>

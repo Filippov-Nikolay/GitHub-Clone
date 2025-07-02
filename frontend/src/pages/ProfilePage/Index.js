@@ -121,7 +121,7 @@ export function Index() {
     const renderTabContent = () => {
         switch (tab) {
             case 'repositories':
-                return <RepoSearchInit />;
+               return <RepoSearchInit username={urlUserName} />;
             case 'projects':
                 return <Projects />;
             case 'packages':
