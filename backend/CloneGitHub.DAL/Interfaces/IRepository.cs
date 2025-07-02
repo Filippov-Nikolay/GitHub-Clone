@@ -13,5 +13,6 @@ namespace CloneGitHub.DAL.Interfaces
         Task AddAsync(T entity);
         void UpdateAsync(T entity);
         Task DeleteAsync(int id);
+        
     }
 }
