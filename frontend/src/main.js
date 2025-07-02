@@ -6,12 +6,13 @@ import DashboardPage from './pages/DashboardPage/Index';
 import LandingPage from './pages/LandingPage/Index';
 import ProfilePage from './pages/ProfilePage/Index';
 import Projects from './pages/ProfilePage/components/Projects/Projects';
-import LoginPage from './pages/LoginPage/Index';
+import LoginPage from './pages/LoginPage/index';
 import PasswordResetPage from './pages/PasswordResetPage/Index';
 import SignupPage from './pages/RegisterPage/Index';
 import RepositoryPage from './pages/RepositoryPage/Index';
 import CreateRepository from './pages/CreateRepository/Index';
 import RepositorySettingsPage from './pages/RepositorySettingsPage/Index';
+// import HomePage from './pages/HomePage/';
 
 const AppRouter = () => {
   const user = Cookies.get('dotcom_user');
@@ -23,7 +24,7 @@ const AppRouter = () => {
           user ? (
                 // Приватные маршруты
             <>
-              <Route path="/" element={<HomePage />} />
+              {/* <Route path="/" element={<HomePage />} /> */}
               <Route path="/repository/:username/:name" element={<RepositoryPage />}>
                 <Route path="projects" element={<Projects />} />
               </Route>

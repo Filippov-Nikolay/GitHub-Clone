@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RepositorySearch from '../../../HomePage/components/RepoSearch/RepoSearch';
+// import RepositorySearch from '../../../HomePage/components/RepoSearch/RepoSearch';
 import './repoSearchInit.css';
 import Avatar1 from "../../../../shared/assets/img/Image_repo.png";
 import { getUserRepositories } from '../../services/profileApi';
@@ -48,7 +48,7 @@ const RepoSearchInit = ({ username }) => {
 
   return (
     <div className="search-app">
-      <RepositorySearch repositories={repositories} />
+      {/* <RepositorySearch repositories={repositories} /> */}
     </div>
   );
 };

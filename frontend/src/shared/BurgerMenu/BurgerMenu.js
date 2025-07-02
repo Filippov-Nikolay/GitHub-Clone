@@ -16,7 +16,7 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
 
   const handleSignOut = async () => {
   try {
-    await logout();
+    // await logout();
     localStorage.clear();
     sessionStorage.clear();
     window.location.reload();

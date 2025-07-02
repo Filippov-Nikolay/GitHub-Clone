@@ -9,6 +9,7 @@ import SideBar from './components/SideBar/SideBar';
 import './components/Index.css';
 import { useParams } from 'react-router-dom';
 import { getRepositoryByUserAndName } from '../RepositorySettingsPage/services/EditRepository';
+import Main from './components/Main/Main';
 
 
 export function Index() {
@@ -36,16 +37,18 @@ export function Index() {
       <Topbar repoName={repoName} />
       <Navbar />
       <ContainerHeader repository={repository} />
-      <BranchBox />
+      
+      {/* <BranchBox /> */}
 
-      <div className="main-content-wrapper">
+      {/* <div className="main-content-wrapper">
         <div className="main-left">
           <RepositoryFiles />
           <ReadMeBar />
         </div>
 
         <SideBar />
-      </div>
+      </div> */}
+      <Main />
     </div>
   );
 }
