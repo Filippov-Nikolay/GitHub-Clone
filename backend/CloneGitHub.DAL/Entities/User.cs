@@ -14,6 +14,7 @@ namespace CloneGitHub.DAL.Entities
 
         public virtual ICollection<Repository> Repositories { get; set; } = new List<Repository>();
         public virtual ICollection<Logger> Loggers { get; set; } = new List<Logger>();
-        public virtual ICollection<Subscription> Subscriptions { get; set; }
+        public virtual ICollection<Subscription> Following { get; set; } = new List<Subscription>();
+        public virtual ICollection<Subscription> Followers { get; set; } = new List<Subscription>();
     }
 }

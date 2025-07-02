@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ActionsSvg, SearchSvg, CloseSvg } from '../../../shared/assets/svg/SvgComponents';
+import { ActionsSvg, SearchSvg, CloseSvg, BookSVG, ProfileSVG } from '../../../shared/assets/svg/SvgComponents';
 import './modalWindowInput.css';
 import { searchUsers } from './Services/userSearchService.js';
 
-export function ModalWindowInput({ isActive, setIsActive, theme = 'dark' }) {
+export function ModalWindowInput({ isActive, setIsActive, theme = 'dark', userName}) {
     const [search, setSearchValue] = useState("");
     const [isSearchShow, setIsSearch] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
@@ -14,6 +14,31 @@ export function ModalWindowInput({ isActive, setIsActive, theme = 'dark' }) {
         setSearchValue(value);
         setIsSearch(value.length > 0);
     };
+
+    const saveRecentUser = (user) => {
+    const key = 'recent_users';
+    let recentUsers = JSON.parse(localStorage.getItem(key)) || [];
+
+
+    recentUsers = recentUsers.filter(u => u.userName !== user.userName);
+
+    recentUsers.unshift(user);
+
+    recentUsers = recentUsers.slice(0, 5);
+
+    localStorage.setItem(key, JSON.stringify(recentUsers));
+};
+
+const [localRecentUsers, setLocalRecentUsers] = useState([]);
+
+useEffect(() => {
+    if (userName && isActive) {
+        const stored = localStorage.getItem('recent_users');
+        if (stored) {
+            setLocalRecentUsers(JSON.parse(stored));
+        }
+    }
+}, [isActive, userName]);
 
     useEffect(() => {
     const delayDebounce = setTimeout(() => {
@@ -55,7 +80,7 @@ export function ModalWindowInput({ isActive, setIsActive, theme = 'dark' }) {
 
                     <div className="modal-window-input__action-list-content">
                         {isSearchShow && searchResults.map((user, index) => (
-                            <a key={index} className="modal-window-input__action-list-link" href={`/${user.userName}`}>
+                            <a key={index} className="modal-window-input__action-list-link" href={`/${user.userName}`} onClick={() => saveRecentUser(user)}>
                                 <span className="modal-window-input__search-span"><SearchSvg /></span>
                                 <span className={`modal-window-input__action-list-output modal-window-input__action-list-output--${theme}`}>
                                     {user.userName}
@@ -71,30 +96,49 @@ export function ModalWindowInput({ isActive, setIsActive, theme = 'dark' }) {
 
                 <div className="modal-window-input__item">
                     <ul className="sub-menu__modal-window modal-window-list">
-                        <li className='modal-window-list__title-li'>Explore</li>
-                        <li className="modal-window-list__item">
-                            <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
-                                <ActionsSvg />
-                                <div className="modal-window-list__wrapper">
-                                    <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>
-                                </div>
-                                <span className="modal-window-input__action-list-hint">Learn More</span>
-                            </a>
-                        </li>
-                        <li className="modal-window-list__item">
-                            <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
-                                <ActionsSvg />
-                                <div className="modal-window-list__wrapper">
-                                    <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>
-                                </div>
-                                <span className="modal-window-input__action-list-hint">Learn More</span>
-                            </a>
-                        </li>
+                        <li className='modal-window-list__title-li'>
+        {userName ? 'Owners' : 'Explore'}
+    </li>
+
+    {userName && localRecentUsers.length > 0 ? (
+        localRecentUsers.map((user, index) => (
+            <li className="modal-window-list__item" key={index}>
+                <a href={`/${user.userName}`} className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                    <span className="modal-window-list__icon"><ProfileSVG /></span>
+                    <div className="modal-window-list__wrapper">
+                        <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>{user.userName}</h6>
+                    </div>
+                    <span className="modal-window-input__action-list-hint">{user.email}</span>
+                </a>
+            </li>
+        ))
+    ) : (
+        <>
+            <li className="modal-window-list__item">
+                <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                    <ActionsSvg />
+                    <div className="modal-window-list__wrapper">
+                        <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>
+                    </div>
+                    <span className="modal-window-input__action-list-hint">Learn More</span>
+                </a>
+            </li>
+            <li className="modal-window-list__item">
+                <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                    <ActionsSvg />
+                    <div className="modal-window-list__wrapper">
+                        <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>
+                    </div>
+                    <span className="modal-window-input__action-list-hint">Learn More</span>
+                </a>
+            </li>
+        </>
+    )}
                     </ul>
                 </div>
 
                 <div className="modal-window-input__item">
-                    <a className="modal-window-input__link" href="#">Search syntax tips</a>
+                    <a className="modal-window-input__link" href="https://docs.github.com/ru/search-github/github-code-search/understanding-github-code-search-syntax">Search syntax tips</a>
                 </div>
             </div>
         </div>

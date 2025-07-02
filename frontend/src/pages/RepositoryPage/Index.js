@@ -7,6 +7,7 @@ import RepositoryFiles from './components/RepositoryFiles/RepositoryFiles';
 import ReadMeBar from './components/ReadMeBar/ReadMeBar';
 import SideBar from './components/SideBar/SideBar';
 import './components/Index.css';
+import { Header } from '../../shared/Header/Header';
 
 
 export function Index()
@@ -25,7 +26,7 @@ export function Index()
     //   </div>
 
         <div>
-            <Topbar />
+            <Header />
             <Navbar />
             <ContainerHeader />
             <BranchBox />

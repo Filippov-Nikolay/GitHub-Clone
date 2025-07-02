@@ -2,10 +2,11 @@
 using CloneGitHub.DAL.Entities;
 using CloneGitHub.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace CloneGitHub.DAL.Repositories
 {
-    public class SubscriptionRepository : IRepository<Subscription>
+    public class SubscriptionRepository : IRepositoryWithPredicate<Subscription>
     {
         private readonly CloneGitHubContext _db;
 
@@ -48,6 +49,16 @@ namespace CloneGitHub.DAL.Repositories
             {
                 _db.Subscriptions.Remove(subscription);
             }
+        }
+
+        public async Task<Subscription> FindAsync(Expression<Func<Subscription, bool>> predicate)
+        {
+            return await _db.Subscriptions.FirstOrDefaultAsync(predicate);
+        }
+
+        public async Task<IEnumerable<Subscription>> FindAllAsync(Expression<Func<Subscription, bool>> predicate)
+        {
+            return await _db.Subscriptions.Where(predicate).ToListAsync();
         }
     }
 }

@@ -26,6 +26,7 @@ const AppRouter = () => {
                 <Route path="/" element={<DashboardPage/>} />
                 <Route path="/:urlUserName" element={<ProfilePage />}/>
                 <Route path="/CreateRepository" element={<CreateRepository />} />
+                <Route path="/RepositoryPage" element={<RepositoryPage />} />
                </>
             ) : (
               // Публичные маршруты

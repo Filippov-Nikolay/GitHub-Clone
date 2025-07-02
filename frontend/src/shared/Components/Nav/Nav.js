@@ -27,7 +27,7 @@ export function Nav({bgColor = "#ffffff00", theme = 'dark'}) {
             <nav className="nav" style={{backgroundColor: bgColor}}>
                 <div className="nav__wrapper">
                     <div className="nav__sign-up-wrapper"><SignUp></SignUp></div>
-                    <a href="#" className="logo" aria-label='logo'><LogoSvg colorProps="#fff"></LogoSvg></a>
+                    <a href="/" className="logo" aria-label='logo'><LogoSvg colorProps="#fff"></LogoSvg></a>
                     <div className="nav__inner">
                         <Menu></Menu>
                         <div className="nav__wrapper-item">

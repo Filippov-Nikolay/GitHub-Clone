@@ -19,9 +19,9 @@ namespace CloneGitHub.BLL.Service
             _mapper = mapper;
         }
 
-        public async Task<UserDetailsDTO> GetProfileAsync(string username)
+        public async Task<UserDetailsDTO> GetProfileAsync(string profileUserName, string currentUserName)
         {
-            var user = await _unitOfWork.Users.GetUser(username);
+            var user = await _unitOfWork.Users.GetUser(profileUserName);
             if (user == null) return null;
 
             var userDetails = (await _unitOfWork.UserDetails.GetAllAsync())
@@ -29,15 +29,36 @@ namespace CloneGitHub.BLL.Service
 
             if (userDetails == null)
             {
-                userDetails = new UserDetails
-                {
-                    UserId = user.Id,
-                };
+                userDetails = new UserDetails { UserId = user.Id };
                 await _unitOfWork.UserDetails.AddAsync(userDetails);
                 await _unitOfWork.CompleteAsync();
             }
 
-            return _mapper.Map<UserDetailsDTO>(userDetails);
+            var dto = _mapper.Map<UserDetailsDTO>(userDetails);
+
+            // Считаем количество подписчиков и подписок
+            dto.FollowersCount = (await _unitOfWork.Subscriptions.FindAllAsync(s => s.FollowedId == user.Id)).Count();
+            dto.FollowingCount = (await _unitOfWork.Subscriptions.FindAllAsync(s => s.FollowerId == user.Id)).Count();
+
+            // Флаг, подписан ли currentUser на этот профиль
+            if (!string.IsNullOrEmpty(currentUserName))
+            {
+                var currentUser = await _unitOfWork.Users.GetUser(currentUserName);
+                if (currentUser != null)
+                {
+                    dto.IsFollowing = await _unitOfWork.Subscriptions.FindAsync(s => s.FollowerId == currentUser.Id && s.FollowedId == user.Id) != null;
+                }
+                else
+                {
+                    dto.IsFollowing = false;
+                }
+            }
+            else
+            {
+                dto.IsFollowing = false;
+            }
+
+            return dto;
         }
 
         public async Task<UserDetailsDTO> SaveProfileAsync(string username, UserDetailsDTO updatedProfile)

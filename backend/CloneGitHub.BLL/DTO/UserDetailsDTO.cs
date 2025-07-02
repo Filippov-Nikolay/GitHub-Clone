@@ -23,5 +23,9 @@ namespace CloneGitHub.BLL.DTO
         public string? LinkToSocial2 { get; set; }
         public string? LinkToSocial3 { get; set; }
         public string? LinkToSocial4 { get; set; }
+
+        public int FollowersCount { get; set; }
+        public int FollowingCount { get; set; }
+        public bool IsFollowing { get; set; }
     }
 }

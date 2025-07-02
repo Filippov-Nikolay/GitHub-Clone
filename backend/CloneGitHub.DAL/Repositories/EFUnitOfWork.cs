@@ -41,7 +41,7 @@ namespace CloneGitHub.DAL.Repositories
             }
         }
 
-        public IRepository<Subscription> Subscriptions
+        public IRepositoryWithPredicate<Subscription> Subscriptions
         {
             get
             {

@@ -25,7 +25,7 @@ namespace CloneGitHub.Controllers
                 return Unauthorized();
             }
 
-            var profile = await _editService.GetProfileAsync(userName);
+            var profile = await _editService.GetProfileAsync(userName, null);
             if (profile == null)
             {
                 return NotFound("User not found");
@@ -37,14 +37,19 @@ namespace CloneGitHub.Controllers
         [HttpGet("getProfileByName/{username}")]
         public async Task<IActionResult> GetProfileByName(string username)
         {
-            var profile = await _editService.GetProfileAsync(username);
+            string currentUserName = null;
+            if (User.Identity?.IsAuthenticated == true)
+                currentUserName = User.Identity.Name;
+            else if (Request.Cookies.TryGetValue("dotcom_user", out var cookieUser))
+                currentUserName = cookieUser;
+
+            var profile = await _editService.GetProfileAsync(username, currentUserName);
             if (profile == null)
-            {
                 return NotFound("User not found");
-            }
 
             return Ok(profile);
         }
+
 
 
 
@@ -59,7 +64,7 @@ namespace CloneGitHub.Controllers
             if (string.IsNullOrEmpty(userName))
                 return Unauthorized();
 
-            var user = await _editService.GetProfileAsync(userName);
+            var user = await _editService.GetProfileAsync(userName, null);
             if (user == null)
                 return NotFound();
 

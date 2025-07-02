@@ -6,7 +6,7 @@ namespace CloneGitHub.DAL.Interfaces
     {
         IRepository<Activity> Activities { get; }
         IRepositoryRepository Repositories { get; }
-        IRepository<Subscription> Subscriptions { get; }
+        IRepositoryWithPredicate<Subscription> Subscriptions { get; }
         IRepository<Logger> Loggers { get; }
         IRepository<UserDetails> UserDetails { get; }
         IUserRepository Users { get; }

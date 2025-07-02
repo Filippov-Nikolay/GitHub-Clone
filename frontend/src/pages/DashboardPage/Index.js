@@ -46,10 +46,6 @@ const HomePage = () => {
                 <div className="panels">
                     <div className="left-panel">
                         <div className="left-panel__container">
-                            <Profile 
-                                avatar={profileData?.avatar}
-                                userName={userName} 
-                            />
                             <TopRepositories />
                         </div>
                     </div>

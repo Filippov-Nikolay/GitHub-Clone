@@ -195,6 +195,10 @@
     font-size: 14px;
 }
 
+.modal-window-list__icon{
+    padding-right: 10px;
+}
+
 .modal-window-list__title--light {
     color: #1f2328;
 }

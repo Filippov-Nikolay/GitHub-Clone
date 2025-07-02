@@ -7,78 +7,19 @@ import BtnSearch from '../Components/BtnSearch/BtnSearch.js';
 import { ModalWindowInput } from '../Components/ModalWindowInput/ModalWindowInput';
 import { useLocation } from 'react-router-dom';
 
-const shuffleArray = (array) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
 
-const getRandomSubset = (array) => {
-  const shuffled = shuffleArray(array);
-  const randomLength = Math.floor(Math.random() * (shuffled.length + 1));
-  return shuffled.slice(0, randomLength);
-};
+export function Header({ avatar, name, userName, pageUserName, recentlyUserName  }) {
 
-const initialNotifications = [
-  'You were mentioned in a comment by @username.',
-  'Your post was liked by @username.',
-  'You have a new follower: @username.',
-  'Your post received a new comment from @username.',
-  'New discussion in the group "Group Name"',
-  'Project "Project Name" has been updated.',
-  'Your post is trending in the community.',
-  'You`ve been invited to join the "Event/Group Name".',
-  'Your notification settings have been updated.',
-  'Explore our new feature: [Feature Name].'
-];
-
-export function Header({ avatar, name, userName, pageUserName }) {
-
-  
-  const [notifications, setNotifications] = useState(() => getRandomSubset(initialNotifications));
-  const [unreadCount, setUnreadCount] = useState(notifications.length);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [isLeftMenuOpen, setIsLeftMenuOpen] = useState(false);
   const [isRightMenuOpen, setIsRightMenuOpen] = useState(false);
 
-  const dropdownRef = useRef(null);
 
-  const toggleNotifications = useCallback(() => {
-    setShowNotifications((prev) => !prev);
-  }, []);
-
-  const markAllAsRead = useCallback(() => {
-    setUnreadCount(0);
-    setNotifications([]);
-    setShowNotifications(false);
-  }, []);
 
   const location = useLocation();
 
   const isDashboard = location.pathname === '/';
   const headerTitle = isDashboard ? 'Dashboard' : pageUserName || userName || '';
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setShowNotifications(false);
-      }
-    };
-
-    if (showNotifications) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [showNotifications]);
-
-  const headerLinks = useMemo(() => (
-    ['Pull requests', 'Issues', 'Codespaces', 'Marketplace', 'Explore']
-  ), []);
 
     const [isModalVisible, setModalVisible] = useState(false);
     const handleButtonClick = () => {
@@ -87,7 +28,7 @@ export function Header({ avatar, name, userName, pageUserName }) {
 
   return (
     <header className={style["profile"]}>
-        <ModalWindowInput isActive={isModalVisible} setIsActive={setModalVisible} theme={'dark'}/>
+        <ModalWindowInput isActive={isModalVisible} setIsActive={setModalVisible} theme={'dark'} userName={recentlyUserName}/>
         <div className={style["profile__wrapper"]}>
             <div className={style["profile__item"]}>
                 <button className={style["burger"]} onClick={() => setIsLeftMenuOpen((prev) => !prev)}><div className={style["burger__svg"]}><DotsSvg/></div></button>
@@ -102,29 +43,6 @@ export function Header({ avatar, name, userName, pageUserName }) {
                 />
 
                 <ul className={style['profile-content__wrapper']}>
-                    <li className={style['profile-content__item']}>
-                        <button onClick={toggleNotifications} className={style['notification-btn']}>
-                            <NotificationSVG style={{ fill: unreadCount > 0 ? 'red' : 'inherit' }} />
-                            {unreadCount > 0 && <span className={style['notification-count']}>{unreadCount}</span>}
-                        </button>
-
-                        {showNotifications && (
-                        <div className={style['notifications-dropdown']} ref={dropdownRef}>
-                            {notifications.length > 0 ? (
-                            <>
-                                <ul className={style['notifications-list']}>
-                                {notifications.map((notification, index) => (
-                                    <li key={index} className={style['notification-item']}>{notification}</li>
-                                ))}
-                                </ul>
-                                <button className={style['all-notifications-btn']} onClick={markAllAsRead}>It has been read</button>
-                            </>
-                            ) : (
-                            <div className={style['empty-notifications']}>There are no notifications right now</div>
-                            )}
-                        </div>
-                        )}
-                    </li>
                     <li className={style['profile-content__item']} onClick={() => setIsRightMenuOpen((prev) => !prev)} style={{ cursor: 'pointer' }}>
                         <button className={style['profile-content__btn']}><img className={style['profile-content__logo']}  src={avatar || DefaultAvatar} 
   onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }} alt='Profile' /></button>

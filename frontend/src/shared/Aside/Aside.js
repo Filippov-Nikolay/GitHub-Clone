@@ -12,22 +12,22 @@ import DefaultAvatar from '../assets/img/avatar_account.png'
 
 const emblemList = [Emblem1, Emblem2, Emblem3, Emblem4];
 
-function EmblemOrganizations() {
-    return (
-        <div className='profile-aside__organizations'>
-            <h3 className='profile-aside__title-name'>Organizations</h3>
-            <ul className='profile-organizations-emblem__list'>
-                {emblemList.map((emblem, index) => (
-                    <li key={index} className='profile-organizations-emblem__item'>
-                        <a href='#'>
-                            <img className='profile-organizations-emblem__img' src={emblem} alt={`Emblem${index + 1}`} />
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
+// function EmblemOrganizations() {
+//     return (
+//         <div className='profile-aside__organizations'>
+//             <h3 className='profile-aside__title-name'>Organizations</h3>
+//             <ul className='profile-organizations-emblem__list'>
+//                 {emblemList.map((emblem, index) => (
+//                     <li key={index} className='profile-organizations-emblem__item'>
+//                         <a href='#'>
+//                             <img className='profile-organizations-emblem__img' src={emblem} alt={`Emblem${index + 1}`} />
+//                         </a>
+//                     </li>
+//                 ))}
+//             </ul>
+//         </div>
+//     );
+// }
 
 const extractSocialData = (url) => {
     const instagramRegex = /instagram\.com\/([^\/]+)/;
@@ -52,7 +52,7 @@ const extractSocialData = (url) => {
     return { linkName: url, icon: 'default', url };
 };
 
-export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
+export function Aside({ data, onEdit, isOwnProfile, isAuthenticated, isFollowing, followersCount, followingCount, onFollowToggle  }) {
 
     // Функция для получения времени в зависимости от часового пояса
     const getCurrentTimeInTimeZone = (timezone) => {
@@ -73,8 +73,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
         if (!isAuthenticated) {
             navigate('/login');
         } else {
-            // Заглушка — здесь будет логика подписки
-            console.log('Follow clicked — заглушка');
+            onFollowToggle();
         }
     }
 
@@ -108,7 +107,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
         }
 
         return (
-            <a className='profile-aside__content-wrapper' href={url} target="_blank" rel="noopener noreferrer">
+            <a className='profile-aside__content-wrapper' href={url} target="_blank" rel="noopener noreferrer" key={url}>
                 <IconComponent />
                 <span className='profile-link__social'>{linkName}</span>
             </a>
@@ -116,6 +115,9 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
     };
 
     if (!data) return <div>Loading profile...</div>;
+
+    // Показывать блок подписчиков/подписок только если хотя бы один счетчик больше 0
+    const showFollowersInfo = (followersCount > 0 || followingCount > 0);
 
     return (
         <aside className='profile-aside'>
@@ -126,7 +128,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
                             src={data?.avatar || DefaultAvatar}
                             onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }}
                             alt="User avatar"
-                            />
+                        />
                     </div>
                     <div className='profile-aside__name'>
                         <h2 className='profile-aside__name-main'>{data.name}</h2>
@@ -142,19 +144,29 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
                     </div>
                 )}
                 <div className='profile-aside__func'>
-                {isOwnProfile ? (
-                        <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button> 
+                    {isOwnProfile ? (
+                        <button className='profile-aside__btn-edit' onClick={onEdit}>Edit profile</button>
                     ) : (
-                        <button className='profile-aside__btn-edit' onClick={handleFollowClick}>Follow</button> 
+                        <button 
+                            className='profile-aside__btn-edit' 
+                            onClick={handleFollowClick}
+                            style={{ backgroundColor: isFollowing ? '#bbb' : '#0366d6', color: isFollowing ? '#444' : '#fff' }}
+                        >
+                            {isFollowing ? 'Unfollow' : 'Follow'}
+                        </button>
                     )}
-                    <div className='profile-aside__content-wrapper'>
-                        <a href={`/${data.userName}?tab=followers`} onClick={handleFollowersClick} className='profile-aside__links'>
-                            <FollowersSVG /><span className='profile-aside__links-follow'> 12</span> followers
-                        </a>
-                        <a href={`/${data.userName}?tab=following`} onClick={handleFollowingClick} className='profile-aside__links'>
-                            <span className='profile-aside__links-follow'>3</span> following
-                        </a>
-                    </div>
+
+                    {showFollowersInfo && (
+                        <div className='profile-aside__content-wrapper'>
+                            <a href={`/${data.userName}?tab=followers`} className='profile-aside__links' onClick={handleFollowersClick}>
+                                <FollowersSVG /> 
+                                <span className='profile-aside__links-follow'> {followersCount} </span> followers
+                            </a>
+                            <a href={`/${data.userName}?tab=following`} className='profile-aside__links' onClick={handleFollowingClick}>
+                                <span className='profile-aside__links-follow'> {followingCount} </span> following
+                            </a>
+                        </div>
+                    )}
                 </div>
                 {data.location && (
                     <div className='profile-aside__info'>
@@ -181,7 +193,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
                 {data.linkToSocial2 && renderSocialLink(data.linkToSocial2)}
                 {data.linkToSocial3 && renderSocialLink(data.linkToSocial3)}
                 {data.linkToSocial4 && renderSocialLink(data.linkToSocial4)}
-                <div className='profile-aside__achievements'>
+                {/* <div className='profile-aside__achievements'>
                     <h3 className='profile-aside__title-name'>Achievements</h3>
                     <div className='profile-aside__achiev-logo'>
                         <img src={Achiev} alt='profile-Achievements' />
@@ -191,7 +203,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated }) {
                         <a href='#' className='profile-aside__link-feedback'>Send feedback</a>
                     </div>
                 </div>
-                <EmblemOrganizations />
+                <EmblemOrganizations /> */}
             </div>
         </aside>
     );

@@ -62,6 +62,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
 builder.Services.AddTransient<IRepositoryService, RepositoryService>();
+builder.Services.AddTransient<ISubscriptionService, SubscriptionService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddScoped<IEditService, EditService>();
 builder.Services.AddControllersWithViews();
