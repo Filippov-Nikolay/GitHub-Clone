@@ -140,7 +140,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated, isFollowing
                 </div>
                 {data.bio && (
                     <div className='profile-aside__bio'>
-                        <span className='profile-aside__bio-text'>{data.bio}</span>
+                        <div className='profile-aside__bio-text'>{data.bio}</div>
                     </div>
                 )}
                 <div className='profile-aside__func'>

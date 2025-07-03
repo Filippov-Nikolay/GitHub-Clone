@@ -1,5 +1,5 @@
 import React from 'react';
-import Btn from '../Btn/Btn.js';
+import Btn from '../BtnLink/Btn.js';
 import '../Following/following.css';
 import { useNavigate } from 'react-router-dom';
 

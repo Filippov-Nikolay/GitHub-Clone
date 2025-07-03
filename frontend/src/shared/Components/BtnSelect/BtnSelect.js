@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import Btn from '../Btn/Btn'
+import Btn from '../BtnLink/Btn.js'
 import { CheckSVG, CloseBurgerSVG, ArrowDownSvg } from '../../assets/svg/SvgComponents'
 
 import './btnSelect.css';
