@@ -80,7 +80,7 @@ useEffect(() => {
                     <InputSearch
                         onChange={HandleSearchChange}
                         search={search}
-                        theme={"light"}
+                        theme={"dark"}
                         placeholder={"Search users"}
                     />
                     <div className="modal-window-input__action-list-content">

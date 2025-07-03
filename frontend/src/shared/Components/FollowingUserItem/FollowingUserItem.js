@@ -1,7 +1,8 @@
 import React from 'react';
-import Btn from '../BtnLink/Btn.js';
+import Btn from '../Btn/Btn.js';
 import '../Following/following.css';
 import { useNavigate } from 'react-router-dom';
+import DefaultAvatar from '../../assets/img/avatar_account.png'
 
 export default function FollowingUserItem({ user, onFollowToggle, isAuthenticated, currentUserId }) {
   const isOwnSelf = user.id === currentUserId;
@@ -21,7 +22,8 @@ export default function FollowingUserItem({ user, onFollowToggle, isAuthenticate
         <a href={`/${user.userName}`} className="following-user__avatar-link">
           <img
             className="following-user__avatar-img"
-            src={user.avatar || '/default-avatar.png'}
+            src={user.avatar || DefaultAvatar}
+            onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }}
             alt={`${user.name || user.userName} avatar`}
             loading="lazy"
           />

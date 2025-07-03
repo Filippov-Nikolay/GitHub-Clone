@@ -48,7 +48,7 @@
     text-align: center;
     border: 1px solid #f0f6fc15;
     background-color: #21262D;
-    color: #C9D1D9;
+    color: #C9D1D9 !important;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s all;
