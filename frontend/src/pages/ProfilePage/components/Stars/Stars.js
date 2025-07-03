@@ -2,7 +2,7 @@ import React, {useState} from 'react';
  
 import Blankslate from "../../../../shared/Components/Blankslate/Blankslate";
 import BtnPrimary from "../../../../shared/Components/BtnPrimary/BtnPrimary";
-import Btn from "../../../../shared/Components/Btn/Btn";
+import Btn from "../../../../shared/Components/BtnLink/Btn.js";
 import BtnSearch from "../../../../shared/Components/BtnSearch/BtnSearch";
 import BtnSelect from '../../../../shared/Components/BtnSelect/BtnSelect'
 
