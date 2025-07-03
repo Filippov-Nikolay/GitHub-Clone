@@ -77,8 +77,8 @@ namespace CloneGitHub.Controllers
             var salt = PasswordHasher.GenerateSalt();
             var hash = PasswordHasher.HashPassword(userDTO.Password, salt);
 
-            userDTO.Salt = salt;
-            //userDTO.Password = hash;
+            //userDTO.Salt = salt;
+            userDTO.Password = hash;
 
             await _userService.CreateUser(userDTO);
 
@@ -135,8 +135,8 @@ namespace CloneGitHub.Controllers
                 return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
             }
 
-            //bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
-            bool passwordValid = user.Password == loginRequest.Password;
+            bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
+            //bool passwordValid = user.Password == loginRequest.Password;
 
             if (!passwordValid)
             {
@@ -234,8 +234,8 @@ namespace CloneGitHub.Controllers
             var hash = PasswordHasher.HashPassword(request.NewPassword, salt);
 
             user.Salt = salt;
-            //user.Password = hash;
-            user.Password = request.NewPassword;
+            user.Password = hash;
+            //user.Password = request.NewPassword;
 
             await _userService.UpdateUser(user);
 

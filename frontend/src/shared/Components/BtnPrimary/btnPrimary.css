@@ -1,5 +1,7 @@
 .btn-primary {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     /* margin-top: 15px; */
     padding: 7px 15px;
 
@@ -16,4 +18,10 @@
 }
 .btn-primary:hover {
     background-color: #262c36;
+}
+.btn-primary__svg {
+}
+.btn-primary__svg svg {
+    max-width: 12px;
+    max-height: 12px;
 }

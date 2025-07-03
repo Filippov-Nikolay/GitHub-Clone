@@ -4,6 +4,7 @@ import chiragsingla17Image from '../../sources/images/chiragsingla1716x16.png';
 import BuilderIOImage from '../../sources/images/BuilderIO16x16.png';
 import UpVoxAiImage from '../../sources/images/UpVoxAi16x16.png';
 import Input from '../../../../shared/Components/Input/Input';
+import BtnPrimary from '../../../../shared/Components/BtnPrimary/BtnPrimary'
 import { GoRepo } from "react-icons/go";
 
 
@@ -23,8 +24,13 @@ const TopRepositories = () => {
             {/* <hr className="separator" /> */}
             <div className="top-repositories">
                 <div className='repository-header-wrapper'>
-                    <h2>Top Repositories</h2>
-                    <button className="new-button"><GoRepo/><div className="new-button__span">New</div></button>
+                    <h2 className='repository-header-wrapper__title'>Top Repositories</h2>
+                    <BtnPrimary
+                        btnText={"New"}
+                        iconSvg={<GoRepo/>}
+                        positionIcon={"left"}
+                        btnHref={"/CreateRepository"}
+                    />
                 </div>
                 <Input
                     placeholder={"find a repository..."}
