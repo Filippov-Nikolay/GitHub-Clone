@@ -1,7 +1,7 @@
 .input-select {
     position: relative;
 }
-.btn {
+.input-select .btn {
     margin-top: 10px;
     padding: 8px 12px;
 
@@ -18,10 +18,10 @@
 
     background-color: inherit;
 }
-.btn:hover {
+.input-select .btn:hover {
     background-color: inherit;
 }
-.btn svg {
+.input-select .btn svg {
     fill: #25292e;
 }
 .bg-for-close {

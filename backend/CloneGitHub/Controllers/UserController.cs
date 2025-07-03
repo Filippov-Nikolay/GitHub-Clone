@@ -77,7 +77,7 @@ namespace CloneGitHub.Controllers
             var salt = PasswordHasher.GenerateSalt();
             var hash = PasswordHasher.HashPassword(userDTO.Password, salt);
 
-            //userDTO.Salt = salt;
+            userDTO.Salt = salt;
             userDTO.Password = hash;
 
             await _userService.CreateUser(userDTO);
