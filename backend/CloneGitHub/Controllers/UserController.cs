@@ -91,6 +91,32 @@ namespace CloneGitHub.Controllers
             return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
         }
 
+        [HttpGet("username")]
+        public async Task<ActionResult<bool>> isExistsUsername([FromQuery] string username) {
+            if (string.IsNullOrWhiteSpace(username)) {
+                return BadRequest("Username is empty");
+            }
+            var user = await _userService.GetUser(username);
+            if (user != null)
+            {
+                return Ok(true);
+            }
+            return Ok(false);
+        }
+        [HttpGet("email")]
+        public async Task<ActionResult<bool>> isExistsEmail([FromQuery] string email) {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return BadRequest("Username is empty");
+            }
+            var user = await _userService.GetUserByEmail(email);
+            if (user != null)
+            {
+                return Ok(true);
+            }
+            return Ok(false);
+        }
+
         [HttpPost("login")]
         public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest)
         {

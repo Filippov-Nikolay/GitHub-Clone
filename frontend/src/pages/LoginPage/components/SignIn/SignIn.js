@@ -129,7 +129,8 @@ export function SignIn() {
                     <form onSubmit={handleResetSubmit} className="login-form__form">
                         <div className="login-form__item">
                             <label className="login-form__label" htmlFor="newPassword">Password</label>
-                            <input 
+                            <input
+                                required
                                 id="newPassword"
                                 className="login-form__input" 
                                 type="password" 
@@ -140,7 +141,8 @@ export function SignIn() {
                         </div>
                         <div className="login-form__item">
                             <label className="login-form__label" htmlFor="confirmPassword">Confirm password</label>
-                            <input 
+                            <input
+                                required
                                 id="confirmPassword"
                                 className="login-form__input" 
                                 type="password" 
@@ -162,6 +164,7 @@ export function SignIn() {
                         <div className="login-form__item">
                             <label className="login-form__label" htmlFor="loginOrEmail">Username or email address</label>
                             <input 
+                                required
                                 id="loginOrEmail"
                                 className="login-form__input" 
                                 type="text" 
@@ -176,6 +179,7 @@ export function SignIn() {
                                 <a href="/password_reset" className="login-form__forgot-password">Forgot password?</a>
                             </div>
                             <input 
+                                required
                                 className="login-form__input" 
                                 type="password" 
                                 name="password"

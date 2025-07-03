@@ -50,7 +50,7 @@
 
     cursor: pointer;
 }
-.btn-select__close-svg svg {
+.btn-select__close-svg #Vector {
     stroke: #9198a1;
 }
 .btn-select__close-svg svg:hover #Vector {

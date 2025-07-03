@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ActionsSvg, SearchSvg, CloseSvg, BookSVG, ProfileSVG } from '../../../shared/assets/svg/SvgComponents';
 import './modalWindowInput.css';
+import InputSearch  from '../InputSearch/InputSearch.js'
 import { searchUsers } from './Services/userSearchService.js';
 
 export function ModalWindowInput({ isActive, setIsActive, theme = 'dark', userName}) {
@@ -41,18 +42,18 @@ useEffect(() => {
 }, [isActive, userName]);
 
     useEffect(() => {
-    const delayDebounce = setTimeout(() => {
-        if (search.trim().length > 0) {
-            searchUsers(search)
-                .then(setSearchResults)
-                .catch(() => setSearchResults([]));
-        } else {
-            setSearchResults([]);
-        }
-    }, 300);
+        const delayDebounce = setTimeout(() => {
+            if (search.trim().length > 0) {
+                searchUsers(search)
+                    .then(setSearchResults)
+                    .catch(() => setSearchResults([]));
+            } else {
+                setSearchResults([]);
+            }
+        }, 300);
 
-    return () => clearTimeout(delayDebounce);
-}, [search]);
+        return () => clearTimeout(delayDebounce);
+    }, [search]);
 
     const handleBackgroundClick = () => {
         setIsActive(false);
@@ -62,9 +63,8 @@ useEffect(() => {
         <div className="modal-window-input">
             <div className={`modal-window-input__content ${!isActive ? 'modal-window-input__content--hide' : ''} modal-window-input__content--${theme}`}>
                 <div className="modal-window-input__bg" onClick={handleBackgroundClick}></div>
-                
                 <div className="modal-window-input__item">
-                    <div className="modal-window-input__wrapper-input">
+                    {/* <div className="modal-window-input__wrapper-input">
                         <span className="modal-window-input__search-span"><SearchSvg /></span>
                         <input
                             className={`modal-window-input__input modal-window-input__input--${theme}`}
@@ -76,8 +76,13 @@ useEffect(() => {
                         <span className="modal-window-input__search-span modal-window-input__search-span--close">
                             <CloseSvg />
                         </span>
-                    </div>
-
+                    </div> */}
+                    <InputSearch
+                        onChange={HandleSearchChange}
+                        search={search}
+                        theme={"light"}
+                        placeholder={"Search users"}
+                    />
                     <div className="modal-window-input__action-list-content">
                         {isSearchShow && searchResults.map((user, index) => (
                             <a key={index} className="modal-window-input__action-list-link" href={`/${user.userName}`} onClick={() => saveRecentUser(user)}>

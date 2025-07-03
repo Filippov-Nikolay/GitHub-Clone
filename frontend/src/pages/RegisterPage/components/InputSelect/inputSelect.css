@@ -1,0 +1,120 @@
+.input-select {
+    position: relative;
+}
+.btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+
+    min-width: 100%;
+
+    border: 1px solid #d1d9e0;
+    border-radius: 4px;
+
+    justify-content: space-between;
+
+    color: #25292e;
+    font-weight: 200;
+    text-transform: capitalize;
+
+    background-color: inherit;
+}
+.btn:hover {
+    background-color: inherit;
+}
+.btn svg {
+    fill: #25292e;
+}
+.bg-for-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100vh;
+}
+.bg-for-close--hidden {
+    display: none;
+}
+.input-select__wrapper {
+    position: absolute;
+    top: auto;
+    right: 0;
+    z-index: 2;
+    
+    margin: 8px 0;
+
+    width: 300px;
+    max-height: 432px;
+
+    color: #f0f6fc;
+    font-size: 12px;
+
+    background-color: #ffffff;
+    border: 1px solid #d1d9e080;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+.input-select__wrapper--hidden {
+    display: none;
+}
+.input-select__title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 16px 16px;
+
+    color: #1f2328;
+    font-size: 14px;
+    font-weight: 600;
+
+    border-bottom: 1px solid #d1d9e080;
+}
+.input-select__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input-select__close-svg {
+    max-width: 16px;
+    max-height: 16px;
+
+    cursor: pointer;
+}
+.input-select__close-svg #Vector {
+    stroke: #25292e;
+}
+.input-select__close-svg svg:hover #Vector {
+    /* stroke: #f0f6fc; */
+}
+.input-select__menu {
+    max-height: 432px;
+    overflow: auto;
+}
+.input-select__item {
+    display: flex;
+    align-items: center;
+
+    padding: 6px 16px;
+    
+    color: #1f2328;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+.input-select__item:hover {
+    background-color: #656c7633;
+}
+.input-select__svg--hidden {
+    visibility: hidden;
+}
+.input-select__svg svg {
+    fill: #25292e;
+}
+.input-select__text {
+    margin-left: 8px;
+}

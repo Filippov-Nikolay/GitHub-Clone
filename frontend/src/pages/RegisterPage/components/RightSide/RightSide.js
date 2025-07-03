@@ -1,15 +1,131 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useSearchParams} from 'react-router-dom';
+import { getNames } from "country-list";
+
+import Input from "../Input/Input"
+import InputSelect from "../InputSelect/InputSelect";
 
 import { ArrowSymbolMktg } from "../../../../shared/assets/svg/SvgComponents";
 import { registerUser } from "../../services/Registration";
 import styles from "./rightSide.module.css"
 
+// Services
+import { checkEmailExists } from "../../services/ValidationService";
+import { checkUsernameExists } from "../../services/ValidationService";
+
 
 export function RightSide() {
-    const [params] = useSearchParams();
-    const [email, setEmail] = useState("");
+    const countries = getNames();
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const [email, setEmail] = useState('');
+    const [errorForEmail, setErrorForEmail] = useState('');
+    const [errorTitleForEmail, setErrorTitleForEmail] = useState('');
+    const [formData, setFormData] = useState({ 
+        Email: '', 
+        Password: '',
+        Username: '',
+        Country: '',
+        EmailPreferences: false
+    });
+    const debounceEmailRef = useRef(null)
+    const handleEmailChange = (e) => {
+        const val = e.target.value;
+        setEmail(val);
+
+        setFormData(prev => ({ ...prev, Email: val }));
+
+        // Сбрасываем старый таймер
+        if (debounceEmailRef.current) {
+            clearTimeout(debounceEmailRef.current);
+        }
+
+        // Устанавливаем новый
+        debounceEmailRef.current = setTimeout(async() => {
+            if (val.length == 0) {
+                setErrorTitleForEmail('Email cannot be blank');
+                return;
+            } else if (!emailRegex.test(val)) {
+                setErrorTitleForEmail('Email is invalid or already taken');
+                return;
+            }
+
+            const exists = await checkEmailExists(val);
+            if (exists) {
+                setErrorTitleForEmail(
+                    <p>
+                        The email you have provided is already associated with an account.{' '}
+                        <a href="/login" style={{display: "inline-block", textDecoration: "underline"}}>Sign in</a>{' '}or{' '}<a href="password_reset" style={{display: "inline-block", textDecoration: "underline"}}>reset your password</a> 
+                    </p>
+                );
+            } else {
+                setErrorTitleForEmail('');
+            }
+        }, 500);
+    }
+
+    const [password, setPassword] = useState('');
+    const [errorForPassword, setErrorForPassword] = useState('');
+    const [errorTitleForPassword, setErrorTitleForPassword] = useState('');
+    const handlePasswordChange = (e) => {
+        const val = e.target.value;
+        setPassword(val);
+
+        setFormData(prev => ({ ...prev, Password: val }));
+
+        if (val.length == 0) {
+            setErrorTitleForPassword('Password cannot be blank')
+        } else if (val.length >= 15) {
+            setErrorTitleForPassword('');
+        } else if (val.length >= 8 && /[0-9]/.test(val) && /[a-z]/.test(val)) {
+            setErrorTitleForPassword('');
+        } else {
+            setErrorTitleForPassword('');
+        }
+    };
+
+    const [username, setUsername] = useState('');
+    const [errorForUsername, setErrorForUsername] = useState('');
+    const [errorTitleForUsername, setErrorTitleForUsername] = useState('');
+    const debounceUsernameRef = useRef(null)
+    const handleUsernameChange = (e) => {
+        const val = e.target.value;
+        setUsername(val);
+
+        setFormData(prev => ({ ...prev, Username: val }));
+
+        // Сбрасываем старый таймер
+        if (debounceUsernameRef.current) {
+            clearTimeout(debounceUsernameRef.current);
+        }
+
+        // Устанавливаем новый
+        debounceUsernameRef.current = setTimeout(async() => {
+            if (val.length == 0) {
+                setErrorTitleForUsername('Username cannot be blank');
+                return;
+            }
+
+            const exists = await checkUsernameExists(val);
+            console.log(val, exists);
+
+            if (exists) {
+                setErrorTitleForUsername(`Username ${val} is not available.`);
+            } else {
+                setErrorTitleForUsername('');
+            }
+        }, 500);
+    }
+
+    const [emailPreferences, setEmailPreferences] = useState(false);
+    const handleEmailPreferencesChange = (e) => {
+        const isChecked = e.target.checked;
+        setEmailPreferences(isChecked);
+        setFormData(prev => ({ ...prev, EmailPreferences: isChecked }));
+    };
+
+
+    const [params] = useSearchParams();
     useEffect(() => {
         const emailFromUrl = params.get("email");
         if (emailFromUrl) {
@@ -22,23 +138,13 @@ export function RightSide() {
         }
     }, [params]);
 
-    const navigate = useNavigate();
-    const [formData, setFormData] = useState({
-        Email: "",
-        UserName: "",
-        Password: "",
-        Country: "",
-        EmailPreferences: false
-    });
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData({
-          ...formData,
-          [name]: type === "checkbox" ? checked : value,
-        });
-      };
+
+    // const navigate = useNavigate();
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        console.log(formData);
 
         try {
             const result = await registerUser(formData);
@@ -64,49 +170,46 @@ export function RightSide() {
                     <h2 className={styles["right-side__title"]}>Sign up to GitHub</h2>
                     <form className={styles["right-side__form"]} onSubmit={handleSubmit}>
                         <div className={styles["right-side__form-group"]}>
-                            <label htmlFor="email" className={styles["right-side__label"]}>Email</label>
-                            <input 
-                                id="email"
-                                className={styles["right-side__input"]}
-                                type="text"
-                                name="Email"
-                                value={formData.Email}
-                                onChange={handleChange}
-                                placeholder="Enter your email or username"
-                                required
+                            <Input
+                                label={"Email"}
+                                placeholder={"Enter your email or username"}
+                                type={"email"}
+                                msgErrorTitle={errorTitleForEmail}
+                                value={email}
+                                onChange={handleEmailChange}
                             />
                         </div>
                         <div className={styles["right-side__form-group"]}>
-                            <label htmlFor="password" className={styles["right-side__label"]}>Password</label>
-                            <input 
-                                id="password"
-                                className={styles["right-side__input"]}
-                                type="password"
-                                name="Password"
-                                value={formData.Password}
-                                onChange={handleChange}
-                                placeholder="Enter your password"
-                                required
+                            <Input
+                                label={"Password"}
+                                placeholder={"Enter your password"}
+                                type={"password"}
+                                msgErrorTitle={errorTitleForPassword}
+                                note={"Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter."}
+                                value={password}
+                                onChange={handlePasswordChange}
                             />
-                            <p className={styles["right-side__note"]}>Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
                         </div>
                         <div className={styles["right-side__form-group"]}>
-                            <label htmlFor="username" className={styles["right-side__label"]}>Username</label>
-                            <input 
-                                id="username" 
-                                className={styles["right-side__input"]}
-                                type="text"  
-                                placeholder="Enter your username" 
-                                value={formData.UserName}
-                                onChange={handleChange}
-                                name="UserName"
+                            <Input
+                                label={"Username"}
+                                placeholder={"Enter your username"}
+                                type={"text"}
+                                msgErrorTitle={errorTitleForUsername}
+                                note={"Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen."}
+                                value={username}
+                                onChange={handleUsernameChange}
+                            />
+                        </div>
+                        <div className={styles["right-side__form-group"]}>
+                            <InputSelect
+                                label={"Your Country/Region"}
+                                options={countries}
+                                note={"For compliance reasons, we're required to collect country information to send you occasional updates and announcements."}
+                            />
+                            {/* 
+                            <input
                                 required 
-                            />
-                            <p className={styles["right-side__note"]}>Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.</p>
-                        </div>
-                        <div className={styles["right-side__form-group"]}>
-                            <label htmlFor="country" className={styles["right-side__label"]}>Your country</label>
-                            <input 
                                 id="country" 
                                 className={styles["right-side__input"]} 
                                 type="text" 
@@ -114,24 +217,30 @@ export function RightSide() {
                                 value={formData.Country}
                                 onChange={handleChange}
                                 name="Country"
-                                required 
                             />
-                            <p className={styles["right-side__note"]}>For compliance reasons, we're required to collect country information to send you occasional updates and announcements.</p>
+                            <p className={styles["right-side__note"]}>For compliance reasons, we're required to collect country information to send you occasional updates and announcements.</p> */}
                         </div>
-
                         <label htmlFor="email-preferences" className={styles["right-side__label"]}>Email preferences</label>
                         <div className={`${styles["right-side__form-group"]} ${styles["right-side__form-group--flex"]}`}>
+                            {/* <Input
+                                isRequired={false}
+                                label={"Email preferences"}
+                                placeholder={"Enter your username"}
+                                type={"checkbox"}
+                                value={username}
+                                onChange={handleUsernameChange}
+                            /> */}
                             <input 
                                 id="email-preferences" 
                                 className={styles["right-side__checkbox"]} 
                                 type="checkbox" 
-                                checked={formData.EmailPreferences}
-                                onChange={handleChange}
+                                checked={emailPreferences}
+                                onChange={handleEmailPreferencesChange}
                                 name="EmailPreferences"
                             />
-                            <span className={styles["right-side__checkbox-label"]}>Receive occasional product updates and announcements</span>
+                            <span className={styles["right-side__checkbox-label"]}>Receive occasional product updates and announcements</span> 
                         </div>
-                        <button type="submit" className={styles["btn"]}> <span className={styles["btn__span"]}>Continue</span> <ArrowSymbolMktg /></button>
+                        <button type="submit" className={styles["btn"]}><span className={styles["btn__span"]}>Continue</span> <ArrowSymbolMktg /></button>
                     </form>
                 </main>
                 <footer className={styles.footer}>
