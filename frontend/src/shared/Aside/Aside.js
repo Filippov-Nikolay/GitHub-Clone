@@ -150,7 +150,7 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated, isFollowing
                         <button 
                             className='profile-aside__btn-edit' 
                             onClick={handleFollowClick}
-                            style={{ backgroundColor: isFollowing ? '#bbb' : '#0366d6', color: isFollowing ? '#444' : '#fff' }}
+                            style={{ backgroundColor: isFollowing ? '#212931' : '#212931', color: isFollowing ? '#444' : '#fff' }}
                         >
                             {isFollowing ? 'Unfollow' : 'Follow'}
                         </button>

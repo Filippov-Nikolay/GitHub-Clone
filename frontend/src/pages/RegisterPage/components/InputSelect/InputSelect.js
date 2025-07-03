@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import Btn from '../../../../shared/Components/BtnLink/Btn.js'
+import Btn from '../../../../shared/Components/Btn/Btn.js'
 import BtnSearch from '../../../../shared/Components/BtnSearch/BtnSearch'
 import InputSearch from '../../../../shared/Components/InputSearch/InputSearch';
 import { CheckSVG, CloseBurgerSVG, ArrowDownSvg, SearchSVG } from '../../../../shared/assets/svg/SvgComponents'
