@@ -73,12 +73,14 @@ export function RightSide() {
 
         setFormData(prev => ({ ...prev, Password: val }));
 
-        if (val.length == 0) {
-            setErrorTitleForPassword('Password cannot be blank')
-        } else if (val.length >= 15) {
-            setErrorTitleForPassword('');
-        } else if (val.length >= 8 && /[0-9]/.test(val) && /[a-z]/.test(val)) {
-            setErrorTitleForPassword('');
+        if (val.length === 0) {
+            setErrorTitleForPassword('Password cannot be blank');
+        } else if (val.length < 8) {
+            setErrorTitleForPassword('Password must be at least 8 characters');
+        } else if (!/[0-9]/.test(val)) {
+            setErrorTitleForPassword('Password must include at least one number');
+        } else if (!/[a-z]/.test(val)) {
+            setErrorTitleForPassword('Password must include at least one lowercase letter');
         } else {
             setErrorTitleForPassword('');
         }
