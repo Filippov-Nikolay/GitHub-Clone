@@ -2,15 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 
-import DashboardPage from './pages/DashboardPage/Index';
-import LandingPage from './pages/LandingPage/Index';
-import ProfilePage from './pages/ProfilePage/Index';
+import DashboardPage from './pages/DashboardPage';
+import LandingPage from './pages/LandingPage';
+import ProfilePage from './pages/ProfilePage';
 
-import LoginPage from './pages/LoginPage/Index';
-import PasswordResetPage from './pages/PasswordResetPage/Index';
-import SignupPage from './pages/RegisterPage/Index';
-import RepositoryPage from './pages/RepositoryPage/Index';
-import CreateRepository from './pages/CreateRepository/Index';
+import LoginPage from './pages/LoginPage/index';
+import PasswordResetPage from './pages/PasswordResetPage';
+import SignupPage from './pages/RegisterPage';
+import RepositoryPage from './pages/RepositoryPage';
+import CreateRepository from './pages/CreateRepository';
 
 
 const AppRouter = () => {
