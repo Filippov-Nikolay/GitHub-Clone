@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 
 import { LogoSVG } from "../../../../shared/assets/svg/SvgComponents";
 
@@ -55,7 +55,7 @@ export function SignIn() {
             if (result === true) {
                 console.log("Login successful!");
                 const userName = Cookies.get('dotcom_user');
-                window.location.href = `/${userName}`;
+                navigate(userName ? `/${userName}` : '/');
             } else {
                 setFormData(prev => ({ ...prev, password: "" }));
                 console.log("Login failed! Invalid credentials.");
@@ -109,7 +109,7 @@ export function SignIn() {
 
     return (
         <div className="form-content">
-            <nav className="form-content__nav"><a href="/" className="form-content__link"><LogoSVG/></a></nav>
+            <nav className="form-content__nav"><Link to="/" className="form-content__link"><LogoSVG/></Link></nav>
             <h1 className="title">
                 {isResetMode ? "Change password" : "Sign in to GitHub"}
             </h1>
@@ -153,7 +153,7 @@ export function SignIn() {
                         </div>
                         <div className="login-form__item">
                             <p className="login-form__text">
-                                Make sure it`s at least 15 characters OR at least 8 characters including a number, symbol, and uppercase and lowercase letter. <a className="login-callout__link" href="/">Learn more.</a>
+                                Make sure it`s at least 15 characters OR at least 8 characters including a number, symbol, and uppercase and lowercase letter. <Link className="login-callout__link" to="/">Learn more.</Link>
                             </p>
                         </div>
                         <button type="submit" className="login-form__btn">Reset Password</button>
@@ -176,7 +176,7 @@ export function SignIn() {
                         <div className="login-form__item">
                             <div className="login-form__wrapper">
                                 <label className="login-form__label" htmlFor="password">Password</label>
-                                <a href="/password_reset" className="login-form__forgot-password">Forgot password?</a>
+                                <Link to="/password_reset" className="login-form__forgot-password">Forgot password?</Link>
                             </div>
                             <input 
                                 required
@@ -191,7 +191,7 @@ export function SignIn() {
                     </form>
                     <div className="login-callout">
                         <button type="button" className="login-callout__btn">Sign in with a passkey</button>
-                        <p className="login-callout__text">New to GitHub? <a className="login-callout__link" href="signup">Create an account</a></p>
+                        <p className="login-callout__text">New to GitHub? <Link className="login-callout__link" to="/signup">Create an account</Link></p>
                     </div>
                     </>
                 )}

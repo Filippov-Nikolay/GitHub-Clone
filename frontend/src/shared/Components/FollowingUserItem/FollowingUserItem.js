@@ -1,7 +1,7 @@
 import React from 'react';
 import Btn from '../Btn/Btn.js';
 import '../Following/following.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DefaultAvatar from '../../assets/img/avatar_account.png'
 
 export default function FollowingUserItem({ user, onFollowToggle, isAuthenticated, currentUserId }) {
@@ -19,7 +19,7 @@ export default function FollowingUserItem({ user, onFollowToggle, isAuthenticate
   return (
     <div className="following-user">
       <div className="following-user__avatar">
-        <a href={`/${user.userName}`} className="following-user__avatar-link">
+        <Link to={`/${user.userName}`} className="following-user__avatar-link">
           <img
             className="following-user__avatar-img"
             src={user.avatar || DefaultAvatar}
@@ -27,14 +27,14 @@ export default function FollowingUserItem({ user, onFollowToggle, isAuthenticate
             alt={`${user.name || user.userName} avatar`}
             loading="lazy"
           />
-        </a>
+        </Link>
       </div>
 
       <div className="following-user__info">
-        <a className="following-user__name-link" href={`/${user.userName}`}>
+        <Link className="following-user__name-link" to={`/${user.userName}`}>
           <span className="following-user__name">{user.name || user.userName}</span>{' '}
           <span className="following-user__username">{user.userName}</span>
-        </a>
+        </Link>
         {user.bio && (
           <div className="following-user__description">{user.bio}</div>
         )}

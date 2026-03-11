@@ -5,7 +5,7 @@ import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from
 import DefaultAvatar from '../assets/img/avatar_account.png'
 import BtnSearch from '../Components/BtnSearch/BtnSearch.js';
 import { ModalWindowInput } from '../Components/ModalWindowInput/ModalWindowInput';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 export function Header({ avatar, name, userName, pageUserName, recentlyUserName  }) {
@@ -32,7 +32,7 @@ export function Header({ avatar, name, userName, pageUserName, recentlyUserName 
         <div className={style["profile__wrapper"]}>
             <div className={style["profile__item"]}>
                 <button className={style["burger"]} onClick={() => setIsLeftMenuOpen((prev) => !prev)}><div className={style["burger__svg"]}><DotsSvg/></div></button>
-                <div className={style["logo"]}><a className={style["logo__link"]} href='/'><div className={style["logo__svg"]}><LogoSVG/></div><h2 className={style["logo__title"]}>{headerTitle}</h2></a></div>
+                <div className={style["logo"]}><Link className={style["logo__link"]} to='/'><div className={style["logo__svg"]}><LogoSVG/></div><h2 className={style["logo__title"]}>{headerTitle}</h2></Link></div>
             </div>
             <div className={style["profile__item"]}>
                 <BtnSearch

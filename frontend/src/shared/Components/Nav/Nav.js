@@ -1,4 +1,5 @@
 import {React, useState} from "react";
+import { Link } from "react-router-dom";
 import { 
     LogoSvg, PathSvg, SearchSvg
 } from '../../../shared/assets/svg/SvgComponents'
@@ -12,7 +13,7 @@ import './adaptive.css'
 
 function SignUp() {
     return (
-        <a className="nav__btn nav__btn--border" href="/signup">Sign up</a>
+        <Link className="nav__btn nav__btn--border" to="/signup">Sign up</Link>
     )
 }
 export function Nav({bgColor = "#ffffff00", theme = 'dark'}) {
@@ -27,7 +28,7 @@ export function Nav({bgColor = "#ffffff00", theme = 'dark'}) {
             <nav className="nav" style={{backgroundColor: bgColor}}>
                 <div className="nav__wrapper">
                     <div className="nav__sign-up-wrapper"><SignUp></SignUp></div>
-                    <a href="/" className="logo" aria-label='logo'><LogoSvg colorProps="#fff"></LogoSvg></a>
+                    <Link to="/" className="logo" aria-label='logo'><LogoSvg colorProps="#fff"></LogoSvg></Link>
                     <div className="nav__inner">
                         <Menu></Menu>
                         <div className="nav__wrapper-item">
@@ -37,7 +38,7 @@ export function Nav({bgColor = "#ffffff00", theme = 'dark'}) {
                                 btnText={'Search GitHub'}
                                 additionalSvgComponent={<PathSvg></PathSvg>}
                             />
-                            <a className="nav__btn" href="/login">Sign in</a>
+                            <Link className="nav__btn" to="/login">Sign in</Link>
                             <div className="nav__sign-up"><SignUp></SignUp></div>
                         </div>
                     </div>

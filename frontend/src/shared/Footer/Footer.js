@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../shared/Footer/footer.css';
 import { LogoFooterSvg } from '../assets/svg/SvgComponents';
 
@@ -21,9 +22,9 @@ export function Footer() {
         <footer className='profile-footer'>
             <div className='profile-footer__container'>
                 <div className='profile-footer__wrapper'>
-                    <a href='/' className='profile-footer__logo'>
+                    <Link to='/' className='profile-footer__logo'>
                         <LogoFooterSvg />
-                    </a>
+                    </Link>
                     <div className='profile-footer__container--name'>
                         © 2023 GitHub, Inc.
                     </div>

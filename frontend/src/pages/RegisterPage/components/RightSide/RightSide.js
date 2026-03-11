@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate, useSearchParams} from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { getNames } from "country-list";
 
 import Input from "../Input/Input"
@@ -55,7 +55,7 @@ export function RightSide() {
                 setErrorTitleForEmail(
                     <p>
                         The email you have provided is already associated with an account.{' '}
-                        <a href="/login" style={{display: "inline-block", textDecoration: "underline"}}>Sign in</a>{' '}or{' '}<a href="password_reset" style={{display: "inline-block", textDecoration: "underline"}}>reset your password</a> 
+                        <Link to="/login" style={{display: "inline-block", textDecoration: "underline"}}>Sign in</Link>{' '}or{' '}<Link to="/password_reset" style={{display: "inline-block", textDecoration: "underline"}}>reset your password</Link>
                     </p>
                 );
             } else {
@@ -165,7 +165,7 @@ export function RightSide() {
         <div className={styles["right-side"]}>
             <header className={styles["right-side__header"]}>
                 <span className={styles["right-side__span"]}>Already have an account?</span>
-                <a href="/login" className={styles["right-side__link"]}> <span className={styles["right-side__text"]}>Sign in</span> <ArrowSymbolMktg /></a>
+                <Link to="/login" className={styles["right-side__link"]}> <span className={styles["right-side__text"]}>Sign in</span> <ArrowSymbolMktg /></Link>
             </header>
             <div className={styles["right-side__content"]}>
                 <main className={styles["right-side__main"]}>

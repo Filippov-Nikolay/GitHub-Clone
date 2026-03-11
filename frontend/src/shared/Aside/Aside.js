@@ -1,6 +1,6 @@
 import React from 'react';
 import './aside.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { FollowersSVG, GeoSVG, LinksSVG, InstagramSVG, LinkedInSVG, YouTubeSVG, ClockSVG } from '../assets/svg/SvgComponents'; // Добавьте иконки
 import Achiev from '../assets/svg/Achiev.svg';
@@ -77,16 +77,6 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated, isFollowing
         }
     }
 
-    const handleFollowersClick = (e) => {
-        e.preventDefault();
-        navigate(`/${data.userName}?tab=followers`);
-    };
-
-    const handleFollowingClick = (e) => {
-        e.preventDefault();
-        navigate(`/${data.userName}?tab=following`);
-    };
-
     const renderSocialLink = (socialLink) => {
         const { linkName, icon, url } = extractSocialData(socialLink);
         let IconComponent;
@@ -158,13 +148,13 @@ export function Aside({ data, onEdit, isOwnProfile, isAuthenticated, isFollowing
 
                     {showFollowersInfo && (
                         <div className='profile-aside__content-wrapper'>
-                            <a href={`/${data.userName}?tab=followers`} className='profile-aside__links' onClick={handleFollowersClick}>
+                            <Link to={`/${data.userName}?tab=followers`} className='profile-aside__links'>
                                 <FollowersSVG /> 
                                 <span className='profile-aside__links-follow'> {followersCount} </span> followers
-                            </a>
-                            <a href={`/${data.userName}?tab=following`} className='profile-aside__links' onClick={handleFollowingClick}>
+                            </Link>
+                            <Link to={`/${data.userName}?tab=following`} className='profile-aside__links'>
                                 <span className='profile-aside__links-follow'> {followingCount} </span> following
-                            </a>
+                            </Link>
                         </div>
                     )}
                 </div>

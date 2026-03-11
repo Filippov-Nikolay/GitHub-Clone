@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LogoSVG } from "../../../../shared/assets/svg/SvgComponents";
 import { PasswordReset } from "../../services/PasswordReset";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Form() {
     const [formData, setFormData] = useState({ email: "" });
@@ -39,9 +39,9 @@ export function Form() {
     return (
         <div className="form-content">
             <nav className="form-content__nav">
-                <a href="/" className="form-content__link">
+                <Link to="/" className="form-content__link">
                     <LogoSVG />
-                </a>
+                </Link>
             </nav>
             <h1 className="title">Reset your password</h1>
             <div className="login-form">

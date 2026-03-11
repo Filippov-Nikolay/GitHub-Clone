@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { ActionsSvg, SearchSvg, CloseSvg, BookSVG, ProfileSVG } from '../../../shared/assets/svg/SvgComponents';
 import './modalWindowInput.css';
 import InputSearch  from '../InputSearch/InputSearch.js'
@@ -83,15 +84,15 @@ useEffect(() => {
                         theme={"dark"}
                         placeholder={"Search users"}
                     />
-                    <div className="modal-window-input__action-list-content">
+                        <div className="modal-window-input__action-list-content">
                         {isSearchShow && searchResults.map((user, index) => (
-                            <a key={index} className="modal-window-input__action-list-link" href={`/${user.userName}`} onClick={() => saveRecentUser(user)}>
+                            <Link key={index} className="modal-window-input__action-list-link" to={`/${user.userName}`} onClick={() => saveRecentUser(user)}>
                                 <span className="modal-window-input__search-span"><SearchSvg /></span>
                                 <span className={`modal-window-input__action-list-output modal-window-input__action-list-output--${theme}`}>
                                     {user.userName}
                                 </span>
                                 <span className="modal-window-input__action-list-hint">{user.email}</span>
-                            </a>
+                            </Link>
                         ))}
                         {isSearchShow && searchResults.length === 0 && (
                             <div className="modal-window-input__no-results">No users found</div>
@@ -108,13 +109,13 @@ useEffect(() => {
     {userName && localRecentUsers.length > 0 ? (
         localRecentUsers.map((user, index) => (
             <li className="modal-window-list__item" key={index}>
-                <a href={`/${user.userName}`} className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                <Link to={`/${user.userName}`} className={`modal-window-list__link modal-window-list__link--${theme}`}>
                     <span className="modal-window-list__icon"><ProfileSVG /></span>
                     <div className="modal-window-list__wrapper">
                         <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>{user.userName}</h6>
                     </div>
                     <span className="modal-window-input__action-list-hint">{user.email}</span>
-                </a>
+                </Link>
             </li>
         ))
     ) : (
