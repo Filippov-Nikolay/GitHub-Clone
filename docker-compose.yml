@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "Your_password123!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend/CloneGitHub
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=CloneGitHubDB;User Id=sa;Password=Your_password123!;TrustServerCertificate=true
+      - AllowedOrigins=http://localhost
+      - ASPNETCORE_ENVIRONMENT=Production
+    ports:
+      - "7093:80"
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
+volumes:
+  mssql_data:
+
+networks:
+  app-network:
+    driver: bridge
