@@ -7,7 +7,7 @@ export const registerUser = async (userData) => {
             withCredentials: true // Для отправки куки
         });
 
-        return true; 
+        return response.data; 
     } catch (error) {
         console.error('Error registering user:', error);
         return false;

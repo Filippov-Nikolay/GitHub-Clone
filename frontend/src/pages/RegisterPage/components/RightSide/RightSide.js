@@ -151,8 +151,9 @@ export function RightSide() {
         try {
             const result = await registerUser(formData);
 
-            if (result === true) {
-                window.location.href = '/';
+            if (result && result.success === true) {
+                const username = result.username;
+                window.location.href = username ? `/${username}` : '/';
             } else {
                 alert("Failed! Invalid credentials.");
             }

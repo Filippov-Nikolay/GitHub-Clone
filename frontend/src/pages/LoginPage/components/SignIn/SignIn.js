@@ -52,9 +52,9 @@ export function SignIn() {
         try {
             const result = await Login({ formData });
 
-            if (result === true) {
+            if (result && result.success === true) {
                 console.log("Login successful!");
-                const userName = Cookies.get('dotcom_user');
+                const userName = result.username;
                 navigate(userName ? `/${userName}` : '/');
             } else {
                 setFormData(prev => ({ ...prev, password: "" }));
