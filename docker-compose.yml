@@ -4,7 +4,7 @@ services:
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
-      SA_PASSWORD: "Your_password123!"
+      SA_PASSWORD: "${SA_PASSWORD}"
       ACCEPT_EULA: "Y"
     volumes:
       - mssql_data:/var/opt/mssql
@@ -13,14 +13,16 @@ services:
 
   backend:
     build:
-      context: ./backend/CloneGitHub
-      dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: CloneGitHub/Dockerfile
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
-      - ConnectionStrings__DefaultConnection=Server=db,1433;Database=CloneGitHubDB;User Id=sa;Password=Your_password123!;TrustServerCertificate=true
-      - AllowedOrigins=http://localhost
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=${ConnectionStrings__DefaultConnection}
+      - AllowedOrigins=${ALLOWED_ORIGINS}
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
     ports:
       - "7093:80"
     networks:
