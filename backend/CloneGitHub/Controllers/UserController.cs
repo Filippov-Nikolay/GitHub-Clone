@@ -57,7 +57,7 @@ namespace CloneGitHub.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO)
+        public async Task<IActionResult> CreateUser(UserDTO userDTO)
         {
             if (userDTO == null)
             {
@@ -86,9 +86,9 @@ namespace CloneGitHub.Controllers
 
             // Генерируем JWT токен
             var token = _jwtTokenGenerator.GenerateToken(createdUser);
-            SetAuthCookies(userDTO, token);
+            SetAuthCookies(createdUser, token);
 
-            return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
+            return Ok(new { success = true, username = createdUser.UserName });
         }
 
         [HttpGet("username")]
@@ -118,13 +118,13 @@ namespace CloneGitHub.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] Models.LoginRequest loginRequest)
         {
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
 
             if (loginRequest == null)
             {
-                return Ok(false);
+                return Ok(new { success = false, message = "Invalid request" });
             }
 
             var user = await _userService.GetUser(loginRequest.Username)
@@ -132,7 +132,7 @@ namespace CloneGitHub.Controllers
 
             if (user == null)
             {
-                return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
+                return Ok(new { success = false, message = $"Пользователь с таким логином или email не найден: {loginRequest.Username}" });
             }
 
             bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
@@ -140,14 +140,14 @@ namespace CloneGitHub.Controllers
 
             if (!passwordValid)
             {
-                return Ok("Неверный логин или пароль.");
+                return Ok(new { success = false, message = "Неверный логин или пароль." });
             }
 
             // Генерируем JWT токен
             var token = _jwtTokenGenerator.GenerateToken(user);
             SetAuthCookies(user, token);
 
-            return Ok(true);
+            return Ok(new { success = true, username = user.UserName });
         }
 
         [HttpDelete("{id}")]
@@ -288,22 +288,21 @@ namespace CloneGitHub.Controllers
 
         private void SetAuthCookies(UserDTO userDTO, string token)
         {
-            const bool HTTP_ONLY = false;
-            const bool SECURE = false;
+            var isHttps = HttpContext.Request.IsHttps;
 
             var userCookieOptions = new CookieOptions
             {
                 HttpOnly = false,
-                Secure = true,
-                SameSite = SameSiteMode.None,
+                Secure = isHttps,
+                SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
 
             var tokenCookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Secure = true,
-                SameSite = SameSiteMode.None,
+                Secure = isHttps,
+                SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
 
@@ -344,6 +343,15 @@ namespace CloneGitHub.Controllers
                 });
 
             return Ok(result);
+        }
+        
+        [HttpGet("current")]
+        public IActionResult Current()
+        {
+            var userName = Request.Cookies["dotcom_user"];
+            if (!string.IsNullOrEmpty(userName))
+                return Ok(new { username = userName });
+            return Ok(new { username = (string?)null });
         }
 
 
