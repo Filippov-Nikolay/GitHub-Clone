@@ -5,10 +5,18 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["CloneGitHub.csproj", "./"]
-RUN dotnet restore "./CloneGitHub.csproj"
+
+# Copy project files for solution relative layout
+COPY ["CloneGitHub/CloneGitHub.csproj", "CloneGitHub/"]
+COPY ["CloneGitHub.BLL/CloneGitHub.BLL.csproj", "CloneGitHub.BLL/"]
+COPY ["CloneGitHub.DAL/CloneGitHub.DAL.csproj", "CloneGitHub.DAL/"]
+
+RUN dotnet restore "CloneGitHub/CloneGitHub.csproj"
+
+# Copy the rest of the source
 COPY . .
-WORKDIR "/src/"
+
+WORKDIR "/src/CloneGitHub"
 RUN dotnet publish "CloneGitHub.csproj" -c Release -o /app/publish
 
 FROM base AS final
