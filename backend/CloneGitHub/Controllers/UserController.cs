@@ -14,18 +14,21 @@ namespace CloneGitHub.Controllers
     [Route("api/[controller]")]
     public class UserController : Controller
     {
+
         private readonly IUserService _userService;
         private readonly JwtTokenGenerator _jwtTokenGenerator;
         private static readonly Dictionary<string, string> resetCodes = new();
 
         public UserController(IUserService userService, JwtTokenGenerator jwtTokenGenerator)
         {
+
             _userService = userService;
             _jwtTokenGenerator = jwtTokenGenerator;
         }
 
 
         [HttpGet]
+
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetUsers()
         {
             return Ok(await _userService.GetAllUsers());
@@ -38,13 +41,18 @@ namespace CloneGitHub.Controllers
 
             if (user == null)
             {
-                return NotFound();
-            }
+                if (user == null)
+                {
+                    return NotFound();
+                }
 
-            return Ok(user);
+                return Ok(user);
+            }
+            return null;
         }
 
         [HttpPut]
+
         public async Task<ActionResult<UserDTO>> UpdateUser(UserDTO userDTO)
         {
             if (userDTO == null)
@@ -59,6 +67,7 @@ namespace CloneGitHub.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserDTO userDTO)
         {
+
             if (userDTO == null)
             {
                 Console.WriteLine($"Какое-то поле является пустым: {ModelState.IsValid}");
@@ -68,6 +77,7 @@ namespace CloneGitHub.Controllers
             // Проверка: уже существует пользователь с таким Email или UserName
             var existingUser = await _userService.GetUserByEmail(userDTO.Email)
                             ?? await _userService.GetUser(userDTO.UserName);
+
 
             if (existingUser != null)
             {
@@ -120,7 +130,9 @@ namespace CloneGitHub.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] Models.LoginRequest loginRequest)
         {
+
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
+
 
             if (loginRequest == null)
             {
@@ -129,6 +141,7 @@ namespace CloneGitHub.Controllers
 
             var user = await _userService.GetUser(loginRequest.Username)
                     ?? await _userService.GetUserByEmail(loginRequest.Username);
+
 
             if (user == null)
             {
@@ -143,9 +156,9 @@ namespace CloneGitHub.Controllers
                 return Ok(new { success = false, message = "Неверный логин или пароль." });
             }
 
-            // Генерируем JWT токен
-            var token = _jwtTokenGenerator.GenerateToken(user);
-            SetAuthCookies(user, token);
+                // Генерируем JWT токен
+                var token = _jwtTokenGenerator.GenerateToken(user);
+                SetAuthCookies(user, token);
 
             return Ok(new { success = true, username = user.UserName });
         }
@@ -153,20 +166,25 @@ namespace CloneGitHub.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
+
             var user = await _userService.GetUser(id);
 
             if (user == null)
             {
-                return NotFound();
+                if (user == null)
+                {
+                    return NotFound();
+                }
+
+                await _userService.DeleteUser(id);
+                return Ok(user);
             }
-
-            await _userService.DeleteUser(id);
-            return Ok(user);
+            return null;
         }
-
 
         // Reset password
         [HttpPost("forgot-password")]
+
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordRequest request)
         {
             var user = await _userService.GetUserByEmail(request.Email);
@@ -204,20 +222,24 @@ namespace CloneGitHub.Controllers
             return Ok($"Код сброса отправлен на почту.");
         }
         [HttpGet("verify-reset-code")]
+
         public async Task<IActionResult> VerifyResetCode([FromQuery] string email, [FromQuery] string code)
         {
             var result = await VerifyCodeAsync(email, code);
+
             if (result)
             {
                 Console.WriteLine($"Код сброса для {email} подтверждён.");
                 return Redirect($"http://localhost:3000/login?email={email}&code={code}");
             }
+
             else
             {
                 return BadRequest("Неверный код подтверждения.");
             }
         }
         [HttpPost("reset-password")]
+
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordViewModel request)
         {
             if (!ModelState.IsValid)
@@ -245,6 +267,8 @@ namespace CloneGitHub.Controllers
         }
 
 
+
+
         private async Task<bool> VerifyCodeAsync(string email, string code)
         {
             var user = await _userService.GetUserByEmail(email);
@@ -257,6 +281,7 @@ namespace CloneGitHub.Controllers
 
             return true;
         }
+
         private async Task SendEmailAsync(string to, string subject, string body)
         {
             const string email = "BranchPoint00@gmail.com";
@@ -282,7 +307,10 @@ namespace CloneGitHub.Controllers
             {
                 Console.WriteLine("Ошибка при отправке: " + ex.Message);
             }
-            await client.DisconnectAsync(true);
+            finally
+            {
+                await client.DisconnectAsync(true);
+            }
         }
 
 
@@ -297,6 +325,7 @@ namespace CloneGitHub.Controllers
                 SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
+
 
             var tokenCookieOptions = new CookieOptions
             {
@@ -356,4 +385,5 @@ namespace CloneGitHub.Controllers
 
 
     }
+}
 }

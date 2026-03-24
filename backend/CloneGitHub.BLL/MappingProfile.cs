@@ -16,6 +16,7 @@ namespace CloneGitHub.BLL.MappingProfiles
 
             // UserDetails <-> UserDetailsDTO
             CreateMap<UserDetails, UserDetailsDTO>().ReverseMap();
+            CreateMap<Repository, RepositoryDTO>();
         }
     }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Topbar from './components/Topbar/Topbar';
 import Navbar from './components/Navbar/Navbar';
 import ContainerHeader from './components/ContainerHeader/ContainerHeader';
@@ -42,7 +42,29 @@ export function Index()
             </div>
         </div>
 
+    fetchRepo();
+  }, [username, name]);
+
+  return (
+    <div>
+      <Topbar repoName={repoName} />
+      <Navbar />
+      <ContainerHeader repository={repository} />
       
-    );
+      {/* <BranchBox /> */}
+
+      {/* <div className="main-content-wrapper">
+        <div className="main-left">
+          <RepositoryFiles />
+          <ReadMeBar />
+        </div>
+
+        <SideBar />
+      </div> */}
+      <Main />
+    </div>
+  );
 }
+
 export default Index;
+

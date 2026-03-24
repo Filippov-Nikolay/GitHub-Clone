@@ -1,10 +1,67 @@
-import React from 'react';
+import React, { useState } from "react";
 import './Title.css';
 import { BookRepositorySVG, LockSVG} from '../../../../shared/assets/svg/SvgComponents';
+import { useNavigate } from 'react-router-dom';
+import { createRepository } from "../../services/CreateRepository";
+import Cookies from "js-cookie";
+
 
 
 export function Title() {
+
+    const user = Cookies.get("dotcom_user");
+    const navigate = useNavigate();
+    const [showError, setShowError] = useState(false);
+    const [formData, setFormData] = useState({
+        name: "",
+        description: "",
+        isPrivate: false,
+        isPinned: false
+        
+    });
+    
+
+
+    const handleChange = (e) => {
+        const { name, type, value, checked } = e.target;
+
+        if (name === "isPrivate") {
+            setFormData({
+                ...formData,
+                isPrivate: value === "true", // "true" → true, "false" → false
+            });
+        }
+        else{
+
+
+        setFormData({
+            ...formData,
+            [name]: type === "checkbox" ? checked : value,
+        });
+    }
+
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // предотвращает перезагрузку страницы при отправке формы
+        try{
+            console.log("dotcom_user =", user); // ← это то, что приходит из куки
+            await createRepository(formData);
+            navigate(`/repository/${user}/${formData.name}`);
+            console.log("Creating repository...", formData);
+        }
+        catch(error)
+        {
+            console.error("An error occurred by creating repository:", error);
+            setShowError(true);
+        }
+    
+   
+    };
+        
+
     return(
+        <form onSubmit={handleSubmit}>
     
         <div className="repo-container">
             <h2 className="title">Create a new repository</h2>
@@ -19,12 +76,12 @@ export function Title() {
             <div className="input-row">
                 <div className="input-group">
                     <label htmlFor="owner" className="label">Owner<span className="required">*</span></label>
-                    <input id="owner" disabled value="username" className="input small" />
+                    <input id="owner" disabled value={user} className="input small" />
                 </div>
                 <div className="slash">/</div>
                 <div className="input-group">
                     <label htmlFor="repo" className="label">Repository name<span className="required">*</span></label>
-                    <input id="repo" placeholder="my-repo" className="input" />
+                    <input id="repo" placeholder="my-repo" className="input" name="repositoryName" name="name" value={formData.name} onChange={handleChange} />
                 </div>
             </div>
 
@@ -35,17 +92,17 @@ export function Title() {
 
             <div className="input-group">
                 <label htmlFor="desc" className="label">Description <span className="optional">(optional)</span></label>
-                <input id="desc" className="input full" placeholder="Description" />
+                <input id="desc" className="input full" placeholder="Description" name="description" value={formData.description} onChange={handleChange}/>
                 <div className="section-divider"></div>
 
             </div>
             
 
             <div className="radio-group">
-                <label><input type="radio" name="visibility" defaultChecked /><BookRepositorySVG/> Public</label>
+                <label><input type="radio" name="isPrivate" value="false" checked={formData.isPrivate === false} onChange={handleChange} defaultChecked /><BookRepositorySVG/> Public</label>
                 <span className="radio-note">Anyone on the internet can see this repository. You choose who can commit.</span>
 
-                <label><input type="radio" name="visibility" /><LockSVG/> Private</label>
+                <label><input type="radio" name="isPrivate" value="true" checked={formData.isPrivate === true} onChange={handleChange}/><LockSVG/> Private</label>
                 <span className="radio-note">You choose who can see and commit to this repository.</span>
                 <div className="section-divider"></div>
 
@@ -81,9 +138,11 @@ export function Title() {
             <p className="info-note">You are creating a public repository in your personal account.</p>
             <div className="section-divider"></div>
 
+ 
             <button className="create-btn">Create repository</button>
             
         </div>
+        </form>
     );
 }
 

@@ -44,21 +44,20 @@ const AppRouter = () => {
                </>
             ) : (
               // Публичные маршруты
-              <>
-                <Route path="/:urlUserName" element={<ProfilePage />}/>
-                <Route path="/" element={<LandingPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/password_reset" element={<PasswordResetPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-
-                <Route path="/RepositoryPage" element={<RepositoryPage />} />
-              </>
-            )
-          }
-        </Routes>
-      </Router>
-    );
+            <>
+            
+              <Route path="/:urlUserName" element={<ProfilePage />} />
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/password_reset" element={<PasswordResetPage />} />
+              <Route path="/signup" element={<SignupPage />} />
+            </>
+          )
+        }
+      </Routes>
+    </Router>
+  );
 };
-  
 
 export default AppRouter;
+

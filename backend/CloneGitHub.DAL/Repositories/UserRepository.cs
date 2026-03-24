@@ -49,12 +49,13 @@ namespace CloneGitHub.DAL.Repositories
 
             db.Entry(user).State = EntityState.Modified;
         }
+        
 
         public async Task DeleteAsync(int id)
         {
             User user = await db.Users.FindAsync(id);
-        
-            if(user != null)
+
+            if (user != null)
             {
                 db.Users.RemoveRange(user);
             }
