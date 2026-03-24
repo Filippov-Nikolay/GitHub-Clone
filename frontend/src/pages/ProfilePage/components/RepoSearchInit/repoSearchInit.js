@@ -1,193 +1,112 @@
-import React, { useState, useEffect } from 'react';
-// import RepositorySearch from '../../../HomePage/components/RepoSearch/RepoSearch';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import RepositoryCard from '../../../HomePage/components/RepositoryCard/RepositoryCard';
 import './repoSearchInit.css';
-import Avatar1 from "../../../../shared/assets/img/Image_repo.png";
+import Avatar1 from '../../../../shared/assets/img/Image_repo.png';
 import { getUserRepositories } from '../../services/profileApi';
 
+const fallbackRepositories = [
+  {
+    user: 'pymodbus-dev',
+    repoName: 'pymodbus',
+    description: 'A full modbus protocol written in python',
+    language: 'Python',
+    stars: '3',
+    userAvatar: Avatar1,
+  },
+  {
+    user: 'BuilderIO',
+    repoName: 'demo-editor',
+    description: '',
+    language: 'JavaScript',
+    stars: '8',
+    userAvatar: Avatar1,
+  },
+  {
+    user: 'stared',
+    repoName: 'livelossplot',
+    description: 'Live training loss plot in Jupyter Notebook for Keras, PyTorch and others',
+    language: 'Python',
+    stars: '1.2k',
+    userAvatar: Avatar1,
+  },
+];
+
 const RepoSearchInit = () => {
-    const repositories = [
-        {
-            user: "pymodbus-dev",
-            repoName: "pymodbus",
-            description: "A full modbus protocol written in python",
-            language: "Python",
-            languageColor: "#3572A5",
-            stars: "3",
-            userAvatar: Avatar1,
-            isPrivate: true
-        },
-        {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "8",
-            userAvatar: Avatar1,
-            isPrivate: false
-        },
-        {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: true
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "0",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: true
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }, {
-            user: "BuilderIO",
-            repoName: "demo-editor",
-            description: "",
-            language: "JavaScript",
-            languageColor: "#f1e05a",
-            stars: "5",
-            userAvatar: Avatar1,
-            isPrivate: false
-        },
-        {
-            user: "stared",
-            repoName: "livelossplot",
-            description: "Live training loss plot in Jupyter Notebook for Keras, PyTorch and others",
-            language: "Python",
-            languageColor: "#3572A5",
-            stars: "1.2k",
-            userAvatar: Avatar1,
-            isPrivate: false
-        }
-    ];
+  const { urlUserName } = useParams();
+  const [repositories, setRepositories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!username) return;
+    let isActive = true;
 
     async function fetchRepos() {
-      try {
-        const response = await getUserRepositories(username);
-        const repos = (response.data || []).map(repo => ({
-          user: repo.userName || repo.ownerName || username,
-          repoName: repo.name,
-          description: repo.description || "",
-          language: repo.language || "Unknown",
-          languageColor: getLanguageColor(repo.language),
-          stars: repo.starsCount ? repo.starsCount.toString() : "0",
-          userAvatar: Avatar1,
-          url: repo.html_url || `https://github.com/${username}/${repo.name}`,
-        }));
-        setRepositories(repos);
-      } catch (e) {
+      if (!urlUserName) {
         setRepositories([]);
-      } finally {
         setLoading(false);
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const response = await getUserRepositories(urlUserName);
+        const repos = (response.data || []).map((repo) => ({
+          user: repo.userName || repo.ownerName || urlUserName,
+          repoName: repo.name,
+          description: repo.description || '',
+          language: repo.language || 'Unknown',
+          stars: repo.starsCount ? repo.starsCount.toString() : '0',
+          userAvatar: Avatar1,
+        }));
+
+        if (isActive) {
+          setRepositories(repos);
+        }
+      } catch (error) {
+        if (isActive) {
+          setRepositories(
+            fallbackRepositories.map((repo) => ({
+              ...repo,
+              user: urlUserName || repo.user,
+            })),
+          );
+        }
+      } finally {
+        if (isActive) {
+          setLoading(false);
+        }
       }
     }
 
     fetchRepos();
-  }, [username]);
 
-  function getLanguageColor(language) {
-    const colors = {
-      JavaScript: "#f1e05a",
-      Python: "#3572A5",
+    return () => {
+      isActive = false;
     };
-    return colors[language] || "#cccccc";
+  }, [urlUserName]);
+
+  if (loading) {
+    return <div className="search-app">Loading repositories...</div>;
   }
 
-  if (loading) return <div>Загрузка репозиториев...</div>;
-  if (repositories.length === 0) return <div>Репозитории не найдены</div>;
+  if (repositories.length === 0) {
+    return <div className="search-app">No repositories found.</div>;
+  }
 
   return (
     <div className="search-app">
-      {/* <RepositorySearch repositories={repositories} /> */}
+      {repositories.map((repo) => (
+        <RepositoryCard
+          key={`${repo.user}-${repo.repoName}`}
+          user={repo.user}
+          repoName={repo.repoName}
+          description={repo.description}
+          language={repo.language}
+          stars={repo.stars}
+          userAvatar={repo.userAvatar}
+        />
+      ))}
     </div>
   );
 };

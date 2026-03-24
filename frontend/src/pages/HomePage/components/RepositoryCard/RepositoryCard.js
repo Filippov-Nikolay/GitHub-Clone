@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegStar } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import './repositoryCard.css';
+import '../../../DashboardPage/components/RepositoryCard/repositoryCard.css';
 
 const RepositoryCard = ({ user, repoName, description, language, stars, userAvatar, url }) => {
     return (
