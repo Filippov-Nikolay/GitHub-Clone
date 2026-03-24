@@ -32,3 +32,6 @@ yarn-error.log*
 /backend/CloneGitHub/appsettings.json
 appsettings.json
 .fake
+
+# dotenv
+.env
