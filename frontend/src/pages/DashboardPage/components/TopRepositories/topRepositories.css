@@ -28,9 +28,11 @@
 }
 .new-button__span {
 }
-.top-repositories h2 {
-    font-size: 16px;
+.repository-header-wrapper {
     margin-bottom: 10px;
+}
+.repository-header-wrapper__title {
+    font-size: 16px;
 }
 
 /* .top-repositories input {

@@ -1,8 +1,11 @@
-import { React } from 'react';
+import React from 'react';
 import './btn.css';
 
-export default function Btn({ btnHref = "#", btnText }) {
+export default function Btn({ btnText, icon, onClick }) {
     return (
-        <a href={btnHref} className="btn">{ btnText }</a>
+        <button className="btn" onClick={onClick} type='button'>
+            <span className="btn__text">{ btnText }</span>
+            {icon && <span className="btn__svg">{icon}</span>}
+        </button>
     )
 }

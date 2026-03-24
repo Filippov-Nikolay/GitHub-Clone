@@ -9,7 +9,7 @@ import tempAvatar from '../../assets/img/avatar_account.png'
 import './feed.css';
 import './adaptive.css';
 
-export default function Feed({ userName = "userName", srcImg = "#", description = "created a repository", date = "4 days ago", nameRepository = "Unity3D", colorLang = "#fff", nameLang = "Python", userLinkHref = "#" }) {
+export default function Feed({ userName = "NF", srcImg = "#", description = "created a repository", date = "4 days ago", nameRepository = "Unity3D", colorLang = "#fff", nameLang = "Python", userLinkHref = "#" }) {
     return (
         <div className="feed">
             <div className="feed__wrapper">

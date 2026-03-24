@@ -10,6 +10,7 @@ import './BurgerMenu.css';
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
 import DefaultAvatar from '../assets/img/avatar_account.png'
 import { logout } from '../../pages/ProfilePage/services/profileApi.js';
+import { Link } from 'react-router-dom';
 
 export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, name, userName }) {
   if (!isOpen) return null;
@@ -158,10 +159,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
               {rightMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
                   {item.getPath ? (
-                    <a href={item.getPath(userName)} className="burger-menu__item">
+                    <Link to={item.getPath(userName)} className="burger-menu__item">
                       <span className="burger-menu__icon">{item.icon}</span>
                       <span className="burger-menu__text">{item.text}</span>
-                    </a>
+                    </Link>
                   ) : (
                     <a href="#" className="burger-menu__item">
                       <span className="burger-menu__icon">{item.icon}</span>

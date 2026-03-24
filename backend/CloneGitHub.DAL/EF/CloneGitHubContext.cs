@@ -50,13 +50,13 @@ namespace CloneGitHub.DAL.EF
 
             modelBuilder.Entity<Subscription>()
                 .HasOne(s => s.Follower)
-                .WithMany()
+                .WithMany(u => u.Following)    // Связь с коллекцией Following
                 .HasForeignKey(s => s.FollowerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Subscription>()
                 .HasOne(s => s.Followed)
-                .WithMany()
+                .WithMany(u => u.Followers)    // Связь с коллекцией Followers
                 .HasForeignKey(s => s.FollowedId)
                 .OnDelete(DeleteBehavior.Restrict);
 

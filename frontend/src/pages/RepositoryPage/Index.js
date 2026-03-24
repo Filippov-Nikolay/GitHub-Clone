@@ -7,27 +7,40 @@ import RepositoryFiles from './components/RepositoryFiles/RepositoryFiles';
 import ReadMeBar from './components/ReadMeBar/ReadMeBar';
 import SideBar from './components/SideBar/SideBar';
 import './components/Index.css';
-import { useParams } from 'react-router-dom';
-import { getRepositoryByUserAndName } from '../RepositorySettingsPage/services/EditRepository';
-import Main from './components/Main/Main';
+import { Header } from '../../shared/Header/Header';
 
 
-export function Index() {
-  const { username, name } = useParams();
-  const [repoName, setRepoName] = useState(name);
-  const [repository, setRepository] = useState(null);
+export function Index()
+{
+    return(
+    //     <div>
+    //   <Topbar/>
+    //   <Navbar/>
+    //   <ContainerHeader/>
+    //   <BranchBox/>
+    //   <RepositoryFiles/>
+    //   <ReadMeBar/>
+    //  
+    // <SideBar />
+    //
+    //   </div>
 
+        <div>
+            <Header />
+            <Navbar />
+            <ContainerHeader />
+            <BranchBox />
 
-  useEffect(() => {
-    async function fetchRepo() {
-      try {
-        const response = await getRepositoryByUserAndName(username, name);
-        setRepoName(response.data.name);
-        setRepository(response.data); 
-      } catch (error) {
-        console.error('Ошибка загрузки репозитория', error);
-      }
-    }
+            {/* Новый flex-контейнер для основного содержимого */}
+            <div className="main-content-wrapper">
+                <div className="main-left">
+                    <RepositoryFiles />
+                    <ReadMeBar />
+                </div>
+
+                <SideBar />
+            </div>
+        </div>
 
     fetchRepo();
   }, [username, name]);

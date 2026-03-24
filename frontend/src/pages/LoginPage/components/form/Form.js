@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { LogoSVG } from "../../../../shared/assets/svg/SvgComponents";
 import { Login } from "../../services/Login"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Form() {
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ export function Form() {
 
     return (
         <div className="form-content">
-            <nav className="form-content__nav"><a href="/" className="form-content__link"><LogoSVG/></a></nav>
+            <nav className="form-content__nav"><Link to="/" className="form-content__link"><LogoSVG/></Link></nav>
             <h1 className="title">Sign in to GitHub</h1>
             <div className={`flash-error ${showError ? "" : "flash-error--hidden"}`}>
                 <div className="flash-error__text">
@@ -64,7 +64,7 @@ export function Form() {
                         <div className="login-form__item">
                             <div className="login-form__wrapper">
                                 <label className="login-form__label" htmlFor="password">Password</label>
-                                <a href="#" className="login-form__forgot-password">Forgot password?</a>
+                                <Link to="/password_reset" className="login-form__forgot-password">Forgot password?</Link>
                             </div>
                             <input 
                                 className="login-form__input" 
@@ -78,7 +78,7 @@ export function Form() {
                     </form>
                     <div className="login-callout">
                         <button type="button" className="login-callout__btn">Sign in with a passkey</button>
-                        <p className="login-callout__text">New to GitHub? <a className="login-callout__link" href="signup">Create an account</a></p>
+                        <p className="login-callout__text">New to GitHub? <Link className="login-callout__link" to="/signup">Create an account</Link></p>
                     </div>
                 </div>
             </div>

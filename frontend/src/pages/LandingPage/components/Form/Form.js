@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowSymbolMktg } from "../../../../shared/assets/svg/SvgComponents";
 
 export function Form() {
@@ -15,9 +16,9 @@ export function Form() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <a href={signupUrl} className='form-content__btn'>
+                <Link to={signupUrl} className='form-content__btn'>
                     Sign up for GitHub
-                </a>
+                </Link>
             </div>
             <div className="form-content__decor"></div>
             <button className='form-content__btn-start'>Start a free enterprise trial <span className='form-content__btn-decor-arrow'><ArrowSymbolMktg></ArrowSymbolMktg></span></button>

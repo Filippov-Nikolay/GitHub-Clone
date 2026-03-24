@@ -1,9 +1,20 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+
 import { CloseBurgerSVG } from '../../../../../../shared/assets/svg/SvgComponents';
 import './projectsBanner.css'; 
 
 export default function ProjectsBanner() {
-    const [showBanner, setShowBanner] = useState(true);
+    let isShowBanner = Cookies.get("is_show_banner");
+    const [showBanner, setShowBanner] = useState(isShowBanner !== "false");
+
+    useEffect(() => {
+        if (isShowBanner == null) {
+            Cookies.set("is_show_banner", "true");
+            setShowBanner(true);
+        }
+    }, [isShowBanner]);
+
     const handleCloseBanner = () => {
         setShowBanner(false);
     };

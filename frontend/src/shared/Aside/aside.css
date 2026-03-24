@@ -23,12 +23,17 @@
 
 .profile-aside__bio{
     padding: 15px 0;
-   
+    max-width: 250px;
 }
 
 .profile-aside__bio-text{
     color: #C9D1D9;
     font-size: 17px;
+    white-space: pre-line;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;                
+    line-height: 1.5;
 }
 
 .profile-aside__func{
@@ -43,7 +48,7 @@
     text-align: center;
     border: 1px solid #f0f6fc15;
     background-color: #21262D;
-    color: #C9D1D9;
+    color: #C9D1D9 !important;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.5s all;
@@ -198,9 +203,12 @@
         font-size: 15px;
     }
 
-    .profile-aside__bio-text{
+    .profile-aside__bio-text {
         font-size: 13px;
-    }
+        white-space: pre-line; /* Позволяет отображать \n как перенос строки */
+        word-wrap: break-word; /* Перенос длинных слов */
+        line-height: 1.4;
+        }
 
     .profile-aside__links{
         font-size: 14px;

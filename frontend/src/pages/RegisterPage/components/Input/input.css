@@ -1,0 +1,43 @@
+.form-group__label {
+    display: block;
+
+    font-size: 14px;
+}
+.form-group__input {
+    margin-top: 10px;
+    padding: 8px 12px;
+
+    width: 100%;
+
+    border: 1px solid #d1d9e0;
+    border-radius: 4px;
+}
+.form-group__input--error {
+    border-color: #cf222e;
+}
+.form-group__note {
+    margin-top: 5px;
+
+    font-size: 12px;
+    color: #57606a;
+}
+.form-group__msg-error-wrapper {
+    margin-top: 5px;
+
+    font-size: 12px;
+}
+.form-group__msg-error-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #d1242f;
+    font-weight: 200;
+}
+.form-group__msg-error-svg {
+    max-width: 11px;
+    max-height: 11px;
+}
+.form-group__msg-error-text {
+    color: #57606a;
+}

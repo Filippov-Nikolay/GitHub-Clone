@@ -1,7 +1,6 @@
 .left-side {
     background: url('../../assets/img/bg-darkest.jpg') no-repeat center bottom/cover;
     width: 100%;
-    height: 100vh;
 }
 .left-side__content {
     display: flex;

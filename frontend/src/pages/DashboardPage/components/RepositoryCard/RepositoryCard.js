@@ -5,6 +5,8 @@ import { FaCaretDown } from "react-icons/fa";
 import LangMarker from "../../../../shared/Components/LangMarker/LangMarker"
 import BtnStar from "../../../../shared/Components/BtnStar/BtnStar"
 
+import { StarSvg } from '../../../../shared/assets/svg/SvgComponents';
+
 import './repositoryCard.css';
 
 const RepositoryCard = ({ user, repoName, isPrivate = false, description, language, stars, userAvatar }) => {
@@ -20,6 +22,12 @@ const RepositoryCard = ({ user, repoName, isPrivate = false, description, langua
                         <LangMarker
                             nameLang={language}
                         />
+                        {stars != "0" && 
+                            <div className="repository-card__stars">
+                                <span className="repository-card__stars-svg"><StarSvg/></span>
+                                {stars} 
+                            </div>
+                        }
                         <p className="repository-card__date-last-update">Update on</p>
                     </div>
                 </div>

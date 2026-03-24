@@ -30,17 +30,15 @@
     color: #fff;
     padding: 10px 0;
     text-align: center;
-  }
-  
-  .panels {
+}
+
+.panels {
     display: flex;
     flex-grow: 1;
     flex-wrap: nowrap;
     width: 100%;
-    height: auto;
-    
-
-  }
+    min-height: 100vh;
+}
 
 .left-panel {
     position: relative;

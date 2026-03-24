@@ -65,7 +65,7 @@ namespace CloneGitHub.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<UserDTO>> CreateUser(UserDTO userDTO)
+        public async Task<IActionResult> CreateUser(UserDTO userDTO)
         {
 
             if (userDTO == null)
@@ -88,7 +88,7 @@ namespace CloneGitHub.Controllers
             var hash = PasswordHasher.HashPassword(userDTO.Password, salt);
 
             userDTO.Salt = salt;
-            //userDTO.Password = hash;
+            userDTO.Password = hash;
 
             await _userService.CreateUser(userDTO);
 
@@ -96,13 +96,39 @@ namespace CloneGitHub.Controllers
 
             // Генерируем JWT токен
             var token = _jwtTokenGenerator.GenerateToken(createdUser);
-            SetAuthCookies(userDTO, token);
+            SetAuthCookies(createdUser, token);
 
-            return CreatedAtAction(nameof(GetUser), new { id = userDTO.Id }, userDTO);
+            return Ok(new { success = true, username = createdUser.UserName });
+        }
+
+        [HttpGet("username")]
+        public async Task<ActionResult<bool>> isExistsUsername([FromQuery] string username) {
+            if (string.IsNullOrWhiteSpace(username)) {
+                return BadRequest("Username is empty");
+            }
+            var user = await _userService.GetUser(username);
+            if (user != null)
+            {
+                return Ok(true);
+            }
+            return Ok(false);
+        }
+        [HttpGet("email")]
+        public async Task<ActionResult<bool>> isExistsEmail([FromQuery] string email) {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return BadRequest("Username is empty");
+            }
+            var user = await _userService.GetUserByEmail(email);
+            if (user != null)
+            {
+                return Ok(true);
+            }
+            return Ok(false);
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<bool>> Login([FromBody] Models.LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] Models.LoginRequest loginRequest)
         {
 
             Console.WriteLine($"Login request: {loginRequest.Username}, {loginRequest.Password}");
@@ -110,7 +136,7 @@ namespace CloneGitHub.Controllers
 
             if (loginRequest == null)
             {
-                return Ok(false);
+                return Ok(new { success = false, message = "Invalid request" });
             }
 
             var user = await _userService.GetUser(loginRequest.Username)
@@ -119,34 +145,22 @@ namespace CloneGitHub.Controllers
 
             if (user == null)
             {
-                return Ok($"Пользователь с таким логином или email не найден: {loginRequest.Username}");
+                return Ok(new { success = false, message = $"Пользователь с таким логином или email не найден: {loginRequest.Username}" });
             }
 
-            //bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
-            bool passwordValid = user.Password == loginRequest.Password;
+            bool passwordValid = PasswordHasher.VerifyPassword(loginRequest.Password, user.Password, user.Salt);
+            //bool passwordValid = user.Password == loginRequest.Password;
 
             if (!passwordValid)
             {
-                if (!passwordValid)
-                {
-                    return Ok("Неверный логин или пароль.");
-                }
-
-                Response.Cookies.Append("dotcom_user", user.UserName, new CookieOptions
-                {
-                    HttpOnly = false,
-                    Secure = true,
-                    SameSite = SameSiteMode.None,
-                    Expires = DateTimeOffset.UtcNow.AddDays(7)
-                });
+                return Ok(new { success = false, message = "Неверный логин или пароль." });
+            }
 
                 // Генерируем JWT токен
                 var token = _jwtTokenGenerator.GenerateToken(user);
                 SetAuthCookies(user, token);
 
-                return Ok(true);
-            }
-            return null;
+            return Ok(new { success = true, username = user.UserName });
         }
 
         [HttpDelete("{id}")]
@@ -242,8 +256,8 @@ namespace CloneGitHub.Controllers
             var hash = PasswordHasher.HashPassword(request.NewPassword, salt);
 
             user.Salt = salt;
-            //user.Password = hash;
-            user.Password = request.NewPassword;
+            user.Password = hash;
+            //user.Password = request.NewPassword;
 
             await _userService.UpdateUser(user);
 
@@ -302,11 +316,13 @@ namespace CloneGitHub.Controllers
 
         private void SetAuthCookies(UserDTO userDTO, string token)
         {
+            var isHttps = HttpContext.Request.IsHttps;
+
             var userCookieOptions = new CookieOptions
             {
                 HttpOnly = false,
-                Secure = false,
-                SameSite = SameSiteMode.None,
+                Secure = isHttps,
+                SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
 
@@ -314,13 +330,60 @@ namespace CloneGitHub.Controllers
             var tokenCookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Secure = false,
-                SameSite = SameSiteMode.None,
+                Secure = isHttps,
+                SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
             };
 
             Response.Cookies.Append("dotcom_user", userDTO.UserName, userCookieOptions);
             Response.Cookies.Append("user_session", token, tokenCookieOptions);
+        }
+
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+
+            Response.Cookies.Delete("dotcom_user", new CookieOptions
+            {
+                SameSite = SameSiteMode.None,
+                Secure = true
+            });
+
+            Response.Cookies.Delete("user_session", new CookieOptions
+            {
+                SameSite = SameSiteMode.None,
+                Secure = true
+            });
+
+            return Ok(new { message = "Выход выполнен успешно" });
+        }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchUsers([FromQuery] string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+                return BadRequest("Query is empty");
+
+            var users = await _userService.GetAllUsers();
+            var result = users
+                .Where(u => u.UserName.Contains(query, StringComparison.OrdinalIgnoreCase))
+                .Select(u => new {
+                    u.UserName
+                });
+
+            return Ok(result);
+        }
+        
+        [HttpGet("current")]
+        public IActionResult Current()
+        {
+            var userName = Request.Cookies["dotcom_user"];
+            if (!string.IsNullOrEmpty(userName))
+                return Ok(new { username = userName });
+            return Ok(new { username = (string?)null });
+        }
+
+
     }
 }
 }

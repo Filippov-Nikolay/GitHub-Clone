@@ -49,9 +49,11 @@ builder.Services.AddAuthentication(options => {
 });
 builder.Services.AddAuthorization();
 
+var allowedOriginsConfig = builder.Configuration["AllowedOrigins"] ?? "http://localhost:3000";
+var allowedOrigins = allowedOriginsConfig.Split(';', StringSplitOptions.RemoveEmptyEntries);
 builder.Services.AddCors(options => {
     options.AddDefaultPolicy(policy => {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins(allowedOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
@@ -66,6 +68,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddTransient<IUnitOfWork, EFUnitOfWork>();
 builder.Services.AddTransient<IRepositoryService, RepositoryService>();
+builder.Services.AddTransient<ISubscriptionService, SubscriptionService>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddScoped<IEditService, EditService>();
 builder.Services.AddControllersWithViews();
