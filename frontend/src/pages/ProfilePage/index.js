@@ -14,6 +14,7 @@ import Packages from './components/Packages/Packages';
 import Stars from './components/Stars/Stars';
 import Following from '../../shared/Components/Following/Following';
 import { Nav as HeaderUnAuthenticated } from '../../shared/Components/Nav/Nav';
+import FullPageState from '../../shared/Components/FullPageState/FullPageState';
 
 import { getProfileByName, getProfile, saveProfile, uploadAvatar } from './services/profileApi';
 import { subscribeToUser, unsubscribeFromUser } from '../../shared/Components/Following/Services/subscriptionApi';
@@ -201,7 +202,22 @@ export function Index() {
 
   const isOwnProfile = userName === urlUserName;
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <FullPageState
+        title="Loading profile..."
+        description="Requesting public profile data."
+      />
+    );
+  }
+  if (!profileData) {
+    return (
+      <FullPageState
+        title="Profile not found"
+        description="The requested user could not be loaded."
+      />
+    );
+  }
   if (!profileData) return <div>Профиль не найден</div>;
 
   return (

@@ -3,32 +3,77 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 import axios from 'axios';
 import config from './shared/config';
+import FullPageState from './shared/Components/FullPageState/FullPageState';
 
-import DashboardPage from './pages/DashboardPage';
-import LandingPage from './pages/LandingPage';
-import ProfilePage from './pages/ProfilePage';
+import DashboardPage from './pages/DashboardPage/index';
+import LandingPage from './pages/LandingPage/index';
+import ProfilePage from './pages/ProfilePage/index';
 
 import LoginPage from './pages/LoginPage/index';
-import PasswordResetPage from './pages/PasswordResetPage';
-import SignupPage from './pages/RegisterPage';
-import RepositoryPage from './pages/RepositoryPage';
-import CreateRepository from './pages/CreateRepository';
+import PasswordResetPage from './pages/PasswordResetPage/index';
+import SignupPage from './pages/RegisterPage/index';
+import RepositoryPage from './pages/RepositoryPage/index';
+import CreateRepository from './pages/CreateRepository/index';
 
 
 const AppRouter = () => {
-  const [user, setUser] = useState(Cookies.get('dotcom_user'));
+  const initialUser = Cookies.get('dotcom_user') || null;
+  const [user, setUser] = useState(initialUser);
+  const [isAuthResolved, setIsAuthResolved] = useState(!initialUser);
 
   useEffect(() => {
+    let isMounted = true;
+
+    const finishAuthCheck = (nextUser) => {
+      if (!isMounted) return;
+      setUser(nextUser);
+      setIsAuthResolved(true);
+    };
+
     const fetchCurrent = async () => {
       try {
-        const resp = await axios.get(`${config.API_BASE_BACKEND}/api/User/current`, { withCredentials: true });
-        if (resp?.data?.username) setUser(resp.data.username);
+        const resp = await axios.get(`${config.API_BASE_BACKEND}/api/User/current`, {
+          withCredentials: true,
+          timeout: config.API_TIMEOUT_MS,
+        });
+        const currentUser = resp?.data?.username || null;
+
+        if (currentUser) {
+          Cookies.set('dotcom_user', currentUser);
+          finishAuthCheck(currentUser);
+          return;
+        }
+
+        Cookies.remove('dotcom_user');
+        finishAuthCheck(null);
       } catch (e) {
-        // ignore
+        Cookies.remove('dotcom_user');
+        finishAuthCheck(null);
       }
     };
-    if (!user) fetchCurrent();
-  }, []);
+
+    if (!initialUser) {
+      finishAuthCheck(null);
+      return () => {
+        isMounted = false;
+      };
+    }
+
+    fetchCurrent();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [initialUser]);
+
+  if (!isAuthResolved) {
+    return (
+      <FullPageState
+        title="Checking session..."
+        description="Verifying your local GitHub Clone session."
+      />
+    );
+  }
 
   return (
     <Router>

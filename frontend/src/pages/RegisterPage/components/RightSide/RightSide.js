@@ -19,7 +19,6 @@ export function RightSide() {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const [email, setEmail] = useState('');
-    const [errorForEmail, setErrorForEmail] = useState('');
     const [errorTitleForEmail, setErrorTitleForEmail] = useState('');
     const [formData, setFormData] = useState({ 
         Email: '', 
@@ -42,7 +41,7 @@ export function RightSide() {
 
         // Устанавливаем новый
         debounceEmailRef.current = setTimeout(async() => {
-            if (val.length == 0) {
+            if (val.length === 0) {
                 setErrorTitleForEmail('Email cannot be blank');
                 return;
             } else if (!emailRegex.test(val)) {
@@ -65,7 +64,6 @@ export function RightSide() {
     }
 
     const [password, setPassword] = useState('');
-    const [errorForPassword, setErrorForPassword] = useState('');
     const [errorTitleForPassword, setErrorTitleForPassword] = useState('');
     const handlePasswordChange = (e) => {
         const val = e.target.value;
@@ -87,7 +85,6 @@ export function RightSide() {
     };
 
     const [username, setUsername] = useState('');
-    const [errorForUsername, setErrorForUsername] = useState('');
     const [errorTitleForUsername, setErrorTitleForUsername] = useState('');
     const debounceUsernameRef = useRef(null)
     const handleUsernameChange = (e) => {
@@ -103,7 +100,7 @@ export function RightSide() {
 
         // Устанавливаем новый
         debounceUsernameRef.current = setTimeout(async() => {
-            if (val.length == 0) {
+            if (val.length === 0) {
                 setErrorTitleForUsername('Username cannot be blank');
                 return;
             }
@@ -248,7 +245,7 @@ export function RightSide() {
                 </main>
                 <footer className={styles.footer}>
                     <p className={styles["footer__text"]}>
-                        By creating an account, you agree to the <a href="#" className={styles["footer__link"]}>Terms of Service</a> For more information about GitHub's privacy practices, see the <a href="#" className={styles["footer__link"]}>GitHub Privacy Statement</a> We'll occasionally send you account-related emails.
+                        By creating an account, you agree to the <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service" className={styles["footer__link"]}>Terms of Service</a> For more information about GitHub's privacy practices, see the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" className={styles["footer__link"]}>GitHub Privacy Statement</a> We'll occasionally send you account-related emails.
                     </p>
                 </footer>
             </div>

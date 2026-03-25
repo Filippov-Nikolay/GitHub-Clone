@@ -1,5 +1,5 @@
 import React from "react";
-import { ForkSVG, TagSVG, MagnifyingGlassSVG, SearchSVG } from "../../../../shared/assets/svg/SvgComponents";
+import { ForkSVG, TagSVG } from "../../../../shared/assets/svg/SvgComponents";
 import './BranchBox.css'
 import {SearchSvg} from "../../../../shared/assets/svg/SvgComponents";
 import './adaptive.css'

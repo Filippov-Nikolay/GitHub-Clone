@@ -3,14 +3,7 @@ import './aside.css';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { FollowersSVG, GeoSVG, LinksSVG, InstagramSVG, LinkedInSVG, YouTubeSVG, ClockSVG } from '../assets/svg/SvgComponents'; // Добавьте иконки
-import Achiev from '../assets/svg/Achiev.svg';
-import Emblem1 from '../assets/svg/Emblem1.svg';
-import Emblem2 from '../assets/svg/Emblem2.svg';
-import Emblem3 from '../assets/svg/Emblem3.svg';
-import Emblem4 from '../assets/svg/Emblem4.svg';
 import DefaultAvatar from '../assets/img/avatar_account.png'
-
-const emblemList = [Emblem1, Emblem2, Emblem3, Emblem4];
 
 // function EmblemOrganizations() {
 //     return (
@@ -30,9 +23,9 @@ const emblemList = [Emblem1, Emblem2, Emblem3, Emblem4];
 // }
 
 const extractSocialData = (url) => {
-    const instagramRegex = /instagram\.com\/([^\/]+)/;
-    const linkedinRegex = /linkedin\.com\/(in\/[^\/?#]+)/i;
-    const youtubeRegex = /youtube\.com\/(@[^\/?#]+)/i;
+    const instagramRegex = /instagram\.com\/([^/]+)/;
+    const linkedinRegex = /linkedin\.com\/(in\/[^/?#]+)/i;
+    const youtubeRegex = /youtube\.com\/(@[^/?#]+)/i;
 
     if (instagramRegex.test(url)) {
         const linkName = url.match(instagramRegex)[1];

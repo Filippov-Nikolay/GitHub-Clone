@@ -243,21 +243,21 @@ export function Menu() {
     return (
         <ul className="menu">
             <li className="menu__item">
-                <a href="#" className="menu__link">
+                <button type="button" className="menu__link">
                     product
                     <span className="menu__span"><ArrowDownSvg></ArrowDownSvg></span>
-                </a>
+                </button>
                 <div className="menu__wrapper-sub-menu menu__wrapper-sub-menu--row">
                     <ul className="sub-menu sub-menu__product">
                         {ProductList[0].map((list, index) => (
                             <li className="sub-menu__item" key={list.id}>
-                                <a href="#" className="sub-menu__link">
+                                <button type="button" className="sub-menu__link">
                                     {list.iconComponentSvg}
                                     <div className="sub-menu__wrapper">
                                         <h6 className="sub-menu__title">{list.title}</h6>
                                         <p className="sum-menu__text">{list.subTitle}</p>
                                     </div>
-                                </a>
+                                </button>
                             </li>
                         ))}
                     </ul>
@@ -266,10 +266,10 @@ export function Menu() {
                             <li className='sub-menu__title-li'>{list.title}</li>
                             {list.items.map((item, itemIndex) => (
                                 <li className="sub-menu__item" key={item.id}>
-                                    <a href="#" className="sub-menu__link">
+                                    <button type="button" className="sub-menu__link">
                                         {item.text}
                                         {item.isIconComponentSvg ? <span className='sub-menu__span'>{list.iconComponentSvg}</span> : null}
-                                    </a>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
@@ -277,10 +277,10 @@ export function Menu() {
                 </div>
             </li>
             <li className="menu__item">
-                <a href="#" className="menu__link">
+                <button type="button" className="menu__link">
                     Solutions
                     <span className="menu__span"><ArrowDownSvg></ArrowDownSvg></span>
-                </a>
+                </button>
                 <div className="menu__wrapper-sub-menu menu__wrapper-sub-menu--column menu__wrapper-sub-menu--solutions">
                     {SolutionsList.map((list, listIndex) => (
                         <ul className="sub-menu sub-menu__solutions" key={list.id}>
@@ -288,10 +288,10 @@ export function Menu() {
                             {
                                 list.items.map((item, itemIndex) => (
                                     <li className="sub-menu__item" key={item.id}>
-                                        <a href="#" className="sub-menu__link">
+                                        <button type="button" className="sub-menu__link">
                                             {item.text}
                                             {item.isIconComponentSvg ? <span className='sub-menu__span'>{list.iconComponentSvg}</span> : null}
-                                        </a>
+                                        </button>
                                     </li>
                                 ))
                             }
@@ -300,20 +300,20 @@ export function Menu() {
                 </div>
             </li>
             <li className="menu__item">
-                <a href="#" className="menu__link">
+                <button type="button" className="menu__link">
                     Open source
                     <span className="menu__span"><ArrowDownSvg></ArrowDownSvg></span>
-                </a>
+                </button>
                 <div className="menu__wrapper-sub-menu menu__wrapper-sub-menu--column menu__wrapper-sub-menu--open-source">
                     {OpenSourceList[0].map((list, listIndex) => (
                         <ul className="sub-menu sub-menu__open-source" key={list.id}>
                             <li className="sub-menu__item">
-                                <a href="#" className="sub-menu__link">
+                                <button type="button" className="sub-menu__link">
                                     <div className="sub-menu__wrapper">
                                         <h6 className="sub-menu__title">{list.title}</h6>
                                         <p className="sum-menu__text">{list.subTitle}</p>
                                     </div>
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     ))}
@@ -322,7 +322,7 @@ export function Menu() {
                             <li className='sub-menu__title-li'>{list.title}</li>
                             {list.items.map((item, itemIndex) => (
                                 <li className="sub-menu__item" key={item.id}>
-                                    <a href="#" className="sub-menu__link">{item.text}</a>
+                                    <button type="button" className="sub-menu__link">{item.text}</button>
                                 </li>
                             ))}
                         </ul>
@@ -330,21 +330,21 @@ export function Menu() {
                 </div>
             </li>
             <li className="menu__item">
-                <a href="#" className="menu__link">
+                <button type="button" className="menu__link">
                     Enterprise
                     <span className="menu__span"><ArrowDownSvg></ArrowDownSvg></span>
-                </a>
+                </button>
                 <div className="menu__wrapper-sub-menu menu__wrapper-sub-menu--column menu__wrapper-sub-menu--enterprise">
                     <ul className="sub-menu sub-menu__enterprise">
                         {EnterpriseList[0].map((list, index) => (
                             <li className="sub-menu__item" key={list.id}>
-                                <a href="#" className="sub-menu__link">
+                                <button type="button" className="sub-menu__link">
                                     {list.iconComponentSvg}
                                     <div className="sub-menu__wrapper">
                                         <h6 className="sub-menu__title">{list.title}</h6>
                                         <p className="sum-menu__text">{list.subTitle}</p>
                                     </div>
-                                </a>
+                                </button>
                             </li>
                         ))}
                     </ul>
@@ -353,20 +353,20 @@ export function Menu() {
                             <li className='sub-menu__title-li'>{list.title}</li>
                             {list.items.map((item, itemIndex) => (
                                 <li className="sub-menu__item" key={item.id}>
-                                    <a href="#" className="sub-menu__link">
+                                    <button type="button" className="sub-menu__link">
                                         {item.iconComponentSvg}
                                         <div className="sub-menu__wrapper">
                                             <h6 className="sub-menu__title">{item.title}</h6>
                                             <p className="sum-menu__text">{item.subTitle}</p>
                                         </div>
-                                    </a>
+                                    </button>
                                 </li>
                             ))}
                         </ul>
                     ))}
                 </div>
             </li>
-            <li className="menu__item"><a href="#" className="menu__link">Pricing</a></li>
+            <li className="menu__item"><a href="https://github.com/pricing" className="menu__link">Pricing</a></li>
         </ul>
     )
 }

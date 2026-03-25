@@ -1,30 +1,37 @@
 import React from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { Link } from 'react-router-dom';
 import {
   CommunitySVG, CopilotSVG, DocsSVG, EnterprisesSVG, FeaturePreviewSVG,
   GistsSVG, LogoSVG, OrganizationsSVG, ProfileSVG, ProjectsSVG, RepositorySVG,
   SettingsSVG, SponsorSVG, StarSvg, SupportSVG, TryEnterpriseSVG, WebsiteSVG,
   SignOutSVG, SwitchSVG, CloseBurgerSVG, HomeSVG, IssuesSVG, PullRequestsSVG,
-  DiscussionsSVG, CodespacesSVG, ExploreSVG, MarketplaceSVG, SearchSVG
+  DiscussionsSVG, CodespacesSVG, ExploreSVG, MarketplaceSVG, SearchSVG,
 } from '../assets/svg/SvgComponents';
-import './BurgerMenu.css';
+import DefaultAvatar from '../assets/img/avatar_account.png';
 import { FooterBurgerMenu } from './components/FooterBurgerMenu/FooterBurgerMenu.js';
-import DefaultAvatar from '../assets/img/avatar_account.png'
-import { logout } from '../../pages/ProfilePage/services/profileApi.js';
-import { Link } from 'react-router-dom';
+import config from '../config';
+import './BurgerMenu.css';
 
 export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, name, userName }) {
   if (!isOpen) return null;
 
   const handleSignOut = async () => {
-  try {
-    // await logout();
-    localStorage.clear();
-    sessionStorage.clear();
-    window.location.reload();
-  } catch (error) {
-    console.error('Ошибка выхода из аккаунта:', error);
-  }
-};
+    try {
+      await axios.post(`${config.API_BASE_BACKEND}/api/User/logout`, null, {
+        withCredentials: true,
+        timeout: config.API_TIMEOUT_MS,
+      });
+    } catch (error) {
+      console.error('Logout failed:', error);
+    } finally {
+      Cookies.remove('dotcom_user');
+      localStorage.clear();
+      sessionStorage.clear();
+      window.location.href = '/';
+    }
+  };
 
   const repositories = [
     { name: 'repo1', avatar: 'https://via.placeholder.com/30' },
@@ -49,7 +56,7 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
 
   const rightMenuItems = [
     { text: 'Your profile', icon: <ProfileSVG />, getPath: () => `/${userName}` },
-    { text: 'Your repository', icon: <RepositorySVG />, getPath: () => `/${userName}?tab=repositories`},
+    { text: 'Your repository', icon: <RepositorySVG />, getPath: () => `/${userName}?tab=repositories` },
     { text: 'Your Copilot', icon: <CopilotSVG /> },
     { text: 'Your projects', icon: <ProjectsSVG />, getPath: () => `/${userName}?tab=projects` },
     { text: 'Your stars', icon: <StarSvg />, getPath: () => `/${userName}?tab=stars` },
@@ -75,7 +82,7 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
   return (
     <>
       <div className="burger-menu__overlay" onClick={onClose}></div>
-      
+
       <div className={`burger-menu burger-menu--${position} ${isOpen ? 'burger-menu--open' : ''}`}>
         {position === 'left' && (
           <>
@@ -89,10 +96,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
             <ul className="burger-menu__list">
               {leftMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <a href="#" className="burger-menu__item">
+                  <button type="button" className="burger-menu__item">
                     <span className="burger-menu__icon">{item.icon}</span>
                     <span className="burger-menu__text">{item.text}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -102,10 +109,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
             <ul className="burger-menu__list">
               {bottomLeftMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <a href="#" className="burger-menu__item">
+                  <button type="button" className="burger-menu__item">
                     <span className="burger-menu__icon">{item.icon}</span>
                     <span className="burger-menu__text">{item.text}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -120,10 +127,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
               <ul className="burger-menu__repositories-list">
                 {repositories.map((repo, index) => (
                   <li key={index} className="burger-menu__repository-item">
-                    <a href="#" className="burger-menu__item">
+                    <button type="button" className="burger-menu__item">
                       <img src={repo.avatar} alt="Repo avatar" className="burger-menu__repository-avatar" />
                       <span>{repo.name}</span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -140,11 +147,15 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
           <>
             <div className="burger-menu__header">
               <div className="burger-menu__logo-wrapper">
-              <img src={avatar || DefaultAvatar} 
-  onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }} alt="Profile" className="burger-menu__logo" />
+                <img
+                  src={avatar || DefaultAvatar}
+                  onError={(e) => { e.target.onerror = null; e.target.src = DefaultAvatar; }}
+                  alt="Profile"
+                  className="burger-menu__logo"
+                />
                 <div className="burger-menu__user-info">
-                <span className="burger-menu__user-nickname">{name || userName}</span>
-                <span className="burger-menu__user-username">{userName}</span>
+                  <span className="burger-menu__user-nickname">{name || userName}</span>
+                  <span className="burger-menu__user-username">{userName}</span>
                 </div>
               </div>
               <div className="burger-menu__actions">
@@ -164,10 +175,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
                       <span className="burger-menu__text">{item.text}</span>
                     </Link>
                   ) : (
-                    <a href="#" className="burger-menu__item">
+                    <button type="button" className="burger-menu__item">
                       <span className="burger-menu__icon">{item.icon}</span>
                       <span className="burger-menu__text">{item.text}</span>
-                    </a>
+                    </button>
                   )}
                 </li>
               ))}
@@ -178,10 +189,10 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
             <ul className="burger-menu__list">
               {bottomRightMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <a href="#" className="burger-menu__item">
+                  <button type="button" className="burger-menu__item">
                     <span className="burger-menu__icon">{item.icon}</span>
                     <span className="burger-menu__text">{item.text}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -191,7 +202,7 @@ export function BurgerMenu({ isOpen = true, onClose, position = 'left', avatar, 
             <ul className="burger-menu__list">
               {footerMenuItems.map((item, index) => (
                 <li key={index} className="burger-menu__item">
-                  <a href="#" className="burger-menu__item">
+                  <a href="https://github.com" className="burger-menu__item">
                     <span className="burger-menu__icon">{item.icon}</span>
                     <span className="burger-menu__text">{item.text}</span>
                   </a>

@@ -82,13 +82,13 @@ export function Productivity() {
                     AccentText={'GitHub Copilot'}
                     text={'empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.'}
                     buttonText={'Explore GitHub Copilot'}
-                    href = {'#'}
+                    href = {'https://github.com/features/copilot'}
                     question = {'Did you know?'} 
                     title={'22% increase'}
                     subTitle={'in developer productivity after three years with GitHub'}
                     color={'green'}
                     isSubButton={true}
-                    linkSubButton = {'#'}
+                    linkSubButton = {'https://github.com/customer-stories'}
                     subButtonText = {'Read the report'}
                 ></SectionPromo>
                 <SectionCard cardData = {CardsContentProductivity} colorCard = 'green'></SectionCard>

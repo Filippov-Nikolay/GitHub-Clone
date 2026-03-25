@@ -7,8 +7,6 @@ import { LogoSVG } from "../../../../shared/assets/svg/SvgComponents";
 import { Login } from "../../services/Login"
 import { PasswordReset } from "../../services/PasswordReset";
 
-import Cookies from "js-cookie";
-
 export function SignIn() {
     // Standard hooks
     const handleChange = (e) => {

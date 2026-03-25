@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProfileLogoSVG, PinSVG, UnwatchSVG, ForkSVG, StarSvg } from '../../../../shared/assets/svg/SvgComponents';
+import { PinSVG, UnwatchSVG, ForkSVG, StarSvg } from '../../../../shared/assets/svg/SvgComponents';
 import './ContainerHeader.css';
 import './adaptive.css';
 import DefaultAvatarSVG from '../../../../shared/assets/img/avatar_account.png';
@@ -10,7 +10,7 @@ const ContainerHeader = ({repository}) => {
         <div className='repository-container-header'>
           <span className='logo'><img src={DefaultAvatarSVG}  className="logo" alt='Avatar' /></span>
 
-        <div><a className='name-link'>{repository?.name || 'Repository'}</a></div>
+        <div><span className='name-link'>{repository?.name || 'Repository'}</span></div>
 
       <span className='access-specificator'>
         {repository?.isPrivate ? 'Private' : 'Public'}

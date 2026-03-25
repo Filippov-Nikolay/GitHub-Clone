@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import '../../styles/main.css'
 
@@ -100,13 +100,13 @@ function Collaboration() {
                     AccentText={'GitHub Issues and GitHub Projects'}
                     text={'supply project management tools that adapt to your team alongside your code.'}
                     buttonText={'Get started with GitHub Issues'}
-                    href = {'#'}
+                    href = {'https://github.com/features/issues'}
                     question = {'Did you know?'} 
                     title={'80%'}
                     subTitle={`reduction in onboarding time with GitHub<sup>2</sup>`}
                     color={'pink'}
                     isSubButton={false}
-                    linkSubButton = {'#'}
+                    linkSubButton = {'https://github.com/customer-stories'}
                     subButtonText = {'Read the report'}
                 ></SectionPromo>
                 <SectionCard cardData = {CardsContentCollaboration} colorCard = 'pink' reverse = 'true'></SectionCard>
@@ -200,13 +200,13 @@ function ApplicationSecurity() {
                     AccentText={'GitHub Advanced Security'}
                     text={'enables you to find and fix vulnerabilities with ease and ship secure code quickly.'}
                     buttonText={'Dive into GitHub Advanced Security'}
-                    href = {'#'}
+                    href = {'https://github.com/security/advanced-security'}
                     question = {'Did you know?'} 
                     title={'7x faster'}
                     subTitle={`vulnerability fixes with GitHub<sup>1</sup>`}
                     color={'blue'}
                     isSubButton={false}
-                    linkSubButton = {'#'}
+                    linkSubButton = {'https://github.com/customer-stories'}
                     subButtonText = {'Read the report'}
                 ></SectionPromo>
                 <SectionCard cardData = {CardsContentApplicationSecurity} colorCard = 'blue'></SectionCard>

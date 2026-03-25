@@ -38,9 +38,9 @@ export function Nav({ profileUserName }) {
                 ))}
 
                 <li className="profile-nav__list-item profile-dropdown-toggle" onClick={toggleDropdown}>
-                    <a href="#" className="profile-list__item-link">
+                    <button type="button" className="profile-list__item-link">
                         <DotsSvg />
-                    </a>
+                    </button>
                     {showDropdown && (
                         <ul className="profile-dropdown-content">
                             {navItems.map((item, index) => (

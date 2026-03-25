@@ -5,7 +5,8 @@ import config from '../../../shared/config';
 export const Test = () => {
     console.log("run test");
     return axios.get(`${config.API_BASE_BACKEND}/api/edit/info`, {
-        withCredentials: true
+        withCredentials: true,
+        timeout: config.API_TIMEOUT_MS
     }).then(response => {
         console.log("TEST RESPONSE", JSON.stringify(response.data, null, 2));
         console.log(`${response.data.userId}`);
@@ -17,19 +18,22 @@ export const Test = () => {
 
 export const getProfile = () => {
     return axios.get(`${config.API_BASE_BACKEND}/api/edit/getProfile`, {
-        withCredentials: true
+        withCredentials: true,
+        timeout: config.API_TIMEOUT_MS
     });
 };
 
 export const saveProfile = (profileData) => {
     return axios.post(`${config.API_BASE_BACKEND}/api/edit/saveProfile`, profileData, {
-        withCredentials: true
+        withCredentials: true,
+        timeout: config.API_TIMEOUT_MS
     });
 };
 
 export const getProfileByName = (username) => {
     return axios.get(`${config.API_BASE_BACKEND}/api/edit/getProfileByName/${username}`, {
-        withCredentials: true
+        withCredentials: true,
+        timeout: config.API_TIMEOUT_MS
     });
 };
 
@@ -42,7 +46,8 @@ export const uploadAvatar = async (file) => {
         formData,
         {
             headers: { 'Content-Type': 'multipart/form-data' },
-            withCredentials: true
+            withCredentials: true,
+            timeout: config.API_TIMEOUT_MS
         }
     );
 
@@ -54,5 +59,6 @@ export const uploadAvatar = async (file) => {
 export const getUserRepositories = (username) => {
   return axios.get(`${config.API_BASE_BACKEND}/api/Repository/userRepos/${encodeURIComponent(username)}`, {
     withCredentials: true,
+    timeout: config.API_TIMEOUT_MS,
   });
 };

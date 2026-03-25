@@ -20,8 +20,10 @@ const useIntersectionObserver = (className, threshold = 0.2) => {
             }
         });
 
+        const observedElements = elementsRef.current;
+
         return () => {
-            elementsRef.current.forEach((element) => {
+            observedElements.forEach((element) => {
                 if (element) {
                     observer.unobserve(element);
                 }

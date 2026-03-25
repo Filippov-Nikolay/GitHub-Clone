@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideBar.css";
-import {ActivitySVG, StarSvg, UnwatchSVG, ForkSVG, SettingsSVG} from "../../../../shared/assets/svg/SvgComponents";
+import {ActivitySVG, StarSvg, UnwatchSVG, ForkSVG} from "../../../../shared/assets/svg/SvgComponents";
 import "./adaptive.css";
 
 const RepositorySidebar = () => {
@@ -25,13 +25,13 @@ const RepositorySidebar = () => {
             <section className="gh-sidebar-section">
                 <h3>Releases</h3>
                 <p>No releases published</p>
-                <a className="gh-sidebar-section__link" href="#">Create a new release</a>
+                <a className="gh-sidebar-section__link" href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">Create a new release</a>
             </section>
 
             <section className="gh-sidebar-section">
                 <h3>Packages</h3>
                 <p>No packages published</p>
-                <a className="gh-sidebar-section__link" href="#">Publish your first package</a>
+                <a className="gh-sidebar-section__link" href="https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages">Publish your first package</a>
             </section>
 
             <section className="gh-sidebar-section">

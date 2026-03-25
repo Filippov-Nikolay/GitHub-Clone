@@ -43,7 +43,7 @@ export function Globe() {
                         <sup>2</sup>The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.
                     </li>
                     <li className="globe__item">
-                        <sup>3</sup>There are now 100 million developers around the world using GitHub. <a className='globe__link' href="#">Read the blog post.</a>
+                        <sup>3</sup>There are now 100 million developers around the world using GitHub. <a className='globe__link' href="https://github.blog/">Read the blog post.</a>
                     </li>
                 </ul>
             </div>

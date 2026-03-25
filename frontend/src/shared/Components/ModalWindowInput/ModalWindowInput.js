@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { ActionsSvg, SearchSvg, CloseSvg, BookSVG, ProfileSVG } from '../../../shared/assets/svg/SvgComponents';
+import { ActionsSvg, SearchSvg, ProfileSVG } from '../../../shared/assets/svg/SvgComponents';
 import './modalWindowInput.css';
 import InputSearch  from '../InputSearch/InputSearch.js'
 import { searchUsers } from './Services/userSearchService.js';
@@ -121,7 +120,7 @@ useEffect(() => {
     ) : (
         <>
             <li className="modal-window-list__item">
-                <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                <a href="https://github.com/features/actions" className={`modal-window-list__link modal-window-list__link--${theme}`}>
                     <ActionsSvg />
                     <div className="modal-window-list__wrapper">
                         <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>
@@ -130,7 +129,7 @@ useEffect(() => {
                 </a>
             </li>
             <li className="modal-window-list__item">
-                <a href="#" className={`modal-window-list__link modal-window-list__link--${theme}`}>
+                <a href="https://docs.github.com/en/search-github/github-code-search/understanding-github-code-search-syntax" className={`modal-window-list__link modal-window-list__link--${theme}`}>
                     <ActionsSvg />
                     <div className="modal-window-list__wrapper">
                         <h6 className={`modal-window-list__title modal-window-list__title--${theme}`}>Actions</h6>

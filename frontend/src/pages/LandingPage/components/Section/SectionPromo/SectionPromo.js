@@ -2,7 +2,7 @@ import React, {} from "react";
 import useIntersectionObserver from "../../../hooks/AnimationHook/UseIntersectionObserver";
 import { ArrowSymbolMktg } from "../../../../../shared/assets/svg/SvgComponents";
 
-export function SectionPromo({event, AccentText, text, buttonText, href = '#', question = 'Did you know?', title, subTitle, color, isSubButton = false, linkSubButton = '#', subButtonText}) {
+export function SectionPromo({event, AccentText, text, buttonText, href = 'https://github.com', question = 'Did you know?', title, subTitle, color, isSubButton = false, linkSubButton = 'https://github.com', subButtonText}) {
     const elementsRef = useIntersectionObserver('element-show');
     let count = 0;
 

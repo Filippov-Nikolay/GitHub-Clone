@@ -10,18 +10,18 @@ export default function BtnPrimary({ btnText, btnHref="#", iconSvg, positionIcon
     if (isExternal) {
         return (
             <a href={btnHref} className="btn-primary">
-                {positionIcon == "left" && <span className="btn-primary__svg">{iconSvg}</span>}
+                {positionIcon === "left" && <span className="btn-primary__svg">{iconSvg}</span>}
                 {btnText}
-                {positionIcon == "right" && <span className="btn-primary__svg">{iconSvg}</span>}
+                {positionIcon === "right" && <span className="btn-primary__svg">{iconSvg}</span>}
             </a>
         );
     }
 
     return (
         <Link to={btnHref} className="btn-primary">
-            {positionIcon == "left" && <span className="btn-primary__svg">{iconSvg}</span>}
+            {positionIcon === "left" && <span className="btn-primary__svg">{iconSvg}</span>}
             {btnText}
-            {positionIcon == "right" && <span className="btn-primary__svg">{iconSvg}</span>}
+            {positionIcon === "right" && <span className="btn-primary__svg">{iconSvg}</span>}
         </Link>
     )
 }

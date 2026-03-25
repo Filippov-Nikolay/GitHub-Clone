@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useState } from 'react';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu.js';
 import style from '../../shared/Header/header.module.css';
-import { LogoSVG, NotificationSVG, SearchSvg, SearchSVG, PathSvg, DotsSvg } from '../assets/svg/SvgComponents';
+import { LogoSVG, SearchSvg, PathSvg, DotsSvg } from '../assets/svg/SvgComponents';
 import DefaultAvatar from '../assets/img/avatar_account.png'
 import BtnSearch from '../Components/BtnSearch/BtnSearch.js';
 import { ModalWindowInput } from '../Components/ModalWindowInput/ModalWindowInput';

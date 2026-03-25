@@ -1,7 +1,6 @@
 import React from "react";
 import './ReadMeBar.css';
-import  {BookSVG, BookSVG1}  from "../../../../shared/assets/svg/SvgComponents";
-import {book} from "../../../../shared/assets/img/Github-Octicons-Book.png";
+import  {BookSVG}  from "../../../../shared/assets/svg/SvgComponents";
 
 
 const ReadMeBar = () => {

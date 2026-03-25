@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 /* Global Components */
 import { Header}  from '../../shared/Header/Header.js';
-import Profile from '../../shared/Profile/Profile.js';
 import Feed from '../../shared/Components/Feed/Feed.js';
 import { Footer } from '../../shared/Footer/Footer.js';
 
@@ -11,6 +10,7 @@ import './styles/main.css';
 import TopRepositories from './components/TopRepositories/TopRepositories.js'
 import LatestChanges from './components/LatestChanges/LatestChanges.js';
 import ExploreRepositories from './components/ExploreRepos/ExploreRepos.js';
+import FullPageState from '../../shared/Components/FullPageState/FullPageState';
 
 import { getProfile } from '../ProfilePage/services/profileApi.js';
 
@@ -35,7 +35,12 @@ const HomePage = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <FullPageState
+                title="Loading dashboard..."
+                description="Fetching your profile and repository activity."
+            />
+        );
     }
 
     return (

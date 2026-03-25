@@ -1,11 +1,9 @@
 import React, {useRef } from "react";
 import debounce from 'lodash.debounce';
 import useIntersectionObserver from "../../../hooks/AnimationHook/UseIntersectionObserver";
-import Tilt from 'react-vanilla-tilt'
 
 export function SectionCard({cardData, colorCard, reverse = false}) {
     const numberOfCards = cardData.length;
-    const perspectiveValue = 5000;
 
     const cardRefs = {
         cardRef1: useRef(null),
@@ -31,7 +29,7 @@ export function SectionCard({cardData, colorCard, reverse = false}) {
     return (
         <div className="section-card">
             <div className={`section-card__wrapper ${reverse ? 'section-card__wrapper--column-reverse' : ''}`}>
-                <Tilt className='tilt-item' options={{ perspective: perspectiveValue, }} style={{ }}>
+                <div className='tilt-item'>
                     <div className={`section-card__item section-card__item--${colorCard}`} onMouseMove={(e) => handleMouseMove(e, 'cardRef1')} ref={cardRefs.cardRef1}>
                         <div className="section-card__main">
                             <h3 className="section-card__title">
@@ -44,12 +42,12 @@ export function SectionCard({cardData, colorCard, reverse = false}) {
                             <img src={cardData[0].srcImg} alt=""/>
                         </div>
                     </div>
-                </Tilt>
+                </div>
                 <div className="section-card__wrapper-flex" style={{ display: numberOfCards === 1 ? 'none' : 'flex' }}>
                     {
                         numberOfCards > 1 && (
                             <>
-                                <Tilt className='tilt-item' options={{ perspective: perspectiveValue, }} style={{ }}>
+                                <div className='tilt-item'>
                                     <div className={`section-card__item section-card__item--${colorCard} section-card__item--column`} onMouseMove={(e) => handleMouseMove(e, 'cardRef2')} ref={cardRefs.cardRef2}> 
                                         <div className="section-card__main">
                                             <h3 className="section-card__title">
@@ -62,8 +60,8 @@ export function SectionCard({cardData, colorCard, reverse = false}) {
                                             <img src={cardData[1].srcImg} alt=""/>
                                         </div>
                                     </div>
-                                </Tilt>
-                                <Tilt className='tilt-item' options={{ perspective: perspectiveValue, }} style={{ }}>
+                                </div>
+                                <div className='tilt-item'>
                                     <div className={`section-card__item section-card__item--${colorCard} section-card__item--column`} onMouseMove={(e) => handleMouseMove(e, 'cardRef3')} ref={cardRefs.cardRef3}> 
                                         <div className="section-card__main">
                                             <h3 className="section-card__title">
@@ -76,7 +74,7 @@ export function SectionCard({cardData, colorCard, reverse = false}) {
                                             <img src={cardData[2].srcImg} alt=""/>
                                         </div>
                                     </div>
-                                </Tilt>
+                                </div>
                             </>
                         )
                     }
