@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Cookies from 'js-cookie'; // npm install js-cookie
 import axios from 'axios';
 import config from './shared/config';
-import FullPageState from './shared/Components/FullPageState/FullPageState';
+import FullPageState from './shared/Components/FullPageState/FullPageState.js';
 
-import DashboardPage from './pages/DashboardPage/index';
-import LandingPage from './pages/LandingPage/index';
-import ProfilePage from './pages/ProfilePage/index';
+import DashboardPage from './pages/DashboardPage/index.js';
+import LandingPage from './pages/LandingPage/index.js';
+import ProfilePage from './pages/ProfilePage/index.js';
 
-import LoginPage from './pages/LoginPage/index';
-import PasswordResetPage from './pages/PasswordResetPage/index';
-import SignupPage from './pages/RegisterPage/index';
-import RepositoryPage from './pages/RepositoryPage/index';
-import CreateRepository from './pages/CreateRepository/index';
+import LoginPage from './pages/LoginPage/index.js';
+import PasswordResetPage from './pages/PasswordResetPage/index.js';
+import SignupPage from './pages/RegisterPage/index.js';
+import RepositoryPage from './pages/RepositoryPage/index.js';
+import CreateRepository from './pages/CreateRepository/index.js';
 
 
 const AppRouter = () => {
