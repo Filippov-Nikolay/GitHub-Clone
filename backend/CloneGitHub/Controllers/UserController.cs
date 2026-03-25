@@ -321,6 +321,7 @@ namespace CloneGitHub.Controllers
             var userCookieOptions = new CookieOptions
             {
                 HttpOnly = false,
+                Path = "/",
                 Secure = isHttps,
                 SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
@@ -330,6 +331,7 @@ namespace CloneGitHub.Controllers
             var tokenCookieOptions = new CookieOptions
             {
                 HttpOnly = true,
+                Path = "/",
                 Secure = isHttps,
                 SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax,
                 Expires = DateTimeOffset.UtcNow.AddDays(7)
@@ -339,22 +341,26 @@ namespace CloneGitHub.Controllers
             Response.Cookies.Append("user_session", token, tokenCookieOptions);
         }
 
+        private void ClearAuthCookies()
+        {
+            var isHttps = HttpContext.Request.IsHttps;
+            var cookieOptions = new CookieOptions
+            {
+                Path = "/",
+                Secure = isHttps,
+                SameSite = isHttps ? SameSiteMode.None : SameSiteMode.Lax
+            };
+
+            Response.Cookies.Delete("dotcom_user", cookieOptions);
+            Response.Cookies.Delete("user_session", cookieOptions);
+            Response.Cookies.Delete("dotcom_user");
+            Response.Cookies.Delete("user_session");
+        }
+
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-
-            Response.Cookies.Delete("dotcom_user", new CookieOptions
-            {
-                SameSite = SameSiteMode.None,
-                Secure = true
-            });
-
-            Response.Cookies.Delete("user_session", new CookieOptions
-            {
-                SameSite = SameSiteMode.None,
-                Secure = true
-            });
-
+            ClearAuthCookies();
             return Ok(new { message = "Выход выполнен успешно" });
         }
 
@@ -378,9 +384,25 @@ namespace CloneGitHub.Controllers
         public IActionResult Current()
         {
             var userName = Request.Cookies["dotcom_user"];
-            if (!string.IsNullOrEmpty(userName))
-                return Ok(new { username = userName });
-            return Ok(new { username = (string?)null });
+            var token = Request.Cookies["user_session"];
+
+            if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(token))
+            {
+                ClearAuthCookies();
+                return Ok(new { username = (string?)null });
+            }
+
+            var principal = _jwtTokenGenerator.ValidateToken(token);
+            var tokenUserName = principal?.FindFirst(ClaimTypes.Name)?.Value;
+
+            if (string.IsNullOrWhiteSpace(tokenUserName) ||
+                !string.Equals(tokenUserName, userName, StringComparison.Ordinal))
+            {
+                ClearAuthCookies();
+                return Ok(new { username = (string?)null });
+            }
+
+            return Ok(new { username = tokenUserName });
         }
 
 
