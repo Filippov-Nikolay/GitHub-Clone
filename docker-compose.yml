@@ -2,44 +2,28 @@ services:
   db:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
-      SA_PASSWORD: "${SA_PASSWORD}"
+      SA_PASSWORD: ${SA_PASSWORD}
       ACCEPT_EULA: "Y"
     volumes:
       - mssql_data:/var/opt/mssql
-    networks:
-      - app-network
 
   backend:
     build:
       context: ./backend
       dockerfile: CloneGitHub/Dockerfile
-    depends_on:
-      - db
-    env_file:
-      - .env
     environment:
-      - ConnectionStrings__DefaultConnection=${ConnectionStrings__DefaultConnection}
-      - AllowedOrigins=${ALLOWED_ORIGINS}
-      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection}
+      AllowedOrigins: ${ALLOWED_ORIGINS}
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
     ports:
       - "7093:80"
-    networks:
-      - app-network
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    depends_on:
-      - backend
     ports:
       - "3000:80"
-    networks:
-      - app-network
 
 volumes:
   mssql_data:
-
-networks:
-  app-network:
-    driver: bridge
