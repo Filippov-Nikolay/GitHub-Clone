@@ -8,6 +8,7 @@ using AutoMapper;
 using Microsoft.Extensions.FileProviders;
 using CloneGitHub.BLL.Service;
 using CloneGitHub.BLL.MappingProfiles;
+using CloneGitHub.BLL.Infrastructure;
 using CloneGitHub.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -15,10 +16,9 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
-string? connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<CloneGitHubContext>(options =>
-    options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
+var connection = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' was not found.");
+builder.Services.AddUserContext(connection);
 
 
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
@@ -59,7 +59,6 @@ builder.Services.AddCors(options => {
             .AllowCredentials();
     });
 });
-// builder.Services.AddDbContext<CloneGitHubContext>(options => options.UseSqlServer(connection));
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
