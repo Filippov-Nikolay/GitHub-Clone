@@ -52,7 +52,7 @@ export const uploadAvatar = async (file) => {
     );
 
     const uploadedAvatarPath = response.data.avatarPath;
-    return `${config.API_BASE_BACKEND}/${uploadedAvatarPath}`;
+    return new URL(uploadedAvatarPath, `${config.API_BASE_BACKEND}/`).toString();
 };
 
 

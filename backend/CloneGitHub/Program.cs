@@ -77,7 +77,7 @@ builder.Services.AddScoped<IEditService, EditService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment()) {
+if (app.Environment.IsDevelopment() || isRunningInContainer) {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
